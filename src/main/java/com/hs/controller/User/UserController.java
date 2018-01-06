@@ -69,6 +69,11 @@ public class UserController {
        List<User> lu = userService.getAllStudent();
        return new ResponseData(lu,null,"0","success");
     }
+    @RequestMapping(value = "/updateUser")
+    @ResponseBody
+    public  ResponseData updateUser(User user){
+        return new ResponseData("0","success");
+    }
     @RequestMapping(value = "/vcode_img")
     public String securityCodeImage(HttpServletRequest request, HttpServletResponse response) {
         BufferedImage imgBuf = SecurityCodeUtil.initImage();

@@ -131,7 +131,7 @@
             <div class="form-group">
                 <label class="col-sm-4 control-label" >登录名：</label>
                 <div class="col-sm-5" style="width:300px">
-                    <input id="admin_name" type="text" class="form-control" value="${user.user_name}" name="admin_name"/>
+                    <input id="admin_name" type="text" readonly="readonly" class="form-control" value="${user.user_name}" name="admin_name"/>
                 </div>
             </div>
             <div class="form-group">
