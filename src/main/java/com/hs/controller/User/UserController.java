@@ -3,7 +3,6 @@ package com.hs.controller.User;
 import com.hs.entity.User;
 import com.hs.entity.common.ResponseData;
 import com.hs.service.UserService;
-import com.hs.utils.JsonUtils;
 import com.hs.utils.SecurityCodeUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Created by zj on 2018年1年6日.
@@ -46,6 +46,28 @@ public class UserController {
     public String logout(HttpServletRequest httpServletRequest){
         httpServletRequest.getSession().invalidate();
         return "/login";
+    }
+    @RequestMapping(value = "/deleteUser")
+    @ResponseBody
+    public ResponseData deleteUser(User user){
+        if(userService.deleteUser(user))
+            return ResponseData.success();
+        else
+            return new ResponseData("1","删除失败");
+    }
+    @RequestMapping(value = "/addUser")
+    @ResponseBody
+    public ResponseData addUser(User user){
+        if(userService.addUser(user))
+            return ResponseData.success();
+        else
+            return new ResponseData("1","添加失败");
+    }
+    @RequestMapping(value = "/getAllStudent")
+    @ResponseBody
+    public ResponseData getAllStudent(){
+       List<User> lu = userService.getAllStudent();
+       return new ResponseData(lu,null,"0","success");
     }
     @RequestMapping(value = "/vcode_img")
     public String securityCodeImage(HttpServletRequest request, HttpServletResponse response) {

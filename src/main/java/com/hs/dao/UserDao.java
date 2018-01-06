@@ -47,4 +47,11 @@ public interface UserDao {
      * @return
      */
     public List<User> getAllTeacher();
+
+    /**
+     * 删除用户
+     * @param user
+     * @return
+     */
+    public int deleteUser(User user);
 }

@@ -33,4 +33,18 @@ public class UserServiceImpl implements UserService {
     public List<User> getAllUser() {
         return userDao.getAllUser();
     }
+
+    public List<User> getAllStudent() {
+        return userDao.getAllStudent();
+    }
+
+    public List<User> getAllTeacher() {
+        return userDao.getAllTeacher();
+    }
+
+    public boolean deleteUser(User user) {
+        if(userDao.deleteUser(user)>0)
+            return true;
+        return false;
+    }
 }

@@ -8,7 +8,7 @@ import java.util.List;
  * Created by zj on 2018年1年6日.
  */
 public class ResponseData implements Serializable{
-    private List<Object> list;
+    private List list;
     private Object data;
     private String result;
     private String msg;
@@ -21,7 +21,7 @@ public class ResponseData implements Serializable{
         this.msg = msg;
     }
 
-    public ResponseData(List<Object> list, Object data, String result, String msg) {
+    public ResponseData(List list, Object data, String result, String msg) {
         this.list = list;
         this.data = data;
         this.result = result;

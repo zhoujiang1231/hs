@@ -35,4 +35,23 @@ public interface UserService {
      * @return
      */
     public List<User> getAllUser();
+
+    /**
+     * 获取所有学生
+     * @return
+     */
+    public List<User> getAllStudent();
+
+    /**
+     * 获取所有老师
+     * @return
+     */
+    public List<User> getAllTeacher();
+
+    /**
+     * 删除用户
+     * @param user
+     * @return
+     */
+    public boolean deleteUser(User user);
 }

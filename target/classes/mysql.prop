@@ -1,4 +1,0 @@
-url=jdbc:mysql://azhou.top:3306/hs
-driverClass=com.mysql.jdbc.Driver
-user=root
-password=1231
