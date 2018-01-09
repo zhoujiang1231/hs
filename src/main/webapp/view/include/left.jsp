@@ -19,7 +19,7 @@
 			<a href="../main.jsp" target="main"><div class="line">
 					<img src="../../img/coin01.png" />&nbsp;&nbsp;首页
 				</div></a>
-            <c:if test="${user.user_type==0}">
+            <c:if test="${user_type==0}">
 			<dl class="system_log">
 
 				<dt>
@@ -30,7 +30,7 @@
 				</dt>
 				<dd>
 					<img class="coin11" src="../../img/coin111.png" /><img class="coin22"
-						src="../../img/coin222.png" /><a class="cks" href="${pageContext.request.contextPath}/user/user/list.jsp"
+						src="../../img/coin222.png" /><a class="cks" href="${pageContext.request.contextPath}/view/user/user_list.jsp"
 						target="main">账户管理</a><img class="icon5" src="../../img/coin21.png" />
 				</dd>
 			</dl>
@@ -48,7 +48,7 @@
 						target="main">权限管理</a><img class="icon5" src="../../img/coin21.png" />
 				</dd>
 			</dl>--%>
-            <c:if test="${user.user_type!=0}">
+            <c:if test="${user_type!=0}">
 			<dl class="system_log">
 				<dt>
 					<img class="icon1" src="../../img/coin03_1.png" /><img class="icon2"
@@ -56,11 +56,11 @@
 						src="../../img/coin19.png" /><img class="icon4"
 						src="../../img/coin20.png" />
 				</dt>
-                <c:if test="${user.user_type==2}">
+                <c:if test="${user_type==2}">
 				<dd>
 					<img class="coin11" src="../../img/coin111.png" /><img class="coin22"
-						src="../../img/coin222.png" /><a href="${pageContext.request.contextPath}/course/course.jsp" target="main"
-						class="cks">学生选课</a><img class="icon5" src="../../img/coin21.png" />
+						src="../../img/coin222.png" /><a href="${pageContext.request.contextPath}/course/course_stu.jsp" target="main"
+						class="cks">课程列表</a><img class="icon5" src="../../img/coin21.png" />
 				</dd>
 				<dd>
 					<img class="coin11" src="../../img/coin111.png" /><img class="coin22"
@@ -68,11 +68,11 @@
 						class="cks">选课结果</a><img class="icon5" src="../../img/coin21.png" />
 				</dd>
                 </c:if>
-                <c:if test="${user.user_type==1}">
+                <c:if test="${user_type==1}">
 				<dd>
 					<img class="coin11" src="../../img/coin111.png" /><img class="coin22"
-                         src="../../img/coin222.png" /><a href="${pageContext.request.contextPath}/course/course_add.jsp" target="main"
-						 class="cks">发布课程</a><img class="icon5" src="../../img/coin21.png" />
+                         src="../../img/coin222.png" /><a href="${pageContext.request.contextPath}/course/course_tea.jsp" target="main"
+						 class="cks">课程列表</a><img class="icon5" src="../../img/coin21.png" />
 				</dd>
 				<dd>
 					<img class="coin11" src="../../img/coin111.png" /><img class="coin22"
@@ -88,7 +88,7 @@
 						src="../../img/coin19.png" /><img class="icon4"
 						src="../../img/coin20.png" />
 				</dt>
-                <c:if test="${user.user_type==2}">
+                <c:if test="${user_type==2}">
 				<dd>
 					<img class="coin11" src="../../img/coin111.png" /><img class="coin22"
 						src="../../img/coin222.png" /><a href="${pageContext.request.contextPath}/grade/grade_stu.jsp"
@@ -96,7 +96,7 @@
 						src="../../img/coin21.png" />
 				</dd>
                 </c:if>
-                <c:if test="${user.user_type==1}">
+                <c:if test="${user_type==1}">
                 <dd>
                     <img class="coin11" src="../../img/coin111.png" /><img class="coin22"
                         src="../../img/coin222.png" /><a href="${pageContext.request.contextPath}/grade/grade_tea.jsp"

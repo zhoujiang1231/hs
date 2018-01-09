@@ -31,6 +31,13 @@ public interface UserDao {
     public int updateUser(User user);
 
     /**
+     * 修改密码
+     * @param user
+     * @return
+     */
+    public int updateUserPsw(User user);
+
+    /**
      * 获取所有用户
      * @return
      */
@@ -54,4 +61,32 @@ public interface UserDao {
      * @return
      */
     public int deleteUser(User user);
+
+    /**
+     * 查询用户
+     * @param user
+     * @return
+     */
+    public List<User> getUsersByCondition(User user);
+
+    /**
+     * 添加学生
+     * @param user
+     * @return
+     */
+    public int addStudent(User user);
+
+    /**
+     * 检查用户名是否唯一
+     * @param username
+     * @return
+     */
+    public User checkUserNameUnique(String username);
+
+    /**
+     * 检查学号是否唯一
+     * @param sno
+     * @return
+     */
+    public User checkSno(String sno);
 }

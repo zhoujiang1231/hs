@@ -12,8 +12,9 @@ public class User implements Serializable{
     private String user_password;
     private int user_type;
     private String name;
+    private String email;
     private int sex;
-    private int sno;
+    private String sno;
     private String tel;
     private String idcard;
     private Date creat_time;
@@ -26,7 +27,7 @@ public class User implements Serializable{
         this.user_password = user_password;
     }
 
-    public User(int user_id, String user_name, String user_password, int user_type, String name, int sex, int sno, String tel, String idcard, Date creat_time) {
+    public User(int user_id, String user_name, String user_password, int user_type, String name, int sex, String sno, String tel, String idcard, Date creat_time) {
         this.user_id = user_id;
         this.user_name = user_name;
         this.user_password = user_password;
@@ -87,11 +88,11 @@ public class User implements Serializable{
         this.sex = sex;
     }
 
-    public int getSno() {
+    public String getSno() {
         return sno;
     }
 
-    public void setSno(int sno) {
+    public void setSno(String sno) {
         this.sno = sno;
     }
 
@@ -117,5 +118,13 @@ public class User implements Serializable{
 
     public void setCreat_time(Date creat_time) {
         this.creat_time = creat_time;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

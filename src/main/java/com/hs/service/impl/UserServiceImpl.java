@@ -19,14 +19,23 @@ public class UserServiceImpl implements UserService {
     }
 
     public boolean addUser(User user) {
-       /* if(userDao.addUser(user)>0)
-            return true;*/
+        if(userDao.addUser(user)>0){
+            return true;
+        }
         return false;
     }
 
     public boolean updateUser(User user) {
-       /* if(userDao.updateUser(user)>0)
-            return true;*/
+       if(userDao.updateUser(user)>0) {
+           return true;
+       }
+        return false;
+    }
+
+    public boolean updateUserPsw(User user) {
+        if(userDao.updateUserPsw(user)>0) {
+            return true;
+        }
         return false;
     }
 
@@ -43,8 +52,36 @@ public class UserServiceImpl implements UserService {
     }
 
     public boolean deleteUser(User user) {
-        if(userDao.deleteUser(user)>0)
+        if(userDao.deleteUser(user)>0) {
             return true;
+        }
+        return false;
+    }
+
+    public List<User> getUsersByCondition(User user) {
+        return userDao.getUsersByCondition(user);
+    }
+
+    public boolean addStudent(User user) {
+        if(userDao.addStudent(user)>0) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean checkUserNameUnique(String username) {
+        User user = userDao.checkUserNameUnique(username);
+        if(user!=null&&user.getUser_name()!=null) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean checkSno(String sno) {
+        User user = userDao.checkSno(sno);
+        if(user!=null&&user.getSno()!=null) {
+            return true;
+        }
         return false;
     }
 }

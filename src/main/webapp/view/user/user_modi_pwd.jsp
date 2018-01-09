@@ -23,7 +23,7 @@
 		</style>
         <script language="javascript" type="text/javascript">
 			$(function(){
-				 $('#form1').bootstrapValidator({
+				 $('#form').bootstrapValidator({
 				     container: 'tooltip',
 				     feedbackIcons: {
 				         valid: 'glyphicon glyphicon-ok',
@@ -31,20 +31,14 @@
 				         validating: 'glyphicon glyphicon-refresh'
 				     }, 
 				     fields: {
-				    	 oldpsw: {
-				             message: 'The username is not valid',
+                         oldpsw: {
 				             validators: {
 				                 notEmpty: {
 				                     message: '旧密码不能为空'
-				                 },
-				                 regexp: {
-				                     regexp: /^[a-zA-Z0-9_]{1,10}$/,
-				                     message: '12长度以内的字母、数字和下划线的组合'
 				                 }
 				             }
 				         },
-				         newpsw1: {
-				             message: 'The username is not valid',
+				         user_password: {
 				             validators: {
 				                 notEmpty: {
 				                     message: '新密码不能为空'
@@ -55,18 +49,13 @@
 				                 }
 				             }
 				         },
-				         newpsw2: {
-				             message: 'The username is not valid',
+                         newpsw: {
 				             validators: {
 				                 notEmpty: {
-				                     message: '重复不能为空'
-				                 },
-				                 regexp: {
-				                     regexp: /^[a-zA-Z0-9_]{1,10}$/,
-				                     message: '12长度以内的字母、数字和下划线的组合'
+				                     message: '重复密码不能为空'
 				                 },
 				                 identical: {
-				                     field: 'newpsw1',
+				                     field: 'user_password',
 				                     message: '两次密码输入不一致'
 				                 }
 				             }
@@ -78,12 +67,12 @@
 	                 var $form = $(e.target);
 	                 var bv = $form.data('bootstrapValidator');
 	                 $.post('${pageContext.request.contextPath}/user/updateUserPsw', $form.serialize(),function(data) {
-	                	 if(data.result==-1){
-	                	     $(".save_fail").text(data.msg);
-                             $(".save_fail").show().delay(2000).fadeOut("slow");
+	                	 if(data.result==1){
+	                	     $(".save_result_info").text(data.msg);
+                             $(".save_result_info").show().delay(2000).fadeOut("slow");
 	      				}else{
-                             $(".save_fail").text(data.msg);
-                             $(".save_success").show().delay(3000).fadeOut("slow");
+                             $(".save_result_info").text(data.msg);
+                             $(".save_result_info").show().delay(3000).fadeOut("slow");
 	      					setTimeout(function(){
 	      						window.top.location="${pageContext.request.contextPath}/user/logout";
 	      					},3000);
@@ -91,24 +80,22 @@
 	                 }, 'json');
 				 });
 				 $('#resetBtn').click(function() {
-					 	location.href='${pageContext.request.contextPath}/view/index';
+					 	location.href='${pageContext.request.contextPath}/view/main.jsp';
 	        	    });
 			})
-			function succ(){
-			}
 		</script>
     </head>
     <body name="information_off">
         <div>
             <br/>
             <br/>
-            <div id="save_result_info" class="save_fail"></div>
+            <div id="save_result_info" class="save_result_info"></div>
             <br/>
             <br/>
             <br/>
             <br/>
             <div class="row">
-            <form id="form1"  class="main_form form-horizontal">
+            <form id="form"  class="main_form form-horizontal" name="form">
              <fieldset>
              <div class="form-group">
                 <label class="col-sm-4 control-label" >旧密码：</label>
@@ -119,25 +106,24 @@
             <div class="form-group">
                 <label class="col-sm-4 control-label" >新密码：</label>
                 <div class="col-sm-4">
-                    <input id="newpsw1" type="password"  class="form-control" name="newpsw1" />
+                    <input id="user_password" type="password"  class="form-control" name="user_password" />
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-sm-4 control-label" >重复新密码：</label>
                 <div class="col-sm-4">
-                    <input id="newpsw2" type="password" class="form-control" name="newpsw2" />
+                    <input id="newpsw" type="password" class="form-control" name="newpsw" />
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-xs-3 col-xs-offset-3" >
-                	<button type="submit" style="width:100px" class="btn btn-primary" >保存</button>	
+                	<button type="submit" style="width:100px" class="btn btn-primary" id="submit" name="submit">保存</button>
                 </div>
                 <div class="col-xs-2">
-                   	<button type="button" style="width:100px" class="btn btn-primary" id="resetBtn">取消</button>
+                   	<button type="button" style="width:100px" class="btn btn-primary" id="resetBtn" name="resetBtn">取消</button>
                 </div>
             </div>
-             	<input type="hidden" name = "admin_id" value="${user.user_id}" />
-             	<input id="admin_psw" type="hidden" name = "admin_psw" value="${user.user_password}" />
+             	<input type="hidden" name = "user_id" id="user_id" value="${user_id}" />
             </fieldset>
             </form>  
             </div>

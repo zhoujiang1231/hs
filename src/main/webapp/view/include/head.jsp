@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -29,18 +30,27 @@
 <body>
 	<!-- 头部 -->
 	<div class="head">
-		<div class="headL">
+		<%--<div class="headL">
 			<img class="headLogo" src="../../img/headLogo.png" /> 
-		</div>
+		</div>--%>
 		<div class="headR">
 		<div id="pic" class = "container" style="margin-left:60px;margin-top:15px">
 <%--
 			<img src="${pageContext.request.contextPath}${user.user_photo}" class="img-circle" />
 --%>
 		</div>
+			<c:choose>
+			<c:when test="${user_type==0}">
 			<p class="p1">
-			&nbsp;欢迎，${user.name}
+			&nbsp;欢迎，管理员
 			</p>
+			</c:when>
+				<c:otherwise>
+					<p class="p1">
+						&nbsp;欢迎，${name}
+					</p>
+				</c:otherwise>
+			</c:choose>
 			<p class="p2">
 			<a href="javascript:void(0)" class="goOut" id="exit" >[退出]</a>
 			</p>

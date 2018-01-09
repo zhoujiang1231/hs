@@ -31,6 +31,13 @@ public interface UserService {
     public boolean updateUser(User user);
 
     /**
+     * 修改密码
+     * @param user
+     * @return
+     */
+    public boolean updateUserPsw(User user);
+
+    /**
      * 获取所有用户
      * @return
      */
@@ -54,4 +61,32 @@ public interface UserService {
      * @return
      */
     public boolean deleteUser(User user);
+
+    /**
+     * 查询用户
+     * @param user
+     * @return
+     */
+    public List<User> getUsersByCondition(User user);
+
+    /**
+     * 添加学生
+     * @param user
+     * @return
+     */
+    public boolean addStudent(User user);
+
+    /**
+     * 检查登录名是否唯一
+     * @param username
+     * @return
+     */
+    public boolean checkUserNameUnique(String username);
+
+    /**
+     * 检查学号是否唯一
+     * @param sno
+     * @return
+     */
+    public boolean checkSno(String sno);
 }

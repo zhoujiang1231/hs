@@ -1,6 +1,9 @@
 package com.hs.entity.common;
 
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -12,6 +15,7 @@ public class ResponseData implements Serializable{
     private Object data;
     private String result;
     private String msg;
+    private static ObjectMapper objectMapper = new ObjectMapper();
 
     public ResponseData() {
     }
@@ -60,8 +64,29 @@ public class ResponseData implements Serializable{
         this.msg = msg;
     }
 
-    public static ResponseData success(){
+    public static String success(){
         ResponseData responseData = new ResponseData("0","success");
-        return responseData;
+        return buildJsonStr(responseData);
+    }
+    public static String success(String parameter){
+        ResponseData responseData = new ResponseData("0",parameter);
+        return buildJsonStr(responseData);
+    }
+    public static String error(String msg){
+        return buildJsonStr( new ResponseData("1",msg));
+    }
+    public static String buildList(List list){
+        return buildJsonStr(new ResponseData(list,null,"0","success"));
+    }
+    public static String buildData(Object data){
+        return buildJsonStr(new ResponseData(null,data,"0","success"));
+    }
+    public static String buildJsonStr(ResponseData responseData){
+        try {
+            return objectMapper.writeValueAsString(responseData);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        return "{\"result\":\"1\",\"description\":\"系统发生异常\"}";
     }
 }
