@@ -82,7 +82,7 @@
         <!--主要区域开始-->
          <div style="height:20px"></div>
         <div id="main1">
-            <form action="" method="post" id="f2" stuAddress="f2">
+            <form action="" method="post" id="f2" name="f2">
                 <!--查询-->
                 <div class="search_add" style="margin-bottom:-20px;margin-right:17px">
                 	<a href="${pageContext.request.contextPath}/view/role/role_add.jsp" class="btn btn-primary btn-sm">

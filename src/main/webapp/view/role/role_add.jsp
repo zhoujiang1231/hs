@@ -125,20 +125,20 @@
            /*  //添加时表单验证
             function checkAddRole(){
 
-            	var stuAddress = $("#per_name").val();
+            	var name = $("#per_name").val();
             	
             	//正则表达式
             	var resName = /^[\u4E00-\u9FA5A-Za-z0-9]{2,20}$/;//名字
             	
             	var a = 0;
-            	if(!resName.test(stuAddress) ||stuAddress==""){
+            	if(!resName.test(name) ||name==""){
             		a = 1;
             		$(".save_success").text("请填写正确的名字！");
 					$(".save_success").fadeIn(100);
 					$(".save_success").fadeOut(2500);  
             	}
             
-            	else if($(":checkbox[stuAddress=per]:checked").size() == 0){
+            	else if($(":checkbox[name=per]:checked").size() == 0){
             		a = 1;
             		$(".save_success").text("请至少选择一种权限！")
 					$(".save_success").fadeIn(100);
@@ -167,7 +167,7 @@
             } */
         </script>
     </head>
-    <body stuAddress="role_off">
+    <body name="role_off">
         <!--主要区域开始-->
         <div >
             <!--保存操作后的提示信息：成功或者失败-->
@@ -178,7 +178,7 @@
                	<div class="form-group">
 	               <label class="col-xs-4 col-xs-offset-1 control-label">角色名称：</label>
 	                 <div class="col-xs-3">
-	                   <input type="text" class="form-control" id="per_name" stuAddress="per_name" value=""  placeholder="长度为20的字母、数字和汉字的组合" />
+	                   <input type="text" class="form-control" id="per_name" name="per_name" value=""  placeholder="长度为20的字母、数字和汉字的组合" />
 	                 </div>
 	             </div>     
 	             
@@ -188,46 +188,46 @@
                 	<div class="form-group" >
                           <div class="checkbox col-xs-6" >
                               <label>
-                                  <input style="margin-top:-6px" type="checkbox" value="1" stuAddress="per"/> 角色管理
+                                  <input style="margin-top:-6px" type="checkbox" value="1" name="per"/> 角色管理
                               </label>
                           </div>
 
                           <div class="checkbox col-xs-6">
                               <label>
-                                  <input style="margin-top:-6px" type="checkbox" value="2" stuAddress="per"/> 管理员管理
+                                  <input style="margin-top:-6px" type="checkbox" value="2" name="per"/> 管理员管理
                               </label>
                           </div>
                     </div>
                     <div class="form-group" style="margin-top:-50px"> 
                           <div class="checkbox col-xs-6">
                               <label>
-                                  <input style="margin-top:-6px" type="checkbox" value="3" stuAddress="per"/> 资费管理
+                                  <input style="margin-top:-6px" type="checkbox" value="3" name="per"/> 资费管理
                               </label>
                           </div>
 
                           <div class="checkbox col-xs-6">
                               <label>
-                                  <input style="margin-top:-6px" type="checkbox" value="4" stuAddress="per"/> 账务账号
+                                  <input style="margin-top:-6px" type="checkbox" value="4" name="per"/> 账务账号
                               </label>
                           </div>
                     </div>
                      <div class="form-group" style="margin-top:-50px"> 
                           <div class="checkbox col-xs-6">
                               <label>
-                                  <input style="margin-top:-6px" type="checkbox" value="5" stuAddress="per"/> 业务账号
+                                  <input style="margin-top:-6px" type="checkbox" value="5" name="per"/> 业务账号
                               </label>
                           </div>
 
                           <div class="checkbox col-xs-6">
                               <label>
-                                  <input style="margin-top:-6px" type="checkbox" value="6" stuAddress="per"/> 账单
+                                  <input style="margin-top:-6px" type="checkbox" value="6" name="per"/> 账单
                               </label>
                           </div>
                     </div> 
                     <div class="form-group" style="margin-top:-25px" > 
                           <div class="checkbox col-xs-6">
                               <label>
-                                  <input style="margin-top:-6px" type="checkbox" value="7" stuAddress="per"/> 报表
+                                  <input style="margin-top:-6px" type="checkbox" value="7" name="per"/> 报表
                               </label>
                           </div>
                           
@@ -240,26 +240,26 @@
                 	<div class="col-xs-3" style="margin-left:15px;border: 1px solid gray;line-height:40px">
                 		<div class="form-group">
 	                		<div class="col-sm-6" >
-								<label ><input type="checkbox" valustuAddressname="per"/>角色管理</label>
+								<label ><input type="checkbox" value=1 name="per"/>角色管理</label>
 							</div>
 	                		<div class="col-sm-6" >
-								<label><input type="checkbox" valustuAddressname="per"/>管理员管理</label>
+								<label><input type="checkbox" value=2 name="per"/>管理员管理</label>
 							</div>
 						</div>
 						<div class="col-sm-4" >
-								<label><input type="checkbox" valustuAddressname="per"/>资费管理</label>
+								<label><input type="checkbox" value=3 name="per"/>资费管理</label>
 							</div>
                 		<div class="checkbox-inline" >
-							<label><input type="checkbox" valustuAddressname="per"/>账务账号</label>
+							<label><input type="checkbox" value=4 name="per"/>账务账号</label>
 						</div>
                 		<div class="checkbox-inline" >
-							<label><input type="checkbox" valustuAddressname="per"/>业务账号</label>
+							<label><input type="checkbox" value=5 name="per"/>业务账号</label>
 						</div>
                 		<div class="checkbox-inline">
-							<label><input type="checkbox" valustuAddressname="per"/>账单</label>
+							<label><input type="checkbox" value=6 name="per"/>账单</label>
 						</div>
                 		<div class="checkbox-inline" >
-							<label><input type="checkbox" valustuAddressname="per"/>报表</label>
+							<label><input type="checkbox" value=7 name="per"/>报表</label>
 						</div>
                 	</div>
                 </div>  -->

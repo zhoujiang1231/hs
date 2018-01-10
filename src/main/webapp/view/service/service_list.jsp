@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta stuAddress="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title></title>
        	<%@include file="../include/cbw.jsp" %> 
         	
@@ -102,16 +102,16 @@
 		    	       						if(item.ser_state!=2){
 		    	       							$("#"+item.ser_os).append("<td id='"+item.ser_id+"'>"+
 		    	       							"</td>");
-		    	       							$("#"+item.ser_id).append("<input stuAddress='"+item.ser_id+"' type='button' value='开通' class='btn_start' />");
-		    	       							$("#"+item.ser_id).append("<input stuAddress='"+item.ser_id+"' type='button' value='暂停' class='btn_pause' />");
+		    	       							$("#"+item.ser_id).append("<input name='"+item.ser_id+"' type='button' value='开通' class='btn_start' />");
+		    	       							$("#"+item.ser_id).append("<input name='"+item.ser_id+"' type='button' value='暂停' class='btn_pause' />");
 		    	       							if(item.ser_state==0){
 		    	       								$("#"+item.ser_id+" input").eq(1).hide();
 		    	       							}
 		    	       							if(item.ser_state==1){
 		    	       								$("#"+item.ser_id+" input").eq(0).hide();
 		    	       							}
-		    	       							$("#"+item.ser_id).append("<input stuAddress='"+item.ser_id+"' type='button' value='修改' class='btn_modify' />");
-		    	       							$("#"+item.ser_id).append("<input stuAddress='"+item.ser_id+"' type='button' value='删除' class='btn_delete' />");
+		    	       							$("#"+item.ser_id).append("<input name='"+item.ser_id+"' type='button' value='修改' class='btn_modify' />");
+		    	       							$("#"+item.ser_id).append("<input name='"+item.ser_id+"' type='button' value='删除' class='btn_delete' />");
 		    	       						}else{
 		    	       							$("#"+item.ser_os).append("<td ></td>");
 		    	       						}
@@ -121,7 +121,7 @@
 		    	       						$(".btn_start").off("click");
 		    			    	        	$(".btn_start").click(function(){
 		    			    	        		if(window.confirm("确定要开通此业务账号吗？")){
-		    			    	        			var ser_id=$(this).attr("stuAddress");
+		    			    	        			var ser_id=$(this).attr("name");
 		    			    	        			$.ajax({
 		    			    	        				url : '${pageContext.request.contextPath}/service/open.do',
 		    			    	        				type : 'post',
@@ -134,7 +134,7 @@
 		    			    	        						$("#"+ser_id+" input").eq(0).hide();
 		    			    	        						$("#"+ser_id+" input").eq(1).show();
 		    			    	        						/* $("#"+ser_id).find('input:first').remove();
-		    			    	        						$("#"+ser_id).prepend("<input stuAddress='"+ser_id+"' type='button' value='暂停' class='btn_pause' />"); */
+		    			    	        						$("#"+ser_id).prepend("<input name='"+ser_id+"' type='button' value='暂停' class='btn_pause' />"); */
 		    			    	        						$(".operate_success").text("启用成功");
 		    			    	        						$(".operate_success").fadeIn(100);
 		    			    	        						$(".operate_success").fadeOut(2500);
@@ -152,7 +152,7 @@
 		    			    	        	$(".btn_pause").off("click");
 		    			    	        	$(".btn_pause").click(function(){
 		    			    	        		if(window.confirm("确定要暂停此业务账号吗？")){
-		    			    	        			var ser_id=$(this).attr("stuAddress");
+		    			    	        			var ser_id=$(this).attr("name");
 		    			    
 		    			    	        			$.ajax({
 		    			    	        				url : '${pageContext.request.contextPath}/service/pause.do',
@@ -166,7 +166,7 @@
 		    			    	        						$("#"+ser_id+" input").eq(1).hide();
 		    			    	        						$("#"+ser_id+" input").eq(0).show();
 		    			    	        						/* $("#"+ser_id).find('input:first').remove();
-		    			    	        						$("#"+ser_id).prepend("<input stuAddress='"+ser_id+"' type='button' value='开通' class='btn_start' />"); */
+		    			    	        						$("#"+ser_id).prepend("<input name='"+ser_id+"' type='button' value='开通' class='btn_start' />"); */
 		    			    	        						$(".operate_success").text("暂停成功");
 		    			    	        						$(".operate_success").fadeIn(100);
 		    			    	        						$(".operate_success").fadeOut(2500);
@@ -184,7 +184,7 @@
 		    			    	        	//修改的动作
 		    			    	        	$(".btn_modify").off("click");
 		    			    	        	$(".btn_modify").click(function(){
-		    			    					location.href="${pageContext.request.contextPath}/service/modiShow.do?ser_id="+$(this).attr("stuAddress");
+		    			    					location.href="${pageContext.request.contextPath}/service/modiShow.do?ser_id="+$(this).attr("name");
 		    			    				});
 		    			    	        	
 		    			    	        	
@@ -192,7 +192,7 @@
 		    			    	        	$(".btn_delete").off("click");
 		    			    	        	$(".btn_delete").click(function(){
 		    			    	        		if(window.confirm("确定要删除此业务账号吗？")){
-		    			    	        			var ser_id=$(this).attr("stuAddress");
+		    			    	        			var ser_id=$(this).attr("name");
 		    			    	        			//onclick="location.href='../../ServiceDeleteAction.do?bussid=${ls.bussid}';"
 		    			    	        			$.ajax({
 		    			    	        				url : '${pageContext.request.contextPath}/service/delete.do',
@@ -266,11 +266,11 @@
                 </div>  
                 <!--删除的操作提示-->
                 <div id="operate_result_info" class="operate_success" style="margin-top:10%">
-                    <img src="${pageContext.request.contextPath}/images/close.png" onclick="this.parentNode.style.display='none';" />
+                    <img src="${pageContext.request.contextPath}/css/cbwcss/images/close.png" onclick="this.parentNode.style.display='none';" />
                     			删除成功！
                 </div>  
                 <div id="operate_result_info" class="operate_fail" style="margin-top:10%">
-                    <img src="${pageContext.request.contextPath}/images/close.png" onclick="this.parentNode.style.display='none';" />
+                    <img src="${pageContext.request.contextPath}/css/cbwcss/images/close.png" onclick="this.parentNode.style.display='none';" />
                     	删除失败！
                 </div> 
                 <!--数据区域：用表格展示数据-->     

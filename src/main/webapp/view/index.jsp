@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title></title>
+<title>nectoss-team7</title>
 </head>
 <!-- 引用头部 -->
 <frameset rows="100,*" cols="*" scrolling="No" framespacing="0"	frameborder="no" border="0"> 

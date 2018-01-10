@@ -65,7 +65,7 @@
 	 	 				    },
 	 	 				    xAxis: [{
 	 	 				        type: 'category',
-	 	 				      	stuAddress: "服务器IP",
+	 	 				      	name: "服务器IP",
 	 	 				        axisTick: {
 	 	 				            show: false
 	 	 				        },
@@ -73,7 +73,7 @@
 	 	 				    }],
 	 	 				    yAxis: [{
 	 	 				        type: 'value',
-	 	 				        stuAddress: "单位：小时",
+	 	 				        name: "单位：小时",
 	 	 				        axisTick: {
 	 	 				            show: false
 	 	 				        },
@@ -93,7 +93,7 @@
 	 	 				        }
 	 	 				    },
 	 	 				    series: [{
-	 	 				        stuAddress: 'Top2',
+	 	 				        name: 'Top2',
 	 	 				        type: 'bar',
 	 	 				        barWidth: 10,
 	 	 				        itemStyle: {
@@ -103,7 +103,7 @@
 	 	 				        },
 	 	 				        data: top2s
 	 	 				    }, {
-	 	 				        stuAddress: 'Top1',
+	 	 				        name: 'Top1',
 	 	 				        type: 'bar',
 	 	 				        barWidth: 10,
 	 	 				        itemStyle: {
@@ -113,7 +113,7 @@
 	 	 				        },
 	 	 				        data: top1s
 	 	 				    }, {
-	 	 				        stuAddress: 'Top3',
+	 	 				        name: 'Top3',
 	 	 				        type: 'bar',
 	 	 				        barWidth: 10,
 	 	 				        itemStyle: {

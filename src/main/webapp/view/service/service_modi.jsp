@@ -98,7 +98,7 @@
 	        }   
         </script>
     </head>
-    <body stuAddress="service_off">
+    <body name="service_off">
     	<div id="container1">
         <div id="output1">
         </div></div>
@@ -115,7 +115,7 @@
                 <!--必填项-->
                 <div class="text_info clearfix"><span>业务账号ID：</span></div>
                 <div class="input_info">
-                    <input type="text" stuAddress="ser_id" value="${service1.ser_id}" readonly class="readonly" />
+                    <input type="text" name="ser_id" value="${service1.ser_id}" readonly class="readonly" />
                 </div>
                 <div class="text_info clearfix"><span>OS 账号：</span></div>
                 <div class="input_info">
@@ -127,7 +127,7 @@
                 </div>
                 <div class="text_info clearfix"><span>资费类型：</span></div>
                 <div class="input_info">
-                    <select id="selid" stuAddress="fee_id">
+                    <select id="selid" name="fee_id">
                     	<c:forEach items="${openFeeLs}" var="ls" varStatus="status">
                         	<option value="${ls.fee_id}">${ls.fee_name}</option>
                         </c:forEach>
@@ -158,7 +158,7 @@
 	                 <div class="form-group">
 	                     <label class="col-xs-3 col-xs-offset-1 control-label">业务账号ID：</label>
 	                     <div class="col-xs-4">
-                    		<input type="text" stuAddress="ser_id" value="${service1.ser_id}" readonly class="readonly form-control" />
+                    		<input type="text" name="ser_id" value="${service1.ser_id}" readonly class="readonly form-control" />
 	                     </div>
 	                 </div>
 	                 
@@ -179,7 +179,7 @@
 	                 <div class="form-group">
 	                     <label class="col-xs-3 col-xs-offset-1 control-label">资费类型：</label>
 	                     <div class="col-xs-4">
-	                     	<select class="form-control" id="selid" stuAddress="fee_id">
+	                     	<select class="form-control" id="selid" name="fee_id">
                     			<c:forEach items="${openFeeLs}" var="ls" varStatus="status">
                         			<option value="${ls.fee_id}">${ls.fee_name}</option>
                         		</c:forEach>

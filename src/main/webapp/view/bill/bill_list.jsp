@@ -7,7 +7,7 @@
         <title></title>
         <%@include file ="/view/include/link.jsp"%>
         <%@include file ="/view/include/bootstrap.jsp"%>
-			<link type="text/css" rel="stylesheet" media="all" href="${pageContext.request.contextPath}/css/global_color.css" />
+			<link type="text/css" rel="stylesheet" media="all" href="${pageContext.request.contextPath}/css/cbwcss/bootcss/global_color.css" />
         <style type="text/css">
         	div.search_text{
         		margin-top:10px;
@@ -64,20 +64,20 @@
         })
         </script>
     </head>
-    <body stuAddress="bill_off" onload="initialYearAndMonth();">
+    <body name="bill_off" onload="initialYearAndMonth();">
         <!--主要区域开始-->
         <div class="main1">
             <form id="myform" action="${pageContext.request.contextPath }/bill/BillListAction.do" method="post">
                 <!--查询-->
                 <div style="padding: 8px;width:1000px">
-                	<div class="search_text">身份证：<input type="text"  stuAddress="acc_idcard" value="${ac.acc_idcard }" class="width150 text_search" /></div>
-                    <div class="search_text">账务账号：<input type="text"  stuAddress="acc_login" value="${ac.acc_login }" class="width150 text_search" /></div>
-                    <div class="search_text">姓名：<input type="text" stuAddress="acc_name" value="${ac.acc_name }" class="width70 text_search" /></div>
+                	<div class="search_text">身份证：<input type="text"  name="acc_idcard" value="${ac.acc_idcard }" class="width150 text_search" /></div>
+                    <div class="search_text">账务账号：<input type="text"  name="acc_login" value="${ac.acc_login }" class="width150 text_search" /></div>                            
+                    <div class="search_text">姓名：<input type="text" name="acc_name" value="${ac.acc_name }" class="width70 text_search" /></div>
                     <div class="search_text">
-                        <select stuAddress="year" class="select_search" id="selYears" style="border: 1px solid silver">
+                        <select name="year" class="select_search" id="selYears" style="border: 1px solid silver">
                         </select>
                         年
-                        <select stuAddress="month" class="select_search" id="selMonths" style="border: 1px solid silver">
+                        <select name="month" class="select_search" id="selMonths" style="border: 1px solid silver">
                         </select>
                         月
                     </div>

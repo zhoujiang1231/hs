@@ -33,7 +33,7 @@
 				     }, 
 				     fields: {
 				    	 //名字验证
-				    	  stuAddress: {
+				    	  name: {
 				             validators: {
 				                 notEmpty: {
 				                     message: '名字不能为空'
@@ -86,7 +86,7 @@
 		           				}
 		           				if(date=="2"){
 	 	           					$(".save_success").text("当前角色名已存在，请重新输入!");
-	 	           					$("#stuAddress").val("");
+	 	           					$("#name").val("");
 	 	           					$(".save_success").fadeIn(100);
 		    						$(".save_success").fadeOut(2500); 
 		           				}
@@ -97,20 +97,20 @@
             /* //添加时表单验证
             function checkUpdateRole(){
 
-            	var stuAddress = $("#stuAddress").val();
+            	var name = $("#name").val();
             	
             	//正则表达式
             	var resName = /^[\u4E00-\u9FA5A-Za-z0-9]{2,20}$/;//名字
             	
             	var a = 0;
-            	if(!resName.test(stuAddress) ||stuAddress==""){
+            	if(!resName.test(name) ||name==""){
             		a = 1;
             		$(".save_success").text("请填写正确的名字！");
 					$(".save_success").fadeIn(100);
 					$(".save_success").fadeOut(2500);  
             	}
             	
-            	else if($(":checkbox[stuAddress=per]:checked").size() == 0){
+            	else if($(":checkbox[name=per]:checked").size() == 0){
             		a = 1;
             		$(".save_success").text("请至少选择一种权限！")
 					$(".save_success").fadeIn(100);
@@ -139,7 +139,7 @@
             } */
         </script>
     </head>
-    <body stuAddress="role_off">
+    <body name="role_off">
         <!--Logo区域开始-->
         <!--主要区域开始-->
         <div id="main">           
@@ -151,10 +151,10 @@
                	<div class="form-group">
 	               <label class="col-xs-4  control-label">角色名称：</label>
 	                 <div class="col-xs-4">
-	                   <input type="text" class="form-control" id="stuAddress" stuAddress="stuAddress" value="${requestScope.role.role_name}"  placeholder="长度为20的字母、数字和汉字的组合" />
+	                   <input type="text" class="form-control" id="name" name="name" value="${requestScope.role.role_name}"  placeholder="长度为20的字母、数字和汉字的组合" />
 	                 </div>
 	             </div>
-                <input type = "hidden" stuAddress="id" value="${role.role_id}" />
+                <input type = "hidden" name="id" value="${role.role_id}" />
                 
                 <div class="form-group">
                      		<label  class="col-sm-4 control-label">设置权限：</label>
@@ -164,7 +164,7 @@
 	                  					<div style="line-height:25px"  class="checkbox">
 	                       					<c:forEach items="${requestScope.powers}" var="power" varStatus="status">
 	                                   		 	<label class="col-sm-6" >
-	                                        		<input style="margin-top:-1px"  type="checkbox" stuAddress="per" value="${power.pow_id}"
+	                                        		<input style="margin-top:-1px"  type="checkbox" name="per" value="${power.pow_id}" 
 	                                        		<c:forEach items="${requestScope.role.power}" var="p">
 	                               						<c:if test="${p.pow_id == power.pow_id}">checked</c:if>
 	                               					</c:forEach>

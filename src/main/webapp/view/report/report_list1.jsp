@@ -6,7 +6,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title></title>
 	    <%@ include file ="../include/bootstrap.jsp"%>
-       	<link type="text/css" rel="stylesheet" media="all" href="${pageContext.request.contextPath}/css/global_color.css" />
+       	<link type="text/css" rel="stylesheet" media="all" href="${pageContext.request.contextPath}/css/cbwcss/bootcss/global_color.css" />
 	    <style type="text/css">
         	#main1{
        			width:1020px;
@@ -79,17 +79,17 @@
           			    xAxis: {
           			        type: 'category',
           			        boundaryGap: false,
-          			      	stuAddress:'月份',
+          			      	name:'月份',
           			        data: month,
           			      	
           			    },
           			    yAxis: {
           			        type: 'value',
-          			      	stuAddress:'小时',
+          			      	name:'小时',
           			    },
           			    series: [
           			        {
-          			            stuAddress:'用户使用时长',
+          			            name:'用户使用时长',
           			            type:'line',
 //           			            stack: '总量',
           			            data: data1

@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-    	<meta stuAddress="viewport" content="width=device-width, initial-scale=1.0">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title></title>
        	<%@include file="../include/cbw.jsp" %> 
@@ -317,7 +317,7 @@
             }
         </script>
     </head>
-    <body stuAddress="service_off">
+    <body name="service_off">
         <!--Logo区域开始-->
         <!--导航区域开始-->
         <%-- <%@include file="../include/header.jsp" %> --%>
@@ -333,20 +333,20 @@
                 <!--内容项-->
                 <div class="text_info clearfix"><span>身份证：</span></div>
                 <div class="input_info">
-                    <input type="text" id="useridentify" stuAddress="acc_idcard" value="" class="width180"  />
+                    <input type="text" id="useridentify" name="acc_idcard" value="" class="width180"  />
                     <input type="button" id="selectaccount"  value="查询账务账号" class="btn_search_large" />
                     <span class="required">*</span>
                     <div id="identifyerror" class="validate_msg_short">没有此身份证号，请重新录入。</div>
                 </div>
                 <div class="text_info clearfix"><span>账务账号：</span></div>
                 <div class="input_info">
-                    <input type="text" id="useraccount"  stuAddress="acc_login" value="" onkeyup="searchAccounts(this);" />
+                    <input type="text" id="useraccount"  name="acc_login" value="" onkeyup="searchAccounts(this);" />
                     <span class="required">*</span>
                     <div class="validate_msg_long">没有此账务账号，请重新录入。</div>
                 </div>
                 <div class="text_info clearfix"><span>资费类型：</span></div>
                 <div class="input_info">
-                    <select stuAddress="fee_id">
+                    <select name="fee_id">
                     	<c:forEach items="${openFeeLs}" var="ls" varStatus="status">
                         	<option value="${ls.fee_id}">${ls.fee_name}</option>
                         </c:forEach>
@@ -354,31 +354,31 @@
                 </div> 
                 <div class="text_info clearfix"><span>服务器 IP：</span></div>
                 <div class="input_info">
-                    <input type="text" stuAddress="ser_ip" value="192.168.0.23"  />
+                    <input type="text" name="ser_ip" value="192.168.0.23"  />
                     <span class="required">*</span>
                     <div class="validate_msg_long">15 长度，符合IP的地址规范</div>
                 </div>                   
                 <div class="text_info clearfix"><span>登录 OS 账号：</span></div>
                 <div class="input_info">
-                    <input type="text" stuAddress="ser_os" value=""  />
+                    <input type="text" name="ser_os" value=""  />
                     <span class="required">*</span>
                     <div class="validate_msg_long">8长度以内的字母、数字和下划线的组合</div>
                 </div>
                 <div class="text_info clearfix"><span>密码：</span></div>
                 <div class="input_info">
-                    <input type="password" stuAddress="ser_psw"  />
+                    <input type="password" name="ser_psw"  />
                     <span class="required">*</span>
                     <div class="validate_msg_long">30长度以内的字母、数字和下划线的组合</div>
                 </div>
                 <div class="text_info clearfix"><span>重复密码：</span></div>
                 <div class="input_info">
-                    <input type="password" stuAddress="rbusspsw"  />
+                    <input type="password" name="rbusspsw"  />
                     <span class="required">*</span>
                     <div class="validate_msg_long">两次密码必须相同</div>
                 </div>     
                 <!--操作按钮-->
                 <div class="button_info clearfix">
-                	<input type="hidden" stuAddress="acc_id" value=""  id="accountid" >
+                	<input type="hidden" name="acc_id" value=""  id="accountid" >
                     <input  id="save" type="button" value="保存" class="btn_save" />
                     <input id="cancel" type="button" value="取消" class="btn_save" />
                 </div>
@@ -393,7 +393,7 @@
 	                 <div class="form-group">
 	                     <label class="col-xs-3 col-xs-offset-1 control-label">身份证：</label>
 	                     <div class="col-xs-4">
-	                         <input type="text" class="form-control" id="useridentify" stuAddress="acc_idcard" value="" />
+	                         <input type="text" class="form-control" id="useridentify" name="acc_idcard" value="" />
 	                     </div>
 	                     <div class="col-xs-2">
                                 <button type="button" id="selectaccount" class="btn btn-primary btn-sm" >查询账务账号</button>
@@ -403,14 +403,14 @@
 	                 <div class="form-group">
 	                     <label class="col-xs-3 col-xs-offset-1 control-label">账务账号:</label>
 	                     <div class="col-xs-4">
-	                         <input type="text" class="form-control" id="useraccount" readonly="readonly" class="readonly"  stuAddress="acc_login" value="" />
+	                         <input type="text" class="form-control" id="useraccount" readonly="readonly" class="readonly"  name="acc_login" value="" />
 	                     </div>
 	                 </div>
 					
 	                 <div class="form-group">
 	                     <label class="col-xs-3 col-xs-offset-1 control-label">资费类型：</label>
 	                     <div class="col-xs-4">
-	                   		<select class="form-control" stuAddress="fee_id">
+	                   		<select class="form-control" name="fee_id">
 	                            <option value="">-- 请选择 --</option>
 	                      		<c:forEach items="${openFeeLs}" var="ls" varStatus="status">
                         			<option value="${ls.fee_id}">${ls.fee_name}</option>
@@ -421,25 +421,25 @@
 	                 <div class="form-group">
 	                     <label class="col-xs-3 col-xs-offset-1 control-label">服务器 IP：</label>
 	                     <div class="col-xs-4">
-	                         <input type="text" class="form-control" stuAddress="ser_ip" value="" />
+	                         <input type="text" class="form-control" name="ser_ip" value="" />
 	                     </div>
 	                 </div>
 	                 <div class="form-group">
 	                     <label class="col-xs-3 col-xs-offset-1 control-label">登录 OS 账号：</label>
 	                     <div class="col-xs-4">
-	                         <input type="text" class="form-control" stuAddress="ser_os" value="" />
+	                         <input type="text" class="form-control" name="ser_os" value="" />
 	                     </div>
 	                 </div>
 	                 <div class="form-group">
 	                     <label class="col-xs-3 col-xs-offset-1 control-label">密码：</label>
 	                     <div class="col-xs-4">
-	                         <input type="password" class="form-control" stuAddress="ser_psw" />
+	                         <input type="password" class="form-control" name="ser_psw" />
 	                     </div>
 	                 </div>
 	                 <div class="form-group">
 	                     <label class="col-xs-3 col-xs-offset-1 control-label">重复密码：</label>
 	                     <div class="col-xs-4">
-	                         <input type="password" class="form-control" stuAddress="rbusspsw" />
+	                         <input type="password" class="form-control" name="rbusspsw" />
 	                     </div>
 	                 </div>
 	                 <div class="form-group">
@@ -452,7 +452,7 @@
                          <div class="col-xs-1">
                          		<button id="cancel" type="button" class="btn btn-primary" >返回</button>
                          </div>
-                         <input type="hidden" stuAddress="acc_id" value=""  id="accountid" />
+                         <input type="hidden" name="acc_id" value=""  id="accountid" />
 	                 </div>  
 	        	</fieldset>
 	        </form>
