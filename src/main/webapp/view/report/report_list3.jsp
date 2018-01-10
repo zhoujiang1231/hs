@@ -33,7 +33,7 @@
 			                }
 			                for( var j = 0; j < lr.length; j++) {
 			                	ftype.push({
-			                		name : lr[j].fname,
+			                		stuAddress : lr[j].fname,
 			                		value : lr[j].ftype_use_count
 			                	});
 			                }
@@ -59,7 +59,7 @@
 					    },
 					    series : [
 					        {	
-					        	name: '资费类型',
+					        	stuAddress: '资费类型',
 					            type: 'pie',
 					            radius : '65%',
 					            center: ['50%', '50%'],

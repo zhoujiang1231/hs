@@ -65,9 +65,9 @@
                         .bootstrapValidator('removeField', 'time')
                         .bootstrapValidator('removeField', 'basecost')
                         .bootstrapValidator('removeField', 'unitcost');
-                		$("[name='time']").val("");
-                		$("[name='basecost']").val("");
-                		$("[name='unitcost']").val("");
+                		$("[stuAddress='time']").val("");
+                		$("[stuAddress='basecost']").val("");
+                		$("[stuAddress='unitcost']").val("");
                 		$('#receiverInfo1').hide();
                     	$('#receiverInfo2').show();
                     	$('#receiverInfo3').hide();
@@ -96,9 +96,9 @@
                         .bootstrapValidator('removeField', 'time')
                         .bootstrapValidator('removeField', 'basecost')
                         .bootstrapValidator('removeField', 'unitcost');
-                		$("[name='time']").val("");
-                		$("[name='basecost']").val("");
-                		$("[name='unitcost']").val("");
+                		$("[stuAddress='time']").val("");
+                		$("[stuAddress='basecost']").val("");
+                		$("[stuAddress='unitcost']").val("");
                 		$('#receiverInfo1').show();
                     	$('#receiverInfo2').show();
                     	$('#receiverInfo3').show();
@@ -149,9 +149,9 @@
                         .bootstrapValidator('removeField', 'time')
                         .bootstrapValidator('removeField', 'basecost')
                         .bootstrapValidator('removeField', 'unitcost');
-                		$("[name='time']").val("");
-                		$("[name='basecost']").val("");
-                		$("[name='unitcost']").val("");
+                		$("[stuAddress='time']").val("");
+                		$("[stuAddress='basecost']").val("");
+                		$("[stuAddress='unitcost']").val("");
                 		$('#receiverInfo1').hide();
                     	$('#receiverInfo2').hide();
                     	$('#receiverInfo3').show();
@@ -219,7 +219,7 @@
 	                 <div class="form-group">
 	                     <label class="col-xs-3 col-xs-offset-1 control-label">资费名称：</label>
 	                     <div class="col-xs-4">
-	                         <input type="text" class="form-control" id="fname" name="fee_name" value=""/>
+	                         <input type="text" class="form-control" id="fname" stuAddress="fee_name" value=""/>
 	                     </div>
 	                 </div>
 					
@@ -227,13 +227,13 @@
 	                     <label class="col-xs-3 col-xs-offset-1 control-label">资费类型：</label>
 	                     <div class="col-xs-4">
 	                   		<label class="radio-inline">
-								<input class="receiver1" type="radio" name="fee_type" id="monthly" value="1"/> 包月
+								<input class="receiver1" type="radio" stuAddress="fee_type" id="monthly" value="1"/> 包月
 							</label>
 							<label class="radio-inline">
-								<input class="receiver2" type="radio" name="fee_type" id="package"  value="2" checked="checked"/> 套餐
+								<input class="receiver2" type="radio" stuAddress="fee_type" id="package"  value="2" checked="checked"/> 套餐
 							</label>
 							<label class="radio-inline">
-								<input class="receiver3" type="radio" name="fee_type" id="timeBased"  value="3"/> 计时
+								<input class="receiver3" type="radio" stuAddress="fee_type" id="timeBased"  value="3"/> 计时
 							</label>
 	                     </div>
 	                 </div>
@@ -244,7 +244,7 @@
 		                     <label class="col-xs-3 col-xs-offset-1 control-label">基本时长：</label>
 		                     <div class="col-xs-4">
 		                     <div class="input-group">
-		                         <input type="text" class="form-control" name="time" value="" placeholder="请输入1-600之间的整数..."/>
+		                         <input type="text" class="form-control" stuAddress="time" value="" placeholder="请输入1-600之间的整数..."/>
 		                         <span class="input-group-addon">小时</span>
 		                     </div>
 		                     </div>
@@ -255,7 +255,7 @@
 		                     <label class="col-xs-3 col-xs-offset-1 control-label">基本费用：</label>
 		                     <div class="col-xs-4">
 		                     	<div class="input-group">
-		                         	<input type="text" class="form-control" name="basecost" value="" placeholder="请输入数值..."/>
+		                         	<input type="text" class="form-control" stuAddress="basecost" value="" placeholder="请输入数值..."/>
 		                          	<span class="input-group-addon">元</span>
 		                        </div>
 		                     </div>
@@ -266,7 +266,7 @@
 		                     <label class="col-xs-3 col-xs-offset-1 control-label">单位费用：</label>
 		                     <div class="col-xs-4 ">
 		                     	<div class="input-group">
-		                         	<input type="text" class="form-control" name="unitcost" value="" placeholder="请输入数值..."/>
+		                         	<input type="text" class="form-control" stuAddress="unitcost" value="" placeholder="请输入数值..."/>
 		                         	<span class="input-group-addon">元/小时</span>
 		                         </div>
 		                     </div>
@@ -275,9 +275,9 @@
 	                 
 	                 
 	                 <div class="form-group">
-    					<label for="name" class="col-xs-3 col-xs-offset-1 control-label">资费说明：</label>
+    					<label for="stuAddress" class="col-xs-3 col-xs-offset-1 control-label">资费说明：</label>
     					<div class="col-xs-4">
-   							<textarea class="form-control" rows="4" name="fee_comment"></textarea>
+   							<textarea class="form-control" rows="4" stuAddress="fee_comment"></textarea>
    						</div>
   					</div>
   							

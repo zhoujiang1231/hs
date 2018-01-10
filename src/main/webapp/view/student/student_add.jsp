@@ -59,7 +59,7 @@
                     validating: 'glyphicon glyphicon-refresh'
                 },
                 fields: {
-                    userName: {
+                    stuName: {
                         message: 'The username is not valid',
                         validators: {
                             notEmpty:{
@@ -71,11 +71,15 @@
                             }
                         }
                     },
-                    userPassword: {
+                    stuNo: {
                         message: 'The username is not valid',
                         validators: {
-                            notEmpty: {
-                                message: '密码不能为空'
+                            notEmpty:{
+                                message:'学号不能为空'
+                            },
+                            regexp: {
+                                regexp: /^\d{13}$/,
+                                message:'请输入13位数字格式的学号'
                             }
                         }
                     }
@@ -85,13 +89,13 @@
                     e.preventDefault();
                     var $form = $(e.target);
                     var bv = $form.data('bootstrapValidator');
-                    $.post('${pageContext.request.contextPath}/system/addUser', $form.serialize(),function(data) {
+                    $.post('${pageContext.request.contextPath}/student/addStudent', $form.serialize(),function(data) {
                         var result = data.result;
                         if(result==0){
                             $("#save_result_info").text(data.msg);
                             $("#save_result_info").show().delay(1000).fadeOut("slow");
                             setTimeout(function () {
-                                window.location.href="../user/user_list.jsp";
+                                window.location.href="../student/student_list.jsp";
                             },1000);
                         }
                         $("#save_result_info").text(data.msg);
@@ -116,24 +120,16 @@
             <form id="form1" class="main_form form-horizontal">
                 <fieldset>
                     <div class="form-group">
-                        <label class="col-sm-4 control-label" >类型：</label>
-                        <div class="col-sm-5" style="width:300px">
-                            <select id="user_type" name="user_type" class="form-control" >
-                                <option value="0">管理员</option>
-                                <option value="1">老师</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
                         <label class="col-sm-4 control-label" >姓名：</label>
-                        <div class="col-sm-5" style="width:300px"><input id="userName" name="userName" type="text" class="form-control" value=""/></div>
+                        <div class="col-sm-5" style="width:300px"><input id="stuName" name="stuName" type="text" class="form-control" value=""/></div>
                     </div>
-                    <div class="form-group psw_div">
-                        <label class="col-sm-4 control-label" >密码：</label>
+                    <div class="form-group sno_div" >
+                        <label class="col-sm-4 control-label" >学号：</label>
                         <div class="col-sm-5" style="width:300px">
-                            <input id="userPassword" type="text" class="form-control" value="" name="userPassword"/>
+                            <input id="stuNo" type="text" class="form-control" value="" name="stuNo"/>
                         </div>
                     </div>
+                    <br/>
                     <div class="form-group">
                         <div class="col-xs-3 col-xs-offset-3" >
                             <button type="submit" style="width:100px" class="btn btn-primary" >保存</button>

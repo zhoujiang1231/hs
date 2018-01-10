@@ -22,7 +22,16 @@
 <script type="text/javascript">
 	$(function(){
 		$("#exit").click(function(){
-			window.location="${pageContext.request.contextPath}/user/logut";
+			$.ajax({
+				url:'${pageContext.request.contextPath}/system/logout',
+				dataType:'json',
+				type:'get',
+				success:function(data){
+					if(data.result==0){
+					    window.top.location.href='${pageContext.request.contextPath}/view/login.jsp';
+					}
+				}
+			})
 		})
 	})
 </script>
@@ -36,7 +45,7 @@
 		<div class="headR">
 		<div id="pic" class = "container" style="margin-left:60px;margin-top:15px">
 <%--
-			<img src="${pageContext.request.contextPath}${user.user_photo}" class="img-circle" />
+			<img src="${pageContext.request.contextPath}${student.user_photo}" class="img-circle" />
 --%>
 		</div>
 			<c:choose>
@@ -45,9 +54,14 @@
 			&nbsp;欢迎，管理员
 			</p>
 			</c:when>
+				<c:when test="${user_type==1}">
+					<p class="p1">
+						&nbsp;欢迎，${tName}
+					</p>
+				</c:when>
 				<c:otherwise>
 					<p class="p1">
-						&nbsp;欢迎，${name}
+						&nbsp;欢迎，${stuName}
 					</p>
 				</c:otherwise>
 			</c:choose>

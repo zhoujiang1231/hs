@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
     <%@ include file ="../include/bootstrap.jsp"%>
-    <link type="text/css" rel="stylesheet" media="all" href="${pageContext.request.contextPath}/css/cbwcss/bootcss/global_color.css" />
+    <link type="text/css" rel="stylesheet" media="all" href="${pageContext.request.contextPath}/css/global_color.css" />
     <style type="text/css">
         #main1{
             width:1000px;
@@ -19,12 +19,12 @@
         $(function () {
             //加载课程列表
             $.ajax( {
-                url:'${pageContext.request.contentPath}/Course/teacher?user_id='+${user_id},
+                url:'${pageContext.request.contentPath}/Course/teacher?stuId='+${stuId},
                 type:'get',
                 dataType:'json',
                 success:function (data) {
                     $.each(data.list,function (course) {
-                        $("#table_tr").append("<tr><td>"+course.cno+"</td><td>"+course.cname+"</td><td>"+course.cteacher+"</td><td>"+<c:if test="course.ctype==0">必修</c:if><c:if test="course.ctype==1">选修</c:if>+"</td><td>"+course.chour+"</td><td>"+course.cgrade+"</td><td>+"删除"+</td></tr>")
+                        $("#table_tr").append("<tr><td>"+course.cno+"</td><td>"+course.cname+"</td><td>"+course.cteacher+"</td><td>"+<c:if test="course.ctype==0">必修</c:if><c:if test="course.ctype==1">选修</c:if>+"</td><td>"+course.chour+"</td><td>"+course.cmark+"</td><td>+"删除"+</td></tr>")
                     })
                 }
             })
@@ -33,10 +33,10 @@
         function sort(btnObj){
             if (btnObj.className == "sort_desc"){
                 btnObj.className = "sort_asc";
-                location.href = "${pageContext.request.contextPath}/fee/FeeRankAction.do?rank="+btnObj.name+"&order=asc";
+                location.href = "${pageContext.request.contextPath}/fee/FeeRankAction.do?rank="+btnObj.stuAddress+"&order=asc";
             }else{
                 btnObj.className = "sort_desc";
-                location.href = "${pageContext.request.contextPath}/fee/FeeRankAction.do?rank="+btnObj.name+"&order=desc";
+                location.href = "${pageContext.request.contextPath}/fee/FeeRankAction.do?rank="+btnObj.stuAddress+"&order=desc";
             }
         }
 
@@ -86,7 +86,7 @@
 
 <!--删除的操作提示-->
 <div id="operate_result_info" class="operate_info" style="margin-top:10%">
-    <img src="${pageContext.request.contextPath}/css/cbwcss/images/close.png" onclick="this.parentNode.style.display='none';" />
+    <img src="${pageContext.request.contextPath}/images/close.png" onclick="this.parentNode.style.display='none';" />
 </div>
 
 <div id="main1">
@@ -94,9 +94,9 @@
         <!--排序-->
         <div class="search_add">
             <div>
-                <input type="button" name="fee_unitcost" value="单价" class="${classfee_unitcost }" onclick="sort(this);" id="fee_unitcost"/>
-                <input type="button" name="fee_basecost" value="基费" class="${classfee_basecost }" onclick="sort(this);" id="fee_basecost"/>
-                <input type="button" name="fee_time" value="时长" class="${classfee_time }" onclick="sort(this);" id="fee_time"/>
+                <input type="button" stuAddress="fee_unitcost" value="单价" class="${classfee_unitcost }" onclick="sort(this);" id="fee_unitcost"/>
+                <input type="button" stuAddress="fee_basecost" value="基费" class="${classfee_basecost }" onclick="sort(this);" id="fee_basecost"/>
+                <input type="button" stuAddress="fee_time" value="时长" class="${classfee_time }" onclick="sort(this);" id="fee_time"/>
 
             </div>
             <a href="${path}/view/fee/fee_add.jsp" class="btn btn-info btn-sm">

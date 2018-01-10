@@ -1,4 +1,4 @@
 url=jdbc:mysql://azhou.top:3306/hs?userUnicode=true&characterEncoding=UTF-8
 driverClass=com.mysql.jdbc.Driver
-user=root
+student=root
 password=1231

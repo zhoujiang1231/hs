@@ -7,7 +7,7 @@
         <title></title>
         <%@include file ="/view/include/link.jsp"%>
         <%@include file ="/view/include/bootstrap.jsp"%>
-        <link type="text/css" rel="stylesheet" media="all" href="${pageContext.request.contextPath}/css/cbwcss/bootcss/global_color.css" />
+        <link type="text/css" rel="stylesheet" media="all" href="${pageContext.request.contextPath}/css/global_color.css" />
         <style type="text/css">
         	div.search_text{
         		margin-top:10px;
@@ -28,7 +28,7 @@
 	        }
         </script>
     </head>
-    <body name="bill_off" onload="initialYearAndMonth();">
+    <body stuAddress="bill_off" onload="initialYearAndMonth();">
         <!--主要区域开始-->
         <div id="main1">
             <form action="" method="">

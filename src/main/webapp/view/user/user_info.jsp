@@ -4,16 +4,16 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<meta stuAddress="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title></title>
-        <link type="text/css" rel="stylesheet" media="all" href="${pageContext.request.contextPath}/css/cbwcss/bootcss/global.css" />
-        <link type="text/css" rel="stylesheet" media="all" href="${pageContext.request.contextPath}/css/cbwcss/bootcss/global_color.css" />
-        <script src="${pageContext.request.contextPath}/js/cbwjs/jquery-2.1.1.min.js"></script>
-        <link type="text/css" rel="stylesheet" media="all" href="${pageContext.request.contextPath}/css/cbwcss/bootstrap.min.css" />  
-        <link type="text/css" rel="stylesheet" media="all" href="${pageContext.request.contextPath}/css/cbwcss/bootstrapValidator.min.css" />
-		<script src="${pageContext.request.contextPath}/js/cbwjs/bootstrap.min.js"></script>
-		<script src="${pageContext.request.contextPath}/js/cbwjs/bootstrapValidator.js"></script>
+        <link type="text/css" rel="stylesheet" media="all" href="${pageContext.request.contextPath}/css/global.css" />
+        <link type="text/css" rel="stylesheet" media="all" href="${pageContext.request.contextPath}/css/global_color.css" />
+        <script src="${pageContext.request.contextPath}/js/jquery-2.1.1.min.js"></script>
+        <link type="text/css" rel="stylesheet" media="all" href="${pageContext.request.contextPath}/css/bootstrap.min.css" />
+        <link type="text/css" rel="stylesheet" media="all" href="${pageContext.request.contextPath}/css/bootstrapValidator.min.css" />
+		<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
+		<script src="${pageContext.request.contextPath}/js/bootstrapValidator.js"></script>
 		<style type="text/css">
 			body{
        			overflow:scroll;
@@ -25,8 +25,8 @@
 				//菜单图标样式
 				$(function(){
 					$("#menu a").each(function(){
-						if($(this).attr("class")==$("body").attr("name")){
-							$(this).attr("class",$("body").attr("name").replace("off","on"));
+						if($(this).attr("class")==$("body").attr("stuAddress")){
+							$(this).attr("class",$("body").attr("stuAddress").replace("off","on"));
 						}
 					});
 				})
@@ -41,7 +41,7 @@
 				         validating: 'glyphicon glyphicon-refresh'
 				     }, 
 				     fields: {
-				         tel: {
+				         stuTel: {
 				             message: 'The username is not valid',
 				             validators: {
 				                 regexp: {
@@ -50,7 +50,7 @@
 				                 }
 				             }
 				         },
-				         email: {
+				         stuEmail: {
 				             message: 'The username is not valid',
 				             validators: {
 				                 regexp: {
@@ -65,7 +65,7 @@
 	                 e.preventDefault();
 	                 var $form = $(e.target);
 	                 var bv = $form.data('bootstrapValidator');
-                         $.post('${pageContext.request.contextPath}/user/updateUser', $form.serialize(),function(data) {
+                         $.post('${pageContext.request.contextPath}/student/updateUser', $form.serialize(),function(data) {
 	                	 var result = data.result;
 		     				if(result==1){
 		     					window.parent.parent.headmenu.location.reload();
@@ -81,7 +81,7 @@
 			})
         </script>
     </head>
-    <body name="information_off">
+    <body stuAddress="information_off">
         <!--主要区域开始-->
         <div>  
             <!--保存操作后的提示信息：成功或者失败-->
@@ -93,26 +93,26 @@
             <fieldset>
             <div class="form-group">
                 <label class="col-sm-4 control-label" >个人姓名：</label>
-                <div class="col-sm-5" style="width:300px"><input type="text" readonly="readonly" class="form-control" value="${name}"/></div>
+                <div class="col-sm-5" style="width:300px"><input type="text" readonly="readonly" class="form-control" value="${stuAddress}"/></div>
             </div>
                 <c:if test="${user_type==1}">
                     <div class="form-group">
                         <label class="col-sm-4 control-label" >学号：</label>
                         <div class="col-sm-5" style="width:300px">
-                            <input id="sno" type="text" readonly="readonly" class="form-control" value="${sno}" name="sno"/>
+                            <input id="stuNo" type="text" readonly="readonly" class="form-control" value="${stuNo}" stuAddress="stuNo"/>
                         </div>
                     </div>
                 </c:if>
             <div class="form-group">
                 <label class="col-sm-4 control-label" >登录名：</label>
                 <div class="col-sm-5" style="width:300px">
-                    <input id="user_name" type="text" readonly="readonly" class="form-control" value="${user_name}" name="user_name"/>
+                    <input id="stuName" type="text" readonly="readonly" class="form-control" value="${stuName}" stuAddress="stuName"/>
                 </div>
             </div>
                 <div class="form-group">
                     <label class="col-sm-4 control-label" >性别：</label>
                     <div class="col-sm-5" style="width:300px">
-                        <select id="sex" name="sex" class="form-control" readonly="readonly">
+                        <select id="stuSex" stuAddress="stuSex" class="form-control" readonly="readonly">
                             <option value="0">男</option>
                             <option value="1">女</option>
                         </select>
@@ -121,13 +121,13 @@
             <div class="form-group">
                 <label class="col-sm-4 control-label" >电话：</label>
                 <div class="col-sm-5" style="width:300px">
-                    <input id="tel" type="text" class="form-control" value="${tel}" name="tel"/>
+                    <input id="stuTel" type="text" class="form-control" value="${stuTel}" stuAddress="stuTel"/>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-sm-4 control-label" >Email：</label>
                 <div class="col-sm-5" style="width:300px">
-                    <input id="email" type="text" class="form-control" value="${email}" name="email"/>
+                    <input id="stuEmail" type="text" class="form-control" value="${stuEmail}" stuAddress="stuEmail"/>
                 </div>
             </div>
             <div class="form-group">
@@ -143,7 +143,7 @@
                    	<button type="button" style="width:100px" class="btn btn-primary" id="resetBtn">取消</button>
                 </div>
             </div>
-                <input id="user_id" type="hidden" name="user_id" value="${user_id}"/>
+                <input id="stuId" type="hidden" stuAddress="stuId" value="${stuId}"/>
             </fieldset>
             </form> 
             </section>

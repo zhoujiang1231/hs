@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<meta stuAddress="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title></title>
         <%@include file="../include/cbw.jsp" %> 
@@ -39,7 +39,7 @@
 	        });
         </script>
     </head>
-    <body name="service_off">
+    <body stuAddress="service_off">
     	<div id="container1">
         <div id="output1">
         </div></div>

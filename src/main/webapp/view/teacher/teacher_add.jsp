@@ -85,7 +85,7 @@
                     e.preventDefault();
                     var $form = $(e.target);
                     var bv = $form.data('bootstrapValidator');
-                    $.post('${pageContext.request.contextPath}/system/addUser', $form.serialize(),function(data) {
+                    $.post('${pageContext.request.contextPath}/system/addUser?user_type=1', $form.serialize(),function(data) {
                         var result = data.result;
                         if(result==0){
                             $("#save_result_info").text(data.msg);
@@ -115,15 +115,6 @@
         <section>
             <form id="form1" class="main_form form-horizontal">
                 <fieldset>
-                    <div class="form-group">
-                        <label class="col-sm-4 control-label" >类型：</label>
-                        <div class="col-sm-5" style="width:300px">
-                            <select id="user_type" name="user_type" class="form-control" >
-                                <option value="0">管理员</option>
-                                <option value="1">老师</option>
-                            </select>
-                        </div>
-                    </div>
                     <div class="form-group">
                         <label class="col-sm-4 control-label" >姓名：</label>
                         <div class="col-sm-5" style="width:300px"><input id="userName" name="userName" type="text" class="form-control" value=""/></div>

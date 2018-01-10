@@ -9,8 +9,8 @@
         <title></title>
         <%@include file="../include/link.jsp" %>
          <%@ include file ="../include/easyui.jsp"%>
-         <link type="text/css" rel="stylesheet" media="all" href="${pageContext.request.contextPath}/css/cbwcss/bootcss/global.css" />
-<link type="text/css" rel="stylesheet" media="all" href="${pageContext.request.contextPath}/css/cbwcss/bootcss/global_color.css" />
+         <link type="text/css" rel="stylesheet" media="all" href="${pageContext.request.contextPath}/css/global.css" />
+<link type="text/css" rel="stylesheet" media="all" href="${pageContext.request.contextPath}/css/global_color.css" />
         <!-- <link type="text/css" rel="stylesheet" media="all" href="../../css/global.css" />
         <link type="text/css" rel="stylesheet" media="all" href="../../css/global_color.css" /> -->
         <style type="text/css">
@@ -22,12 +22,12 @@
        </style>
         <script type="text/javascript">
         $(function(){
-        	if($("#idcard").val()!=null&&$("#idcard").val()!=""){
-    		var idcr=$("#idcard").val();
+        	if($("#stuIdcard").val()!=null&&$("#stuIdcard").val()!=""){
+    		var idcr=$("#stuIdcard").val();
     		var year=idcr.substring(6,10);
         	var m =idcr.substring(10,12);
         	var day=idcr.substring(12,14);
-        	$("[name='birth']").val(year+"年"+m+"月"+day+"日");}
+        	$("[stuAddress='birth']").val(year+"年"+m+"月"+day+"日");}
     	})
         </script>
     </head>
@@ -52,7 +52,7 @@
                 <div class="input_info"><input type="text" value="${cl.acc_name }" readonly class="readonly" /></div>
                 <div class="text_info clearfix"><span>身份证：</span></div>
                 <div class="input_info">
-                    <input type="text" id="idcard" value="${cl.acc_idcard }" readonly class="readonly" />
+                    <input type="text" id="stuIdcard" value="${cl.acc_idcard }" readonly class="readonly" />
                 </div>
                 <div class="text_info clearfix"><span>登录账号：</span></div>
                 <div class="input_info">
@@ -86,7 +86,7 @@
                 <!--可选项数据-->
                 <div class="text_info clearfix"><span>生日：</span></div>
                 <div class="input_info">
-                    <input type="text" readonly class="readonly" name="birth" value="由身份证计算而来" />
+                    <input type="text" readonly class="readonly" stuAddress="birth" value="由身份证计算而来" />
                 </div>
                 <div class="text_info clearfix"><span>Email：</span></div>
                 <div class="input_info">
@@ -105,9 +105,9 @@
                 </div>
                 <div class="text_info clearfix"><span>性别：</span></div>
                 <div class="input_info fee_type">
-                    <input type="radio" name="radSex" <c:choose><c:when test="${cl.acc_sex==0 }">checked="checked"</c:when></c:choose> id="female" disabled />
+                    <input type="radio" stuAddress="radSex" <c:choose><c:when test="${cl.acc_sex==0 }">checked="checked"</c:when></c:choose> id="female" disabled />
                     <label for="female">女</label>
-                    <input type="radio" name="radSex" <c:choose><c:when test="${cl.acc_sex==1 }">checked="checked"</c:when></c:choose> id="male" disabled />
+                    <input type="radio" stuAddress="radSex" <c:choose><c:when test="${cl.acc_sex==1 }">checked="checked"</c:when></c:choose> id="male" disabled />
                     <label for="male">男</label>
                 </div> 
                 <div class="text_info clearfix"><span>通信地址：</span></div>

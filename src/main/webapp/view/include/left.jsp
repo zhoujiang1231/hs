@@ -30,8 +30,13 @@
 				</dt>
 				<dd>
 					<img class="coin11" src="../../img/coin111.png" /><img class="coin22"
-						src="../../img/coin222.png" /><a class="cks" href="${pageContext.request.contextPath}/view/user/user_list.jsp"
-						target="main">账户管理</a><img class="icon5" src="../../img/coin21.png" />
+						src="../../img/coin222.png" /><a class="cks" href="${pageContext.request.contextPath}/view/teacher/teacher_list.jsp"
+						target="main">教师管理</a><img class="icon5" src="../../img/coin21.png" />
+				</dd>
+				<dd>
+					<img class="coin11" src="../../img/coin111.png" /><img class="coin22"
+						src="../../img/coin222.png" /><a class="cks" href="${pageContext.request.contextPath}/view/student/student_list.jsp"
+						target="main">学生管理</a><img class="icon5" src="../../img/coin21.png" />
 				</dd>
 			</dl>
             </c:if>
@@ -167,13 +172,13 @@
 				</dt>
 				<dd>
 					<img class="coin11" src="../../img/coin111.png" /><img class="coin22"
-						src="../../img/coin222.png" /><a href="${pageContext.request.contextPath}/view/user/user_info.jsp"
+						src="../../img/coin222.png" /><a href="${pageContext.request.contextPath}/view/student/user_info.jsp"
 						target="main" class="cks">修改信息</a><img class="icon5"
 						src="../../img/coin21.png" />
 				</dd>
 				<dd>
 					<img class="coin11" src="../../img/coin111.png" /><img class="coin22"
-						src="../../img/coin222.png" /><a href="${pageContext.request.contextPath}/view/user/user_modi_pwd.jsp"
+						src="../../img/coin222.png" /><a href="${pageContext.request.contextPath}/view/student/user_modi_pwd.jsp"
 						target="main" class="cks">修改密码</a><img
 						class="icon5" src="../../img/coin21.png" />
 				</dd>

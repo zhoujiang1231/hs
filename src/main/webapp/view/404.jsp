@@ -4,9 +4,9 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0" />
+		<meta stuAddress="viewport" content="width=device-width,initial-scale=1,student-scalable=0" />
 		<title>404</title>
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/cycss/404.css" />
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/404.css" />
 		<!--[if IE 6]>
 		<script src="js/png.js"></script>
 		<script>DD_belatedPNG.fix('*')</script>

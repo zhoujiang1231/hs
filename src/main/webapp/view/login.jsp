@@ -5,8 +5,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>登录-黄冈师范学院选课程管理系统</title>
-<%@ include file ="include/link.jsp"%>    
-<%@ include file ="include/cy.jsp"%>
+<%@ include file ="include/link.jsp"%>
+	<%@ include file ="include/cy.jsp"%>
 <script>
 	$(function(){
 	  	$('#form1').bootstrapValidator({
@@ -66,19 +66,16 @@
 	 	})
 		//提交登录
 		function login(){
-			var user_name = $("#user_name").val();
-			var user_password = $("#user_password").val();
-			var code = $("#code").val();
 			$.ajax({
-				url:'${pageContext.request.contextPath}/user/login',
+				url:'${pageContext.request.contextPath}/system/login',
 				type: 'post',
 				data:$("#form1").serialize(),
-                dataType:"json",
-                success : function(date){
-					if(date.result=="0"){
+				dataType:"json",
+				success : function(data){
+					if(data.result=="0"){
 						location.href="${pageContext.request.contextPath}/view/index.jsp";
-					}else if(date.result=="1"){
-					    $("#span1").text(date.msg);
+					}else if(data.result=="1"){
+						$("#span1").text(data.msg);
 						$("#span1").show();
 						var src = $("#vcode_img").attr("src");
 						$("#vcode_img").attr("src",src+'?');
@@ -110,6 +107,16 @@
 			<div class="row">
              	<div class="col-sm-8 col-sm-offset-2"> 
             		<form id="form1" class="form-horizontal">
+						<div class="form-group">
+							<div class="input-group col-sm-12">
+								<span class="input-group-addon">身份</span>
+								<select id="type" name="type" class="form-control" >
+									<option value="0">管理员</option>
+									<option value="1">老师</option>
+									<option value="2">学生</option>
+								</select>
+							</div>
+						</div>
                  		<div class="form-group">
                      		<div class="input-group col-sm-12">
                      			<span class="input-group-addon">账号</span>
@@ -128,7 +135,7 @@
 		                         <input type="text" name="code" class="form-control" id="code"  />
 		                     </div>
 		                     <div class="col-sm-5" style="margin-left:-10px">  
-                     			<img id="vcode_img" src="${pageContext.request.contextPath }/user/vcode_img" alt="验证码" class="img-rounded"  onclick="this.src=this.src+'?'"/>
+                     			<img id="vcode_img" src="${pageContext.request.contextPath }/system/vcode_img" alt="验证码" class="img-rounded"  onclick="this.src=this.src+'?'"/>
                      		</div> 
                  		</div>  
                  		<!-- <br/>  -->
@@ -137,7 +144,6 @@
                           		<button id="img" type="submit" class="btn btn-primary btn-block" >登录</button>	
                      		</div>
                  		</div>
-                 		
                  		<div id="span1" style="display:none;color:red" class="form-group">
                      		<span class="input-group-addon"></span>
                  		</div>

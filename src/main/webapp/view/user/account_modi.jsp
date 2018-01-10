@@ -8,8 +8,8 @@
         <title></title>
         <%@include file="../include/link.jsp" %>
          <%@ include file ="../include/easyui.jsp"%>
-         <link type="text/css" rel="stylesheet" media="all" href="${pageContext.request.contextPath}/css/cbwcss/bootcss/global.css" />
-<link type="text/css" rel="stylesheet" media="all" href="${pageContext.request.contextPath}/css/cbwcss/bootcss/global_color.css" />
+         <link type="text/css" rel="stylesheet" media="all" href="${pageContext.request.contextPath}/css/global.css" />
+<link type="text/css" rel="stylesheet" media="all" href="${pageContext.request.contextPath}/css/global_color.css" />
          <style type="text/css">
             .xx{
             	color: red;
@@ -23,11 +23,11 @@
         <script language="javascript" type="text/javascript">
         //生日为用户的
         $(function(){
-        		var idcr=$("#idcard").val();
+        		var idcr=$("#stuIdcard").val();
         		var year=idcr.substring(6,10);
             	var m =idcr.substring(10,12);
             	var day=idcr.substring(12,14);
-            	$("[name='birth']").val(year+"年"+m+"月"+day+"日");
+            	$("[stuAddress='birth']").val(year+"年"+m+"月"+day+"日");
         	})
           //保存成功的提示信息
             function showResult() {
@@ -55,8 +55,8 @@
         	 //表单验证,验证姓名
             function addName(){
             	var reg =  /^[\w\u4e00-\u9fa5]{1,20}$/; 
-            	var r = $("[name='acc_name']").val().match(reg); 
-            	if($("[name='acc_name']").val()==null || $("[name='acc_name']").val()==""){
+            	var r = $("[stuAddress='acc_name']").val().match(reg);
+            	if($("[stuAddress='acc_name']").val()==null || $("[stuAddress='acc_name']").val()==""){
             		$("#name1").hide();
             		$("#name2").show();
             		$("#name3").hide();
@@ -76,8 +76,8 @@
         	//登录账号和密码
             function addLogin(aa){
             	var reg =  /^[\w\u4e00-\u9fa5]{1,30}$/;
-            	var r = $("[name='acc_"+aa+"']").val().match(reg); 
-            	if($("[name='acc_"+aa+"']").val()==null || $("[name='acc_"+aa+"']").val()==""){
+            	var r = $("[stuAddress='acc_"+aa+"']").val().match(reg);
+            	if($("[stuAddress='acc_"+aa+"']").val()==null || $("[stuAddress='acc_"+aa+"']").val()==""){
             		$("#"+aa+"1").hide();
             		$("#"+aa+"2").hide();
             		$("#"+aa+"3").hide();
@@ -97,22 +97,22 @@
         	 //验证手机号
             function addTel(){
             	var reg=/^(1)\d{10}$/;
-            	var r=$("[name='acc_tel']").val().match(reg);
-            	if($("[name='acc_tel']").val()==null||$("[name='acc_tel']").val()==""){
-            		$("#tel").hide();
+            	var r=$("[stuAddress='acc_tel']").val().match(reg);
+            	if($("[stuAddress='acc_tel']").val()==null||$("[stuAddress='acc_tel']").val()==""){
+            		$("#stuTel").hide();
             		return true;
             	}else if(r==null){
-            		$("#tel").show();
+            		$("#stuTel").show();
             		return false;
-            	}else $("#tel").hide();return true;
+            	}else $("#stuTel").hide();return true;
             }
             //验证推荐人省份证
             function recidcard(){
             	var reg=/^[1-9]\d{5}((19|20)\d{2})((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}[\d|x]$/;
-            	var idcr=$("[name='acc_recidcard']").val();
+            	var idcr=$("[stuAddress='acc_recidcard']").val();
             	var birth =idcr.substring(6,14);
             	var r=idcr.match(reg);
-            	if($("[name='acc_recidcard']").val()==null||$("[name='acc_recidcard']").val()==""){
+            	if($("[stuAddress='acc_recidcard']").val()==null||$("[stuAddress='acc_recidcard']").val()==""){
             		$("#recidcard3").hide();
             		$("#recidcard2").hide();
             		return true;
@@ -123,7 +123,7 @@
             	}else if(checkbirth(birth)){
             		$("#recidcard3").hide();
             		$("#recidcard2").hide();
-            		/* $("[name='birth']").val(birth); */
+            		/* $("[stuAddress='birth']").val(birth); */
             		return true;
             	}else{
             		$("#recidcard3").show();
@@ -163,22 +163,22 @@
             //验证邮箱
             function addEmail(){
             	var reg=/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
-            	var r=$("[name='acc_email']").val().match(reg);
-            	if($("[name='acc_email']").val()==null||$("[name='acc_email']").val()==""){
-            		$("#email").hide();
+            	var r=$("[stuAddress='acc_email']").val().match(reg);
+            	if($("[stuAddress='acc_email']").val()==null||$("[stuAddress='acc_email']").val()==""){
+            		$("#stuEmail").hide();
             		return true;
             	}else if(r==null){
-            		$("#email").show();
+            		$("#stuEmail").show();
             		return false;
             	}else{
-            		$("#email").hide();
+            		$("#stuEmail").hide();
             		return true;
             	}
             }
           //验证通信地址
             function address(){
             	var reg=/^[\w\u4e00-\u9fa5]{0,50}$/;
-            	var r=$("[name='acc_address']").val().match(reg);
+            	var r=$("[stuAddress='acc_address']").val().match(reg);
             	if(r==null){
             		$("#address").show();
             		return false;
@@ -187,8 +187,8 @@
             //验证邮编
             function zipcode(){
             	var reg=/^\d{6}$/;
-            	var r=$("[name='acc_zipcode']").val().match(reg);
-            	if($("[name='acc_zipcode']").val()==null||$("[name='acc_zipcode']").val()==""){
+            	var r=$("[stuAddress='acc_zipcode']").val().match(reg);
+            	if($("[stuAddress='acc_zipcode']").val()==null||$("[stuAddress='acc_zipcode']").val()==""){
             		$("#zipcode").hide();
             		return true;
             	}else if(r==null){
@@ -198,7 +198,7 @@
             }
             //重复密码
             function addpsw(){
-            	if($("[name='acc_psw']").val()==$("[name='password']").val()){
+            	if($("[stuAddress='acc_psw']").val()==$("[stuAddress='password']").val()){
             		$("#password").hide();
             		return true;
             	}else{
@@ -209,8 +209,8 @@
             //验证qq
             function qq(){
             	var reg=/^\d{5,16}$/;
-            	var r=$("[name='acc_qq']").val().match(reg);
-            	if($("[name='acc_qq']").val()==null||$("[name='acc_qq']").val()==""){
+            	var r=$("[stuAddress='acc_qq']").val().match(reg);
+            	if($("[stuAddress='acc_qq']").val()==null||$("[stuAddress='acc_qq']").val()==""){
             		$("#qq").hide();
             		return true;
             	}else if(r==null){
@@ -283,11 +283,11 @@
                     <!--必填项-->
                     <div class="text_info clearfix"><span>账务账号ID：</span></div>
                     <div class="input_info">
-                        <input type="text" name="acc_id" value="${Accent.acc_id }" readonly class="readonly" />
+                        <input type="text" stuAddress="acc_id" value="${Accent.acc_id }" readonly class="readonly" />
                     </div>
                     <div class="text_info clearfix"><span>姓名：</span></div>
                     <div class="input_info">
-                        <input type="text" name="acc_name" value="${Accent.acc_name }" onblur="addName()" />
+                        <input type="text" stuAddress="acc_name" value="${Accent.acc_name }" onblur="addName()" />
                         <!-- <span class="required">*</span>-->
                         <div class="validate_msg_long"><p id="name1">20长度以内的汉字、字母和数字的组合</p>
                     <p id="name2" class="xx" >姓名不能为空</p>
@@ -295,11 +295,11 @@
                     </div>
                     <div class="text_info clearfix"><span>身份证：</span></div>
                     <div class="input_info">
-                        <input type="text" id="idcard" name="acc_idcard" value="${Accent.acc_idcard }" readonly class="readonly" />
+                        <input type="text" id="stuIdcard" stuAddress="acc_idcard" value="${Accent.acc_idcard }" readonly class="readonly" />
                     </div>
                     <div class="text_info clearfix"><span>登录账号：</span></div>
                     <div class="input_info">
-                        <input type="text" name="acc_login" value="${Accent.acc_login }" readonly class="readonly"  />                        
+                        <input type="text" stuAddress="acc_login" value="${Accent.acc_login }" readonly class="readonly"  />
                         <div class="change_pwd">
                             <input id="chkModiPwd" type="checkbox" onclick="showPwd(this);" />
                             <label for="chkModiPwd">修改密码</label>
@@ -309,13 +309,13 @@
                     <div id="divPwds">
                         <div class="text_info clearfix"><span>旧密码：</span></div>
                         <div class="input_info">
-                            <input type="password" value="${Accent.acc_psw }" name="oldpsw" />
+                            <input type="password" value="${Accent.acc_psw }" stuAddress="oldpsw" />
                             <!-- <span class="required">*</span>-->
                             <div class="validate_msg_long"></div>
                         </div>
                         <div class="text_info clearfix"><span>新密码：</span></div>
                         <div class="input_info">
-                            <input type="password" name="acc_psw" onblur="addLogin('psw')"/>
+                            <input type="password" stuAddress="acc_psw" onblur="addLogin('psw')"/>
                             <!-- <span class="required">*</span>-->
                             <div class="validate_msg_long"><p id="psw1">30长度以内的字母、数字和下划线的组合</p>
                     	<p id="psw2" class="xx">密码不能为空</p>
@@ -323,35 +323,35 @@
                         </div>
                         <div class="text_info clearfix"><span>重复新密码：</span></div>
                         <div class="input_info">
-                            <input type="password" name="password"  onblur="addpsw()"/>
+                            <input type="password" stuAddress="password"  onblur="addpsw()"/>
                             <!-- <span class="required">*</span>-->
                             <div class="validate_msg_long"><p class="xx" id="password">两次密码必须相同</p></div>
                         </div>  
                     </div>                   
                     <div class="text_info clearfix"><span>手机号：</span></div>
                     <div class="input_info">
-                        <input type="text"  name="acc_tel" value="${Accent.acc_tel}" onblur="addTel()"/>
+                        <input type="text"  stuAddress="acc_tel" value="${Accent.acc_tel}" onblur="addTel()"/>
                         <!-- <span class="required">*</span>-->
-                        <div class="validate_msg_long"><p id="tel" class="xx">请输入正确手机号</p></div>
+                        <div class="validate_msg_long"><p id="stuTel" class="xx">请输入正确手机号</p></div>
                     </div>
                     <div class="text_info clearfix"><span>推荐人身份证号码：</span></div>
                     <div class="input_info">
-                        <input type="text" name="acc_recidcard" value="${Accent.acc_recidcard }" onblur="recidcard()"/>
+                        <input type="text" stuAddress="acc_recidcard" value="${Accent.acc_recidcard }" onblur="recidcard()"/>
                         <div class="validate_msg_long error_msgs"> <p id="recidcard2" class="xx">身份证不能为空</p>  <!-- 这句没用 -->
                     	<p id="recidcard3" class="xx">身份证格式错误</p></div>
                     </div>
                     <div class="text_info clearfix"><span>生日：</span></div>
                     <div class="input_info">
-                        <input type="text" value="" readonly name="birth" class="readonly"  />
+                        <input type="text" value="" readonly stuAddress="birth" class="readonly"  />
                     </div>
                     <div class="text_info clearfix"><span>Email：</span></div>
                     <div class="input_info">
-                        <input type="text"  name="acc_email" value="${Accent.acc_email }" onblur="addEmail()"/>
-                        <div class="validate_msg_medium"><p class="xx" id="email">请输入正确的邮箱格式</p></div>
+                        <input type="text"  stuAddress="acc_email" value="${Accent.acc_email }" onblur="addEmail()"/>
+                        <div class="validate_msg_medium"><p class="xx" id="stuEmail">请输入正确的邮箱格式</p></div>
                     </div> 
                     <div class="text_info clearfix"><span>职业：</span></div>
                     <div class="input_info">
-                        <select name="acc_job">
+                        <select stuAddress="acc_job">
                        
                         	<option <c:if test="${Accent.acc_job==1 }">selected="selected"</c:if> value="1" >干部</option>
                         	<option <c:if test="${Accent.acc_job==2 }">selected="selected"</c:if> value="2" >学生</option>
@@ -363,33 +363,33 @@
                     <div class="text_info clearfix"><span>性别：</span></div>
                     <div class="input_info fee_type">
                     	
-                        <input type="radio" name="acc_sex" value="0" <c:choose><c:when test="${Accent.acc_sex==0}">checked="checked"</c:when> </c:choose> id="female" onclick="feeTypeChange(1);" />
+                        <input type="radio" stuAddress="acc_sex" value="0" <c:choose><c:when test="${Accent.acc_sex==0}">checked="checked"</c:when> </c:choose> id="female" onclick="feeTypeChange(1);" />
                         <label for="female">女</label>
-                        <input type="radio" name="acc_sex" value="1" <c:choose><c:when test="${Accent.acc_sex==1}">checked="checked"</c:when> </c:choose>  id="male" onclick="feeTypeChange(2);" />
+                        <input type="radio" stuAddress="acc_sex" value="1" <c:choose><c:when test="${Accent.acc_sex==1}">checked="checked"</c:when> </c:choose>  id="male" onclick="feeTypeChange(2);" />
                         <label for="male">男</label>
                     </div> 
                      <!--删除的操作提示-->
                 <div id="operate_result_info" class="operate_success" style="margin-top:10%">
-                    <img src="${pageContext.request.contextPath}/css/cbwcss/images/close.png" onclick="this.parentNode.style.display='none';" />
+                    <img src="${pageContext.request.contextPath}/images/close.png" onclick="this.parentNode.style.display='none';" />
                     			删除成功！
                 </div>  
                 <div id="operate_result_info" class="operate_fail" style="margin-top:10%">
-                    <img src="${pageContext.request.contextPath}/css/cbwcss/images/close.png" onclick="this.parentNode.style.display='none';" />
+                    <img src="${pageContext.request.contextPath}/images/close.png" onclick="this.parentNode.style.display='none';" />
                     	删除失败！
                 </div>     
                     <div class="text_info clearfix"><span>通信地址：</span></div>
                     <div class="input_info">
-                        <input type="text"  name="acc_address" value="${Accent.acc_address }" onblur="address()"/>
+                        <input type="text"  stuAddress="acc_address" value="${Accent.acc_address }" onblur="address()"/>
                         <div class="validate_msg_tiny"><p class="xx" id="address">不能使用符号五十长度以内</p></div>
                     </div> 
                     <div class="text_info clearfix"><span>邮编：</span></div>
                     <div class="input_info">
-                        <input type="text" name="acc_zipcode" value="${Accent.acc_zipcode}" onblur="zipcode()"/>
+                        <input type="text" stuAddress="acc_zipcode" value="${Accent.acc_zipcode}" onblur="zipcode()"/>
                         <div class="validate_msg_long"><p class="xx" id="zipcode">6位数字</p></div>
                     </div> 
                     <div class="text_info clearfix"><span>QQ：</span></div>
                     <div class="input_info">
-                        <input type="text" name="acc_qq" value="${Accent.acc_qq }" onblur="qq();" />
+                        <input type="text" stuAddress="acc_qq" value="${Accent.acc_qq }" onblur="qq();" />
                         <div class="validate_msg_long"><p class="xx" id="qq">5到13位数字</p></div>
                     </div>                
                     <!--操作按钮-->

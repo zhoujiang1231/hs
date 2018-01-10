@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hs.dao.TeacherDao">
+    <resultMap id="TeacherList" type="Teacher">
+    </resultMap>
+    <select id="getLoginTeacher" resultType="Teacher" parameterType="Teacher">
+        SELECT * FROM teacher WHERE tName=#{tName} and tPassword = #{tPassword}
+    </select>
+    <update id="updateTeacherPsw" parameterType="Teacher">
+        UPDATE teacher SET tPassword=#{tPassword} WHERE tId = #{tId}
+    </update>
+    <insert id="addTeacher" parameterType="Teacher" useGeneratedKeys="true">
+        INSERT INTO teacher  (tName,tPassword)
+        VALUES (#{tName},#{tPassword})
+    </insert>
+    <delete id="deleteTeacher" parameterType="Teacher">
+        DELETE teacher where tId=#{tId}
+    </delete>
+</mapper>

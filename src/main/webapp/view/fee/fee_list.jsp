@@ -6,7 +6,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title></title>
        	<%@ include file ="../include/bootstrap.jsp"%>
-       	<link type="text/css" rel="stylesheet" media="all" href="${pageContext.request.contextPath}/css/cbwcss/bootcss/global_color.css" />
+       	<link type="text/css" rel="stylesheet" media="all" href="${pageContext.request.contextPath}/css/global_color.css" />
         <style type="text/css">
         	#main1{
        			width:1000px;
@@ -32,10 +32,10 @@
             function sort(btnObj){
             	if (btnObj.className == "sort_desc"){
                     btnObj.className = "sort_asc";
-                    location.href = "${pageContext.request.contextPath}/fee/FeeRankAction.do?rank="+btnObj.name+"&order=asc";
+                    location.href = "${pageContext.request.contextPath}/fee/FeeRankAction.do?rank="+btnObj.stuAddress+"&order=asc";
                 }else{
                 	btnObj.className = "sort_desc";
-                	location.href = "${pageContext.request.contextPath}/fee/FeeRankAction.do?rank="+btnObj.name+"&order=desc";
+                	location.href = "${pageContext.request.contextPath}/fee/FeeRankAction.do?rank="+btnObj.stuAddress+"&order=desc";
                 }
             }
 			
@@ -130,11 +130,11 @@
         
         <!--删除的操作提示-->
         <div id="operate_result_info" class="operate_success" style="margin-top:10%">
-            <img src="${pageContext.request.contextPath}/css/cbwcss/images/close.png" onclick="this.parentNode.style.display='none';" />
+            <img src="${pageContext.request.contextPath}/images/close.png" onclick="this.parentNode.style.display='none';" />
             			删除成功！
         </div>  
         <div id="operate_result_info" class="operate_fail" style="margin-top:10%">
-            <img src="${pageContext.request.contextPath}/css/cbwcss/images/close.png" onclick="this.parentNode.style.display='none';" />
+            <img src="${pageContext.request.contextPath}/images/close.png" onclick="this.parentNode.style.display='none';" />
             	删除失败！
         </div>
 		
@@ -143,9 +143,9 @@
                 <!--排序-->
                 <div class="search_add">
                     <div> 
-                        <input type="button" name="fee_unitcost" value="单价" class="${classfee_unitcost }" onclick="sort(this);" id="fee_unitcost"/>
-                        <input type="button" name="fee_basecost" value="基费" class="${classfee_basecost }" onclick="sort(this);" id="fee_basecost"/>
-                        <input type="button" name="fee_time" value="时长" class="${classfee_time }" onclick="sort(this);" id="fee_time"/>
+                        <input type="button" stuAddress="fee_unitcost" value="单价" class="${classfee_unitcost }" onclick="sort(this);" id="fee_unitcost"/>
+                        <input type="button" stuAddress="fee_basecost" value="基费" class="${classfee_basecost }" onclick="sort(this);" id="fee_basecost"/>
+                        <input type="button" stuAddress="fee_time" value="时长" class="${classfee_time }" onclick="sort(this);" id="fee_time"/>
 					
 						<%-- <a href="javascript:void(0)" class="btn btn-primary btn-lg" style="text-align:center" > 
 						 	<span id="test" class="${classfee_unitcost}" onclick="sort(this);" cy="fee_unitcost"> 单价</span>
@@ -153,7 +153,7 @@
 						<a href="javascript:void(0)" class="btn btn-primary btn-lg"> 
 							<span class="${classfee_basecost}" onclick="sort(this);" cy="fee_basecost"> 基费 </span>
 						</a> 
-						<a href="javascript:void(0)" class="btn btn-primary btn-lg" name="fee_time"> 
+						<a href="javascript:void(0)" class="btn btn-primary btn-lg" stuAddress="fee_time">
 							<span class="${classfee_time}" onclick="sort(this);" cy="fee_time"> 时长</span>
 						</a> --%>					
 					</div>

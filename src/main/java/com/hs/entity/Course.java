@@ -7,24 +7,24 @@ import java.io.Serializable;
  */
 public class Course implements Serializable {
     private int	cid;
-    private  int	cno;
+    private  String	cno;
     private String	cname;
     private  String	cteacher;
     private  int	ctype;
     private  int	chour;
-    private  float cgrade;
+    private  float cmark;
 
     public Course() {
     }
 
-    public Course(int cid, int cno, String cname, String cteacher, int ctype, int chour, float cgrade) {
+    public Course(int cid, String cno, String cname, String cteacher, int ctype, int chour, float cmark) {
         this.cid = cid;
         this.cno = cno;
         this.cname = cname;
         this.cteacher = cteacher;
         this.ctype = ctype;
         this.chour = chour;
-        this.cgrade = cgrade;
+        this.cmark = cmark;
     }
 
     public int getCid() {
@@ -35,11 +35,11 @@ public class Course implements Serializable {
         this.cid = cid;
     }
 
-    public int getCno() {
+    public String getCno() {
         return cno;
     }
 
-    public void setCno(int cno) {
+    public void setCno(String cno) {
         this.cno = cno;
     }
 
@@ -75,11 +75,11 @@ public class Course implements Serializable {
         this.chour = chour;
     }
 
-    public float getCgrade() {
-        return cgrade;
+    public float getCmark() {
+        return cmark;
     }
 
-    public void setCgrade(float cgrade) {
-        this.cgrade = cgrade;
+    public void setCmark(float cmark) {
+        this.cmark = cmark;
     }
 }

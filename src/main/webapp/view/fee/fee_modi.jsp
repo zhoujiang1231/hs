@@ -63,9 +63,9 @@
                         .bootstrapValidator('removeField', 'time')
                         .bootstrapValidator('removeField', 'basecost')
                         .bootstrapValidator('removeField', 'unitcost');
-                		$("[name='time']").val("");
-                		$("[name='basecost']").val("");
-                		$("[name='unitcost']").val("");
+                		$("[stuAddress='time']").val("");
+                		$("[stuAddress='basecost']").val("");
+                		$("[stuAddress='unitcost']").val("");
                 		$('#receiverInfo1').hide();
                     	$('#receiverInfo2').show();
                     	$('#receiverInfo3').hide();
@@ -94,9 +94,9 @@
                         .bootstrapValidator('removeField', 'time')
                         .bootstrapValidator('removeField', 'basecost')
                         .bootstrapValidator('removeField', 'unitcost');
-                		$("[name='time']").val("");
-                		$("[name='basecost']").val("");
-                		$("[name='unitcost']").val("");
+                		$("[stuAddress='time']").val("");
+                		$("[stuAddress='basecost']").val("");
+                		$("[stuAddress='unitcost']").val("");
                 		$('#receiverInfo1').show();
                     	$('#receiverInfo2').show();
                     	$('#receiverInfo3').show();
@@ -147,9 +147,9 @@
                         .bootstrapValidator('removeField', 'time')
                         .bootstrapValidator('removeField', 'basecost')
                         .bootstrapValidator('removeField', 'unitcost');
-                		$("[name='time']").val("");
-                		$("[name='basecost']").val("");
-                		$("[name='unitcost']").val("");
+                		$("[stuAddress='time']").val("");
+                		$("[stuAddress='basecost']").val("");
+                		$("[stuAddress='unitcost']").val("");
                 		$('#receiverInfo1').hide();
                     	$('#receiverInfo2').hide();
                     	$('#receiverInfo3').show();
@@ -235,14 +235,14 @@
      		<div class="form-group">
                   <label class="col-xs-3 col-xs-offset-1 control-label">资费ID：</label>
                   <div class="col-xs-4">
-                      <input type="text" class="form-control" id="useridentify" name="fee_id" value="${fee.fee_id}" disabled="disabled"/>
+                      <input type="text" class="form-control" id="useridentify" stuAddress="fee_id" value="${fee.fee_id}" disabled="disabled"/>
                   </div>
               </div>
               
               <div class="form-group">
                   <label class="col-xs-3 col-xs-offset-1 control-label">资费名称：</label>
                   <div class="col-xs-4">
-                      <input type="text" class="form-control" id="useridentify" name="fee_name" value="${fee.fee_name}" />
+                      <input type="text" class="form-control" id="useridentify" stuAddress="fee_name" value="${fee.fee_name}" />
                   </div>
               </div>
 	
@@ -250,17 +250,17 @@
                   <label class="col-xs-3 col-xs-offset-1 control-label">资费类型：</label>
                   <div class="col-xs-4">
                 		<label class="radio-inline">
-				<input class="receiver1" type="radio" name="fee_type" id="monthly" value="1"
+				<input class="receiver1" type="radio" stuAddress="fee_type" id="monthly" value="1"
 					<c:if test="${fee.fee_type==1}">checked</c:if>
 				/> 包月
 			</label>
 			<label class="radio-inline">
-				<input class="receiver2" type="radio" name="fee_type" id="package"  value="2"
+				<input class="receiver2" type="radio" stuAddress="fee_type" id="package"  value="2"
 					<c:if test="${fee.fee_type==2}">checked</c:if> 
 				/> 套餐
 			</label>
 			<label class="radio-inline">
-				<input class="receiver3" type="radio" name="fee_type" id="timeBased"  value="3"
+				<input class="receiver3" type="radio" stuAddress="fee_type" id="timeBased"  value="3"
 					 <c:if test="${fee.fee_type==3}">checked</c:if>
 				/> 计时
 			</label>
@@ -271,7 +271,7 @@
                   <label class="col-xs-3 col-xs-offset-1 control-label">基本时长：</label>
                   <div class="col-xs-4">
                   <div class="input-group">
-                      <input type="text" class="form-control" name="fee_time" value="${fee.fee_time}" />
+                      <input type="text" class="form-control" stuAddress="fee_time" value="${fee.fee_time}" />
                       <span class="input-group-addon">小时</span>
                   </div>
                   </div>
@@ -280,7 +280,7 @@
                   <label class="col-xs-3 col-xs-offset-1 control-label">基本费用：</label>
                   <div class="col-xs-4">
                   	<div class="input-group">
-                      	<input type="text" class="form-control" name="fee_basecost" value="${fee.fee_basecost}"/>
+                      	<input type="text" class="form-control" stuAddress="fee_basecost" value="${fee.fee_basecost}"/>
                        	<span class="input-group-addon">元</span>
                      </div>
                   </div>
@@ -289,20 +289,20 @@
                   <label class="col-xs-3 col-xs-offset-1 control-label">单位费用：</label>
                   <div class="col-xs-4 ">
                   	<div class="input-group">
-                      	<input type="text" class="form-control" name="fee_unitcost" value="${fee.fee_unitcost}"/>
+                      	<input type="text" class="form-control" stuAddress="fee_unitcost" value="${fee.fee_unitcost}"/>
                       	<span class="input-group-addon">元/小时</span>
                       </div>
                   </div>
               </div>
               
               <div class="form-group">
-					<label for="name" class="col-xs-3 col-xs-offset-1 control-label">资费说明：</label>
+					<label for="stuAddress" class="col-xs-3 col-xs-offset-1 control-label">资费说明：</label>
 					<div class="col-xs-4">
-						<textarea class="form-control" rows="4" name="fee_comment">${fee.fee_comment}</textarea>
+						<textarea class="form-control" rows="4" stuAddress="fee_comment">${fee.fee_comment}</textarea>
 					</div>
 			  </div>
 			<div class="form-group">
-				<input type="hidden" name="fee_id" value="${fee.fee_id}"/>
+				<input type="hidden" stuAddress="fee_id" value="${fee.fee_id}"/>
 			</div>
 			              				
               <div class="form-group">

@@ -158,7 +158,7 @@
                         </select>
                     </div>
                     <div><input type="button" value="搜索" class="btn_search" onclick="seareach()" /></div>
-                    <input type="button" value="增加" class="btn_add" onclick="location.href='../user/user_add.jsp';"/>
+                    <input type="button" value="增加" class="btn_add" onclick="location.href='../teacher/teacher_add.jsp';"/>
                 </div>  
                 <!--删除的操作提示-->
                 <div id="operate_result_info" class="operate_info" style="margin-top:10%">
