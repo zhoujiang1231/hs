@@ -23,10 +23,7 @@
 			<dt><img class="icon1" src="../img/coin01.png" /><img class="icon2"src="../img/coin02.png" />
 				首页<img class="icon3" src="../img/coin19.png" /><img class="icon4" src="../img/coin20.png" /></dt>
 		</dl> -->
-		<c:forEach items="${admin.admin_power}" var="admin_power">
-		<c:if test="${admin_power.pow_id==1 }">
 			<dl class="system_log">
-			
 				<dt>
 					<img class="icon1" src="../../img/coin07.png" /><img class="icon2"
 						src="../../img/coin08.png" />角色管理<img class="icon3"
@@ -39,8 +36,6 @@
 						target="main">角色管理</a><img class="icon5" src="../../img/coin21.png" />
 				</dd>
 			</dl>
-		</c:if>
-		<c:if test="${admin_power.pow_id==2 }">
 			<dl class="system_log">
 				<dt>
 					<img class="icon1" src="../../img/coin10.png" /><img class="icon2"
@@ -53,13 +48,6 @@
 						src="../../img/coin222.png" /><a class="cks" href="${pageContext.request.contextPath}${admin_power.pow_class }?cur=1"
 						target="main">管理员管理</a><img class="icon5" src="../../img/coin21.png" />
 				</dd>
-			</c:if>
-			<c:if test="${admin_power.pow_id==3 }">
-				<!-- <dd>
-					<img class="coin11" src="../../img/coin111.png" /><img class="coin22"
-						src="../../img/coin222.png" /><a class="cks" href="../opinion.html"
-						target="main">多余</a><img class="icon5" src="../../img/coin21.png" />
-				</dd> -->
 			</dl>
 			<dl class="system_log">
 				<dt>
@@ -74,8 +62,6 @@
 						class="cks">资费管理</a><img class="icon5" src="../../img/coin21.png" />
 				</dd>
 			</dl>
-			</c:if>
-			<c:if test="${admin_power.pow_id==4 }">
 			<dl class="system_log">
 				<dt>
 					<img class="icon1" src="../../img/coin17.png" /><img class="icon2"
@@ -90,8 +76,6 @@
 						src="../../img/coin21.png" />
 				</dd>
 			</dl>
-			</c:if>
-			<c:if test="${admin_power.pow_id==5 }">
 			<dl class="system_log">
 				<dt>
 					<img class="icon1" src="../../img/coin11_1.png" /><img class="icon2"
@@ -105,8 +89,6 @@
 						class="cks">业务管理</a><img class="icon5" src="../../img/coin21.png" />
 				</dd>
 			</dl>
-			</c:if>
-			<c:if test="${admin_power.pow_id==6 }">
 			<dl class="system_log">
 				<dt>
 					<img class="icon1" src="../../img/coin14_1.png" /><img class="icon2"
@@ -120,8 +102,6 @@
 						class="cks">账单管理</a><img class="icon5" src="../../img/coin21.png" />
 				</dd>
 			</dl>
-			</c:if>
-			<c:if test="${admin_power.pow_id==7 }">
 			<dl class="system_log">
 				<dt>
 					<img class="icon1" src="../../img/coin15_1.png" /><img class="icon2"
@@ -148,8 +128,6 @@
 						src="../../img/coin21.png" />
 				</dd>
 			</dl>
-			</c:if>
-			</c:forEach>
 			<dl class="system_log">
 				<dt>
 					<img class="icon1" src="../../img/coinL1.png" /><img class="icon2"
@@ -170,9 +148,7 @@
 						class="icon5" src="../../img/coin21.png" />
 				</dd>
 			</dl>
-		
 		</div>
-
 	</div>
 </body>
 </html>

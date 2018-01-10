@@ -9,8 +9,6 @@
 <%@ include file ="include/cy.jsp"%>
 <script>
 	$(function(){
-		
-	
 	  	$('#form1').bootstrapValidator({
 	     /* message: 'This value is not valid', */
 		     container: 'tooltip',
@@ -63,77 +61,49 @@
 	 	})
 	 	
 	 	.on('success.form.bv', function(e) {
-            // Prevent form submission
             e.preventDefault();
-
-            // Get the form instance
             var $form = $(e.target);
-            // Get the BootstrapValidator instance
             var bv = $form.data('bootstrapValidator');
-
-            // Use Ajax to submit form data
             login();
-           /*  $.post({
-           	 	url:"${pageContext.request.contextPath}/fee/feeAdd.do",
-           	 	data:$("#form1").serialize(),
-           	 	success:function(data){
-           		 	if(data==1){
-    					//showSussessResult();
-    					$(location).attr('href','${pageContext.request.contextPath}/fee/feeList.do');
-    				}else if(data==-1){
-    					showErrorResult();
-    				}
-           	 	}
-            }) */
 	 	})
-		
-/* 		$("#img").click(function(){
-			login();
-		}); */
 		//提交登录
 		function login(){
-			var admin_account = $("#account").val();
-			var admin_psw = $("#psw").val();
+			var user_name = $("#user_name").val();
+			var user_password = $("#user_password").val();
 			var code = $("#code").val();
+			var user_type = $("#user_type").val();
 			$.ajax({
-				url:'${pageContext.request.contextPath}/admin/login.do',
+				url:'${pageContext.request.contextPath}/user/login',
 				type: 'post',
 				data:{
-					admin_account:admin_account,
-					admin_psw:admin_psw,
-					code:code
+                    user_name:user_name,
+                    user_password:user_password,
+					code:code,
+                    user_type:user_type
 				},
-				success : function(date){
-					if(date=="0"){
+				dataType:'json',
+				success : function(data){
+					if(data.result=="0"){
 						location.href="${pageContext.request.contextPath}/view/index.jsp";
-					}else if(date=="1"){
-						$("#span2").hide();
+					}else {
+						$("#span1").val(data.msg);
 						$("#span1").show();
 						var src = $("#vcode_img").attr("src");
 						$("#vcode_img").attr("src",src+'?');
-						/* $("#vcode_img").src=$("#vcode_img").src+'?'; */
 					}
 				}
 			});
 		}
 	})
-	/* //回车登录
-	$(document).keydown(function(event){
-	 	if (event.keyCode ==13){
-	 		$("img").click();
-		}
-	}); */
-	
+
 </script>
 </head>
 <body>
-
 	<!-- 登录页面头部 -->
 	<div class="logHead">
 		<img src="../img/logLOGO.png" />
 	</div>
 	<!-- 登录页面头部结束 -->
-
 	<!-- 登录body -->
 	<div class="logDiv">
 		<img class="logBanner" src="../img/logBanner.png" />
@@ -144,8 +114,8 @@
 			</div>
 			<br/>
 			<div class="row">
-             	<div class="col-sm-8 col-sm-offset-2"> 
-            		<form id="form1" method="post" class="form-horizontal" action="${pageContext.request.contextPath}/user/login">
+             	<div class="col-sm-8 col-sm-offset-2">
+            		<form id="form1" class="form-horizontal" >
 						<div class="form-group">
 							<div class="input-group col-sm-12">
 								<span class="input-group-addon">用户名</span>
@@ -175,7 +145,7 @@
 		                         <input type="text" name="code" class="form-control" id="code"  />
 		                     </div>
 		                     <div class="col-sm-5" style="margin-left:-10px">  
-                     			<img id="vcode_img" src="${pageContext.request.contextPath }/open/getJPGCode.do" alt="验证码" class="img-rounded"  onclick="this.src=this.src+'?'"/>
+                     			<img id="vcode_img" src="${pageContext.request.contextPath }/user/vcode_img" alt="验证码" class="img-rounded"  onclick="this.src=this.src+'?'"/>
                      		</div> 
                  		</div>  
                  		<div class="form-group">
@@ -194,12 +164,5 @@
 	</div>
 	<!-- 登录body  end -->
 
-	<!-- 登录页面底部 -->
-	<!-- <div class="logFoot">
-		<p class="p1">版权所有：蓝桥开发部第7组全体成员</p>
-		<p class="p2">开发 :  肖睿，徐翔，曹博文，杨荭铃，陈杨，雷鸣</p>
-		<p class="p2">测试 :  王雪韦</p>
-	</div> -->
-	<!-- 登录页面底部end -->
 </body>
 </html>

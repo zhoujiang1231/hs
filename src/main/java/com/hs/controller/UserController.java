@@ -1,5 +1,4 @@
 package com.hs.controller;
-
 import com.hs.entity.Admin;
 import com.hs.entity.Student;
 import com.hs.entity.Teacher;
@@ -11,7 +10,6 @@ import com.hs.utils.SecurityCodeUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 import javax.annotation.Resource;
 import javax.imageio.ImageIO;
 import javax.servlet.ServletOutputStream;
@@ -25,7 +23,7 @@ import java.io.IOException;
  * Created by zj on 2018年1年10日.
  */
 @Controller
-@RequestMapping(value = "/system",produces = "text/html;charset=UTF-8")
+@RequestMapping(value = "/user",produces = "text/html;charset=UTF-8")
 public class UserController {
     @Resource private AdminService adminService;
     @Resource private TeacherService teacherService;
@@ -33,14 +31,14 @@ public class UserController {
 
     @RequestMapping(value = "/login")
     @ResponseBody
-    public String login(String type, String user_name, String user_password, String code, HttpServletRequest request){
+        public String login(String user_type, String user_name, String user_password, String code, HttpServletRequest request){
         HttpSession session = request.getSession();
         if(!session.getAttribute("SECURITY_CODE").equals(code)) {
             return ResponseData.error("验证码错误！");
         }
         else{
             //管理员登录
-            if ("0".equals(type)) {
+            if ("0".equals(user_type)) {
                 Admin admin1 = adminService.getLoginAdmin(new Admin(user_name, user_password));
                 if (admin1 != null && admin1.getAdminId() != -1) {
                     session.setAttribute("adminId", admin1.getAdminId());
@@ -53,7 +51,7 @@ public class UserController {
                 }
             }
             //老师登录
-            if ("1".equals(type)) {
+            if ("1".equals(user_type)) {
                 Teacher teacher = teacherService.getLoginTeacher(new Teacher(user_name,user_password));
                 if(teacher!=null&&teacher.getTid()!=-1){
                     session.setAttribute("tId", teacher.getTid());
@@ -66,7 +64,7 @@ public class UserController {
                 }
             }
             //学生登录
-            if ("2".equals(type)) {
+            if ("2".equals(user_type)) {
                 Student student = studentService.getLoginStudent(new Student(user_name,user_password));
                 if(student!=null&&student.getStuId()!=-1){
                     session.setAttribute("stuId", student.getStuId());
