@@ -34,7 +34,7 @@ public interface TeacherDao {
      * 获取所有老师
      * @return
      */
-    public List<Teacher> getAllTeacher();
+    public List<Teacher> getAllTeacher(String tName);
 
     /**
      * 删除老师
@@ -42,5 +42,12 @@ public interface TeacherDao {
      * @return
      */
     public int deleteTeacher(Teacher teacher);
+
+    /**
+     * 重置密码
+     * @param tId
+     * @return
+     */
+    public int updateTeacherPswAll(String[] tId);
 
 }

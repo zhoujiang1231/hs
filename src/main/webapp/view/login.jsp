@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>登录-电信资费系统</title>
+<title>登录-黄冈师范学院课程管理系统</title>
 <%@ include file ="include/link.jsp"%>    
 <%@ include file ="include/cy.jsp"%>
 <script>
@@ -18,11 +18,11 @@
 		         validating: 'glyphicon' 
 		     },  
 		     fields: {
-		    	 admin_account:{
+                 user_name:{
 		    		 validators: {
 		    			 notEmpty: {
 		                     message: '账号不能为空'
-		                 },
+		                 }/*,
 		                 stringLength: {
 		                     min: 2,
 		                     max: 16,
@@ -31,14 +31,14 @@
 		                 regexp: {
 		                     regexp: /^[a-zA-Z0-9_\.]+$/,
 		                     message: '应以字母数字下划线组合'
-		                 }
+		                 }*/
 		    		 }
 		    	 },
-		    	 admin_psw: {
+		    	 user_password: {
 		             validators: {
 		            	 notEmpty: {
 		                     message: '密码不能为空'
-		                 },
+		                 }/*,
 		                 stringLength: {
 		                     min: 3,
 		                     max: 16,
@@ -47,7 +47,7 @@
 		                 regexp: {
 		                     regexp: /^[a-zA-Z0-9_\.]+$/,
 		                     message: '应以字母数字下划线组合'
-		                 }
+		                 }*/
 		             }
 		         },	 	
 		         code: {
@@ -59,7 +59,6 @@
 		         },	 	
 	     	}
 	 	})
-	 	
 	 	.on('success.form.bv', function(e) {
             e.preventDefault();
             var $form = $(e.target);
@@ -86,7 +85,7 @@
 					if(data.result=="0"){
 						location.href="${pageContext.request.contextPath}/view/index.jsp";
 					}else {
-						$("#span1").val(data.msg);
+						$("#span1").text(data.msg);
 						$("#span1").show();
 						var src = $("#vcode_img").attr("src");
 						$("#vcode_img").attr("src",src+'?');

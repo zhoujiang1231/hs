@@ -33,7 +33,7 @@ public interface TeacherService {
      * 获取所有用户
      * @return
      */
-    public List<Teacher> getAllTeacher();
+    public List<Teacher> getAllTeacher(String tName);
 
 
     /**
@@ -42,5 +42,12 @@ public interface TeacherService {
      * @return
      */
     public boolean deleteTeacher(Teacher teacher);
+
+    /**
+     * 重置密码
+     * @param tId
+     * @return
+     */
+    public boolean updateTeacherPswAll(String[] tId);
 
 }

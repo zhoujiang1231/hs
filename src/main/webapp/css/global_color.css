@@ -179,7 +179,7 @@ div.save_success
     background-repeat: no-repeat;
     background-position:10px center;
 }
-div.save_fail
+div.save_info
 {
     background-color: #fbf0db;
     border: 1px solid #ff9000;

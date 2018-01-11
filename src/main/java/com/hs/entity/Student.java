@@ -20,8 +20,8 @@ public class Student implements Serializable {
     public Student() {
     }
 
-    public Student(String stuName, String stuPassword) {
-        this.stuName = stuName;
+    public Student(String stuNo, String stuPassword) {
+        this.stuNo = stuNo;
         this.stuPassword = stuPassword;
     }
 

@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>ç»å½-æç¹</title>
+<title></title>
 <link rel="stylesheet" type="text/css" href="../../css/public.css" />
 <link rel="stylesheet" type="text/css" href="../../css/page.css" />
 <script type="text/javascript" src="../../js/jquery.min.js"></script>

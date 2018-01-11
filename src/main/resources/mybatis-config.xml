@@ -6,4 +6,10 @@
     <typeAliases>
        <package name="com.hs.entity"></package>
     </typeAliases>
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageHelper">
+            <property name="dialect" value="mysql"></property>
+            <property name="rowBoundsWithCount" value="true"></property>
+        </plugin>
+    </plugins>
 </configuration>

@@ -272,7 +272,7 @@
 		     					$(".save_success").show().delay(2000).fadeOut("slow");
 		     					
 		     				}else{
-		     					$(".save_fail").show().delay(2000).fadeOut("slow");
+		     					$(".save_info").show().delay(2000).fadeOut("slow");
 		     				}
 	                 }, 'json');
 				 });
@@ -293,7 +293,7 @@
         <div>  
             <!--保存操作后的提示信息：成功或者失败-->
             <div id="save_result_info" class="save_success" >保存成功！</div>
-            <div id="save_result_info" class="save_fail" >保存失败，数据并发错误！</div>
+            <div id="save_result_info" class="save_info" >保存失败，数据并发错误！</div>
             <br/>
             <div class="row">
             <section>

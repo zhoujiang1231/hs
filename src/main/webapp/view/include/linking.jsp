@@ -7,3 +7,4 @@
 <script src="${pageContext.request.contextPath}/js/cbwjs/bootstrap.min.js"></script>
 <script src="${pageContext.request.contextPath}/js/cbwjs/pagination.js"></script>
 <script src="${pageContext.request.contextPath}/js/cbwjs/bootstrapValidator.js"></script>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>

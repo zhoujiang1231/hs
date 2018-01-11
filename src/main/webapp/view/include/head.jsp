@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>头部—netctoss</title>
+<title></title>
 	<style>
 			#pic img{width:43.26%;height:70%;}
 			 
@@ -28,7 +28,7 @@
 				dataType:'json',
 				success:function (data) {
 					if(data.result==0){
-                        window.top.location="${pageContext.request.contextPath}/user/logout";
+                        window.top.location="${pageContext.request.contextPath}/view/login.jsp";
 					}
                 }
 			})

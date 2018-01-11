@@ -34,12 +34,20 @@ public class TeacherServiceImpl implements TeacherService {
         return false;
     }
 
-    public List<Teacher> getAllTeacher() {
-        return teacherDao.getAllTeacher();
+    public List<Teacher> getAllTeacher(String tName) {
+        return teacherDao.getAllTeacher(tName);
     }
+
 
     public boolean deleteTeacher(Teacher teacher) {
         if(teacherDao.deleteTeacher(teacher)>0){
+            return true;
+        }
+        return false;
+    }
+
+    public boolean updateTeacherPswAll(String[] tId) {
+        if(teacherDao.updateTeacherPswAll(tId)>0){
             return true;
         }
         return false;

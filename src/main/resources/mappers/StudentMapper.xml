@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hs.dao.StudentDao">
     <select id="getLoginStudent" resultType="Student" parameterType="Student">
-        SELECT * FROM student WHERE stuName=#{stuName} and stuPassword = #{stuPassword}
+        SELECT * FROM student WHERE stuNo=#{stuNo} and stuPassword = #{stuPassword}
     </select>
     <update id="updateStudentPsw" parameterType="Student">
         UPDATE student SET stuPassword=#{stuPassword} WHERE stuId = #{stuId}
@@ -12,8 +12,8 @@
         UPDATE student SET stuEmail = #{stuEmail},stuTel=#{stuTel},stuAddress=#{stuAddress},stuSex=#{stuSex},stuIdcard=#{stuIdcard} WHERE stuId = #{stuId}
     </update>
     <insert id="addStudent" parameterType="Student" useGeneratedKeys="true">
-        INSERT INTO student  (stuName,stuNo,stuDepart)
-        VALUES (#{stuName},#{stuNo},#{stuDepart})
+        INSERT INTO student  (stuName,stuNo,stuDepart,creatTime)
+        VALUES (#{stuName},#{stuNo},#{stuDepart},now())
     </insert>
     <delete id="deleteStudent" parameterType="Student">
         DELETE student where stuId=#{stuId}

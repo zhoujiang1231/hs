@@ -53,8 +53,8 @@ public class UserController {
             //老师登录
             if ("1".equals(user_type)) {
                 Teacher teacher = teacherService.getLoginTeacher(new Teacher(user_name,user_password));
-                if(teacher!=null&&teacher.getTid()!=-1){
-                    session.setAttribute("tId", teacher.getTid());
+                if(teacher!=null&&teacher.gettId()!=-1){
+                    session.setAttribute("tId", teacher.gettId());
                     session.setAttribute("tName", teacher.gettName());
                     session.setAttribute("tPassword", teacher.gettPassword());
                     session.setAttribute("user_type", "1");
@@ -128,6 +128,44 @@ public class UserController {
             }
         }
     }
+
+    @RequestMapping(value = "/updateUserPsw")
+    @ResponseBody
+    public String updateUserPsw(int userId,String oldpsw,String newpsw1,HttpServletRequest request){
+        HttpSession session = request.getSession();
+        String user_type= (String) session.getAttribute("user_type");
+        if("0".equals(user_type)){
+            Admin admin = new Admin();
+            admin.setAdminId(userId);
+            admin.setAdminPassword(newpsw1);
+            if(adminService.updateAdminPsw(admin)){
+                return ResponseData.success("修改成功");
+            }
+            return ResponseData.error("修改失败");
+        }
+        if("1".equals(user_type)){
+            Teacher teacher = new Teacher();
+            teacher.settId(userId);
+            teacher.settPassword(newpsw1);
+            if(teacherService.updateTeacherPsw(teacher)){
+                return ResponseData.success("修改成功");
+            }
+            return ResponseData.error("修改失败");
+        }
+        if("2".equals(user_type)){
+            Student student = new Student();
+            student.setStuId(userId);
+            student.setStuPassword(newpsw1);
+            if(studentService.updateStudentPsw(student)){
+                return ResponseData.success("修改成功");
+            }
+            return ResponseData.error("修改失败");
+        }
+        else{
+            return ResponseData.error("系统异常");
+        }
+    }
+
     @RequestMapping(value = "/vcode_img")
     public String securityCodeImage(HttpServletRequest request, HttpServletResponse response) {
         BufferedImage imgBuf = SecurityCodeUtil.initImage();

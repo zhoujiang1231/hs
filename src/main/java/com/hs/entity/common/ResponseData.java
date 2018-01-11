@@ -3,6 +3,7 @@ package com.hs.entity.common;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.pagehelper.PageInfo;
 
 import java.io.Serializable;
 import java.util.List;
@@ -15,6 +16,7 @@ public class ResponseData implements Serializable{
     private Object data;
     private String result;
     private String msg;
+    private PageInfo pageInfo;
     private static ObjectMapper objectMapper = new ObjectMapper();
 
     public ResponseData() {
@@ -30,6 +32,13 @@ public class ResponseData implements Serializable{
         this.data = data;
         this.result = result;
         this.msg = msg;
+    }
+    public ResponseData(List list, Object data, String result, String msg,PageInfo pageInfo) {
+        this.list = list;
+        this.data = data;
+        this.result = result;
+        this.msg = msg;
+        this.pageInfo = pageInfo;
     }
 
     public List<Object> getList() {
@@ -64,6 +73,14 @@ public class ResponseData implements Serializable{
         this.msg = msg;
     }
 
+    public PageInfo getPageInfo() {
+        return pageInfo;
+    }
+
+    public void setPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+    }
+
     public static String success(){
         ResponseData responseData = new ResponseData("0","success");
         return buildJsonStr(responseData);
@@ -72,11 +89,15 @@ public class ResponseData implements Serializable{
         ResponseData responseData = new ResponseData("0",parameter);
         return buildJsonStr(responseData);
     }
+
     public static String error(String msg){
         return buildJsonStr( new ResponseData("1",msg));
     }
     public static String buildList(List list){
         return buildJsonStr(new ResponseData(list,null,"0","success"));
+    }
+    public static String buildList(List list,PageInfo pageInfo){
+        return buildJsonStr(new ResponseData(list,null,"0","success",pageInfo));
     }
     public static String buildData(Object data){
         return buildJsonStr(new ResponseData(null,data,"0","success"));
