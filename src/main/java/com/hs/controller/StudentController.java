@@ -1,6 +1,9 @@
 package com.hs.controller;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.hs.entity.Student;
+import com.hs.entity.Teacher;
 import com.hs.entity.common.ResponseData;
 import com.hs.service.StudentService;
 import org.springframework.stereotype.Controller;
@@ -37,6 +40,9 @@ public class StudentController {
         if("".equals(student.getStuNo())){
             return ResponseData.error("学号为空");
         }
+        /*if("".equals(student.getStuIdcard())){
+            return ResponseData.error("身份证为空");
+        }*/
         else {
             if (studentService.addStudent(student)) {
                 return ResponseData.success("添加成功");
@@ -45,11 +51,28 @@ public class StudentController {
             }
         }
     }
+
     @RequestMapping(value = "/getAllStudent")
     @ResponseBody
-    public String getAllStudent(){
-       List<Student> lu = studentService.getAllStudent();
-       return ResponseData.buildList(lu);
+    public String getAllStudent(@RequestParam String pageNum, String stuName, String stuDepart, String stuSex,HttpServletRequest request) {
+        if("".equals(pageNum)||pageNum== null){
+            pageNum="1";
+        }
+        if("".equals(stuSex)||stuSex==null){
+            stuSex="10";
+        }
+        Student student = new Student();
+        student.setStuName(stuName);
+        student.setStuDepart(stuDepart);
+        student.setStuSex(Integer.parseInt(stuSex));
+        PageHelper.startPage(Integer.parseInt(pageNum), 10,true);
+        List<Student> ls = studentService.getAllStudent(student);
+        PageInfo<Student> ps = new PageInfo<Student>(ls);
+        request.getSession().setAttribute("student_page",ps);
+        if(ps.getTotal()!=0){
+            return ResponseData.buildList(ls);
+        }
+        return ResponseData.error("没有学生");
     }
 
     @RequestMapping(value = "/getUserByCondition")
@@ -74,11 +97,23 @@ public class StudentController {
     @ResponseBody
     public String updateStudent(Student student, HttpServletRequest request){
         if (studentService.updateStudent(student)){
-            request.getSession().setAttribute("email", student.getStuEmail());
-            request.getSession().setAttribute("tel", student.getStuTel());
+            request.getSession().setAttribute("stuSex", student.getStuSex());
+            request.getSession().setAttribute("stuAddress", student.getStuAddress());
+            request.getSession().setAttribute("stuTel", student.getStuTel());
+            request.getSession().setAttribute("stuEmail", student.getStuEmail());
             return ResponseData.success("修改成功");
         }
         return ResponseData.error("修改失败");
 
     }
+
+    @RequestMapping(value = "/updateStudentPswAll")
+    @ResponseBody
+    public String updateStudentPswAll(String[] stuId) {
+        if(studentService.updateStudentPswAll(stuId)){
+            return ResponseData.success("密码重置成功");
+        }
+        return ResponseData.error("重置密码失败");
+    }
+
 }

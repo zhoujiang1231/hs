@@ -33,6 +33,13 @@ public class StudentServiceImpl implements StudentService {
         return false;
     }
 
+    public boolean updateStudentPswAll(String[] stuId) {
+        if(studentDao.updateStudentPswAll(stuId)>0) {
+            return true;
+        }
+        return false;
+    }
+
     public boolean updateStudent(Student student) {
         if(studentDao.updateStudent(student)>0){
             return true;
@@ -40,8 +47,8 @@ public class StudentServiceImpl implements StudentService {
         return false;
     }
 
-    public List<Student> getAllStudent() {
-        return studentDao.getAllStudent();
+    public List<Student> getAllStudent(Student student) {
+        return studentDao.getAllStudent(student);
     }
 
     public List<Student> getStudentByCondition(Student student) {

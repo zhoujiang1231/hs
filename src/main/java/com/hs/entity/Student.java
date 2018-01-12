@@ -1,6 +1,9 @@
 package com.hs.entity;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
 
 /**
  * Created by zj on 2018年1年6日.
@@ -16,6 +19,8 @@ public class Student implements Serializable {
     private String stuTel;
     private String stuDepart;
     private String stuIdcard;
+    private Date creatTime;
+    private List<Course> lc;
 
     public Student() {
     }
@@ -116,5 +121,26 @@ public class Student implements Serializable {
 
     public void setStuIdcard(String stuIdcard) {
         this.stuIdcard = stuIdcard;
+    }
+
+    public String getCreatTime() {
+        if(this.creatTime!=null) {
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String s = simpleDateFormat.format(this.creatTime);
+            return s;
+        }
+        return "";
+    }
+
+    public void setCreatTime(Date creatTime) {
+        this.creatTime = creatTime;
+    }
+
+    public List<Course> getLc() {
+        return lc;
+    }
+
+    public void setLc(List<Course> lc) {
+        this.lc = lc;
     }
 }

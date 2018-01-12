@@ -6,80 +6,97 @@ import java.io.Serializable;
  * Created by zj on 2018年1年9日.
  */
 public class Course implements Serializable {
-    private int	cid;
-    private  String	cno;
-    private String	cname;
-    private  String	cteacher;
-    private  int	ctype;
-    private  int	chour;
-    private  float cmark;
-
+    private int cId;
+    private  String cNo;
+    private String cName;
+    private  String cTeacher;
+    private  int cType;
+    private  int cHour;
+    private  float cMark;
+    private int cTotal;
+    private int cChosed;
     public Course() {
     }
 
-    public Course(int cid, String cno, String cname, String cteacher, int ctype, int chour, float cmark) {
-        this.cid = cid;
-        this.cno = cno;
-        this.cname = cname;
-        this.cteacher = cteacher;
-        this.ctype = ctype;
-        this.chour = chour;
-        this.cmark = cmark;
+    public Course(int cId, String cNo, String cName, String cTeacher, int cType, int cHour, float cMark) {
+        this.cId = cId;
+        this.cNo = cNo;
+        this.cName = cName;
+        this.cTeacher = cTeacher;
+        this.cType = cType;
+        this.cHour = cHour;
+        this.cMark = cMark;
     }
 
-    public int getCid() {
-        return cid;
+    public int getcId() {
+        return cId;
     }
 
-    public void setCid(int cid) {
-        this.cid = cid;
+    public void setcId(int cId) {
+        this.cId = cId;
     }
 
-    public String getCno() {
-        return cno;
+    public String getcNo() {
+        return cNo;
     }
 
-    public void setCno(String cno) {
-        this.cno = cno;
+    public void setcNo(String cNo) {
+        this.cNo = cNo;
     }
 
-    public String getCname() {
-        return cname;
+    public String getcName() {
+        return cName;
     }
 
-    public void setCname(String cname) {
-        this.cname = cname;
+    public void setcName(String cName) {
+        this.cName = cName;
     }
 
-    public String getCteacher() {
-        return cteacher;
+    public String getcTeacher() {
+        return cTeacher;
     }
 
-    public void setCteacher(String cteacher) {
-        this.cteacher = cteacher;
+    public void setcTeacher(String cTeacher) {
+        this.cTeacher = cTeacher;
     }
 
-    public int getCtype() {
-        return ctype;
+    public int getcType() {
+        return cType;
     }
 
-    public void setCtype(int ctype) {
-        this.ctype = ctype;
+    public void setcType(int cType) {
+        this.cType = cType;
     }
 
-    public int getChour() {
-        return chour;
+    public int getcHour() {
+        return cHour;
     }
 
-    public void setChour(int chour) {
-        this.chour = chour;
+    public void setcHour(int cHour) {
+        this.cHour = cHour;
     }
 
-    public float getCmark() {
-        return cmark;
+    public float getcMark() {
+        return cMark;
     }
 
-    public void setCmark(float cmark) {
-        this.cmark = cmark;
+    public void setcMark(float cMark) {
+        this.cMark = cMark;
+    }
+
+    public int getcTotal() {
+        return cTotal;
+    }
+
+    public void setcTotal(int cTotal) {
+        this.cTotal = cTotal;
+    }
+
+    public int getcChosed() {
+        return cChosed;
+    }
+
+    public void setcChosed(int cChosed) {
+        this.cChosed = cChosed;
     }
 }

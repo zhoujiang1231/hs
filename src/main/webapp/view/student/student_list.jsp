@@ -30,15 +30,15 @@
                 }else{
                     var b = window.confirm("确定重置密码吗？");
                     if(b){
-                        var tId =[];
+                        var stuId =[];
                         $('input[name="pswcheckbox"]:checked').each(function(){
-                            tId.push($(this).val());
+                            stuId.push($(this).val());
                         })
                         $.ajax({
-                            url :'${pageContext.request.contextPath}/teacher/updateTeacherPswAll',
+                            url :'${pageContext.request.contextPath}/student/updateStudentPswAll',
                             type : 'post',
                             dataType:'json',
-                            data : {tId:tId},
+                            data : {stuId:stuId},
                             traditional: true,
                             success : function(data){
                                 $(".operate_info").text(data.msg);
@@ -53,21 +53,21 @@
                 }
             }
             //删除
-            function deleteTeacher(tId){
-                var r = window.confirm("确定要删除该教师吗？");
+            function deleteStudent(stuId){
+                var r = window.confirm("确定要删除该学生吗？");
                 if(r){
                     $.ajax({
-                        url :'${pageContext.request.contextPath}/teacher/deleteTeacher',
+                        url :'${pageContext.request.contextPath}/student/deleteStudent',
                         type : 'post',
-                        data :{tId :tId},
+                        data :{stuId :stuId},
                         dataType:'json',
                         success : function(data){
                             $(".operate_info").text(data.msg)
                             $(".operate_info").fadeIn(100);
                             $(".operate_info").fadeOut(3500);
                             if(data.result=="0"){
-                                $("#"+tId).remove();
-                                initList(${teacher_page.pageNum});
+                                $("#"+stuId).remove();
+                                initList(${student_page.pageNum});
                             }
                         }
                     })
@@ -78,30 +78,42 @@
                 }
             }
             function initList(pageNum) {
-                var tName = $("#tName").val();
+                var stuName = $("#stuName").val();
+                var stuDepart = $("#stuDepart").val();
+                var stuSex = $("#stuSex").val();
                 if(pageNum==""||pageNum==0||pageNum==null){
                     pageNum=1;
                 }
                 $.ajax({
-                    url:'${pageContext.request.contextPath}/teacher/getAllTeacher',
+                    url:'${pageContext.request.contextPath}/student/getAllStudent',
                     dataType:'text',
                     type:'post',
                     /*async:false,*/
                     data:{pageNum:pageNum,
-                        tName:tName},
+                        stuName:stuName,
+                        stuDepart:stuDepart,
+                        stuSex:stuSex},
                     success:function(data){
                         $("#pages").show();
-                        $("#currentPage").text("第      ${teacher_page.pageNum} 页");
-                        $("#indexPage").prop("href","javaScript:initList(${teacher_page.firstPage})");
-                        $("#prePage").prop("href","javaScript:initList(${teacher_page.prePage})");
-                        $("#nextPage").prop("href","javaScript:initList(${teacher_page.nextPage})");
-                        $("#lastPage").prop("href","javaScript:initList(${teacher_page.lastPage})");
-                        $("#totalPage").text("共       ${teacher_page.total} 条记录");
+                        $("#currentPage").text("第      ${student_page.pageNum} 页");
+                        $("#indexPage").prop("href","javaScript:initList(${student_page.firstPage})");
+                        $("#prePage").prop("href","javaScript:initList(${student_page.prePage})");
+                        $("#nextPage").prop("href","javaScript:initList(${student_page.nextPage})");
+                        $("#lastPage").prop("href","javaScript:initList(${student_page.lastPage})");
+                        $("#totalPage").text("共       ${student_page.total} 条记录");
                         var responseData = jQuery.parseJSON(data);
                         var list = responseData.list;
                         $("#tbody").empty();
-                        $.each(list,function (i,teacher) {
-                            $("#tbody").append("<tr id='"+teacher.tId+"'><td><input type='checkbox' value='"+teacher.tId+"' id ='pswcheckbox' name='pswcheckbox' /></td><td>"+teacher.tId+"</td><td>"+teacher.tName+"</td><td>"+teacher.creatTime+"</td><td><input type='button' value='删除' class='btn_delete' onclick='deleteTeacher("+teacher.tId+")'/></td></tr>");
+                        $.each(list,function (i,student) {
+                            var htmlstr = "<tr id='"+student.stuId+"'><td><input type='checkbox' value='"+student.stuId+"' id ='pswcheckbox' name='pswcheckbox' /></td><td>"+student.stuId+"</td><td>"+student.stuName+"</td><td>";
+                            if(student.stuSex==0){
+                                htmlstr = htmlstr+"男";
+                            }
+                            if(student.stuSex==1){
+                                htmlstr = htmlstr+"女";
+                            }
+                            htmlstr = htmlstr +"</td><td>"+student.stuDepart+"</td><td>"+student.stuAddress+"</td><td>"+student.stuTel+"</td><td>"+student.stuEmail+"</td><td>"+student.stuIdcard+"</td><td>"+student.creatTime+"</td><td><input type='button' value='删除' class='btn_delete' onclick='deleteStudent("+student.stuId+")'/></td></tr>";
+                            $("#tbody").append(htmlstr);
                         })
                     }
                 })
@@ -127,10 +139,17 @@
             <form id="serachForm">
                 <!--查询-->
                 <div class="search_add">
-                    <div>名称：<input type="text" value="" class="text_search width200" name="tName" id="tName"/></div>
+                    <div>姓名：<input type="text" value="" class="text_search width100" name="stuName" id="stuName"/></div>
+                    <div>院系：<input type="text" value="" class="text_search width100" name="stuDepart" id="stuDepart"/></div>
+                    <div>性别：<select id="stuSex" name="stuSex" class="text_search width70">
+                        <option value="10">全部</option>
+                        <option value="0">男</option>
+                        <option value="1">女</option>
+                    </select>
+                    </div>
                     <div><input type="button" value="搜索" class="btn_search" id="btn_search" onclick="initList(1);"/></div>
                     <input type="button" value="密码重置" class="btn_add" onclick="resetPwd();" />
-                    <input type="button" value="增加" class="btn_add" onclick="location.href='${pageContext.request.contextPath}/view/teacher/teacher_add.jsp'" />
+                    <input type="button" value="增加" class="btn_add" onclick="location.href='${pageContext.request.contextPath}/view/student/student_add.jsp'" />
  					 </div>
                 <!--删除和密码重置的操作提示-->
                  <div id="operate_result_info" class="operate_info">
@@ -146,8 +165,14 @@
 	                                <input style="margin-top:-5px;height:12px" type="checkbox" id="selectAllBtn" />全选
 	                            </th>
                             </div>
-                            <th>教师ID</th>
+                            <th>学号</th>
                             <th>姓名</th>
+                            <th>性别</th>
+                            <th>院系</th>
+                            <th>住址</th>
+                            <th>电话</th>
+                            <th>Email</th>
+                            <th>身份证</th>
                             <th>创建日期</th>
                             <th style="width:160px">操作</th>
                         </tr> 
@@ -157,13 +182,13 @@
                     </table>
                     </div>
                 <div id="pages" hidden="hidden">
-                    <span id="currentPage">第      ${teacher_page.pageNum} 页</span>
-          	        	<a id="indexPage" href="javaScript:initList(${teacher_page.firstPage})">首页</a>
-        	        	<a id="prePage" href="javaScript:initList(${teacher_page.prePage})">上一页</a>
-                    	<%--<a id="currentPage" href="javaScript:initList(${teacher_page.pageNum})"  class="current_page" ></a>--%>
-                    <a id="lastPage" href="javaScript:initList(${teacher_page.lastPage})">尾页</a>
-        	        	<a id="nextPage" href="javaScript:initList(${teacher_page.nextPage})">下一页</a>
-                    <span id="totalPage">共       ${teacher_page.total} 条记录</span>
+                    <span id="currentPage">第      ${student_page.pageNum} 页</span>
+          	        	<a id="indexPage" href="javaScript:initList(${student_page.firstPage})">首页</a>
+        	        	<a id="prePage" href="javaScript:initList(${student_page.prePage})">上一页</a>
+                    	<%--<a id="currentPage" href="javaScript:initList(${student_page.pageNum})"  class="current_page" ></a>--%>
+                    <a id="lastPage" href="javaScript:initList(${student_page.lastPage})">尾页</a>
+        	        	<a id="nextPage" href="javaScript:initList(${student_page.nextPage})">下一页</a>
+                    <span id="totalPage">共       ${student_page.total} 条记录</span>
             	</div>
             </form>
         </div>

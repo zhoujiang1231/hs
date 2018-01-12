@@ -30,6 +30,13 @@ public interface StudentService {
     public boolean updateStudentPsw(Student student);
 
     /**
+     * 批量修改密码
+     * @param stuId
+     * @return
+     */
+    public boolean updateStudentPswAll(String[] stuId);
+
+    /**
      * 修改学生信息
      * @param student
      * @return
@@ -38,9 +45,10 @@ public interface StudentService {
 
     /**
      * 获取所有用户
+     * @Param student
      * @return
      */
-    public List<Student> getAllStudent();
+    public List<Student> getAllStudent(Student student);
 
     /**
      * 搜索用户

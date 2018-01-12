@@ -44,7 +44,10 @@
 				             validators: {
 				                 notEmpty: {
 				                     message: '名字不能为空'
-				                 }
+				                 },regexp:{
+                                     regexp:/^[\u4E00-\u9FA5]{2,4}$/,
+                                     message:"请输入正确的姓名"
+                                 }
 				    		 }
 				    	 },
 				    	 //密码验证
@@ -74,7 +77,7 @@
                             $(".save_success").fadeIn(100);
                             $(".save_success").fadeOut(2500);
 	           				if(data.result=="0"){
-	    						setTimeout("window.location.href ='${pageContext.request.contextPath}/view/teacher/teacher_list.jsp'",2500);
+	    						setTimeout("window.location.href ='teacher_list.jsp'",2500);
 	       					}
            				}
             		})
@@ -122,11 +125,9 @@
 	                     </div>
 	                 </div>
                     <div class="form-group">
-                    	<div class="col-xs-2 col-xs-offset-5">
-                        	<input type="submit" value="保存" class="btn btn-primary" />
-                        </div>
-						<div class="col-xs-2">
-						<input type="button" value="取消" class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/view/teacher/teacher_list.jsp'"/>
+                    	<div class="col-xs-3 col-xs-offset-3" style="margin-left: 45%">
+                        	<input type="submit" style="width:100px" value="保存" class="btn btn-primary" />
+						<input type="button" style="width:100px" value="取消" class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/view/teacher/teacher_list.jsp'"/>
 						</div>
                     </div>
                     </fieldset>

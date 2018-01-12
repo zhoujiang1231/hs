@@ -31,6 +31,13 @@ public interface StudentDao {
     public int updateStudentPsw(Student student);
 
     /**
+     * 批量修改学生密码
+     * @param stuId
+     * @return
+     */
+    public int updateStudentPswAll(String[] stuId);
+
+    /**
      * 修改学生信息
      * @param student
      * @return
@@ -41,7 +48,7 @@ public interface StudentDao {
      * 获取所有学生
      * @return
      */
-    public List<Student> getAllStudent();
+    public List<Student> getAllStudent(Student student);
 
     /**
      * 查询学生

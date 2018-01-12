@@ -2,6 +2,25 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hs.dao.CourseDao">
-    <resultMap id="CourseList" type="Course">
-    </resultMap>
+
+    <select id="getAllCourse" resultType="Course">
+        SELECT * FROM course
+    </select>
+
+    <!--修改课程已选人数-->
+    <update id="choseCourse"  parameterType="map">
+        UPDATE course set cChosed = cChosed+1 where cId=#{cId}
+    </update>
+
+    <!--向学生课程关联表中插入选课数据-->
+    <insert id="addCourseStudent" parameterType="map">
+        INSERT INTO course_student (stuId,cId)
+        VALUES (#{stuId},#{cId})
+    </insert>
+
+    <!--向学生课程关联表中删除选课数据-->
+    <delete id="deleteCourseStudent" parameterType="java.lang.Integer">
+        DELETE FROM course_student WHERE csId=#{csId}
+    </delete>
+
 </mapper>

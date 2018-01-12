@@ -2,41 +2,98 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hs.dao.StudentDao">
+
+    <resultMap id="studentList" type="Student">
+        <id property="stuId" column="stuId"></id>
+        <collection property="lc" select="getStudentCourse" column="stuId">
+            <id column="csId" property="cdId"></id>
+        </collection>
+    </resultMap>
+
     <select id="getLoginStudent" resultType="Student" parameterType="Student">
         SELECT * FROM student WHERE stuNo=#{stuNo} and stuPassword = #{stuPassword}
     </select>
+
+    <select id="getStudentCourse" resultType="Course" parameterType="stuId">
+        SELECT * FROM course_student WHERE stuId = #{stuId}
+    </select>
+
     <update id="updateStudentPsw" parameterType="Student">
         UPDATE student SET stuPassword=#{stuPassword} WHERE stuId = #{stuId}
     </update>
+
     <update id="updateStudent" parameterType="Student">
-        UPDATE student SET stuEmail = #{stuEmail},stuTel=#{stuTel},stuAddress=#{stuAddress},stuSex=#{stuSex},stuIdcard=#{stuIdcard} WHERE stuId = #{stuId}
+        UPDATE student SET stuEmail = #{stuEmail},stuTel=#{stuTel},stuAddress=#{stuAddress},stuSex=#{stuSex} WHERE stuId = #{stuId}
     </update>
+
     <insert id="addStudent" parameterType="Student" useGeneratedKeys="true">
-        INSERT INTO student  (stuName,stuNo,stuDepart,creatTime)
-        VALUES (#{stuName},#{stuNo},#{stuDepart},now())
+        INSERT INTO student  (stuName,stuNo,stuSex,creatTime
+        <if test='stuDepart!=null and stuDepart!=""'>
+            ,stuDepart
+        </if>
+        <if test='stuAddress!=null and stuAddress!=""'>
+            ,stuAddress
+        </if>
+        <if test='stuTel!=null and stuTel!=""'>
+            ,stuTel
+        </if>
+        <if test='stuEmail!=null and stuEmail!=""'>
+            ,stuEmail
+        </if>
+        <if test='stuIdcard!=null and stuIdcard!=""'>
+            ,stuIdcard
+        </if>
+        )
+        VALUES (#{stuName},#{stuNo},#{stuSex},now()
+        <if test='stuDepart!=null and stuDepart!=""'>
+            ,#{stuDepart}
+        </if>
+        <if test='stuAddress!=null and stuAddress!=""'>
+            ,#{stuAddress}
+        </if>
+        <if test='stuTel!=null and stuTel!=""'>
+            ,#{stuTel}
+        </if>
+        <if test='stuEmail!=null and stuEmail!=""'>
+            ,#{stuEmail}
+        </if>
+        <if test='stuIdcard!=null and stuIdcard!=""'>
+            ,#{stuIdcard}
+        </if>
+        )
     </insert>
+
     <delete id="deleteStudent" parameterType="Student">
-        DELETE student where stuId=#{stuId}
+        DELETE FROM student where stuId=#{stuId}
     </delete>
+
     <select id="checkStudentNameUnique" parameterType="java.lang.String" resultType="Student">
         SELECT * FROM student WHERE stuName=#{stuName}
     </select>
-    <select id="getStudentByCondition" parameterType="Student" resultType="Student">
+
+    <select id="getAllStudent" parameterType="Student" resultType="Student">
         SELECT * FROM student WHERE 1=1
-        <!--<if test='stuDepart!="" and stuDepart!=null'>
-             and stuDepart=#{stuDepart}
+        <if test='stuDepart!="" and stuDepart!=null'>
+             and stuDepart =#{stuDepart}
         </if>
         <if test='stuName!="" and stuName!=null'>
-            and stuName=#{stuName}
-        </if>
-        <if test='stuAddress!="" and stuAddress!=null'>
-            and stuAddress=#{stuAddress}
+            and stuName =#{stuName}
         </if>
         <if test='stuSex!=10'>
             and stuSex=#{stuSex}
-        </if>-->
+        </if>
     </select>
+
     <select id="checkSno" parameterType="java.lang.String" resultType="Student">
         SELECT * FROM student WHERE stuNo=#{stuNo}
     </select>
+
+    <update id="updateStudentPswAll" >
+        UPDATE student SET stuPassword=888888 WHERE stuId IN
+        <foreach collection="array" item="stuId" index="index"
+                 open="(" close=")" separator=",">
+            #{stuId}
+        </foreach>
+    </update>
+
 </mapper>

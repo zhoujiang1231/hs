@@ -58,6 +58,7 @@ public class UserController {
                     session.setAttribute("tName", teacher.gettName());
                     session.setAttribute("tPassword", teacher.gettPassword());
                     session.setAttribute("user_type", "1");
+                    session.setAttribute("creatTime", teacher.getCreatTime());
                     return ResponseData.buildData(teacher);
                 } else {
                     return ResponseData.error("用户名或密码错误");
@@ -78,6 +79,7 @@ public class UserController {
                     session.setAttribute("stuTel", student.getStuTel());
                     session.setAttribute("stuSex", student.getStuSex());
                     session.setAttribute("user_type", "2");
+                    session.setAttribute("creatTime", student.getCreatTime());
                     return ResponseData.buildData(student);
                 } else {
                     return ResponseData.error("用户名或密码错误");
@@ -135,6 +137,9 @@ public class UserController {
         HttpSession session = request.getSession();
         String user_type= (String) session.getAttribute("user_type");
         if("0".equals(user_type)){
+            if(!oldpsw.equals(session.getAttribute("adminPassword"))){
+                return ResponseData.error("旧密码输入错误");
+            }
             Admin admin = new Admin();
             admin.setAdminId(userId);
             admin.setAdminPassword(newpsw1);
@@ -144,6 +149,9 @@ public class UserController {
             return ResponseData.error("修改失败");
         }
         if("1".equals(user_type)){
+            if(!oldpsw.equals(session.getAttribute("tPassword"))){
+                return ResponseData.error("旧密码输入错误");
+            }
             Teacher teacher = new Teacher();
             teacher.settId(userId);
             teacher.settPassword(newpsw1);
@@ -153,6 +161,9 @@ public class UserController {
             return ResponseData.error("修改失败");
         }
         if("2".equals(user_type)){
+            if(!oldpsw.equals(session.getAttribute("stuPassword"))){
+                return ResponseData.error("旧密码输入错误");
+            }
             Student student = new Student();
             student.setStuId(userId);
             student.setStuPassword(newpsw1);

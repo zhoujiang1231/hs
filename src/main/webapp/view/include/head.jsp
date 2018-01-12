@@ -49,17 +49,17 @@
 			<c:choose>
 				<c:when test="${user_type==0}">
 					<p class="p1">
-						&nbsp;欢迎，管理员
+						&nbsp;你好，管理员
 					</p>
 				</c:when>
 				<c:when test="${user_type==1}">
 					<p class="p1">
-						&nbsp;欢迎，${tName}
+						&nbsp;你好，${tName}
 					</p>
 				</c:when>
 				<c:otherwise>
 					<p class="p1">
-						&nbsp;欢迎，${stuName}
+						&nbsp;你好，${stuName}
 					</p>
 				</c:otherwise>
 			</c:choose>

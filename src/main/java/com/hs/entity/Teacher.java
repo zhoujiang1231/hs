@@ -50,9 +50,12 @@ public class Teacher implements Serializable{
     }
 
     public String getCreatTime() {
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String s = simpleDateFormat.format(this.creatTime);
-        return s;
+        if(this.creatTime!=null) {
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String s = simpleDateFormat.format(this.creatTime);
+            return s;
+        }
+        return "";
     }
 
     public void setCreatTime(Date creatTime) {
