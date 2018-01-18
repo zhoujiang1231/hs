@@ -40,7 +40,7 @@ public class TeacherServiceImpl implements TeacherService {
 
 
     public boolean deleteTeacher(Teacher teacher) {
-        if(teacherDao.deleteTeacher(teacher)>0){
+        if(teacherDao.deleteTeacher(teacher)>0&&teacherDao.deleteCourseStudent(teacher)!=-1){
             return true;
         }
         return false;

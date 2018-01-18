@@ -47,7 +47,7 @@
     <tx:advice id="txAdvice" transaction-manager="TransitionManager">
         <tx:attributes>
             <tx:method name="update*" propagation="REQUIRED"/>
-            <tx:method name="delete*" propagation="REQUIRED"/>
+            <tx:method name="del*" propagation="REQUIRED"/>
             <tx:method name="add*" propagation="REQUIRED"/>
         </tx:attributes>
     </tx:advice>

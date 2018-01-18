@@ -3,11 +3,28 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hs.dao.CourseDao">
 
-    <select id="getAllCourse" resultType="Course">
-        SELECT * FROM course
+    <select id="getAllCourse" resultType="Course" parameterType="Course">
+        SELECT * FROM course WHERE 1=1
+        <if test='cName!="" and cName!=null '>
+          and   cName like '%${cName}%'
+        </if>
+        <if test="cType!=10 and cType!=-1">
+          and   cType = #{cType}
+        </if>
     </select>
 
-    <!--修改课程已选人数-->
+    <select id="getAllTeacherCourse" resultType="Course" parameterType="map">
+        SELECT * FROM course WHERE cId in(SELECT cId FROM course_teacher WHERE tId = #{tId})
+        <if test='cName!="" and cName!=null '>
+            and   cName like '%${cName}%'
+        </if>
+        <if test="cType!=10 and cType!=-1">
+            and   cType = #{cType}
+        </if>
+    </select>
+
+    <!--学生操作部分-->
+    <!--修改课程已选人数+1-->
     <update id="choseCourse"  parameterType="map">
         UPDATE course set cChosed = cChosed+1 where cId=#{cId}
     </update>
@@ -18,9 +35,54 @@
         VALUES (#{stuId},#{cId})
     </insert>
 
+    <!--修改课程已选人数-1-->
+    <update id="unchoseCourse"  parameterType="map">
+        UPDATE course set cChosed = cChosed-1 where cId=#{cId}
+    </update>
+
     <!--向学生课程关联表中删除选课数据-->
-    <delete id="deleteCourseStudent" parameterType="java.lang.Integer">
-        DELETE FROM course_student WHERE csId=#{csId}
+    <delete id="deleteCourseStudent" parameterType="map">
+        DELETE FROM course_student WHERE stuId=#{stuId} and cId=#{cId}
+    </delete>
+
+    <!--直接删除课程时删除该课程的选课记录-->
+    <delete id="deleteCourseForStudent" parameterType="java.lang.Integer">
+        DELETE FROM course_student WHERE cId=#{cId}
+    </delete>
+
+    <!--老师操作部分-->
+    <insert id="addCourse" parameterType="Course" useGeneratedKeys="true" keyProperty="cId">
+        INSERT INTO course (cName,cMark,cHour,cTeacher,cType,cTotal,cChosed)
+        VALUES (#{cName},#{cMark},#{cHour},#{cTeacher},#{cType},#{cTotal},0)
+    </insert>
+
+    <insert id="addCourseTeacher" parameterType="map" >
+        INSERT INTO course_teacher (tName,cId) VALUES (#{tName},#{cId})
+    </insert>
+
+    <delete id="deleteCourse" parameterType="java.lang.Integer">
+        DELETE FROM course WHERE cId = #{cId}
+    </delete>
+
+    <delete id="deleteCourse_student" parameterType="java.lang.Integer">
+        DELETE FROM course_student WHERE cId=#{cId} and stuId = #{stuId}
+    </delete>
+
+
+    <!--批量删除操作-->
+    <delete id="deleteCourseBatch">
+        DELETE FROM course WHERE cId IN
+        <foreach collection="array" item="cId" index="index"
+                 open="(" close=")" separator=",">
+            #{cId}
+        </foreach>
+    </delete>
+    <delete id="deleteCourseForStudentBatch">
+        DELETE FROM course_student WHERE cId IN
+        <foreach collection="array" item="cId" index="index"
+                 open="(" close=")" separator=",">
+            #{cId}
+        </foreach>
     </delete>
 
 </mapper>

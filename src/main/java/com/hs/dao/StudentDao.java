@@ -63,4 +63,11 @@ public interface StudentDao {
      */
     public int deleteStudent(Student student);
 
+    /**
+     * 删除学生选课记录
+     * @param student
+     * @return
+     */
+    public int deleteStudentCourse(Student student);
+
 }

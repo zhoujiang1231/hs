@@ -182,13 +182,13 @@
                     </table>
                     </div>
                 <div id="pages" hidden="hidden">
-                    <span id="currentPage">第      ${student_page.pageNum} 页</span>
-          	        	<a id="indexPage" href="javaScript:initList(${student_page.firstPage})">首页</a>
-        	        	<a id="prePage" href="javaScript:initList(${student_page.prePage})">上一页</a>
+                    <span id="currentPage"></span>
+          	        	<a id="indexPage" >首页</a>
+        	        	<a id="prePage" >上一页</a>
                     	<%--<a id="currentPage" href="javaScript:initList(${student_page.pageNum})"  class="current_page" ></a>--%>
-                    <a id="lastPage" href="javaScript:initList(${student_page.lastPage})">尾页</a>
-        	        	<a id="nextPage" href="javaScript:initList(${student_page.nextPage})">下一页</a>
-                    <span id="totalPage">共       ${student_page.total} 条记录</span>
+                    <a id="lastPage" >尾页</a>
+        	        	<a id="nextPage" >下一页</a>
+                    <span id="totalPage"></span>
             	</div>
             </form>
         </div>

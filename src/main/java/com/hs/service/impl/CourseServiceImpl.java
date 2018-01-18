@@ -6,6 +6,7 @@ import com.hs.service.CourseService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -15,8 +16,12 @@ import java.util.Map;
 @Service
 public class CourseServiceImpl implements CourseService {
     @Resource private CourseDao courseDao;
-    public List<Course> getAllCourse() {
-        return courseDao.getAllCourse();
+    public List<Course> getAllCourse(Course course) {
+        return courseDao.getAllCourse(course);
+    }
+
+    public List<Course> getAllTeacherCourse(Map map) {
+        return courseDao.getAllTeacherCourse(map);
     }
 
     public boolean choeseCourse(Map map) throws Exception{
@@ -27,8 +32,32 @@ public class CourseServiceImpl implements CourseService {
     }
 
     public boolean unchoeseCourse(Map map) throws Exception {
-        Integer csId = (Integer) map.get("csId");
-        if(courseDao.choseCourse(map)>0&&courseDao.deleteCourseStudent(csId)>0){
+        if(courseDao.unchoseCourse(map)>0&&courseDao.deleteCourseStudent(map)>0){
+            return true;
+        }
+        return false;
+    }
+
+    public boolean addCourse(Course course) {
+        if(courseDao.addCourse(course)>0) {
+            Map map = new HashMap();
+            map.put("tName",course.getcTeacher());
+            map.put("cId",course.getcId());
+            courseDao.addCourseTeacher(map);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean deleteCourse(int cId){
+        if (courseDao.deleteCourse(cId) > 0 && courseDao.deleteCourseForStudent(cId) != -1) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean deleteCourseBatch(int[] cId) {
+        if(courseDao.deleteCourseBatch(cId)>0&&courseDao.deleteCourseForStudentBatch(cId)!= -1){
             return true;
         }
         return false;

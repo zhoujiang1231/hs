@@ -2,6 +2,7 @@ package com.hs.entity;
 
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -20,7 +21,7 @@ public class Student implements Serializable {
     private String stuDepart;
     private String stuIdcard;
     private Date creatTime;
-    private List<Course> lc;
+    private List<Course> lc = new ArrayList<Course>();
 
     public Student() {
     }

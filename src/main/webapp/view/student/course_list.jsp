@@ -30,7 +30,6 @@
                     return;
                 }
                 if($("#"+cId).prop("checked")==true){
-                    cnumStr=1;
                     //修改课程信息-插入选课记录;
                     $.ajax({
                         url:'${pageContext.request.contextPath}/course/choseCourse',
@@ -51,12 +50,14 @@
                     })
                 }
                 else{
-                    cnumStr=-1;
                     //修改课程信息-删除选课记录;
                     $.ajax({
-                        url:'${pageContext.request.contextPath}/course/choseCourse?cnum='+cnumStr,
+                        url:'${pageContext.request.contextPath}/course/unchoeseCourse?cnum='+cnumStr,
                         type:'get',
                         dataType:'json',
+                        data:{
+                            cId:cId
+                        },
                         success:function (data) {
                             if(data.result=="0"){
                                 alert("你已成功取消该课程");

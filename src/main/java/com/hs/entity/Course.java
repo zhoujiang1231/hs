@@ -15,6 +15,7 @@ public class Course implements Serializable {
     private  float cMark;
     private int cTotal;
     private int cChosed;
+
     public Course() {
     }
 

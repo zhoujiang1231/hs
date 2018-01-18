@@ -37,11 +37,18 @@ public interface TeacherDao {
     public List<Teacher> getAllTeacher(String tName);
 
     /**
-     * 删除老师
+     * 删除教师
      * @param teacher
      * @return
      */
     public int deleteTeacher(Teacher teacher);
+
+    /**
+     * 删除教师对应的课程
+     * @param teacher
+     * @return
+     */
+    public int deleteCourseStudent(Teacher teacher);
 
     /**
      * 重置密码

@@ -25,7 +25,17 @@
     <delete id="deleteTeacher" parameterType="Teacher">
         DELETE FROM teacher where tId=#{tId}
     </delete>
-
+    <!--删除教师帐号之后必须做的动作
+        1删除该课程的选课记录
+        2删除教师的课程-->
+    <!--1删除该课程的选课记录-->
+    <delete id="deleteCourseStudent" parameterType="Teacher">
+        DELETE FROM course_student WHERE cId IN (SELECT cId FROM course_teacher WHERE tId=#{tId})
+    </delete>
+    <!--2删除教师的课程-->
+    <delete id="deleteCourseTeacher" parameterType="java.lang.Integer">
+        DELETE FROM course_teacher WHERE tId = #{tId}
+    </delete>
     <update id="updateTeacherPswAll" >
         UPDATE teacher SET tPassword=888888 WHERE tId IN
         <foreach collection="array" item="tId" index="index"

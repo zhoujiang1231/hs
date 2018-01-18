@@ -80,13 +80,13 @@
 				<dl class="system_log">
 					<dt>
 						<img class="icon1" src="../../img/coin03_1.png" /><img class="icon2"
-						src="../../img/coin04_1.png" />选课管理<img class="icon3"
+						src="../../img/coin04_1.png" />课程管理<img class="icon3"
 						src="../../img/coin19.png" /><img class="icon4"
 						src="../../img/coin20.png" />
 					</dt>
 					<dd>
 						<img class="coin11" src="../../img/coin111.png" /><img class="coin22"
-						src="../../img/coin222.png" /><a href="${pageContext.request.contextPath}/view/user/course_list.jsp" target="main"
+						src="../../img/coin222.png" /><a href="${pageContext.request.contextPath}/view/course/course_list.jsp" target="main"
 						class="cks">课程管理</a><img class="icon5" src="../../img/coin21.png" />
 					</dd>
 				</dl>

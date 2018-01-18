@@ -86,9 +86,9 @@
                     url:'${pageContext.request.contextPath}/teacher/getAllTeacher',
                     dataType:'text',
                     type:'post',
-                    /*async:false,*/
                     data:{pageNum:pageNum,
-                        tName:tName},
+                        tName:tName,
+                        pageSize:"10"},
                     success:function(data){
                         $("#pages").show();
                         $("#currentPage").text("第      ${teacher_page.pageNum} 页");
@@ -157,13 +157,13 @@
                     </table>
                     </div>
                 <div id="pages" hidden="hidden">
-                    <span id="currentPage">第      ${teacher_page.pageNum} 页</span>
-          	        	<a id="indexPage" href="javaScript:initList(${teacher_page.firstPage})">首页</a>
-        	        	<a id="prePage" href="javaScript:initList(${teacher_page.prePage})">上一页</a>
+                    <span id="currentPage"></span>
+          	        	<a id="indexPage" >首页</a>
+        	        	<a id="prePage" >上一页</a>
                     	<%--<a id="currentPage" href="javaScript:initList(${teacher_page.pageNum})"  class="current_page" ></a>--%>
-                    <a id="lastPage" href="javaScript:initList(${teacher_page.lastPage})">尾页</a>
-        	        	<a id="nextPage" href="javaScript:initList(${teacher_page.nextPage})">下一页</a>
-                    <span id="totalPage">共       ${teacher_page.total} 条记录</span>
+                    <a id="lastPage">尾页</a>
+        	        	<a id="nextPage">下一页</a>
+                    <span id="totalPage"></span>
             	</div>
             </form>
         </div>

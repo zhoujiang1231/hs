@@ -5,8 +5,8 @@
 
     <resultMap id="studentList" type="Student">
         <id property="stuId" column="stuId"></id>
-        <collection property="lc" select="getStudentCourse" column="stuId">
-            <id column="csId" property="cdId"></id>
+        <collection property="lc" select="getStudentCourse" column="stuId" javaType="Course">
+            <id column="csId" property="csId"></id>
         </collection>
     </resultMap>
 
@@ -14,8 +14,8 @@
         SELECT * FROM student WHERE stuNo=#{stuNo} and stuPassword = #{stuPassword}
     </select>
 
-    <select id="getStudentCourse" resultType="Course" parameterType="stuId">
-        SELECT * FROM course_student WHERE stuId = #{stuId}
+    <select id="getStudentCourse" resultType="Course" parameterType="java.lang.Integer">
+        SELECT c.* FROM course c LEFT JOIN course_student cs ON c.cId = cs.cId LEFT JOIN student s on cs.stuId = s.stuId WHERE s.stuId = #{stuId}
     </select>
 
     <update id="updateStudentPsw" parameterType="Student">
@@ -63,8 +63,13 @@
         )
     </insert>
 
+    <!--删除学生帐号时同时删除选课记录-->
     <delete id="deleteStudent" parameterType="Student">
         DELETE FROM student where stuId=#{stuId}
+    </delete>
+
+    <delete id="deleteStudentCourse" parameterType="Student">
+        DELETE FROM course_student where stuId=#{stuId}
     </delete>
 
     <select id="checkStudentNameUnique" parameterType="java.lang.String" resultType="Student">

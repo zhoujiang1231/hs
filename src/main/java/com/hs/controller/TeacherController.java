@@ -28,18 +28,30 @@ public class TeacherController {
 
     @RequestMapping(value = "/getAllTeacher")
     @ResponseBody
-    public String getAllTeacher(@RequestParam String pageNum, @RequestParam String tName, HttpServletRequest request) {
+    public String getAllTeacher(@RequestParam String pageNum,@RequestParam String pageSize, @RequestParam String tName, HttpServletRequest request) {
         if("".equals(pageNum)||pageNum== null){
             pageNum="1";
         }
-        PageHelper.startPage(Integer.parseInt(pageNum), 10,true);
-        List<Teacher> lt = teacherService.getAllTeacher(tName);
-        PageInfo<Teacher> pt = new PageInfo<Teacher>(lt);
-        request.getSession().setAttribute("teacher_page",pt);
-        if(pt.getTotal()!=0){
-            return ResponseData.buildList(lt);
+        if("".equals(pageSize)||pageSize== null){
+            pageSize="10";
         }
-        return ResponseData.error("没有教师");
+        if(!"-1".equals(pageSize)) {
+            PageHelper.startPage(Integer.parseInt(pageNum), Integer.parseInt(pageSize), true);
+            List<Teacher> lt = teacherService.getAllTeacher(tName);
+            PageInfo<Teacher> pt = new PageInfo<Teacher>(lt);
+            request.getSession().setAttribute("teacher_page", pt);
+            if (pt.getTotal() != 0) {
+                return ResponseData.buildList(lt);
+            }
+            return ResponseData.error("没有教师");
+        }
+        else{
+            List<Teacher> lt = teacherService.getAllTeacher("");
+            if (lt!=null&&lt.size()>0&&lt.get(0).gettId()!=-1) {
+                return ResponseData.buildList(lt);
+            }
+            return ResponseData.error("没有教师");
+        }
     }
     @RequestMapping(value = "/deleteTeacher")
     @ResponseBody
@@ -47,7 +59,7 @@ public class TeacherController {
         if(teacherService.deleteTeacher(new Teacher(tId))){
             return ResponseData.success("删除成功");
         }
-        return ResponseData.error("没有教师");
+        return ResponseData.error("删除失败");
     }
 
 

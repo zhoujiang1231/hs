@@ -56,7 +56,7 @@ public class StudentServiceImpl implements StudentService {
     }
 
     public boolean deleteStudent(Student student) {
-        if(studentDao.deleteStudent(student)>0){
+        if(studentDao.deleteStudent(student)>0&&studentDao.deleteStudentCourse(student)!=-1){
             return true;
         }
         return false;
