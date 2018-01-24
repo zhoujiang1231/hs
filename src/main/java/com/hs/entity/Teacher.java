@@ -2,16 +2,19 @@ package com.hs.entity;
 
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by zj on 2018年1年10日.
  */
 public class Teacher implements Serializable{
-    int tId;
-    String	tName;
-    String	tPassword;
-    Date creatTime;
+    private int tId;
+    private  String	tName;
+    private String	tPassword;
+    private Date creatTime;
+    private List<Course> lc = new ArrayList<Course>();
 
     public Teacher() {
     }
@@ -60,5 +63,13 @@ public class Teacher implements Serializable{
 
     public void setCreatTime(Date creatTime) {
         this.creatTime = creatTime;
+    }
+
+    public List<Course> getLc() {
+        return lc;
+    }
+
+    public void setLc(List<Course> lc) {
+        this.lc = lc;
     }
 }

@@ -24,63 +24,12 @@
        		}
 		</style>
         <script language="javascript" type="text/javascript">
-            function chooseCourse(cId,cNum){
-                if($("#"+cId).prop("checked")==true){
-                    if(cNum <=0){
-                        alert("该课程人数已满");
-                        $("#"+cId).prop("checked",false);
-                        return;
-                    }
-                    //修改课程信息-插入选课记录;
-                    $.ajax({
-                        url:'${pageContext.request.contextPath}/course/choseCourse',
-                        type:'post',
-                        dataType:'json',
-                        async:false,
-                        data:{
-                            cId:cId
-                        },
-                        success:function (data) {
-                            if(data.result=="0"){
-                                alert("你已成功选择该课程");
-                                window.location.reload();
-                            }
-                            else{
-                                alert(data.msg);
-                                $("#"+cId).prop("checked",false);
-                            }
-                        }
-                    })
-                }
-                else{
-                    //修改课程信息-删除选课记录;
-                    $.ajax({
-                        url:'${pageContext.request.contextPath}/course/unchoeseCourse',
-                        type:'post',
-                        dataType:'json',
-                        async:false,
-                        data:{
-                            cId:cId
-                        },
-                        success:function (data) {
-                            if(data.result=="0"){
-                                alert("你已成功取消该课程");
-                                window.location.reload();
-                            }
-                            else{
-                                alert(data.msg);
-                                $("#"+cId).prop("checked",true);
-                            }
-                        }
-                    })
-                }
-            }
             function initList(pageNum) {
                 if(pageNum==""||pageNum==null){
                     pageNum=1;
                 }
                 $.ajax({
-                    url:'${pageContext.request.contextPath}/course/getAllCourse',
+                    url:'${pageContext.request.contextPath}/course/getAllStudentCourse',
                     dataType:'text',
                     type:'post',
                     async:false,
@@ -100,7 +49,7 @@
                         $("#tbody").empty();
                         $.each(list,function (i,course) {
                             var cNum = course.cTotal-course.cChosed;
-                            var htmlstr = "<tr ><td><input id='"+course.cId+"' type='checkbox'  value='"+course.cId+"' id ='coursecheckbox' name='coursecheckbox' onclick='javascript:chooseCourse("+course.cId+","+cNum+")' /></td><td>"+course.cId+"</td><td>"+course.cName+"</td>";
+                            var htmlstr = "<tr ><td>"+course.cId+"</td><td>"+course.cName+"</td>";
                             htmlstr = htmlstr +"<td>"+course.cMark+"</td><td>"+course.cHour+"</td><td>"+course.cTeacher+"</td>";
                             if(course.cType==0){
                                 htmlstr = htmlstr+"<td>必修课</td>";
@@ -108,13 +57,7 @@
                             if(course.cType==1){
                                 htmlstr = htmlstr+"<td>选修课</td>";
                             }
-                            htmlstr = htmlstr+"<td>"+course.cChosed+"/"+course.cTotal+"</td></tr>"
                             $("#tbody").append(htmlstr);
-                            <c:forEach items="${student_course_list}" var="item">
-                            if(${item.cId}==course.cId){
-                                $("#"+${item.cId}).prop("checked",true);
-                            }
-                            </c:forEach>
                         })
                     }
                 })
@@ -141,17 +84,12 @@
                     <table class="table table-striped table-bordered text-center table-condensed table-hover" id="updatePsw">
                     <thead>
                         <tr>
-                        	<div>
-	                            <th class="th_select_all">
-	                            </th>
-                            </div>
                             <th>课程编号</th>
                             <th>课程名</th>
                             <th>学分</th>
                             <th>学时</th>
                             <th>任课教师</th>
                             <th>类型</th>
-                            <th>已选人数/总人数</th>
                         </tr>
                      </thead> 
                      <tbody id="tbody">

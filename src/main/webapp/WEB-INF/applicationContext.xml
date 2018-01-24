@@ -15,7 +15,7 @@
 
     <context:component-scan base-package="com.hs"></context:component-scan>
 
-    <context:property-placeholder location="classpath:mysql.prop"></context:property-placeholder>
+    <context:property-placeholder location="classpath:/conf/redis.properties"></context:property-placeholder>
 
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
         <!--<property name="jdbcUrl" value="{url}"></property>
@@ -32,6 +32,24 @@
         <property name="maxPoolSize" value="30"></property>
         <property name="minPoolSize" value="5"></property>
     </bean>
+
+    <!--redis 连接池配置 -->
+    <bean scope="singleton" id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <property name="maxTotal" value="${redis.pool.maxTotal}"/>
+        <property name="maxIdle" value="${redis.pool.maxIdle}"/>
+        <property name="minIdle" value="${redis.pool.minIdle}"/>
+        <property name="maxWaitMillis" value="${redis.pool.maxWaitMillis}"/>
+    </bean>
+    <bean scope="singleton" id="jedisPool" class="redis.clients.jedis.JedisPool">
+        <constructor-arg index="0" ref="jedisPoolConfig"/>
+        <constructor-arg index="1" value="${redis.host}"/>
+        <constructor-arg index="2" value="${redis.port}"/>
+        <constructor-arg index="3" value="${redis.timeout}"/>
+    </bean>
+    <bean id="redisService" class="com.hs.service.impl.RedisServiceImp">
+        <property name="jedisPool" ref="jedisPool"/>
+    </bean>
+
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"></property>
         <property name="mapperLocations" value="classpath:mappers/*.xml"></property>
@@ -52,7 +70,7 @@
         </tx:attributes>
     </tx:advice>
     <aop:config>
-        <aop:pointcut id="Pointcut" expression="execution(* com.hs.service.*.*(..))"></aop:pointcut>
+        <aop:pointcut id="Pointcut" expression="execution(* com.hs.service.*.*(..)) and !execution(* com.hs.service.*.get(..))"></aop:pointcut>
         <aop:advisor advice-ref="txAdvice" pointcut-ref="Pointcut"></aop:advisor>
     </aop:config>
 </beans>

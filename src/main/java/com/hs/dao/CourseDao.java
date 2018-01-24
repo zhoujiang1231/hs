@@ -32,4 +32,6 @@ public interface CourseDao {
     public int deleteCourseForStudentBatch(int[] cId);
 
     public int addCourseTeacher(Map map);
+
+    public List<Course> getAllStudentCourse(int stuId);
 }

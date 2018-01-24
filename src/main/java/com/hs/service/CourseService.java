@@ -13,13 +13,16 @@ public interface CourseService {
 
     public List<Course> getAllTeacherCourse(Map map);
 
-    public boolean choeseCourse(Map map) throws Exception;
+    public List<Course> getAllStudentCourse(Integer sutId);
 
-    public boolean unchoeseCourse(Map map) throws Exception;
+    public boolean choeseCourse(Map map);
+
+    public boolean unchoeseCourse(Map map);
 
     public boolean addCourse(Course course);
 
     public boolean deleteCourse(int cId);
 
     public boolean deleteCourseBatch(int[] cId);
+    public List<Course> getAllStudentCourse(int stuId);
 }

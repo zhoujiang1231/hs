@@ -23,6 +23,29 @@
         }
     </style>
     <script language="javascript" type="text/javascript">
+
+        //删除
+        function deleteCourse(cId) {
+            var b = window.confirm("确定要删除该课程吗？");
+            if(b){
+                $.ajax({
+                    url:'${pageContext.request.contextPath}/course/deleteCourse',
+                    type:'post',
+                    dataType:'json',
+                    data:{
+                        cId:cId
+                    },
+                    success:function (data) {
+                        $(".operate_info").text(data.msg);
+                        $(".operate_info").show();
+                        if(data.result=="0"){
+                            $("#"+cId).remove();
+                        }
+                    }
+                })
+            }
+        }
+
         //初始化数据
         function initList(pageNum) {
             var cName = $("#cName").val();
@@ -51,7 +74,7 @@
                     var list = responseData.list;
                     $("#tbody").empty();
                     $.each(list,function (i,course) {
-                        var htmlstr = "<tr id='"+course.cId+"' ><td><input type='checkbox' value='"+course.cId+"' id ='coursecheckbox' name='coursecheckbox' /></td><td>"+course.cNo+"</td><td>"+course.cName+"</td>";
+                        var htmlstr = "<tr id='"+course.cId+"' ><td>"+course.cId+"</td><td>"+course.cName+"</td>";
                         htmlstr = htmlstr +"<td>"+course.cMark+"</td><td>"+course.cHour+"</td><td>"+course.cTeacher+"</td>";
                         if(course.cType==0){
                             htmlstr = htmlstr+"<td>必修课</td>";
@@ -59,7 +82,13 @@
                         if(course.cType==1){
                             htmlstr = htmlstr+"<td>选修课</td>";
                         }
-                        htmlstr = htmlstr+"<td>"+course.cChosed+"/"+course.cTotal+"</td></tr>"
+                        htmlstr = htmlstr+"<td>"+course.cChosed+"/"+course.cTotal+"</td>"
+                        if(course.cChosed<=0){
+                            htmlstr = htmlstr+"<td><a href='javascript:void(0);' onclick='deleteCourse("+course.cId+")'><span style='color: blue'>删除</span></a></td></tr>"
+                        }
+                        else{
+                            htmlstr = htmlstr+"<td>删除</td></tr>";
+                        }
                         $("#tbody").append(htmlstr);
                     })
                 }
@@ -105,11 +134,6 @@
             <table class="table table-striped table-bordered text-center table-condensed table-hover" id="updatePsw">
                 <thead>
                 <tr>
-                    <div>
-                        <th class="th_select_all">
-                            <input style="margin-top:-5px;height:12px" type="checkbox" id="selectAllBtn" />全选
-                        </th>
-                    </div>
                     <th>课程编号</th>
                     <th>课程名</th>
                     <th>学分</th>

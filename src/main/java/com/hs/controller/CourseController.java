@@ -60,6 +60,8 @@ public class CourseController {
        map.put("cId",cId);
        try {
            if (courseService.choeseCourse(map)) {
+               List<Course> lc= courseService.getAllStudentCourse(stuId);
+               request.getSession().setAttribute("student_course_list",lc);
                return ResponseData.success();
            }
        }catch (Exception e){
@@ -77,6 +79,8 @@ public class CourseController {
         map.put("cId",cId);
         try {
             if (courseService.unchoeseCourse(map)) {
+                List<Course> lc= courseService.getAllStudentCourse(stuId);
+                request.getSession().setAttribute("student_course_list",lc);
                 return ResponseData.success();
             }
         }catch (Exception e){
@@ -87,7 +91,7 @@ public class CourseController {
 
     @RequestMapping(value = "/addCourse")
     @ResponseBody
-    public String addCourse(Course course){
+    public String addCourse(Course course,HttpServletRequest request){
         if(course.getcName()==null || course.getcName()==""){
             return ResponseData.error("课程名为空");
         }
@@ -97,8 +101,14 @@ public class CourseController {
         if(course.getcHour()<=0){
             return ResponseData.error("请填写正确的学时");
         }
-        if(course.getcTeacher()==null || course.getcTeacher()==""){
-            return ResponseData.error("请选择任课教师");
+        if(course.getcTeacher()==null || "".equals(course.getcTeacher())){
+            String tName = (String) request.getSession().getAttribute("tName");
+            if(tName==null||"".equals(tName)){
+                return ResponseData.error("请选择任课教师");
+            }
+            else {
+                course.setcTeacher(tName);
+            }
         }
         if(course.getcType()==-1){
             return ResponseData.error("请选择类型");
@@ -144,6 +154,14 @@ public class CourseController {
         }
     }
 
+    /**
+     * 获取老师所要教学的课程
+     * @param pageNum
+     * @param cName
+     * @param cType
+     * @param request
+     * @return
+     */
     @RequestMapping(value = "/getAllTeacherCourse")
     @ResponseBody
     public String getAllTeacherCourse(@RequestParam String pageNum,String cName,String cType,HttpServletRequest request) {
@@ -166,4 +184,28 @@ public class CourseController {
         }
         return ResponseData.error("没有课程");
     }
+
+    /**
+     * 获取学生选择的课程
+     * @param pageNum
+     * @param request
+     * @return
+     */
+    @RequestMapping(value = "/getAllStudentCourse")
+    @ResponseBody
+    public String getAllStudentCourse(@RequestParam String pageNum,HttpServletRequest request) {
+        if("".equals(pageNum)||pageNum== null){
+            pageNum="1";
+        }
+        Integer stuId = (Integer) request.getSession().getAttribute("stuId");
+        PageHelper.startPage(Integer.parseInt(pageNum), 10,true);
+        List<Course> lc = courseService.getAllStudentCourse(stuId);
+        PageInfo<Course> ps = new PageInfo<Course>(lc);
+        request.getSession().setAttribute("course_page",ps);
+        if(ps.getTotal()!=0){
+            return ResponseData.buildList(lc);
+        }
+        return ResponseData.error("没有课程");
+    }
+
 }

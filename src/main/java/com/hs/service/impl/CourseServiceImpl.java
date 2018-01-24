@@ -24,15 +24,19 @@ public class CourseServiceImpl implements CourseService {
         return courseDao.getAllTeacherCourse(map);
     }
 
-    public boolean choeseCourse(Map map) throws Exception{
+    public List<Course> getAllStudentCourse(Integer stuId) {
+        return courseDao.getAllStudentCourse(stuId);
+    }
+
+    public boolean choeseCourse(Map map){
         if(courseDao.choseCourse(map)>0&&courseDao.addCourseStudent(map)>0){
             return true;
         }
         return false;
     }
 
-    public boolean unchoeseCourse(Map map) throws Exception {
-        if(courseDao.unchoseCourse(map)>0&&courseDao.deleteCourseStudent(map)>0){
+    public boolean unchoeseCourse(Map map){
+        if(courseDao.deleteCourseStudent(map)!=0&&courseDao.unchoseCourse(map)>0){
             return true;
         }
         return false;
@@ -50,16 +54,22 @@ public class CourseServiceImpl implements CourseService {
     }
 
     public boolean deleteCourse(int cId){
-        if (courseDao.deleteCourse(cId) > 0 && courseDao.deleteCourseForStudent(cId) != -1) {
+        if (courseDao.deleteCourse(cId) > 0){
+            courseDao.deleteCourseForStudent(cId);
             return true;
         }
         return false;
     }
 
     public boolean deleteCourseBatch(int[] cId) {
-        if(courseDao.deleteCourseBatch(cId)>0&&courseDao.deleteCourseForStudentBatch(cId)!= -1){
+        if(courseDao.deleteCourseBatch(cId)>0){
+            courseDao.deleteCourseForStudentBatch(cId);
             return true;
         }
         return false;
+    }
+
+    public List<Course> getAllStudentCourse(int stuId) {
+        return courseDao.getAllStudentCourse(stuId);
     }
 }

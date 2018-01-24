@@ -140,7 +140,12 @@
                             $(".save_success").fadeIn(100);
                             $(".save_success").fadeOut(2500);
 	           				if(data.result=="0"){
+	           				    <c:if test="${user_type==0}">
 	    						setTimeout("window.location.href ='course_list.jsp'",2500);
+                                </c:if>
+								<c:if test="${user_type==1}">
+                                setTimeout("window.location.href ='../teacher/course_list.jsp'",2500);
+								</c:if>
 	       					}
 			   			}
 	        		 })
@@ -202,6 +207,7 @@
 							 <input type="text" class="form-control" id="cMark" name="cMark" value=""/>
 						 </div>
 					 </div>
+					 <c:if test="${user_type==0}">
 					 <div class="form-group">
 						 <label class="col-xs-4 col-xs-offset-1 control-label" >任课教师：</label>
 						 <div class="col-xs-3">
@@ -209,6 +215,7 @@
 							 </select>
 						 </div>
 					 </div>
+					 </c:if>
 					 <div class="form-group">
 						 <label class="col-xs-4 col-xs-offset-1 control-label" >课程最大人数：</label>
 						 <div class="col-xs-3">

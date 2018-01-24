@@ -11,16 +11,18 @@
         <if test="cType!=10 and cType!=-1">
           and   cType = #{cType}
         </if>
+        ORDER BY cId
     </select>
 
     <select id="getAllTeacherCourse" resultType="Course" parameterType="map">
-        SELECT * FROM course WHERE cId in(SELECT cId FROM course_teacher WHERE tId = #{tId})
+        SELECT * FROM course c WHERE cId in(SELECT cId FROM course_teacher WHERE tName = (SELECT tName FROM teacher WHERE tId=#{tId}))
         <if test='cName!="" and cName!=null '>
-            and   cName like '%${cName}%'
+            and   c.cName like '%${cName}%'
         </if>
         <if test="cType!=10 and cType!=-1">
-            and   cType = #{cType}
+            and   c.cType = #{cType}
         </if>
+        ORDER BY cId
     </select>
 
     <!--学生操作部分-->
@@ -85,4 +87,8 @@
         </foreach>
     </delete>
 
+    <select id="getAllStudentCourse" parameterType="java.lang.Integer" resultType="Course">
+        select * from course where cId in(SELECT  cId FROM course_student WHERE stuId = #{stuId})
+        ORDER BY cId
+    </select>
 </mapper>

@@ -59,6 +59,7 @@ public class UserController {
                     session.setAttribute("tPassword", teacher.gettPassword());
                     session.setAttribute("user_type", "1");
                     session.setAttribute("creatTime", teacher.getCreatTime());
+                    session.setAttribute("teacher_course_list",teacher.getLc());
                     return ResponseData.buildData(teacher);
                 } else {
                     return ResponseData.error("用户名或密码错误");
@@ -80,6 +81,7 @@ public class UserController {
                     session.setAttribute("stuSex", student.getStuSex());
                     session.setAttribute("user_type", "2");
                     session.setAttribute("creatTime", student.getCreatTime());
+                    session.setAttribute("student_course_list",student.getLc());
                     return ResponseData.buildData(student);
                 } else {
                     return ResponseData.error("用户名或密码错误");

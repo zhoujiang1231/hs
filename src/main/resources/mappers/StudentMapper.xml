@@ -5,12 +5,12 @@
 
     <resultMap id="studentList" type="Student">
         <id property="stuId" column="stuId"></id>
-        <collection property="lc" select="getStudentCourse" column="stuId" javaType="Course">
-            <id column="csId" property="csId"></id>
+        <collection property="lc" select="getStudentCourse" column="stuId">
+            <id column="cId" property="cId"></id>
         </collection>
     </resultMap>
 
-    <select id="getLoginStudent" resultType="Student" parameterType="Student">
+    <select id="getLoginStudent" resultMap="studentList" parameterType="Student">
         SELECT * FROM student WHERE stuNo=#{stuNo} and stuPassword = #{stuPassword}
     </select>
 

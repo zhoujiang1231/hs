@@ -7,7 +7,6 @@ import java.io.Serializable;
  */
 public class Course implements Serializable {
     private int cId;
-    private  String cNo;
     private String cName;
     private  String cTeacher;
     private  int cType;
@@ -19,9 +18,8 @@ public class Course implements Serializable {
     public Course() {
     }
 
-    public Course(int cId, String cNo, String cName, String cTeacher, int cType, int cHour, float cMark) {
+    public Course(int cId, String cName, String cTeacher, int cType, int cHour, float cMark) {
         this.cId = cId;
-        this.cNo = cNo;
         this.cName = cName;
         this.cTeacher = cTeacher;
         this.cType = cType;
@@ -35,14 +33,6 @@ public class Course implements Serializable {
 
     public void setcId(int cId) {
         this.cId = cId;
-    }
-
-    public String getcNo() {
-        return cNo;
-    }
-
-    public void setcNo(String cNo) {
-        this.cNo = cNo;
     }
 
     public String getcName() {

@@ -108,7 +108,7 @@
                     var list = responseData.list;
                     $("#tbody").empty();
                     $.each(list,function (i,course) {
-                        var htmlstr = "<tr id='"+course.cId+"' ><td><input type='checkbox' value='"+course.cId+"' id ='coursecheckbox' name='coursecheckbox' /></td><td>"+course.cNo+"</td><td>"+course.cName+"</td>";
+                        var htmlstr = "<tr id='"+course.cId+"' ><td><input type='checkbox' value='"+course.cId+"' id ='coursecheckbox' name='coursecheckbox' /></td><td>"+course.cId+"</td><td>"+course.cName+"</td>";
                         htmlstr = htmlstr +"<td>"+course.cMark+"</td><td>"+course.cHour+"</td><td>"+course.cTeacher+"</td>";
                         if(course.cType==0){
                             htmlstr = htmlstr+"<td>必修课</td>";
