@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hs.dao.StudentDao">
+
+    <resultMap id="studentList" type="Student">
+        <id property="stuId" column="stuId"></id>
+        <collection property="lc" select="getStudentCourse" column="stuId">
+            <id column="cId" property="cId"></id>
+        </collection>
+    </resultMap>
+
+    <select id="getLoginStudent" resultMap="studentList" parameterType="Student">
+        SELECT * FROM student WHERE stuNo=#{stuNo} and stuPassword = #{stuPassword}
+    </select>
+
+    <select id="getStudentCourse" resultType="Course" parameterType="java.lang.Integer">
+        SELECT c.* FROM course c LEFT JOIN course_student cs ON c.cId = cs.cId LEFT JOIN student s on cs.stuId = s.stuId WHERE s.stuId = #{stuId}
+    </select>
+
+    <update id="updateStudentPsw" parameterType="Student">
+        UPDATE student SET stuPassword=#{stuPassword} WHERE stuId = #{stuId}
+    </update>
+
+    <update id="updateStudent" parameterType="Student">
+        UPDATE student SET stuEmail = #{stuEmail},stuTel=#{stuTel},stuAddress=#{stuAddress},stuSex=#{stuSex} WHERE stuId = #{stuId}
+    </update>
+
+    <insert id="addStudent" parameterType="Student" useGeneratedKeys="true">
+        INSERT INTO student  (stuName,stuNo,stuSex,creatTime
+        <if test='stuDepart!=null and stuDepart!=""'>
+            ,stuDepart
+        </if>
+        <if test='stuAddress!=null and stuAddress!=""'>
+            ,stuAddress
+        </if>
+        <if test='stuTel!=null and stuTel!=""'>
+            ,stuTel
+        </if>
+        <if test='stuEmail!=null and stuEmail!=""'>
+            ,stuEmail
+        </if>
+        <if test='stuIdcard!=null and stuIdcard!=""'>
+            ,stuIdcard
+        </if>
+        )
+        VALUES (#{stuName},#{stuNo},#{stuSex},now()
+        <if test='stuDepart!=null and stuDepart!=""'>
+            ,#{stuDepart}
+        </if>
+        <if test='stuAddress!=null and stuAddress!=""'>
+            ,#{stuAddress}
+        </if>
+        <if test='stuTel!=null and stuTel!=""'>
+            ,#{stuTel}
+        </if>
+        <if test='stuEmail!=null and stuEmail!=""'>
+            ,#{stuEmail}
+        </if>
+        <if test='stuIdcard!=null and stuIdcard!=""'>
+            ,#{stuIdcard}
+        </if>
+        )
+    </insert>
+
+    <!--删除学生帐号时同时删除选课记录-->
+    <delete id="deleteStudent" parameterType="Student">
+        DELETE FROM student where stuId=#{stuId}
+    </delete>
+
+    <delete id="deleteStudentCourse" parameterType="Student">
+        DELETE FROM course_student where stuId=#{stuId}
+    </delete>
+
+    <select id="checkStudentNameUnique" parameterType="java.lang.String" resultType="Student">
+        SELECT * FROM student WHERE stuName=#{stuName}
+    </select>
+
+    <select id="getAllStudent" parameterType="Student" resultType="Student">
+        SELECT * FROM student WHERE 1=1
+        <if test='stuDepart!="" and stuDepart!=null'>
+             and stuDepart =#{stuDepart}
+        </if>
+        <if test='stuName!="" and stuName!=null'>
+            and stuName =#{stuName}
+        </if>
+        <if test='stuSex!=10'>
+            and stuSex=#{stuSex}
+        </if>
+    </select>
+
+    <select id="checkSno" parameterType="java.lang.String" resultType="Student">
+        SELECT * FROM student WHERE stuNo=#{stuNo}
+    </select>
+
+    <update id="updateStudentPswAll" >
+        UPDATE student SET stuPassword=888888 WHERE stuId IN
+        <foreach collection="array" item="stuId" index="index"
+                 open="(" close=")" separator=",">
+            #{stuId}
+        </foreach>
+    </update>
+
+</mapper>
