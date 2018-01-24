@@ -63,15 +63,16 @@
                     cType:cType
                 },
                 success:function(data){
-                    //$("#pages").show();
-                    $("#currentPage").text("第      ${course_page.pageNum} 页");
-                    $("#indexPage").prop("href","javaScript:initList(${course_page.firstPage})");
-                    $("#prePage").prop("href","javaScript:initList(${course_page.prePage})");
-                    $("#nextPage").prop("href","javaScript:initList(${course_page.nextPage})");
-                    $("#lastPage").prop("href","javaScript:initList(${course_page.lastPage})");
-                    $("#totalPage").text("共       ${course_page.total} 条记录");
                     var responseData = jQuery.parseJSON(data);
                     var list = responseData.list;
+                    var page = responseData.page;
+                    $("#pages").show();
+                    $("#currentPage").text("第      "+page.pageNum+" 页");
+                    $("#indexPage").prop("href","javaScript:initList("+page.firstPage+")");
+                    $("#prePage").prop("href","javaScript:initList("+page.prePage+")");
+                    $("#nextPage").prop("href","javaScript:initList("+page.nextPage+")");
+                    $("#lastPage").prop("href","javaScript:initList("+page.lastPage+")");
+                    $("#totalPage").text("共       "+page.total+" 条记录");
                     $("#tbody").empty();
                     $.each(list,function (i,course) {
                         var htmlstr = "<tr id='"+course.cId+"' ><td>"+course.cId+"</td><td>"+course.cName+"</td>";
@@ -149,13 +150,13 @@
             </table>
         </div>
         <div id="pages" hidden="hidden">
-            <span id="currentPage">第      ${course_page.pageNum} 页</span>
-            <a id="indexPage" href="javaScript:initList(${course_page.firstPage})">首页</a>
-            <a id="prePage" href="javaScript:initList(${course_page.prePage})">上一页</a>
-            <%--<a id="currentPage" href="javaScript:initList(${course_page.pageNum})"  class="current_page" ></a>--%>
-            <a id="lastPage" href="javaScript:initList(${course_page.lastPage})">尾页</a>
-            <a id="nextPage" href="javaScript:initList(${course_page.nextPage})">下一页</a>
-            <span id="totalPage">共       ${course_page.total} 条记录</span>
+            <span id="currentPage">第      ${page.pageNum} 页</span>
+            <a id="indexPage" href="javaScript:initList(${page.firstPage})">首页</a>
+            <a id="prePage" href="javaScript:initList(${page.prePage})">上一页</a>
+            <%--<a id="currentPage" href="javaScript:initList(${page.pageNum})"  class="current_page" ></a>--%>
+            <a id="lastPage" href="javaScript:initList(${page.lastPage})">尾页</a>
+            <a id="nextPage" href="javaScript:initList(${page.nextPage})">下一页</a>
+            <span id="totalPage">共       ${page.total} 条记录</span>
         </div>
     </form>
 </div>

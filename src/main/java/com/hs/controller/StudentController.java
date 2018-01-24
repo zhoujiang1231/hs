@@ -68,9 +68,8 @@ public class StudentController {
         PageHelper.startPage(Integer.parseInt(pageNum), 10,true);
         List<Student> ls = studentService.getAllStudent(student);
         PageInfo<Student> ps = new PageInfo<Student>(ls);
-        request.getSession().setAttribute("student_page",ps);
         if(ps.getTotal()!=0){
-            return ResponseData.buildList(ls);
+            return ResponseData.buildList(ls,ps);
         }
         return ResponseData.error("没有学生");
     }

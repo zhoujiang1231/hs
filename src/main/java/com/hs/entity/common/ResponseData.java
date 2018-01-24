@@ -16,7 +16,7 @@ public class ResponseData implements Serializable{
     private Object data;
     private String result;
     private String msg;
-    private PageInfo pageInfo;
+    private PageInfo page;
     private static ObjectMapper objectMapper = new ObjectMapper();
 
     public ResponseData() {
@@ -33,12 +33,12 @@ public class ResponseData implements Serializable{
         this.result = result;
         this.msg = msg;
     }
-    public ResponseData(List list, Object data, String result, String msg,PageInfo pageInfo) {
+    public ResponseData(List list, Object data, String result, String msg,PageInfo page) {
         this.list = list;
         this.data = data;
         this.result = result;
         this.msg = msg;
-        this.pageInfo = pageInfo;
+        this.page = page;
     }
 
     public List<Object> getList() {
@@ -73,12 +73,12 @@ public class ResponseData implements Serializable{
         this.msg = msg;
     }
 
-    public PageInfo getPageInfo() {
-        return pageInfo;
+    public PageInfo getPage() {
+        return page;
     }
 
-    public void setPageInfo(PageInfo pageInfo) {
-        this.pageInfo = pageInfo;
+    public void setPage(PageInfo page) {
+        this.page = page;
     }
 
     public static String success(){
@@ -96,8 +96,8 @@ public class ResponseData implements Serializable{
     public static String buildList(List list){
         return buildJsonStr(new ResponseData(list,null,"0","success"));
     }
-    public static String buildList(List list,PageInfo pageInfo){
-        return buildJsonStr(new ResponseData(list,null,"0","success",pageInfo));
+    public static String buildList(List list,PageInfo page){
+        return buildJsonStr(new ResponseData(list,null,"0","success",page));
     }
     public static String buildData(Object data){
         return buildJsonStr(new ResponseData(null,data,"0","success"));

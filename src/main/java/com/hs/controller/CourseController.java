@@ -44,9 +44,8 @@ public class CourseController {
         course.setcType(Integer.parseInt(cType));
         List<Course> lc = courseService.getAllCourse(course);
         PageInfo<Course> ps = new PageInfo<Course>(lc);
-        request.getSession().setAttribute("course_page",ps);
         if(ps.getTotal()!=0){
-            return ResponseData.buildList(lc);
+            return ResponseData.buildList(lc,ps);
         }
         return ResponseData.error("没有课程");
     }
@@ -178,9 +177,8 @@ public class CourseController {
         PageHelper.startPage(Integer.parseInt(pageNum), 10,true);
         List<Course> lc = courseService.getAllTeacherCourse(map);
         PageInfo<Course> ps = new PageInfo<Course>(lc);
-        request.getSession().setAttribute("course_page",ps);
         if(ps.getTotal()!=0){
-            return ResponseData.buildList(lc);
+            return ResponseData.buildList(lc,ps);
         }
         return ResponseData.error("没有课程");
     }
@@ -201,9 +199,8 @@ public class CourseController {
         PageHelper.startPage(Integer.parseInt(pageNum), 10,true);
         List<Course> lc = courseService.getAllStudentCourse(stuId);
         PageInfo<Course> ps = new PageInfo<Course>(lc);
-        request.getSession().setAttribute("course_page",ps);
         if(ps.getTotal()!=0){
-            return ResponseData.buildList(lc);
+            return ResponseData.buildList(lc,ps);
         }
         return ResponseData.error("没有课程");
     }

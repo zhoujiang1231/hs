@@ -67,14 +67,10 @@
                             $(".operate_info").fadeOut(3500);
                             if(data.result=="0"){
                                 $("#"+stuId).remove();
-                                initList(${student_page.pageNum});
+                                initList(${page.pageNum});
                             }
                         }
                     })
-                }else{
-                    $(".operate_info").text("已取消！")
-                    $(".operate_info").fadeIn(100);
-                    $(".operate_info").fadeOut(2500);
                 }
             }
             function initList(pageNum) {
@@ -94,15 +90,16 @@
                         stuDepart:stuDepart,
                         stuSex:stuSex},
                     success:function(data){
-                        $("#pages").show();
-                        $("#currentPage").text("第      ${student_page.pageNum} 页");
-                        $("#indexPage").prop("href","javaScript:initList(${student_page.firstPage})");
-                        $("#prePage").prop("href","javaScript:initList(${student_page.prePage})");
-                        $("#nextPage").prop("href","javaScript:initList(${student_page.nextPage})");
-                        $("#lastPage").prop("href","javaScript:initList(${student_page.lastPage})");
-                        $("#totalPage").text("共       ${student_page.total} 条记录");
                         var responseData = jQuery.parseJSON(data);
                         var list = responseData.list;
+                        var page = responseData.page;
+                        $("#pages").show();
+                        $("#currentPage").text("第      "+page.pageNum+" 页");
+                        $("#indexPage").prop("href","javaScript:initList("+page.firstPage+")");
+                        $("#prePage").prop("href","javaScript:initList("+page.prePage+")");
+                        $("#nextPage").prop("href","javaScript:initList("+page.nextPage+")");
+                        $("#lastPage").prop("href","javaScript:initList("+page.lastPage+")");
+                        $("#totalPage").text("共       "+page.total+" 条记录");
                         $("#tbody").empty();
                         $.each(list,function (i,student) {
                             var htmlstr = "<tr id='"+student.stuId+"'><td><input type='checkbox' value='"+student.stuId+"' id ='pswcheckbox' name='pswcheckbox' /></td><td>"+student.stuId+"</td><td>"+student.stuName+"</td><td>";
@@ -174,7 +171,7 @@
                             <th>Email</th>
                             <th>身份证</th>
                             <th>创建日期</th>
-                            <th style="width:160px">操作</th>
+                            <th style="width:80px">操作</th>
                         </tr> 
                      </thead> 
                      <tbody id="tbody">
@@ -185,7 +182,7 @@
                     <span id="currentPage"></span>
           	        	<a id="indexPage" >首页</a>
         	        	<a id="prePage" >上一页</a>
-                    	<%--<a id="currentPage" href="javaScript:initList(${student_page.pageNum})"  class="current_page" ></a>--%>
+                    	<%--<a id="currentPage" href="javaScript:initList(${page.pageNum})"  class="current_page" ></a>--%>
                     <a id="lastPage" >尾页</a>
         	        	<a id="nextPage" >下一页</a>
                     <span id="totalPage"></span>

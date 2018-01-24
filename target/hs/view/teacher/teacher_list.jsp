@@ -90,15 +90,16 @@
                         tName:tName,
                         pageSize:"10"},
                     success:function(data){
-                        $("#pages").show();
-                        $("#currentPage").text("第      ${teacher_page.pageNum} 页");
-                        $("#indexPage").prop("href","javaScript:initList(${teacher_page.firstPage})");
-                        $("#prePage").prop("href","javaScript:initList(${teacher_page.prePage})");
-                        $("#nextPage").prop("href","javaScript:initList(${teacher_page.nextPage})");
-                        $("#lastPage").prop("href","javaScript:initList(${teacher_page.lastPage})");
-                        $("#totalPage").text("共       ${teacher_page.total} 条记录");
                         var responseData = jQuery.parseJSON(data);
                         var list = responseData.list;
+                        var page = responseData.page;
+                        $("#pages").show();
+                        $("#currentPage").text("第      "+page.pageNum+" 页");
+                        $("#indexPage").prop("href","javaScript:initList("+page.firstPage+")");
+                        $("#prePage").prop("href","javaScript:initList("+page.prePage+")");
+                        $("#nextPage").prop("href","javaScript:initList("+page.nextPage+")");
+                        $("#lastPage").prop("href","javaScript:initList("+page.lastPage+")");
+                        $("#totalPage").text("共       "+page.total+" 条记录");
                         $("#tbody").empty();
                         $.each(list,function (i,teacher) {
                             $("#tbody").append("<tr id='"+teacher.tId+"'><td><input type='checkbox' value='"+teacher.tId+"' id ='pswcheckbox' name='pswcheckbox' /></td><td>"+teacher.tId+"</td><td>"+teacher.tName+"</td><td>"+teacher.creatTime+"</td><td><input type='button' value='删除' class='btn_delete' onclick='deleteTeacher("+teacher.tId+")'/></td></tr>");

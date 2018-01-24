@@ -39,9 +39,8 @@ public class TeacherController {
             PageHelper.startPage(Integer.parseInt(pageNum), Integer.parseInt(pageSize), true);
             List<Teacher> lt = teacherService.getAllTeacher(tName);
             PageInfo<Teacher> pt = new PageInfo<Teacher>(lt);
-            request.getSession().setAttribute("teacher_page", pt);
             if (pt.getTotal() != 0) {
-                return ResponseData.buildList(lt);
+                return ResponseData.buildList(lt,pt);
             }
             return ResponseData.error("没有教师");
         }
