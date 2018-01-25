@@ -36,7 +36,7 @@
 
 [首页相关接口](#首页相关接口)
 
-[&emsp;&emsp;获取当前登录用户所有APP信息](#获取当前登录用户所有APP信息)
+[&emsp;&emsp;获取当前登录用户所有APP信息](#获取当前登录用户所有appP信息)
 
 [&emsp;&emsp;扣费](#扣费)
 
@@ -202,25 +202,25 @@
 
 [&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;删除一条ussd资费](#删除一条ussd资费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;增加一条USSD资费](#增加一条USSD资费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;增加一条USSD资费](#增加一条ussd资费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;修改USSD资费](#修改USSD资费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;修改USSD资费](#修改ussd资费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;VNC资费](#VNC资费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;VNC资费](#vnc资费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;获取VNC资费列表](#获取VNC资费列表)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;获取VNC资费列表](#获取vnc资费列表)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;删除一条VNC资费](#删除一条VNC资费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;删除一条VNC资费](#删除一条vnc资费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;增加一条VNC资费](#增加一条VNC资费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;增加一条VNC资费](#增加一条vnc资费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;修改VNC资费](#修改VNC资费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;修改VNC资费](#修改vnc资费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;VOS资费](#VOS资费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;VOS资费](#vos资费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;获取VOS资费](#获取VOS资费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;获取VOS资费](#获取vos资费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;修改VOS资费](#修改VOS资费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;修改VOS资费](#修改vos资费)
 
 [&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;应用最低月消费](#应用最低月消费)
 
@@ -284,7 +284,7 @@
 
 [&emsp;&emsp;&emsp;&emsp;修改语音验证码应用配置](#修改语音验证码应用配置)
 
-[&emsp;&emsp;&emsp;&emsp;修改VOS应用配置](#修改VOS应用配置)
+[&emsp;&emsp;&emsp;&emsp;修改VOS应用配置](#修改vos应用配置)
 
 [消费日志相关接口](#消费日志相关接口)
 
