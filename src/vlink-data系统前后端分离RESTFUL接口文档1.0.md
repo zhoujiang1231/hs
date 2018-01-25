@@ -50,301 +50,301 @@
 
 [&emsp;&emsp;获取报表数据](#获取报表数据)
 
-[通话记录相关接口](通话记录相关接口)
+[通话记录相关接口](#通话记录相关接口)
 
-[&emsp;&emsp;客户下拉框初始化](客户下拉框初始化)
+[&emsp;&emsp;客户下拉框初始化](#客户下拉框初始化)
 
-[&emsp;&emsp;客户对应应用初始化](客户对应应用初始化)
+[&emsp;&emsp;客户对应应用初始化](#客户对应应用初始化)
 
-[&emsp;&emsp;获取通话记录数据](获取通话记录数据)
+[&emsp;&emsp;获取通话记录数据](#获取通话记录数据)
 
-[&emsp;&emsp;导出功能](导出功能)
+[&emsp;&emsp;导出功能](#导出功能)
 
-[直销部门管理相关接口](直销部门管理相关接口)
+[直销部门管理相关接口](#直销部门管理相关接口)
 
-[&emsp;&emsp;获取所有直销部门](获取所有直销部门)
+[&emsp;&emsp;获取所有直销部门](#获取所有直销部门)
 
-[&emsp;&emsp;获取直销部门详细信息](获取直销部门详细信息)
+[&emsp;&emsp;获取直销部门详细信息](#获取直销部门详细信息)
 
-[&emsp;&emsp;新建直销部门](新建直销部门)
+[&emsp;&emsp;新建直销部门](#新建直销部门)
 
-[&emsp;&emsp;删除直销部门](删除直销部门)
+[&emsp;&emsp;删除直销部门](#删除直销部门)
 
-[&emsp;&emsp;修改直销部门信息](修改直销部门信息)
+[&emsp;&emsp;修改直销部门信息](#修改直销部门信息)
 
-[直销经理管理相关接口](直销经理管理相关接口)
+[直销经理管理相关接口](#直销经理管理相关接口)
 
-[&emsp;&emsp;初始化所属部门下拉框](初始化所属部门下拉框)
+[&emsp;&emsp;初始化所属部门下拉框](#初始化所属部门下拉框)
 
-[&emsp;&emsp;获取直销部门详细信息](获取直销部门详细信息)
+[&emsp;&emsp;获取直销部门详细信息](#获取直销部门详细信息)
 
-[&emsp;&emsp;查询](查询)
+[&emsp;&emsp;查询](#查询)
 
-[&emsp;&emsp;获取直销经理详细信息](获取直销经理详细信息)
+[&emsp;&emsp;获取直销经理详细信息](#获取直销经理详细信息)
 
-[&emsp;&emsp;删除直销经理](删除直销经理)
+[&emsp;&emsp;删除直销经理](#删除直销经理)
 
-[&emsp;&emsp;新建直销经理](新建直销经理)
+[&emsp;&emsp;新建直销经理](#新建直销经理)
 
-[&emsp;&emsp;修改直销经理信息](修改直销经理信息)
+[&emsp;&emsp;修改直销经理信息](#修改直销经理信息)
 
-[企业管理相关接口](企业管理相关接口)
+[企业管理相关接口](#企业管理相关接口)
 
-[&emsp;&emsp;初始化所属部门下拉框](初始化所属部门下拉框)
+[&emsp;&emsp;初始化所属部门下拉框](#初始化所属部门下拉框)
 
-[&emsp;&emsp;获取所属部门所属经理](获取所属部门所属经理)
+[&emsp;&emsp;获取所属部门所属经理](#获取所属部门所属经理)
 
-[&emsp;&emsp;根据条件查询企业](根据条件查询企业)
+[&emsp;&emsp;根据条件查询企业](#根据条件查询企业)
 
-[&emsp;&emsp;获取企业信息](获取企业信息)
+[&emsp;&emsp;获取企业信息](#获取企业信息)
 
-[&emsp;&emsp;&emsp;&emsp;企业基本信息](企业基本信息)
+[&emsp;&emsp;&emsp;&emsp;企业基本信息](#企业基本信息)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;获取企业基本信息](获取企业基本信息)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;获取企业基本信息](#获取企业基本信息)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;获取上传文件列表](获取上传文件列表)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;获取上传文件列表](#获取上传文件列表)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;上传文件](上传文件)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;上传文件](#上传文件)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;修改企业基本信息](修改企业基本信息)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;修改企业基本信息](#修改企业基本信息)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;删除文件相关数据](删除文件相关数据)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;删除文件相关数据](#删除文件相关数据)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;下载文件](下载文件)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;下载文件](#下载文件)
 
-[&emsp;&emsp;&emsp;&emsp;企业业务信息](企业业务信息)
+[&emsp;&emsp;&emsp;&emsp;企业业务信息](#企业业务信息)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;获取企业基本信息](获取企业基本信息)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;获取企业基本信息](#获取企业基本信息)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;初始化所属部门下拉框](初始化所属部门下拉框)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;初始化所属部门下拉框](#初始化所属部门下拉框)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;获取所属部门所属经理](获取所属部门所属经理)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;获取所属部门所属经理](#获取所属部门所属经理)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;修改企业基本信息](修改企业基本信息)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;修改企业基本信息](#修改企业基本信息)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;修改企业月消费](修改企业月消费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;修改企业月消费](#修改企业月消费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;修改本月折扣](修改本月折扣)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;修改本月折扣](#修改本月折扣)
 
-[&emsp;&emsp;&emsp;&emsp;企业应用管理](企业应用管理)
+[&emsp;&emsp;&emsp;&emsp;企业应用管理](#企业应用管理)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;新建应用](新建应用)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;新建应用](#新建应用)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;删除应用](删除应用)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;删除应用](#删除应用)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;获取账户对应的应用](获取账户对应的应用)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;获取账户对应的应用](#获取账户对应的应用)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;查看应用信息](查看应用信息)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;查看应用信息](#查看应用信息)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;删除文件相关数据](删除文件相关数据)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;删除文件相关数据](#删除文件相关数据)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;获取上传文件列表](获取上传文件列表)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;获取上传文件列表](#获取上传文件列表)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;上传文件](上传文件)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;上传文件](#上传文件)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;修改应用信息](修改应用信息)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;修改应用信息](#修改应用信息)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;配置应用](配置应用)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;配置应用](#配置应用)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;呼入资费](呼入资费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;呼入资费](#呼入资费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;获取呼入资费列表](获取呼入资费列表)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;获取呼入资费列表](#获取呼入资费列表)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;删除一条呼入资费](删除一条呼入资费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;删除一条呼入资费](#删除一条呼入资费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;增加一条呼入资费](增加一条呼入资费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;增加一条呼入资费](#增加一条呼入资费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;修改呼入资费](修改呼入资费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;修改呼入资费](#修改呼入资费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;呼入转接资费](呼入转接资费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;呼入转接资费](#呼入转接资费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;获取呼入转接资费列表](获取呼入转接资费列表)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;获取呼入转接资费列表](#获取呼入转接资费列表)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;删除一条呼入转接资费](删除一条呼入转接资费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;删除一条呼入转接资费](#删除一条呼入转接资费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;增加一条呼入转接资费](增加一条呼入转接资费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;增加一条呼入转接资费](#增加一条呼入转接资费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;修改呼入转接资费](修改呼入转接资费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;修改呼入转接资费](#修改呼入转接资费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;外呼资费](外呼资费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;外呼资费](#外呼资费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;获取外呼资费列表](获取外呼资费列表)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;获取外呼资费列表](#获取外呼资费列表)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;删除一条外呼资费](删除一条外呼资费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;删除一条外呼资费](#删除一条外呼资费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;增加一条外呼资费](增加一条外呼资费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;增加一条外呼资费](#增加一条外呼资费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;修改外呼资费](修改外呼资费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;修改外呼资费](#修改外呼资费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;外呼转接资费](外呼转接资费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;外呼转接资费](#外呼转接资费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;获取外呼转接资费列表](获取外呼转接资费列表)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;获取外呼转接资费列表](#获取外呼转接资费列表)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;删除一条外呼转接资费](删除一条外呼转接资费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;删除一条外呼转接资费](#删除一条外呼转接资费)
 
 [&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;增加一条外呼转接资费](增加一条外呼转接资费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;修改外呼转接资费](修改外呼转接资费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;修改外呼转接资费](#修改外呼转接资费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;短信资费](短信资费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;短信资费](#短信资费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;获取短信资费列表](获取短信资费列表)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;获取短信资费列表](#获取短信资费列表)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;删除一条短信资费](删除一条短信资费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;删除一条短信资费](#删除一条短信资费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;增加一条短信资费](增加一条短信资费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;增加一条短信资费](#增加一条短信资费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;修改短信资费](修改短信资费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;修改短信资费](#修改短信资费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;USSD资费](USSD资费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;USSD资费](#USSD资费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;获取USSD资费列表](获取USSD资费列表)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;获取USSD资费列表](#获取USSD资费列表)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;删除一条USSD资费](删除一条USSD资费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;删除一条USSD资费](#删除一条USSD资费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;增加一条USSD资费](增加一条USSD资费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;增加一条USSD资费](#增加一条USSD资费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;修改USSD资费](修改USSD资费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;修改USSD资费](#修改USSD资费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;VNC资费](VNC资费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;VNC资费](#VNC资费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;获取VNC资费列表](获取VNC资费列表)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;获取VNC资费列表](#获取VNC资费列表)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;删除一条VNC资费](删除一条VNC资费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;删除一条VNC资费](#删除一条VNC资费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;增加一条VNC资费](增加一条VNC资费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;增加一条VNC资费](#增加一条VNC资费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;修改VNC资费](修改VNC资费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;修改VNC资费](#修改VNC资费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;VOS资费](VOS资费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;VOS资费](#VOS资费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;获取VOS资费](获取VOS资费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;获取VOS资费](#获取VOS资费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;修改VOS资费](修改VOS资费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;修改VOS资费](#修改VOS资费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;应用最低月消费](应用最低月消费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;应用最低月消费](#应用最低月消费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;获取应用最低月消费](获取应用最低月消费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;获取应用最低月消费](#获取应用最低月消费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;修改应用最低月消费](修改应用最低月消费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;修改应用最低月消费](#修改应用最低月消费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;应用低消配置](应用低消配置)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;应用低消配置](#应用低消配置)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;获取应用当前月低消](获取应用当前月低消)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;获取应用当前月低消](#获取应用当前月低消)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;呼入低消资费](呼入低消资费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;呼入低消资费](#呼入低消资费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;获取/搜索呼入低消资费](获取/搜索呼入低消资费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;获取/搜索呼入低消资费](#获取/搜索呼入低消资费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;修改一条呼入低消资费/批量修改](修改一条呼入低消资费/批量修改)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;修改一条呼入低消资费/批量修改](#修改一条呼入低消资费/批量修改)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;同步](同步)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;同步](#同步)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;号码功能费](号码功能费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;号码功能费](#号码功能费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;获取/搜索号码功能费](获取/搜索号码功能费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;获取/搜索号码功能费](#获取/搜索号码功能费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;修改一条号码功能费/批量修改](修改一条号码功能费/批量修改)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;修改一条号码功能费/批量修改](#修改一条号码功能费/批量修改)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;同步](同步)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;同步](#同步)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;功能费](功能费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;功能费](#功能费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;获取功能费列表](获取功能费列表)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;获取功能费列表](#获取功能费列表)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;修改一条功能费/批量修改](修改一条功能费/批量修改)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;修改一条功能费/批量修改](#修改一条功能费/批量修改)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;添加一条功能费](添加一条功能费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;添加一条功能费](#添加一条功能费)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;删除一条功能费](删除一条功能费)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;删除一条功能费](#删除一条功能费)
 
-[&emsp;&emsp;删除企业](删除企业)
+[&emsp;&emsp;删除企业](#删除企业)
 
-[&emsp;&emsp;新建企业](新建企业)
+[&emsp;&emsp;新建企业](#新建企业)
 
-[应用管理相关接口](应用管理相关接口)
+[应用管理相关接口](#应用管理相关接口)
 
-[&emsp;&emsp;查询功能](查询功能)
+[&emsp;&emsp;查询功能](#查询功能)
 
-[&emsp;&emsp;修改资费设置](修改资费设置)
+[&emsp;&emsp;修改资费设置](#修改资费设置)
 
-[&emsp;&emsp;&emsp;&emsp;初始化页面](初始化页面)
+[&emsp;&emsp;&emsp;&emsp;初始化页面](#初始化页面)
 
-[&emsp;&emsp;&emsp;&emsp;修改自定义应用配置](修改自定义应用配置)
+[&emsp;&emsp;&emsp;&emsp;修改自定义应用配置](#修改自定义应用配置)
 
-[&emsp;&emsp;&emsp;&emsp;修改短信应用配置](修改短信应用配置)
+[&emsp;&emsp;&emsp;&emsp;修改短信应用配置](#修改短信应用配置)
 
-[&emsp;&emsp;&emsp;&emsp;修改总分机应用配置](修改总分机应用配置)
+[&emsp;&emsp;&emsp;&emsp;修改总分机应用配置](#修改总分机应用配置)
 
-[&emsp;&emsp;&emsp;&emsp;修改两端回呼应用配置](修改两端回呼应用配置)
+[&emsp;&emsp;&emsp;&emsp;修改两端回呼应用配置](#修改两端回呼应用配置)
 
-[&emsp;&emsp;&emsp;&emsp;修改ussd应用配置](修改ussd应用配置)
+[&emsp;&emsp;&emsp;&emsp;修改ussd应用配置](#修改ussd应用配置)
 
-[&emsp;&emsp;&emsp;&emsp;修改语音通知应用配置](修改语音通知应用配置)
+[&emsp;&emsp;&emsp;&emsp;修改语音通知应用配置](#修改语音通知应用配置)
 
-[&emsp;&emsp;&emsp;&emsp;修改语音验证码应用配置](修改语音验证码应用配置)
+[&emsp;&emsp;&emsp;&emsp;修改语音验证码应用配置](#修改语音验证码应用配置)
 
-[&emsp;&emsp;&emsp;&emsp;修改VOS应用配置](修改VOS应用配置)
+[&emsp;&emsp;&emsp;&emsp;修改VOS应用配置](#修改VOS应用配置)
 
-[消费日志相关接口](消费日志相关接口)
+[消费日志相关接口](#消费日志相关接口)
 
-[&emsp;&emsp;客户下拉框初始化](客户下拉框初始化)
+[&emsp;&emsp;客户下拉框初始化](#客户下拉框初始化)
 
-[&emsp;&emsp;客户简称下拉框初始化](客户简称下拉框初始化)
+[&emsp;&emsp;客户简称下拉框初始化](#客户简称下拉框初始化)
 
-[&emsp;&emsp;查询消费日志](查询消费日志)
+[&emsp;&emsp;查询消费日志](#查询消费日志)
 
-[&emsp;&emsp;&emsp;&emsp;查看应用扣费日志](查看应用扣费日志)
+[&emsp;&emsp;&emsp;&emsp;查看应用扣费日志](#查看应用扣费日志)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;查看应用扣费详情](查看应用扣费详情)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;查看应用扣费详情](#查看应用扣费详情)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;查看呼入扣费日志](查看呼入扣费日志)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;查看呼入扣费日志](#查看呼入扣费日志)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;查看号码功能费日志](查看号码功能费日志)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;查看号码功能费日志](#查看号码功能费日志)
 
-[预消费日志相关接口](预消费日志相关接口)
+[预消费日志相关接口](#预消费日志相关接口)
 
-[&emsp;&emsp;客户下拉框初始化](客户下拉框初始化)
+[&emsp;&emsp;客户下拉框初始化](#客户下拉框初始化)
 
-[&emsp;&emsp;客户简称下拉框初始化](客户简称下拉框初始化)
+[&emsp;&emsp;客户简称下拉框初始化](#客户简称下拉框初始化)
 
-[&emsp;&emsp;查询预消费日志](查询预消费日志)
+[&emsp;&emsp;查询预消费日志](#查询预消费日志)
 
-[&emsp;&emsp;&emsp;&emsp;查看应用扣费日志](查看应用扣费日志)
+[&emsp;&emsp;&emsp;&emsp;查看应用扣费日志](#查看应用扣费日志)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;查看应用扣费详情](查看应用扣费详情)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;查看应用扣费详情](#查看应用扣费详情)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;查看呼入扣费日志](查看呼入预扣费日志)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;查看呼入扣费日志](#查看呼入预扣费日志)
 
-[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;查看号码功能费日志](查看号码功能费预扣费日志)
+[&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;查看号码功能费日志](#查看号码功能费预扣费日志)
 
-[&emsp;&emsp;导出功能](导出功能)
+[&emsp;&emsp;导出功能](#导出功能)
 
-[账单统计相关接口](账单统计相关接口)
+[账单统计相关接口](#账单统计相关接口)
 
-[&emsp;&emsp;客户下拉框初始化](客户下拉框初始化)
+[&emsp;&emsp;客户下拉框初始化](#客户下拉框初始化)
 
-[&emsp;&emsp;客户简称下拉框初始化](客户简称下拉框初始化)
+[&emsp;&emsp;客户简称下拉框初始化](#客户简称下拉框初始化)
 
-[&emsp;&emsp;查询账单](查询账单)
+[&emsp;&emsp;查询账单](#查询账单)
 
-[外呼统计](外呼统计)
+[外呼统计](#外呼统计)
 
-[&emsp;&emsp;客户下拉框初始化](客户下拉框初始化)
+[&emsp;&emsp;客户下拉框初始化](#客户下拉框初始化)
 
-[&emsp;&emsp;客户简称下拉框初始化](客户简称下拉框初始化)
+[&emsp;&emsp;客户简称下拉框初始化](#客户简称下拉框初始化)
 
-[&emsp;&emsp;查询](查询)
+[&emsp;&emsp;查询](#查询)
 
-[呼入统计](呼入统计)
+[呼入统计](#呼入统计)
 
-[&emsp;&emsp;客户下拉框初始化](客户下拉框初始化)
+[&emsp;&emsp;客户下拉框初始化](#客户下拉框初始化)
 
-[&emsp;&emsp;客户简称下拉框初始化](客户简称下拉框初始化)
+[&emsp;&emsp;客户简称下拉框初始化](#客户简称下拉框初始化)
 
-[&emsp;&emsp;查询](查询)
+[&emsp;&emsp;查询](#查询)
 
-[查询操作日志](查询操作日志)
+[查询操作日志](#查询操作日志)
 
 
 
@@ -864,11 +864,11 @@ list详细说明：
 
 ## 客户下拉框初始化
 
-[&emsp;&emsp;客户下拉框初始化](客户下拉框初始化)
+[&emsp;&emsp;客户下拉框初始化](#客户下拉框初始化)
 
 ## 客户对应应用初始化
 
-[&emsp;&emsp;客户对应应用初始化](客户对应应用初始化)
+[&emsp;&emsp;客户对应应用初始化](#客户对应应用初始化)
 
 ## 获取报表数据
 
@@ -944,11 +944,11 @@ list详细说明：
 
 ## 客户下拉框初始化
 
-[&emsp;&emsp;客户下拉框初始化](客户下拉框初始化)
+[&emsp;&emsp;客户下拉框初始化](#客户下拉框初始化)
 
 ## 客户对应应用初始化
 
-[&emsp;&emsp;客户对应应用初始化](客户对应应用初始化)
+[&emsp;&emsp;客户对应应用初始化](#客户对应应用初始化)
 
 ## 获取通话记录数据
 
@@ -1330,7 +1330,7 @@ data详细说明
 
 ## 删除直销部门
 
-[&emsp;&emsp;删除企业帐号](删除企业帐号)
+[&emsp;&emsp;删除企业帐号](#删除企业帐号)
 
 ## 修改直销部门信息
 
