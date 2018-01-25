@@ -46,7 +46,7 @@
         <constructor-arg index="2" value="${redis.port}"/>
         <constructor-arg index="3" value="${redis.timeout}"/>
     </bean>
-    <bean id="redisService" class="com.hs.service.impl.RedisServiceImp">
+    <bean id="redisService" class="com.hs.service.impl.RedisServiceImpl">
         <property name="jedisPool" ref="jedisPool"/>
     </bean>
 

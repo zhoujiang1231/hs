@@ -132,6 +132,7 @@
                     <div><input type="button" value="搜索" class="btn_search" id="btn_search" onclick="initList(1);"/></div>
                     <input type="button" value="密码重置" class="btn_add" onclick="resetPwd();" />
                     <input type="button" value="增加" class="btn_add" onclick="location.href='${pageContext.request.contextPath}/view/teacher/teacher_add.jsp'" />
+                    <input type="file" value="导入excel" class="btn_add"  />
  					 </div>
                 <!--删除和密码重置的操作提示-->
                  <div id="operate_result_info" class="operate_info">
