@@ -4,6 +4,8 @@
 
 [数据结构返回示例](#返回数据结构示例)
 
+[&emsp;&emsp;请求参数格式](#请求参数格式)
+
 [&emsp;&emsp;返回数据结构说明](#返回数据结构说明)
 
 [&emsp;&emsp;page详细说明](#page详细说明)
@@ -348,7 +350,11 @@
 
 
 
-# 返回数据结构示例
+# 数据结构示例
+
+## 请求参数格式
+
+Content-Type:application/json
 
 ## 返回数据结构说明：
 
@@ -954,7 +960,7 @@ list详细说明：
 
 | 接口地址 | /callRecords |
 | ---- | ------------ |
-| 方法   | POST         |
+| 方法   | GET          |
 
 - 请求参数（json）
 
@@ -1170,7 +1176,7 @@ data详细说明
 
 | 接口地址 | /callRecord/file |
 | ---- | ---------------- |
-| 方法   | POST             |
+| 方法   | GET              |
 
 - 请求参数
 
@@ -2065,9 +2071,18 @@ data详细说明
 
 - 请求参数
 
-| 字段名  | 是否必须 | 字段类型    | 说明                  |
-| ---- | ---- | ------- | ------------------- |
-| id   | 是    | Integer | app_in_setting表主键id |
+| 字段名          | 是否必须 | 字段类型    | 说明                                       |
+| ------------ | ---- | ------- | ---------------------------------------- |
+| id           | 是    | Integer | app_in_setting表主键id                      |
+| operationStr | 是    | String  | 操作记录格式为：“操作人名称,操作企业名称，操作应用名称,操作之前数据,操作之后数据,操作类型” |
+
+operationStr示例:"zj,饿了么,语音通知,热线号码:111* 单价:11,热线号码:123* 单价:2,修改呼入资费"
+
+说明：1当操作企业时应用名称为空
+
+​	    2当操作为删除时，操作之后数据为空
+
+​	    3当操作为添加时，操作之前数据为空
 
 - 返回结果
 
@@ -2089,11 +2104,12 @@ data详细说明
 
 - 请求参数
 
-| 字段名      | 是否必须 | 字段类型    | 说明   |
-| -------- | ---- | ------- | ---- |
-| appId    | 是    | Integer | 应用id |
-| hotline  | 是    | String  | 热线号码 |
-| unitCost | 是    | String  | 单价   |
+| 字段名          | 是否必须 | 字段类型    | 说明                                       |
+| ------------ | ---- | ------- | ---------------------------------------- |
+| appId        | 是    | Integer | 应用id                                     |
+| hotline      | 是    | String  | 热线号码                                     |
+| unitCost     | 是    | String  | 单价                                       |
+| operationStr | 是    | String  | 操作记录格式为：“操作人名称,操作企业名称，操作应用名称,操作之前数据,操作之后数据,操作类型” |
 
 - 返回结果
 
@@ -2115,12 +2131,13 @@ data详细说明
 
 - 请求参数
 
-| 字段名      | 是否必须 | 字段类型    | 说明                  |
-| -------- | ---- | ------- | ------------------- |
-| id       | 是    | Integer | app_in_setting表主键id |
-| appId    | 是    | Integer | 应用id                |
-| hotline  | 是    | String  | 热线号码                |
-| unitCost | 是    | String  | 单价                  |
+| 字段名          | 是否必须 | 字段类型    | 说明                                       |
+| ------------ | ---- | ------- | ---------------------------------------- |
+| id           | 是    | Integer | app_in_setting表主键id                      |
+| appId        | 是    | Integer | 应用id                                     |
+| hotline      | 是    | String  | 热线号码                                     |
+| unitCost     | 是    | String  | 单价                                       |
+| operationStr | 是    | String  | 操作记录格式为：“操作人名称,操作企业名称，操作应用名称,操作之前数据,操作之后数据,操作类型” |
 
 - 返回结果
 
@@ -2179,9 +2196,10 @@ data详细说明
 
 - 请求参数
 
-| 字段名  | 是否必须 | 字段类型    | 说明                         |
-| ---- | ---- | ------- | -------------------------- |
-| id   | 是    | Integer | app_in_bridge_setting表主键id |
+| 字段名          | 是否必须 | 字段类型    | 说明                                       |
+| ------------ | ---- | ------- | ---------------------------------------- |
+| id           | 是    | Integer | app_in_bridge_setting表主键id               |
+| operationStr | 是    | String  | 操作记录格式为：“操作人名称,操作企业名称，操作应用名称,操作之前数据,操作之后数据,操作类型” |
 
 - 返回结果
 
@@ -2203,13 +2221,14 @@ data详细说明
 
 - 请求参数
 
-  | 字段名          | 是否必须 | 字段类型    | 说明   |
-  | ------------ | ---- | ------- | ---- |
-  | appId        | 是    | Integer | 应用id |
-  | hotline      | 是    | String  | 热线号码 |
-  | unitCost     | 是    | String  | 单价   |
-  | clidNumber   | 是    | String  | 外显号码 |
-  | calleeNumber | 是    | String  | 被叫号码 |
+  | 字段名          | 是否必须 | 字段类型    | 说明                                       |
+  | ------------ | ---- | ------- | ---------------------------------------- |
+  | appId        | 是    | Integer | 应用id                                     |
+  | hotline      | 是    | String  | 热线号码                                     |
+  | unitCost     | 是    | String  | 单价                                       |
+  | clidNumber   | 是    | String  | 外显号码                                     |
+  | calleeNumber | 是    | String  | 被叫号码                                     |
+  | operationStr | 是    | String  | 操作记录格式为：“操作人名称,操作企业名称，操作应用名称,操作之前数据,操作之后数据,操作类型” |
 
 
 - 返回结果
@@ -2232,14 +2251,15 @@ data详细说明
 
 - 请求参数
 
-| 字段名          | 是否必须 | 字段类型    | 说明                  |
-| ------------ | ---- | ------- | ------------------- |
-| id           | 是    | Integer | app_in_setting表主键id |
-| appId        | 是    | Integer | 应用id                |
-| hotline      | 是    | String  | 热线号码                |
-| unitCost     | 是    | String  | 单价                  |
-| clidNumber   | 是    | String  | 外显号码                |
-| calleeNumber | 是    | String  | 被叫号码                |
+| 字段名          | 是否必须 | 字段类型    | 说明                                       |
+| ------------ | ---- | ------- | ---------------------------------------- |
+| id           | 是    | Integer | app_in_setting表主键id                      |
+| appId        | 是    | Integer | 应用id                                     |
+| hotline      | 是    | String  | 热线号码                                     |
+| unitCost     | 是    | String  | 单价                                       |
+| clidNumber   | 是    | String  | 外显号码                                     |
+| calleeNumber | 是    | String  | 被叫号码                                     |
+| operationStr | 是    | String  | 操作记录格式为：“操作人名称,操作企业名称，操作应用名称,操作之前数据,操作之后数据,操作类型” |
 
 - 返回结果
 
@@ -2298,9 +2318,10 @@ data详细说明
 
 - 请求参数
 
-| 字段名  | 是否必须 | 字段类型    | 说明                   |
-| ---- | ---- | ------- | -------------------- |
-| id   | 是    | Integer | app_out_setting表主键id |
+| 字段名          | 是否必须 | 字段类型    | 说明                                       |
+| ------------ | ---- | ------- | ---------------------------------------- |
+| id           | 是    | Integer | app_out_setting表主键id                     |
+| operationStr | 是    | String  | 操作记录格式为：“操作人名称,操作企业名称，操作应用名称,操作之前数据,操作之后数据,操作类型” |
 
 - 返回结果
 
@@ -2322,12 +2343,13 @@ data详细说明
 
 - 请求参数
 
-| 字段名          | 是否必须 | 字段类型    | 说明   |
-| ------------ | ---- | ------- | ---- |
-| appId        | 是    | Integer | 应用id |
-| clidNumber   | 是    | String  | 外显号码 |
-| calleeNumber | 是    | String  | 被叫号码 |
-| unitCost     | 是    | String  | 单价   |
+| 字段名          | 是否必须 | 字段类型    | 说明                                       |
+| ------------ | ---- | ------- | ---------------------------------------- |
+| appId        | 是    | Integer | 应用id                                     |
+| clidNumber   | 是    | String  | 外显号码                                     |
+| calleeNumber | 是    | String  | 被叫号码                                     |
+| unitCost     | 是    | String  | 单价                                       |
+| operationStr | 是    | String  | 操作记录格式为：“操作人名称,操作企业名称，操作应用名称,操作之前数据,操作之后数据,操作类型” |
 
 - 返回结果
 
@@ -2349,13 +2371,14 @@ data详细说明
 
 - 请求参数
 
-| 字段名          | 是否必须 | 字段类型    | 说明                   |
-| ------------ | ---- | ------- | -------------------- |
-| id           | 是    | Integer | app_out_setting表主键id |
-| appId        | 是    | Integer | 应用id                 |
-| clidNumber   | 是    | String  | 外显号码                 |
-| calleeNumber | 是    | String  | 被叫号码                 |
-| unitCost     | 是    | String  | 单价                   |
+| 字段名          | 是否必须 | 字段类型    | 说明                                       |
+| ------------ | ---- | ------- | ---------------------------------------- |
+| id           | 是    | Integer | app_out_setting表主键id                     |
+| appId        | 是    | Integer | 应用id                                     |
+| clidNumber   | 是    | String  | 外显号码                                     |
+| calleeNumber | 是    | String  | 被叫号码                                     |
+| unitCost     | 是    | String  | 单价                                       |
+| operationStr | 是    | String  | 操作记录格式为：“操作人名称,操作企业名称，操作应用名称,操作之前数据,操作之后数据,操作类型” |
 
 - 返回结果
 
@@ -2414,9 +2437,10 @@ data详细说明
 
 - 请求参数
 
-| 字段名  | 是否必须 | 字段类型    | 说明                          |
-| ---- | ---- | ------- | --------------------------- |
-| id   | 是    | Integer | app_out_bridge_setting表主键id |
+| 字段名          | 是否必须 | 字段类型    | 说明                                       |
+| ------------ | ---- | ------- | ---------------------------------------- |
+| id           | 是    | Integer | app_out_bridge_setting表主键id              |
+| operationStr | 是    | String  | 操作记录格式为：“操作人名称,操作企业名称，操作应用名称,操作之前数据,操作之后数据,操作类型” |
 
 - 返回结果
 
@@ -2438,12 +2462,13 @@ data详细说明
 
 - 请求参数
 
-  | 字段名          | 是否必须 | 字段类型    | 说明   |
-  | ------------ | ---- | ------- | ---- |
-  | appId        | 是    | Integer | 应用id |
-  | clidNumber   | 是    | String  | 外显号码 |
-  | calleeNumber | 是    | String  | 被叫号码 |
-  | unitCost     | 是    | String  | 单价   |
+  | 字段名          | 是否必须 | 字段类型    | 说明                                       |
+  | ------------ | ---- | ------- | ---------------------------------------- |
+  | appId        | 是    | Integer | 应用id                                     |
+  | clidNumber   | 是    | String  | 外显号码                                     |
+  | calleeNumber | 是    | String  | 被叫号码                                     |
+  | unitCost     | 是    | String  | 单价                                       |
+  | operationStr | 是    | String  | 操作记录格式为：“操作人名称,操作企业名称，操作应用名称,操作之前数据,操作之后数据,操作类型” |
 
 
 - 返回结果
@@ -2466,13 +2491,14 @@ data详细说明
 
 - 请求参数
 
-  | 字段名          | 是否必须 | 字段类型    | 说明                   |
-  | ------------ | ---- | ------- | -------------------- |
-  | id           | 是    | Integer | app_out_setting表主键id |
-  | appId        | 是    | Integer | 应用id                 |
-  | clidNumber   | 是    | String  | 外显号码                 |
-  | calleeNumber | 是    | String  | 被叫号码                 |
-  | unitCost     | 是    | String  | 单价                   |
+  | 字段名          | 是否必须 | 字段类型    | 说明                                       |
+  | ------------ | ---- | ------- | ---------------------------------------- |
+  | id           | 是    | Integer | app_out_setting表主键id                     |
+  | appId        | 是    | Integer | 应用id                                     |
+  | clidNumber   | 是    | String  | 外显号码                                     |
+  | calleeNumber | 是    | String  | 被叫号码                                     |
+  | unitCost     | 是    | String  | 单价                                       |
+  | operationStr | 是    | String  | 操作记录格式为：“操作人名称,操作企业名称，操作应用名称,操作之前数据,操作之后数据,操作类型” |
 
 
 - 返回结果
@@ -2532,9 +2558,10 @@ data详细说明
 
 - 请求参数
 
-| 字段名  | 是否必须 | 字段类型    | 说明                    |
-| ---- | ---- | ------- | --------------------- |
-| id   | 是    | Integer | app_cost_setting表主键id |
+| 字段名          | 是否必须 | 字段类型    | 说明                                       |
+| ------------ | ---- | ------- | ---------------------------------------- |
+| id           | 是    | Integer | app_cost_setting表主键id                    |
+| operationStr | 是    | String  | 操作记录格式为：“操作人名称,操作企业名称，操作应用名称,操作之前数据,操作之后数据,操作类型” |
 
 - 返回结果
 
@@ -2556,12 +2583,13 @@ data详细说明
 
 - 请求参数
 
-  | 字段名                | 是否必须 | 字段类型    | 说明   |
-  | ------------------ | ---- | ------- | ---- |
-  | appId              | 是    | Integer | 应用id |
-  | messageStartAmount | 是    | String  | 开始条数 |
-  | messageEndAmount   | 是    | String  | 结束条数 |
-  | messageUnitCost    | 是    | String  | 单价   |
+  | 字段名                | 是否必须 | 字段类型    | 说明                                       |
+  | ------------------ | ---- | ------- | ---------------------------------------- |
+  | appId              | 是    | Integer | 应用id                                     |
+  | messageStartAmount | 是    | String  | 开始条数                                     |
+  | messageEndAmount   | 是    | String  | 结束条数                                     |
+  | messageUnitCost    | 是    | String  | 单价                                       |
+  | operationStr       | 是    | String  | 操作记录格式为：“操作人名称,操作企业名称，操作应用名称,操作之前数据,操作之后数据,操作类型” |
 
 
 - 返回结果
@@ -2584,12 +2612,13 @@ data详细说明
 
 - 请求参数
 
-  | 字段名                | 是否必须 | 字段类型    | 说明                   |
-  | ------------------ | ---- | ------- | -------------------- |
-  | id                 | 是    | Integer | app_cost_setting主键id |
-  | messageStartAmount | 是    | String  | 开始条数                 |
-  | messageEndAmount   | 是    | String  | 结束条数                 |
-  | messageUnitCost    | 是    | String  | 单价                   |
+  | 字段名                | 是否必须 | 字段类型    | 说明                                       |
+  | ------------------ | ---- | ------- | ---------------------------------------- |
+  | id                 | 是    | Integer | app_cost_setting主键id                     |
+  | messageStartAmount | 是    | String  | 开始条数                                     |
+  | messageEndAmount   | 是    | String  | 结束条数                                     |
+  | messageUnitCost    | 是    | String  | 单价                                       |
+  | operationStr       | 是    | String  | 操作记录格式为：“操作人名称,操作企业名称，操作应用名称,操作之前数据,操作之后数据,操作类型” |
 
 
 - 返回结果
@@ -2646,9 +2675,10 @@ data详细说明
 
 - 请求参数
 
-| 字段名  | 是否必须 | 字段类型    | 说明                    |
-| ---- | ---- | ------- | --------------------- |
-| id   | 是    | Integer | app_cost_setting表主键id |
+| 字段名          | 是否必须 | 字段类型    | 说明                                       |
+| ------------ | ---- | ------- | ---------------------------------------- |
+| id           | 是    | Integer | app_cost_setting表主键id                    |
+| operationStr | 是    | String  | 操作记录格式为：“操作人名称,操作企业名称，操作应用名称,操作之前数据,操作之后数据,操作类型” |
 
 - 返回结果
 
@@ -2670,12 +2700,13 @@ data详细说明
 
 - 请求参数
 
-  | 字段名             | 是否必须 | 字段类型    | 说明   |
-  | --------------- | ---- | ------- | ---- |
-  | appId           | 是    | Integer | 应用id |
-  | ussdStartAmount | 是    | String  | 开始条数 |
-  | ussdEndAmount   | 是    | String  | 结束条数 |
-  | ussdUnitCost    | 是    | String  | 单价   |
+  | 字段名             | 是否必须 | 字段类型    | 说明                                       |
+  | --------------- | ---- | ------- | ---------------------------------------- |
+  | appId           | 是    | Integer | 应用id                                     |
+  | ussdStartAmount | 是    | String  | 开始条数                                     |
+  | ussdEndAmount   | 是    | String  | 结束条数                                     |
+  | ussdUnitCost    | 是    | String  | 单价                                       |
+  | operationStr    | 是    | String  | 操作记录格式为：“操作人名称,操作企业名称，操作应用名称,操作之前数据,操作之后数据,操作类型” |
 
 
 - 返回结果
@@ -2698,12 +2729,13 @@ data详细说明
 
 - 请求参数
 
-  | 字段名             | 是否必须 | 字段类型    | 说明                   |
-  | --------------- | ---- | ------- | -------------------- |
-  | id              | 是    | Integer | app_cost_setting主键id |
-  | ussdStartAmount | 是    | String  | 开始条数                 |
-  | ussdEndAmount   | 是    | String  | 结束条数                 |
-  | ussdUnitCost    | 是    | String  | 单价                   |
+  | 字段名             | 是否必须 | 字段类型    | 说明                                       |
+  | --------------- | ---- | ------- | ---------------------------------------- |
+  | id              | 是    | Integer | app_cost_setting主键id                     |
+  | ussdStartAmount | 是    | String  | 开始条数                                     |
+  | ussdEndAmount   | 是    | String  | 结束条数                                     |
+  | ussdUnitCost    | 是    | String  | 单价                                       |
+  | operationStr    | 是    | String  | 操作记录格式为：“操作人名称,操作企业名称，操作应用名称,操作之前数据,操作之后数据,操作类型” |
 
 
 - 返回结果
@@ -2760,9 +2792,10 @@ data详细说明
 
 - 请求参数
 
-| 字段名  | 是否必须 | 字段类型    | 说明                    |
-| ---- | ---- | ------- | --------------------- |
-| id   | 是    | Integer | app_cost_setting表主键id |
+| 字段名          | 是否必须 | 字段类型    | 说明                                       |
+| ------------ | ---- | ------- | ---------------------------------------- |
+| id           | 是    | Integer | app_cost_setting表主键id                    |
+| operationStr | 是    | String  | 操作记录格式为：“操作人名称,操作企业名称，操作应用名称,操作之前数据,操作之后数据,操作类型” |
 
 - 返回结果
 
@@ -2784,12 +2817,13 @@ data详细说明
 
 - 请求参数
 
-  | 字段名            | 是否必须 | 字段类型    | 说明   |
-  | -------------- | ---- | ------- | ---- |
-  | appId          | 是    | Integer | 应用id |
-  | vncStartAmount | 是    | String  | 开始条数 |
-  | vncEndAmount   | 是    | String  | 结束条数 |
-  | vncUnitCost    | 是    | String  | 单价   |
+  | 字段名            | 是否必须 | 字段类型    | 说明                                       |
+  | -------------- | ---- | ------- | ---------------------------------------- |
+  | appId          | 是    | Integer | 应用id                                     |
+  | vncStartAmount | 是    | String  | 开始条数                                     |
+  | vncEndAmount   | 是    | String  | 结束条数                                     |
+  | vncUnitCost    | 是    | String  | 单价                                       |
+  | operationStr   | 是    | String  | 操作记录格式为：“操作人名称,操作企业名称，操作应用名称,操作之前数据,操作之后数据,操作类型” |
 
 
 - 返回结果
@@ -2812,12 +2846,13 @@ data详细说明
 
 - 请求参数
 
-  | 字段名            | 是否必须 | 字段类型    | 说明                   |
-  | -------------- | ---- | ------- | -------------------- |
-  | id             | 是    | Integer | app_cost_setting主键id |
-  | vncStartAmount | 是    | String  | 开始条数                 |
-  | vncEndAmount   | 是    | String  | 结束条数                 |
-  | vncUnitCost    | 是    | String  | 单价                   |
+  | 字段名            | 是否必须 | 字段类型    | 说明                                       |
+  | -------------- | ---- | ------- | ---------------------------------------- |
+  | id             | 是    | Integer | app_cost_setting主键id                     |
+  | vncStartAmount | 是    | String  | 开始条数                                     |
+  | vncEndAmount   | 是    | String  | 结束条数                                     |
+  | vncUnitCost    | 是    | String  | 单价                                       |
+  | operationStr   | 是    | String  | 操作记录格式为：“操作人名称,操作企业名称，操作应用名称,操作之前数据,操作之后数据,操作类型” |
 
 
 - 返回结果
@@ -2875,10 +2910,11 @@ data详细说明
 
 - 请求参数
 
-  | 字段名         | 是否必须 | 字段类型    | 说明   |
-  | ----------- | ---- | ------- | ---- |
-  | appId       | 是    | Integer | 应用id |
-  | vosUnitCost | 是    | String  | 单价   |
+  | 字段名          | 是否必须 | 字段类型    | 说明                                       |
+  | ------------ | ---- | ------- | ---------------------------------------- |
+  | appId        | 是    | Integer | 应用id                                     |
+  | vosUnitCost  | 是    | String  | 单价                                       |
+  | operationStr | 是    | String  | 操作记录格式为：“操作人名称,操作企业名称，操作应用名称,操作之前数据,操作之后数据,操作类型” |
 
 
 - 返回结果
@@ -2937,11 +2973,12 @@ data详细说明
 
 - 请求参数
 
-  | 字段名       | 是否必须 | 字段类型    | 说明              |
-  | --------- | ---- | ------- | --------------- |
-  | appId     | 是    | Integer | 应用id            |
-  | minCost   | 是    | String  | 最低消费            |
-  | startTime | 是    | String  | 开始时间格式： 2017-11 |
+  | 字段名          | 是否必须 | 字段类型    | 说明                                       |
+  | ------------ | ---- | ------- | ---------------------------------------- |
+  | appId        | 是    | Integer | 应用id                                     |
+  | minCost      | 是    | String  | 最低消费                                     |
+  | startTime    | 是    | String  | 开始时间格式： 2017-11                          |
+  | operationStr | 是    | String  | 操作记录格式为：“操作人名称,操作企业名称，操作应用名称,操作之前数据,操作之后数据,操作类型” |
 
 
 - 返回结果
@@ -3044,16 +3081,21 @@ data详细说明
 
 - 请求参数
 
-  | 字段名       | 是否必须 | 字段类型    | 说明   |
-  | --------- | ---- | ------- | ---- |
-  | appId     | 是    | Integer | 应用id |
-  | hotline   | 是    | String  | 热线号码 |
-  | minCost   | 是    | String  | 最低消费 |
-  | startTime | 是    | String  | 开始时间 |
+  | 字段名          | 是否必须 | 字段类型    | 说明                                       |
+  | ------------ | ---- | ------- | ---------------------------------------- |
+  | appId        | 是    | Integer | 应用id                                     |
+  | hotline      | 是    | String  | 热线号码                                     |
+  | minCost      | 是    | String  | 最低消费                                     |
+  | startTime    | 是    | String  | 开始时间                                     |
+  | operationStr | 是    | String  | 操作记录格式为：“操作人名称,操作企业名称，操作应用名称,操作之前数据,操作之后数据,操作类型” |
 
-说明：修改一条记录时hotline为当前需要修改的记录的hotline，minCost、startTime同理
+说明：
 
-​	批量修改时hotline为批量修改的热线号码、minCost、startTime同理
+​	1修改一条记录时hotline为当前需要修改的记录的hotline，minCost、startTime同理
+
+​	2批量修改时hotline为批量修改的热线号码、minCost、startTime同理
+
+​	3批量修改时operationStr修改之前数据可为空
 
 - 返回结果
 
@@ -3148,17 +3190,24 @@ data详细说明
 
 - 请求参数
 
-  | 字段名        | 是否必须 | 字段类型    | 说明   |
-  | ---------- | ---- | ------- | ---- |
-  | appId      | 是    | Integer | 应用id |
-  | areaNumber | 否    | String  | 区号   |
-  | number     | 否    | String  | 号码   |
-  | minCost    | 否    | String  | 功能费  |
-  | startTime  | 否    | String  | 开始时间 |
+  | 字段名          | 是否必须 | 字段类型    | 说明                                       |
+  | ------------ | ---- | ------- | ---------------------------------------- |
+  | appId        | 是    | Integer | 应用id                                     |
+  | areaNumber   | 否    | String  | 区号                                       |
+  | number       | 否    | String  | 号码                                       |
+  | minCost      | 否    | String  | 功能费                                      |
+  | startTime    | 否    | String  | 开始时间                                     |
+  | operationStr | 是    | String  | 操作记录格式为：“操作人名称,操作企业名称，操作应用名称,操作之前数据,操作之后数据,操作类型” |
 
-说明：修改一条记录时areaNumber为当前需要修改的记录的areaNumber，number、minCost、startTime同理
+  说明：
 
-​	批量修改时areaNumber为批量修改的热线号码areaNumber，number、minCost、startTime同理
+  ​	1修改一条记录时areaNumber为当前需要修改的记录的areaNumber，number、minCost、startTime	同理
+
+  ​	2批量修改时areaNumber为批量修改的热线号码areaNumber，number、minCost、startTime同理
+
+  ​	3批量修改时operationStr修改之前数据可为空
+
+​	 
 
 - 返回结果
 
@@ -3220,13 +3269,22 @@ data详细说明
 
 - 请求参数
 
-  | 字段名       | 是否必须 | 字段类型    | 说明                           |
-  | --------- | ---- | ------- | ---------------------------- |
-  | id        | 是    | Integer | app_function_cost_setting表主键 |
-  | name      | 是    | String  | 功能费名称                        |
-  | cost      | 是    | String  | 功能费用                         |
-  | startTime | 是    | String  | 开始时间                         |
+  | 字段名          | 是否必须 | 字段类型    | 说明                                       |
+  | ------------ | ---- | ------- | ---------------------------------------- |
+  | id           | 是    | Integer | app_function_cost_setting表主键             |
+  | name         | 是    | String  | 功能费名称                                    |
+  | cost         | 是    | String  | 功能费用                                     |
+  | startTime    | 是    | String  | 开始时间                                     |
+  | operationStr | 是    | String  | 操作记录格式为：“操作人名称,操作企业名称，操作应用名称,操作之前数据,操作之后数据,操作类型” |
 
+
+  说明：
+
+  1修改一条记录时areaNumber为当前需要修改的记录的areaNumber，number、minCost、startTime	同理
+
+​	2批量修改时areaNumber为批量修改的热线号码areaNumber，number、minCost、startTime同理
+
+​	3批量修改时operationStr修改之前数据可为空
 
 - 返回结果
 
@@ -3249,12 +3307,13 @@ data详细说明
 
 - 请求参数
 
-| 字段名       | 是否必须 | 字段类型    | 说明    |
-| --------- | ---- | ------- | ----- |
-| appId     | 是    | Integer | 应用id  |
-| name      | 是    | String  | 功能费名称 |
-| cost      | 是    | String  | 功能费用  |
-| startTime | 是    | String  | 开始时间  |
+| 字段名          | 是否必须 | 字段类型    | 说明                                       |
+| ------------ | ---- | ------- | ---------------------------------------- |
+| appId        | 是    | Integer | 应用id                                     |
+| name         | 是    | String  | 功能费名称                                    |
+| cost         | 是    | String  | 功能费用                                     |
+| startTime    | 是    | String  | 开始时间                                     |
+| operationStr | 是    | String  | 操作记录格式为：“操作人名称,操作企业名称，操作应用名称,操作之前数据,操作之后数据,操作类型” |
 
 - 返回结果
 
@@ -3276,9 +3335,10 @@ data详细说明
 
 - 请求参数
 
-| 字段名  | 是否必须 | 字段类型    | 说明                           |
-| ---- | ---- | ------- | ---------------------------- |
-| id   | 是    | Integer | app_function_cost_setting表主键 |
+| 字段名          | 是否必须 | 字段类型    | 说明                                       |
+| ------------ | ---- | ------- | ---------------------------------------- |
+| id           | 是    | Integer | app_function_cost_setting表主键             |
+| operationStr | 是    | String  | 操作记录格式为：“操作人名称,操作企业名称，操作应用名称,操作之前数据,操作之后数据,操作类型” |
 
 - 返回结果
 
