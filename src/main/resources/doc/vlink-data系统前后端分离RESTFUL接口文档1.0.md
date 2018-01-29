@@ -833,7 +833,7 @@ list详细说明：
 
 
 - 返回结果
-
+```
     {
     		"result": "0",
     		"description": "success",
@@ -842,7 +842,7 @@ list详细说明：
     		"page": null
     	}
 
-
+```
 ## 预扣费
 
 | 接口地址 | /preDeduct |
@@ -857,7 +857,7 @@ list详细说明：
 
 
 - 返回结果
-
+```
    {
    	    "result": "0",
    	    "description": "success",
@@ -865,7 +865,7 @@ list详细说明：
    	    "data": null,
    	    "page": null
    	}
-
+```
 # 应用报表相关接口
 
 ## 客户下拉框初始化
