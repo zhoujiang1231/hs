@@ -30,7 +30,25 @@
           <element id="library" level="project" name="Maven: org.springframework.data:spring-data-keyvalue:1.1.1.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.data:spring-data-commons:1.12.1.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.session:spring-session:1.2.2.RELEASE" />
+          <element id="library" level="project" name="Maven: aopalliance:aopalliance:1.0" />
           <element id="library" level="project" name="Maven: commons-logging:commons-logging:1.2" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-core:4.3.13.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context:4.3.13.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-beans:4.3.13.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-expression:4.3.13.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-aop:4.3.13.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-aspects:4.3.13.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context-support:4.3.13.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:4.3.13.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jms:4.3.13.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-messaging:4.3.13.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-orm:4.3.13.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-oxm:4.3.13.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-tx:4.3.13.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-web:4.3.13.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:4.3.13.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-webmvc-portlet:4.3.13.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-websocket:4.3.13.RELEASE" />
         </element>
       </element>
       <element id="directory" name="META-INF">

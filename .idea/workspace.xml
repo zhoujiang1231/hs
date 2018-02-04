@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="hs:war exploded" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="5d9034f3-ceb7-4df5-b78b-11dd0364a026" name="Default" comment="1">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_1_12_1_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_keyvalue_1_1_1_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_redis_1_7_1_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_session_spring_session_1_2_2_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_session_spring_session_data_redis_1_2_2_RELEASE.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/hs_war.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/hs_war.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/hs_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/hs_war_exploded.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_0.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_0.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_0.xml" />
@@ -18,340 +15,73 @@
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_pagehelper_pagehelper_3_7_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_pagehelper_pagehelper_3_7_5.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_mchange_c3p0_0_9_5_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_mchange_c3p0_0_9_5_2.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_mchange_mchange_commons_java_0_2_11.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_mchange_mchange_commons_java_0_2_11.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_1_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_1_0.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jstl_jstl_1_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jstl_jstl_1_2.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_3_8_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_3_8_1.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_44.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_44.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_pool2_2_4_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_pool2_2_3.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_pool2_2_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_pool2_2_3.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_8_13.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_8_13.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_core_asl_1_9_13.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_core_asl_1_9_13.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_generator_mybatis_generator_core_1_3_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_generator_mybatis_generator_core_1_3_5.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_4_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_4_1.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_1_3_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_1_3_0.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__redis_clients_jedis_2_9_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__redis_clients_jedis_2_7_2.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_1_12_1_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_1_12_1_RELEASE.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_keyvalue_1_1_1_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_keyvalue_1_1_1_RELEASE.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_redis_1_7_1_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_redis_1_7_1_RELEASE.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_session_spring_session_1_2_2_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_session_spring_session_1_2_2_RELEASE.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_session_spring_session_data_redis_1_2_2_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_session_spring_session_data_redis_1_2_2_RELEASE.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__redis_clients_jedis_2_7_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__redis_clients_jedis_2_7_2.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/hs.iml" afterPath="$PROJECT_DIR$/hs.iml" />
       <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hs/filter/Login.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hs/service/RedisService.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hs/service/impl/RedisServiceImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/doc/vlink-data系统前后端分离RESTFUL接口文档1.0.md" afterPath="$PROJECT_DIR$/src/main/resources/doc/vlink-data系统前后端分离RESTFUL接口文档1.0.md" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-      <change beforePath="$PROJECT_DIR$/src/test/Test.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/A.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Test.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hs/controller/CourseController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hs/controller/StudentController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hs/controller/TeacherController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hs/controller/UserController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hs/dao/AdminDao.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hs/dao/CourseDao.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hs/dao/StudentDao.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hs/dao/TeacherDao.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hs/entity/Admin.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hs/entity/Course.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hs/entity/Student.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hs/entity/Teacher.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hs/entity/common/ResponseData.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hs/filter/Login.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hs/service/AdminService.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hs/service/CourseService.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hs/service/RedisService.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hs/service/StudentService.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hs/service/TeacherService.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hs/service/impl/AdminServiceImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hs/service/impl/CourseServiceImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hs/service/impl/RedisServiceImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hs/service/impl/StudentServiceImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hs/service/impl/TeacherServiceImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hs/utils/Generate.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hs/utils/JsonUtils.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hs/utils/SecurityCodeUtil.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/META-INF/MANIFEST.MF" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/applicationContext.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/classes/A.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/classes/Test.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/classes/com/hs/controller/CourseController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/classes/com/hs/controller/StudentController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/classes/com/hs/controller/TeacherController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/classes/com/hs/controller/UserController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/classes/com/hs/dao/AdminDao.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/classes/com/hs/dao/CourseDao.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/classes/com/hs/dao/StudentDao.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/classes/com/hs/dao/TeacherDao.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/classes/com/hs/entity/Admin.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/classes/com/hs/entity/Course.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/classes/com/hs/entity/Student.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/classes/com/hs/entity/Teacher.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/classes/com/hs/entity/common/ResponseData.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/classes/com/hs/filter/Login.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/classes/com/hs/service/AdminService.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/classes/com/hs/service/CourseService.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/classes/com/hs/service/RedisService.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/classes/com/hs/service/StudentService.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/classes/com/hs/service/TeacherService.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/classes/com/hs/service/impl/AdminServiceImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/classes/com/hs/service/impl/CourseServiceImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/classes/com/hs/service/impl/RedisServiceImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/classes/com/hs/service/impl/StudentServiceImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/classes/com/hs/service/impl/TeacherServiceImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/classes/com/hs/utils/Generate.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/classes/com/hs/utils/JsonUtils.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/classes/com/hs/utils/SecurityCodeUtil.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/classes/conf/log4j.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/classes/conf/mysql.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/classes/conf/redis.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/classes/mappers/AdminMapper.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/classes/mappers/CourseMapper.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/classes/mappers/StudentMapper.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/classes/mappers/TeacherMapper.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/classes/mybatis-config.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/dispatcher-servlet.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/lib/aopalliance-1.0.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/lib/aspectjweaver-1.8.13.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/lib/c3p0-0.9.5.2.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/lib/commons-logging-1.2.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/lib/commons-pool2-2.4.2.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/lib/jackson-annotations-2.9.0.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/lib/jackson-core-2.9.0.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/lib/jackson-core-asl-1.9.13.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/lib/jackson-databind-2.9.0.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/lib/jedis-2.9.0.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/lib/jsqlparser-0.9.1.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/lib/jstl-1.2.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/lib/log4j-1.2.17.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/lib/mchange-commons-java-0.2.11.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/lib/mybatis-3.4.1.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/lib/mybatis-generator-core-1.3.5.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/lib/mybatis-spring-1.3.0.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/lib/mysql-connector-java-5.1.44.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/lib/pagehelper-3.7.5.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/lib/slf4j-api-1.7.25.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/lib/spring-aop-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/lib/spring-aspects-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/lib/spring-beans-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/lib/spring-context-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/lib/spring-context-support-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/lib/spring-core-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/lib/spring-expression-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/lib/spring-instrument-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/lib/spring-instrument-tomcat-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/lib/spring-jdbc-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/lib/spring-jms-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/lib/spring-messaging-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/lib/spring-orm-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/lib/spring-oxm-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/lib/spring-test-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/lib/spring-tx-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/lib/spring-web-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/lib/spring-webmvc-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/lib/spring-webmvc-portlet-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/lib/spring-websocket-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/WEB-INF/web.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/bootstrap/bootstrap-theme.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/bootstrap/bootstrap.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/bootstrap/bootstrapValidator.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/bootstrap/bootstrapValidator.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/bootstrap/pagination.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/bootcss/global.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/bootcss/global_color.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/bootstrap-theme.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/bootstrap.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/bootstrapValidator.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/bootstrapValidator.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/account_on.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/account_out.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/add.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/admin_on.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/admin_out.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/bill_on.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/bill_out.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/body_bg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/btn_bg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/close.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/close1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/close3.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/delete.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/down.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/error.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/error_power.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/fail.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/fee_on.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/fee_out.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/form_btn.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/form_btn_on.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/hide.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/index_bg.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/index_navi_bg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/index_on.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/index_out.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/information_on.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/information_out.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/login_bg.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/login_box.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/login_btn.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/logo.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/modification.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/navigation.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/none.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/ok.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/password_on.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/password_out.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/pause.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/report_on.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/report_out.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/role_on.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/role_out.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/search.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/search_large.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/service_on.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/service_out.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/show.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/start.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/tab_on.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/tab_out.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/top_bg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/up.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/valicode.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/warning.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/images/wrong.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cbwcss/pagination.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/css.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cycss/404.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/cycss/style.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/fonts/glyphicons-halflings-regular.eot" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/fonts/glyphicons-halflings-regular.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/fonts/glyphicons-halflings-regular.woff" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/global.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/global_color.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/page.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/page1.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/css/public.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/images/close.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/images/hide.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/images/show.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/404/404.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/404/above.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/404/below.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/404/info.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/actionIMG.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/coin01.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/coin02.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/coin03.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/coin03_1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/coin04.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/coin04_1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/coin05.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/coin06.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/coin07.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/coin08.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/coin09.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/coin10.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/coin11.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/coin111.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/coin11_1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/coin12.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/coin12_1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/coin13.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/coin13_1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/coin14.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/coin14_1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/coin15.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/coin15_1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/coin16.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/coin16_1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/coin17.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/coin18.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/coin19.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/coin20.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/coin21.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/coin222.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/coinL1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/coinL2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/con01.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/delete.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/full.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/hide.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/logBanner.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/logLOGO.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/logName.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/logPwd.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/logYZM.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/no.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/ok.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/shanchu.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/show.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/topic.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/update.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/img/userPICS.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/js/bootstrap/bootstrap.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/js/bootstrap/bootstrap.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/js/bootstrap/bootstrapValidator.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/js/bootstrap/jquery.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/js/bootstrap/jquery.pagination.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/js/bootstrap/pagination.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/js/cbwjs/bootstrap.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/js/cbwjs/bootstrap.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/js/cbwjs/bootstrapValidator.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/js/cbwjs/jquery-2.1.1.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/js/cbwjs/jquery.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/js/cbwjs/jquery.pagination.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/js/cbwjs/pagination.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/js/cbwjs/vector.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/js/cyjs/demo.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/js/cyjs/jquery.particleground.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/js/cyjs/jquery.particleground.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/js/cyjs/png.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/js/echarts.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/js/jquery-1.12.4.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/js/jquery.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/js/page.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/js/public.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/js/three.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/view/404.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/view/course/course_add.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/view/course/course_list.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/view/include/bootstrap.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/view/include/cbw.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/view/include/cy.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/view/include/easyui.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/view/include/foot.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/view/include/head.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/view/include/left.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/view/include/link.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/view/include/linking.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/view/index.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/view/login.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/view/main.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/view/student/course_list.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/view/student/student_add.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/view/student/student_course.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/view/student/student_info.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/view/student/student_list.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/view/teacher/course_list.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/view/teacher/teacher_add.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/view/teacher/teacher_list.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/view/upload/adl.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/view/upload/cbw.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/view/upload/cgx.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/view/upload/cy.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/view/upload/pyy.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/view/upload/wxw.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/view/upload/xr.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/view/upload/xx.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/view/upload/yml.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/hs/view/user/user_modi_pwd.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/aopalliance-1.0.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/commons-logging-1.2.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/spring-aop-4.3.13.RELEASE.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/spring-aspects-4.3.13.RELEASE.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/spring-beans-4.3.13.RELEASE.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/spring-context-4.3.13.RELEASE.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/spring-context-support-4.3.13.RELEASE.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/spring-core-4.3.13.RELEASE.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/spring-expression-4.3.13.RELEASE.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/spring-instrument-4.3.13.RELEASE.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/spring-instrument-tomcat-4.3.13.RELEASE.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/spring-jdbc-4.3.13.RELEASE.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/spring-jms-4.3.13.RELEASE.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/spring-messaging-4.3.13.RELEASE.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/spring-orm-4.3.13.RELEASE.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/spring-oxm-4.3.13.RELEASE.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/spring-test-4.3.13.RELEASE.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/spring-tx-4.3.13.RELEASE.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/spring-web-4.3.13.RELEASE.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/spring-webmvc-4.3.13.RELEASE.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/spring-webmvc-portlet-4.3.13.RELEASE.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/spring-websocket-4.3.13.RELEASE.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/aopalliance-1.0.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/commons-logging-1.2.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/doc/vlink-data系统前后端分离接口文档.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring-aop-4.3.13.RELEASE.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring-aspects-4.3.13.RELEASE.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring-beans-4.3.13.RELEASE.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring-context-4.3.13.RELEASE.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring-context-support-4.3.13.RELEASE.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring-core-4.3.13.RELEASE.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring-expression-4.3.13.RELEASE.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring-instrument-4.3.13.RELEASE.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring-instrument-tomcat-4.3.13.RELEASE.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring-jdbc-4.3.13.RELEASE.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring-jms-4.3.13.RELEASE.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring-messaging-4.3.13.RELEASE.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring-orm-4.3.13.RELEASE.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring-oxm-4.3.13.RELEASE.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring-test-4.3.13.RELEASE.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring-tx-4.3.13.RELEASE.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring-web-4.3.13.RELEASE.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring-webmvc-4.3.13.RELEASE.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring-webmvc-portlet-4.3.13.RELEASE.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring-websocket-4.3.13.RELEASE.jar" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -362,7 +92,18 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="164">
+              <caret line="182" column="17" lean-forward="false" selection-start-line="182" selection-start-column="17" selection-end-line="182" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -376,6 +117,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/java/com/hs/controller/TeacherController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hs/controller/CourseController.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
@@ -386,11 +128,17 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="$PROJECT_DIR$/../apache-maven-3.5.2" />
-        <option name="userSettingsFile" value="$PROJECT_DIR$/../apache-maven-3.5.2/conf/settings.xml" />
+        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
       </MavenGeneralSettings>
     </option>
   </component>
@@ -400,6 +148,11 @@
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
           <item name="hs Maven Webapp" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="hs Maven Webapp" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
         </path>
       </expand>
       <select />
@@ -470,8 +223,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -490,28 +241,23 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="hs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -607,6 +353,8 @@
       <listeners />
     </configuration>
     <configuration name="hs" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.0.48" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/" />
+      <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
       <deployment>
@@ -618,8 +366,6 @@
       </deployment>
       <server-settings>
         <option name="BASE_DIRECTORY_NAME" value="Unnamed_hs_2" />
-        <option name="HTTP_PORT" value="8011" />
-        <option name="JNDI_PORT" value="1011" />
       </server-settings>
       <predefined_log_file id="Tomcat" enabled="true" />
       <predefined_log_file id="Tomcat Catalina" enabled="true" />
@@ -703,7 +449,9 @@
       <updated>1517051302503</updated>
       <workItem from="1517051306334" duration="1107000" />
       <workItem from="1517190121433" duration="1152000" />
-      <workItem from="1517465540882" duration="30000" />
+      <workItem from="1517465540882" duration="606000" />
+      <workItem from="1517467038153" duration="21000" />
+      <workItem from="1517741483056" duration="2357000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1517190370888</created>
@@ -730,40 +478,40 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2289000" />
+    <option name="totallyTimeSpent" value="5243000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-6" width="1600" height="906" extended-state="6" />
-    <editor active="true" />
+    <frame x="-1" y="-11" width="1602" height="861" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32903227" sideWeight="0.505148" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32734805" sideWeight="0.510296" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32958803" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32904884" sideWeight="0.49765572" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32903227" sideWeight="0.494852" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882884" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26319176" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39917126" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3383978" sideWeight="0.4948652" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872927" sideWeight="0.49765572" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32734805" sideWeight="0.48970398" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27091378" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33933163" sideWeight="0.4948652" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -825,14 +573,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/doc/vlink-data系统前后端分离接口文档.md" />
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="974">
-          <caret line="116" column="19" lean-forward="true" selection-start-line="116" selection-start-column="19" selection-end-line="116" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/doc/vlink-data系统前后端分离RESTFUL接口文档1.0.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -845,8 +585,309 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hs/controller/TeacherController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="20" column="3" lean-forward="true" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
+        <state relative-caret-position="194">
+          <caret line="11" column="28" lean-forward="false" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/conf/mysql.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-396">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/aopalliance-1.0.jar!/META-INF/MANIFEST.MF">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://MAVEN/com.hs:hs:1.0-SNAPSHOT">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>MAVEN</ID>
+          <OriginalElement>com.hs:hs:1.0-SNAPSHOT</OriginalElement>
+          <nodes>
+            <node x="1533.0" y="404.0">com.hs:hs:1.0-SNAPSHOT</node>
+            <node x="2714.0" y="243.0">junit:junit:jar:3.8.1</node>
+            <node x="2522.0" y="243.0">org.mybatis:mybatis:jar:3.4.1</node>
+            <node x="2358.0" y="243.0">org.mybatis:mybatis-spring:jar:1.3.0</node>
+            <node x="2129.0" y="243.0">org.mybatis.generator:mybatis-generator-core:jar:1.3.5</node>
+            <node x="2037.0" y="243.0">log4j:log4j:jar:1.2.17</node>
+            <node x="1825.0" y="243.0">mysql:mysql-connector-java:jar:5.1.44</node>
+            <node x="1741.0" y="243.0">jstl:jstl:jar:1.2</node>
+            <node x="2630.0" y="243.0">com.mchange:c3p0:jar:0.9.5.2</node>
+            <node x="2566.0" y="162.0">com.mchange:c3p0:jar:0.9.5.2/com.mchange:mchange-commons-java:jar:0.2.11</node>
+            <node x="1405.0" y="243.0">org.aspectj:aspectjweaver:jar:1.8.13</node>
+            <node x="1225.0" y="243.0">org.codehaus.jackson:jackson-core-asl:jar:1.9.13</node>
+            <node x="1101.0" y="243.0">org.slf4j:slf4j-api:jar:1.7.25</node>
+            <node x="780.0000000000001" y="243.0">javax.servlet:javax.servlet-api:jar:3.1.0</node>
+            <node x="1561.0" y="243.0">com.fasterxml.jackson.core:jackson-databind:jar:2.9.0</node>
+            <node x="1461.0" y="162.0">com.fasterxml.jackson.core:jackson-databind:jar:2.9.0/com.fasterxml.jackson.core:jackson-annotations:jar:2.9.0</node>
+            <node x="1665.0" y="162.0">com.fasterxml.jackson.core:jackson-databind:jar:2.9.0/com.fasterxml.jackson.core:jackson-core:jar:2.9.0</node>
+            <node x="968.0000000000001" y="243.0">com.github.pagehelper:pagehelper:jar:3.7.5</node>
+            <node x="1001.2500000000001" y="162.0">com.github.jsqlparser:jsqlparser:jar:0.9.1</node>
+            <node x="688.0000000000001" y="243.0">redis.clients:jedis:jar:2.7.2</node>
+            <node x="656.0000000000001" y="162.0">redis.clients:jedis:jar:2.7.2/org.apache.commons:commons-pool2:jar:2.3</node>
+            <node x="280.0" y="243.0">org.springframework.session:spring-session-data-redis:jar:1.2.2.RELEASE</node>
+            <node x="408.0000000000001" y="162.0">org.springframework.session:spring-session-data-redis:jar:1.2.2.RELEASE/org.apache.commons:commons-pool2:jar:2.4.2</node>
+            <node x="56.0" y="162.0">org.springframework.session:spring-session-data-redis:jar:1.2.2.RELEASE/org.springframework.data:spring-data-redis:jar:1.7.1.RELEASE</node>
+            <node x="44.0" y="81.0">org.springframework.session:spring-session-data-redis:jar:1.2.2.RELEASE/org.springframework.data:spring-data-redis:jar:1.7.1.RELEASE/org.springframework.data:spring-data-keyvalue:jar:1.1.1.RELEASE</node>
+            <node x="48.0" y="0.0">org.springframework.session:spring-session-data-redis:jar:1.2.2.RELEASE/org.springframework.data:spring-data-redis:jar:1.7.1.RELEASE/org.springframework.data:spring-data-keyvalue:jar:1.1.1.RELEASE/org.springframework.data:spring-data-commons:jar:1.12.1.RELEASE</node>
+            <node x="244.0" y="162.0">org.springframework.session:spring-session-data-redis:jar:1.2.2.RELEASE/org.springframework.session:spring-session:jar:1.2.2.RELEASE</node>
+            <node x="564.0000000000001" y="162.0">org.springframework.session:spring-session-data-redis:jar:1.2.2.RELEASE/redis.clients:jedis:jar:2.8.1</node>
+            <node x="140.0" y="243.0">aopalliance:aopalliance:jar:1.0</node>
+            <node x="1264.9999999999995" y="81.0">commons-logging:commons-logging:jar:1.2</node>
+            <node x="0.0" y="243.0">org.springframework:spring-core:jar:4.3.13.RELEASE</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="org.springframework.session:spring-session-data-redis:jar:1.2.2.RELEASE" target="org.springframework.session:spring-session-data-redis:jar:1.2.2.RELEASE/redis.clients:jedis:jar:2.8.1">
+              <point x="87.0" y="-15.5" />
+              <point x="483.0" y="218.0" />
+              <point x="600.0000000000001" y="218.0" />
+              <point x="0.0" y="15.5" />
+            </edge>
+            <edge source="com.mchange:c3p0:jar:0.9.5.2" target="com.mchange:c3p0:jar:0.9.5.2/com.mchange:mchange-commons-java:jar:0.2.11">
+              <point x="0.0" y="-15.5" />
+              <point x="0.0" y="15.5" />
+            </edge>
+            <edge source="com.hs:hs:1.0-SNAPSHOT" target="com.github.jsqlparser:jsqlparser:jar:0.9.1">
+              <point x="-8.400000000000091" y="-15.5" />
+              <point x="1548.6" y="324.0" />
+              <point x="1090.5" y="324.0" />
+              <point x="1090.5" y="218.0" />
+              <point x="1085.25" y="218.0" />
+              <point x="28.0" y="15.5" />
+            </edge>
+            <edge source="org.springframework.session:spring-session-data-redis:jar:1.2.2.RELEASE/org.springframework.data:spring-data-redis:jar:1.7.1.RELEASE/org.springframework.data:spring-data-keyvalue:jar:1.1.1.RELEASE" target="org.springframework.session:spring-session-data-redis:jar:1.2.2.RELEASE/org.springframework.data:spring-data-redis:jar:1.7.1.RELEASE/org.springframework.data:spring-data-keyvalue:jar:1.1.1.RELEASE/org.springframework.data:spring-data-commons:jar:1.12.1.RELEASE">
+              <point x="0.0" y="-15.5" />
+              <point x="0.0" y="15.5" />
+            </edge>
+            <edge source="org.springframework.session:spring-session-data-redis:jar:1.2.2.RELEASE/org.springframework.session:spring-session:jar:1.2.2.RELEASE" target="commons-logging:commons-logging:jar:1.2">
+              <point x="0.0" y="-15.5" />
+              <point x="316.0" y="137.0" />
+              <point x="1302.9999999999995" y="137.0" />
+              <point x="-38.0" y="15.5" />
+            </edge>
+            <edge source="org.springframework.session:spring-session-data-redis:jar:1.2.2.RELEASE" target="org.springframework.session:spring-session-data-redis:jar:1.2.2.RELEASE/org.springframework.session:spring-session:jar:1.2.2.RELEASE">
+              <point x="-29.0" y="-15.5" />
+              <point x="367.0" y="218.0" />
+              <point x="316.0" y="218.0" />
+              <point x="0.0" y="15.5" />
+            </edge>
+            <edge source="com.hs:hs:1.0-SNAPSHOT" target="javax.servlet:javax.servlet-api:jar:3.1.0">
+              <point x="-13.200000000000045" y="-15.5" />
+              <point x="1543.8000000000002" y="344.0" />
+              <point x="864.0000000000001" y="344.0" />
+              <point x="0.0" y="15.5" />
+            </edge>
+            <edge source="com.github.pagehelper:pagehelper:jar:3.7.5" target="com.github.jsqlparser:jsqlparser:jar:0.9.1">
+              <point x="0.0" y="-15.5" />
+              <point x="1024.0" y="218.0" />
+              <point x="1029.25" y="218.0" />
+              <point x="-28.0" y="15.5" />
+            </edge>
+            <edge source="com.hs:hs:1.0-SNAPSHOT" target="org.springframework.session:spring-session-data-redis:jar:1.2.2.RELEASE">
+              <point x="-18.0" y="-15.5" />
+              <point x="1539.0" y="364.0" />
+              <point x="396.0" y="364.0" />
+              <point x="0.0" y="15.5" />
+            </edge>
+            <edge source="com.hs:hs:1.0-SNAPSHOT" target="com.github.pagehelper:pagehelper:jar:3.7.5">
+              <point x="-10.799999999999955" y="-15.5" />
+              <point x="1546.2000000000003" y="334.0" />
+              <point x="1024.0" y="334.0" />
+              <point x="0.0" y="15.5" />
+            </edge>
+            <edge source="com.hs:hs:1.0-SNAPSHOT" target="org.slf4j:slf4j-api:jar:1.7.25">
+              <point x="-6.0" y="-15.5" />
+              <point x="1551.0" y="314.0" />
+              <point x="1153.0" y="314.0" />
+              <point x="0.0" y="15.5" />
+            </edge>
+            <edge source="com.fasterxml.jackson.core:jackson-databind:jar:2.9.0" target="com.fasterxml.jackson.core:jackson-databind:jar:2.9.0/com.fasterxml.jackson.core:jackson-core:jar:2.9.0">
+              <point x="40.0" y="-15.5" />
+              <point x="1681.0" y="218.0" />
+              <point x="1729.0" y="218.0" />
+              <point x="0.0" y="15.5" />
+            </edge>
+            <edge source="com.hs:hs:1.0-SNAPSHOT" target="org.codehaus.jackson:jackson-core-asl:jar:1.9.13">
+              <point x="-3.599999999999909" y="-15.5" />
+              <point x="1553.4" y="304.0" />
+              <point x="1305.0" y="304.0" />
+              <point x="0.0" y="15.5" />
+            </edge>
+            <edge source="com.hs:hs:1.0-SNAPSHOT" target="aopalliance:aopalliance:jar:1.0">
+              <point x="-20.40000000000009" y="-15.5" />
+              <point x="1536.6" y="374.0" />
+              <point x="200.0" y="374.0" />
+              <point x="0.0" y="15.5" />
+            </edge>
+            <edge source="com.hs:hs:1.0-SNAPSHOT" target="org.springframework:spring-core:jar:4.3.13.RELEASE">
+              <point x="-22.799999999999955" y="-15.5" />
+              <point x="1534.2000000000003" y="384.0" />
+              <point x="60.0" y="384.0" />
+              <point x="0.0" y="15.5" />
+            </edge>
+            <edge source="com.hs:hs:1.0-SNAPSHOT" target="org.mybatis:mybatis:jar:3.4.1">
+              <point x="18.0" y="-15.5" />
+              <point x="1575.0" y="364.0" />
+              <point x="2566.0" y="364.0" />
+              <point x="0.0" y="15.5" />
+            </edge>
+            <edge source="com.hs:hs:1.0-SNAPSHOT" target="commons-logging:commons-logging:jar:1.2">
+              <point x="13.200000000000045" y="-15.5" />
+              <point x="1570.2000000000003" y="344.0" />
+              <point x="2347.5" y="344.0" />
+              <point x="2347.5" y="137.0" />
+              <point x="1378.9999999999995" y="137.0" />
+              <point x="38.0" y="15.5" />
+            </edge>
+            <edge source="com.hs:hs:1.0-SNAPSHOT" target="jstl:jstl:jar:1.2">
+              <point x="3.599999999999909" y="-15.5" />
+              <point x="1560.6" y="304.0" />
+              <point x="1773.0" y="304.0" />
+              <point x="0.0" y="15.5" />
+            </edge>
+            <edge source="com.hs:hs:1.0-SNAPSHOT" target="log4j:log4j:jar:1.2.17">
+              <point x="8.400000000000091" y="-15.5" />
+              <point x="1565.4" y="324.0" />
+              <point x="2073.0" y="324.0" />
+              <point x="0.0" y="15.5" />
+            </edge>
+            <edge source="com.hs:hs:1.0-SNAPSHOT" target="junit:junit:jar:3.8.1">
+              <point x="22.799999999999955" y="-15.5" />
+              <point x="1579.8000000000002" y="384.0" />
+              <point x="2750.0" y="384.0" />
+              <point x="0.0" y="15.5" />
+            </edge>
+            <edge source="redis.clients:jedis:jar:2.7.2" target="redis.clients:jedis:jar:2.7.2/org.apache.commons:commons-pool2:jar:2.3">
+              <point x="0.0" y="-15.5" />
+              <point x="0.0" y="15.5" />
+            </edge>
+            <edge source="com.hs:hs:1.0-SNAPSHOT" target="redis.clients:jedis:jar:2.7.2">
+              <point x="-15.599999999999909" y="-15.5" />
+              <point x="1541.4" y="354.0" />
+              <point x="724.0000000000001" y="354.0" />
+              <point x="0.0" y="15.5" />
+            </edge>
+            <edge source="com.hs:hs:1.0-SNAPSHOT" target="org.mybatis.generator:mybatis-generator-core:jar:1.3.5">
+              <point x="10.799999999999955" y="-15.5" />
+              <point x="1567.8000000000002" y="334.0" />
+              <point x="2233.0" y="334.0" />
+              <point x="0.0" y="15.5" />
+            </edge>
+            <edge source="com.hs:hs:1.0-SNAPSHOT" target="mysql:mysql-connector-java:jar:5.1.44">
+              <point x="6.0" y="-15.5" />
+              <point x="1563.0" y="314.0" />
+              <point x="1921.0" y="314.0" />
+              <point x="0.0" y="15.5" />
+            </edge>
+            <edge source="com.fasterxml.jackson.core:jackson-databind:jar:2.9.0" target="com.fasterxml.jackson.core:jackson-databind:jar:2.9.0/com.fasterxml.jackson.core:jackson-annotations:jar:2.9.0">
+              <point x="-40.0" y="-15.5" />
+              <point x="1601.0" y="218.0" />
+              <point x="1553.0" y="218.0" />
+              <point x="0.0" y="15.5" />
+            </edge>
+            <edge source="com.hs:hs:1.0-SNAPSHOT" target="org.aspectj:aspectjweaver:jar:1.8.13">
+              <point x="-1.2000000000000455" y="-15.5" />
+              <point x="1555.8000000000002" y="294.0" />
+              <point x="1473.0" y="294.0" />
+              <point x="0.0" y="15.5" />
+            </edge>
+            <edge source="org.springframework.session:spring-session-data-redis:jar:1.2.2.RELEASE" target="org.springframework.session:spring-session-data-redis:jar:1.2.2.RELEASE/org.apache.commons:commons-pool2:jar:2.4.2">
+              <point x="29.0" y="-15.5" />
+              <point x="425.0" y="218.0" />
+              <point x="476.0000000000001" y="218.0" />
+              <point x="0.0" y="15.5" />
+            </edge>
+            <edge source="com.hs:hs:1.0-SNAPSHOT" target="com.mchange:c3p0:jar:0.9.5.2">
+              <point x="20.40000000000009" y="-15.5" />
+              <point x="1577.4" y="374.0" />
+              <point x="2662.0" y="374.0" />
+              <point x="0.0" y="15.5" />
+            </edge>
+            <edge source="com.hs:hs:1.0-SNAPSHOT" target="org.mybatis:mybatis-spring:jar:1.3.0">
+              <point x="15.599999999999909" y="-15.5" />
+              <point x="1572.6" y="354.0" />
+              <point x="2430.0" y="354.0" />
+              <point x="0.0" y="15.5" />
+            </edge>
+            <edge source="com.hs:hs:1.0-SNAPSHOT" target="com.fasterxml.jackson.core:jackson-databind:jar:2.9.0">
+              <point x="1.2000000000000455" y="-15.5" />
+              <point x="1558.2000000000003" y="294.0" />
+              <point x="1641.0" y="294.0" />
+              <point x="0.0" y="15.5" />
+            </edge>
+            <edge source="org.springframework.session:spring-session-data-redis:jar:1.2.2.RELEASE" target="org.springframework.session:spring-session-data-redis:jar:1.2.2.RELEASE/org.springframework.data:spring-data-redis:jar:1.7.1.RELEASE">
+              <point x="-87.0" y="-15.5" />
+              <point x="309.0" y="218.0" />
+              <point x="140.0" y="218.0" />
+              <point x="0.0" y="15.5" />
+            </edge>
+            <edge source="org.springframework.session:spring-session-data-redis:jar:1.2.2.RELEASE/org.springframework.data:spring-data-redis:jar:1.7.1.RELEASE" target="org.springframework.session:spring-session-data-redis:jar:1.2.2.RELEASE/org.springframework.data:spring-data-redis:jar:1.7.1.RELEASE/org.springframework.data:spring-data-keyvalue:jar:1.1.1.RELEASE">
+              <point x="0.0" y="-15.5" />
+              <point x="0.0" y="15.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.19802610633556192" x="1191.9614147909967" y="-262.2347266881029" />
+          <SelectedNodes />
+          <Categories />
+          <VISIBILITY>All</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hs/controller/StudentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hs/entity/common/ResponseData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="98" column="56" lean-forward="false" selection-start-line="98" selection-start-column="56" selection-end-line="98" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hs/controller/CourseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="138" column="37" lean-forward="false" selection-start-line="138" selection-start-column="37" selection-end-line="138" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/course/course_list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="103" column="60" lean-forward="true" selection-start-line="103" selection-start-column="60" selection-end-line="103" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="182" column="17" lean-forward="false" selection-start-line="182" selection-start-column="17" selection-end-line="182" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -929,7 +970,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.0</last-edited>
+          <last-edited>lib</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
