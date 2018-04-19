@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hs.mapper.TeacherMapper">
+    <select id="getLoginTeacher" resultType="Teacher" parameterType="Teacher">
+        SELECT * FROM teacher WHERE tName=#{tName} and tPassword = #{tPassword}
+    </select>
+
+    <select id="getAllTeacher" resultType="Teacher" parameterType="java.lang.String">
+        SELECT * FROM teacher WHERE 1=1
+        <if test='_parameter!=null and _parameter!=""'>
+           and tName like '%${_parameter}%'
+        </if>
+    </select>
+
+    <update id="updateTeacherPsw" parameterType="Teacher">
+        UPDATE teacher SET tPassword=#{tPassword} WHERE tId = #{tId}
+    </update>
+
+    <insert id="addTeacher" parameterType="Teacher" useGeneratedKeys="true">
+        INSERT INTO teacher (tName,tPassword,creatTime)
+        VALUES (#{tName},#{tPassword},now())
+    </insert>
+
+    <delete id="deleteTeacher" parameterType="Teacher">
+        DELETE FROM teacher where tId=#{tId}
+    </delete>
+    <!--删除教师帐号之后必须做的动作
+        1删除该课程的选课记录
+        2删除教师的课程-->
+    <!--1删除该课程的选课记录-->
+    <delete id="deleteCourseStudent" parameterType="Teacher">
+        DELETE FROM course_student WHERE cId IN (SELECT cId FROM course_teacher WHERE tId=#{tId})
+    </delete>
+    <!--2删除教师的课程-->
+    <delete id="deleteCourseTeacher" parameterType="java.lang.Integer">
+        DELETE FROM course_teacher WHERE tId = #{tId}
+    </delete>
+    <update id="updateTeacherPswAll" >
+        UPDATE teacher SET tPassword=888888 WHERE tId IN
+        <foreach collection="array" item="tId" index="index"
+                 open="(" close=")" separator=",">
+            #{tId}
+        </foreach>
+    </update>
+
+</mapper>

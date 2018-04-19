@@ -1,66 +1,63 @@
 package com.hs.service;
 
+import com.hs.mapper.StudentMapper;
 import com.hs.entity.Student;
+import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
  * Created by zj on 2018年1年6日.
  */
-public interface StudentService {
-    /**
-     * 获取登录用户信息
-     * @param student
-     * @return
-     */
-    public Student getLoginStudent(Student student);
+@Service
+public class StudentService {
+    @Resource private StudentMapper studentMapper;
 
-    /**
-     * 添加用户
-     * @param student
-     * @return
-     */
-    public boolean addStudent(Student student);
+    public Student getLoginStudent(Student student) {
+        return studentMapper.getLoginStudent(student);
+    }
 
-    /**
-     * 修改密码
-     * @param student
-     * @return
-     */
-    public boolean updateStudentPsw(Student student);
+    public boolean addStudent(Student student) {
+        if(studentMapper.addStudent(student)>0){
+            return true;
+        }
+        return false;
+    }
 
-    /**
-     * 批量修改密码
-     * @param stuId
-     * @return
-     */
-    public boolean updateStudentPswAll(String[] stuId);
+    public boolean updateStudentPsw(Student student) {
+        if(studentMapper.updateStudentPsw(student)>0){
+            return true;
+        }
+        return false;
+    }
 
-    /**
-     * 修改学生信息
-     * @param student
-     * @return
-     */
-    public boolean updateStudent(Student student);
+    public boolean updateStudentPswAll(String[] stuId) {
+        if(studentMapper.updateStudentPswAll(stuId)>0) {
+            return true;
+        }
+        return false;
+    }
 
-    /**
-     * 获取所有用户
-     * @Param student
-     * @return
-     */
-    public List<Student> getAllStudent(Student student);
+    public boolean updateStudent(Student student) {
+        if(studentMapper.updateStudent(student)>0){
+            return true;
+        }
+        return false;
+    }
 
-    /**
-     * 搜索用户
-     * @return
-     */
-    public List<Student> getStudentByCondition(Student student);
+    public List<Student> getAllStudent(Student student) {
+        return studentMapper.getAllStudent(student);
+    }
 
-    /**
-     * 删除用户
-     * @param student
-     * @return
-     */
-    public boolean deleteStudent(Student student);
+    public List<Student> getStudentByCondition(Student student) {
+        return studentMapper.getStudentByCondition(student);
+    }
 
+    public boolean deleteStudent(Student student) {
+        if(studentMapper.deleteStudent(student)>0&& studentMapper.deleteStudentCourse(student)!=-1){
+            return true;
+        }
+        return false;
+    }
 }

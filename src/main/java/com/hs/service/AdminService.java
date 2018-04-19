@@ -1,46 +1,45 @@
 package com.hs.service;
 
+import com.hs.mapper.AdminMapper;
 import com.hs.entity.Admin;
+import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
  * Created by zj on 2018年1年6日.
  */
-public interface AdminService {
-    /**
-     * 获取登录用户信息
-     * @param admin
-     * @return
-     */
-    public Admin getLoginAdmin(Admin admin);
+@Service
+public class AdminService {
+    @Resource private AdminMapper adminMapper;
 
-    /**
-     * 添加用户
-     * @param admin
-     * @return
-     */
-    public boolean addAdmin(Admin admin);
+    public Admin getLoginAdmin(Admin admin) {
+        return adminMapper.getLoginAdmin(admin);
+    }
 
-    /**
-     * 修改密码
-     * @param admin
-     * @return
-     */
-    public boolean updateAdminPsw(Admin admin);
+    public boolean addAdmin(Admin admin) {
+        if(adminMapper.addAdmin(admin)>0){
+            return true;
+        }
+        return false;
+    }
 
-    /**
-     * 获取所有用户
-     * @return
-     */
-    public List<Admin> getAllAdmin();
+    public boolean updateAdminPsw(Admin admin) {
+        if(adminMapper.updateAdminPsw(admin)>0){
+            return true;
+        }
+        return false;
+    }
 
+    public List<Admin> getAllAdmin() {
+        return adminMapper.getAllAdmin();
+    }
 
-    /**
-     * 删除用户
-     * @param admin
-     * @return
-     */
-    public boolean deleteAdmin(Admin admin);
-
+    public boolean deleteAdmin(Admin admin) {
+        if(adminMapper.deleteAdmin(admin)>0){
+            return true;
+        }
+        return false;
+    }
 }

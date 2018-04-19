@@ -3,7 +3,6 @@ package com.hs.controller;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.hs.entity.Student;
-import com.hs.entity.Teacher;
 import com.hs.entity.common.ResponseData;
 import com.hs.service.StudentService;
 import org.springframework.stereotype.Controller;
@@ -11,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -54,7 +54,7 @@ public class StudentController {
 
     @RequestMapping(value = "/getAllStudent")
     @ResponseBody
-    public String getAllStudent(@RequestParam String pageNum, String stuName, String stuDepart, String stuSex,HttpServletRequest request) {
+    public String getAllStudent(@RequestParam String pageNum, String stuName, String stuDepart, String stuSex, HttpServletRequest request) {
         if("".equals(pageNum)||pageNum== null){
             pageNum="1";
         }

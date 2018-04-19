@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
@@ -25,7 +26,7 @@ public class CourseController {
 
     @RequestMapping(value = "/getAllCourse")
     @ResponseBody
-    public String getAllCourse(@RequestParam String pageNum,String cName,String cType,HttpServletRequest request) {
+    public String getAllCourse(@RequestParam String pageNum, String cName, String cType, HttpServletRequest request) {
         if("".equals(pageNum)||pageNum== null){
             pageNum="1";
         }
@@ -157,7 +158,7 @@ public class CourseController {
      */
     @RequestMapping(value = "/getAllTeacherCourse")
     @ResponseBody
-    public String getAllTeacherCourse(@RequestParam String pageNum,String cName,String cType,HttpServletRequest request) {
+    public String getAllTeacherCourse(@RequestParam String pageNum, String cName, String cType, HttpServletRequest request) {
         if("".equals(pageNum)||pageNum== null){
             pageNum="1";
         }
@@ -185,7 +186,7 @@ public class CourseController {
      */
     @RequestMapping(value = "/getAllStudentCourse")
     @ResponseBody
-    public String getAllStudentCourse(@RequestParam String pageNum,HttpServletRequest request) {
+    public String getAllStudentCourse(@RequestParam String pageNum, HttpServletRequest request) {
         if("".equals(pageNum)||pageNum== null){
             pageNum="1";
         }

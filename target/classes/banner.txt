@@ -1,0 +1,11 @@
+${AnsiColor.BRIGHT_GREEN}
+          _______
+|\     /|(  ____ \
+| )   ( || (    \/
+| (___) || (_____
+|  ___  |(_____  )
+| (   ) |      ) |
+| )   ( |/\____) |
+|/     \|\_______)
+${application.title}${application.formatted-version}
+${AnsiColor.DEFAULT}

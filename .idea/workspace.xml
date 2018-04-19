@@ -7,81 +7,267 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d9034f3-ceb7-4df5-b78b-11dd0364a026" name="Default" comment="1">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/hs_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/hs_war_exploded.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_0.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_0.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_0.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_jsqlparser_jsqlparser_0_9_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_jsqlparser_jsqlparser_0_9_1.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_pagehelper_pagehelper_3_7_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_pagehelper_pagehelper_3_7_5.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_mchange_c3p0_0_9_5_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_mchange_c3p0_0_9_5_2.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_mchange_mchange_commons_java_0_2_11.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_mchange_mchange_commons_java_0_2_11.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_1_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_1_0.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jstl_jstl_1_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jstl_jstl_1_2.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_3_8_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_3_8_1.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_44.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_44.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_pool2_2_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_pool2_2_3.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_8_13.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_8_13.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_core_asl_1_9_13.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_core_asl_1_9_13.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_generator_mybatis_generator_core_1_3_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_generator_mybatis_generator_core_1_3_5.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_4_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_4_1.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_1_3_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_1_3_0.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_1_12_1_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_1_12_1_RELEASE.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_keyvalue_1_1_1_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_keyvalue_1_1_1_RELEASE.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_redis_1_7_1_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_redis_1_7_1_RELEASE.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_session_spring_session_1_2_2_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_session_spring_session_1_2_2_RELEASE.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_session_spring_session_data_redis_1_2_2_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_session_spring_session_data_redis_1_2_2_RELEASE.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__redis_clients_jedis_2_7_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__redis_clients_jedis_2_7_2.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_0.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_0.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_0.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_mchange_c3p0_0_9_5_2.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_mchange_mchange_commons_java_0_2_11.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_1_0.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jstl_jstl_1_2.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_3_8_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_44.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_pool2_2_3.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_8_13.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_core_asl_1_9_13.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_generator_mybatis_generator_core_1_3_5.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_4_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_1_3_0.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_1_12_1_RELEASE.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_keyvalue_1_1_1_RELEASE.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_redis_1_7_1_RELEASE.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_session_spring_session_1_2_2_RELEASE.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_session_spring_session_data_redis_1_2_2_RELEASE.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__redis_clients_jedis_2_7_2.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/hs.iml" afterPath="$PROJECT_DIR$/hs.iml" />
       <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/aopalliance-1.0.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/commons-logging-1.2.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/spring-aop-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/spring-aspects-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/spring-beans-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/spring-context-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/spring-context-support-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/spring-core-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/spring-expression-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/spring-instrument-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/spring-instrument-tomcat-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/spring-jdbc-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/spring-jms-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/spring-messaging-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/spring-orm-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/spring-oxm-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/spring-test-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/spring-tx-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/spring-web-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/spring-webmvc-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/spring-webmvc-portlet-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/spring-websocket-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/aopalliance-1.0.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/commons-logging-1.2.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/doc/vlink-data系统前后端分离接口文档.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring-aop-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring-aspects-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring-beans-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring-context-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring-context-support-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring-core-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring-expression-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring-instrument-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring-instrument-tomcat-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring-jdbc-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring-jms-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring-messaging-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring-orm-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring-oxm-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring-test-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring-tx-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring-web-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring-webmvc-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring-webmvc-portlet-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring-websocket-4.3.13.RELEASE.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hs/controller/CourseController.java" afterPath="$PROJECT_DIR$/src/main/java/com/hs/controller/CourseController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hs/controller/StudentController.java" afterPath="$PROJECT_DIR$/src/main/java/com/hs/controller/StudentController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hs/controller/TeacherController.java" afterPath="$PROJECT_DIR$/src/main/java/com/hs/controller/TeacherController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hs/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/com/hs/controller/UserController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hs/dao/AdminDao.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hs/dao/CourseDao.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hs/dao/StudentDao.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hs/dao/TeacherDao.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hs/service/AdminService.java" afterPath="$PROJECT_DIR$/src/main/java/com/hs/service/AdminService.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hs/service/CourseService.java" afterPath="$PROJECT_DIR$/src/main/java/com/hs/service/CourseService.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hs/service/StudentService.java" afterPath="$PROJECT_DIR$/src/main/java/com/hs/service/StudentService.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hs/service/TeacherService.java" afterPath="$PROJECT_DIR$/src/main/java/com/hs/service/TeacherService.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hs/service/impl/AdminServiceImpl.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hs/service/impl/CourseServiceImpl.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hs/service/impl/StudentServiceImpl.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hs/service/impl/TeacherServiceImpl.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hs/utils/Generate.java" afterPath="$PROJECT_DIR$/src/main/java/com/hs/utils/Generate.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hs/utils/JsonUtils.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hs/utils/generator.xml" afterPath="$PROJECT_DIR$/src/main/java/com/hs/utils/generator.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/conf/log4j.properties" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/conf/mysql.properties" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/conf/redis.properties" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/doc/vlink-data系统前后端分离RESTFUL接口文档1.0.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/AdminMapper.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/CourseMapper.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/StudentMapper.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/TeacherMapper.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/bootstrap/bootstrap-theme.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/bootstrap/bootstrap.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/bootstrap/bootstrapValidator.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/bootstrap/bootstrapValidator.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/bootstrap/pagination.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/bootcss/global.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/bootcss/global_color.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/bootstrap-theme.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/bootstrap.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/bootstrapValidator.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/bootstrapValidator.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/account_on.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/account_out.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/add.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/admin_on.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/admin_out.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/bill_on.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/bill_out.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/body_bg.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/btn_bg.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/close.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/close1.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/close3.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/delete.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/down.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/error.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/error_power.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/fail.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/fee_on.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/fee_out.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/form_btn.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/form_btn_on.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/hide.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/index_bg.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/index_navi_bg.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/index_on.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/index_out.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/information_on.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/information_out.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/login_bg.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/login_box.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/login_btn.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/logo.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/modification.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/navigation.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/none.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/ok.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/password_on.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/password_out.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/pause.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/report_on.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/report_out.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/role_on.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/role_out.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/search.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/search_large.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/service_on.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/service_out.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/show.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/start.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/tab_on.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/tab_out.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/top_bg.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/up.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/valicode.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/warning.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/images/wrong.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cbwcss/pagination.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/css.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cycss/404.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cycss/style.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/fonts/glyphicons-halflings-regular.eot" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/fonts/glyphicons-halflings-regular.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/fonts/glyphicons-halflings-regular.woff" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/global.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/global_color.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/page.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/page1.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/public.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/close.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/hide.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/show.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/404/404.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/404/above.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/404/below.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/404/info.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/actionIMG.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/coin01.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/coin02.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/coin03.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/coin03_1.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/coin04.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/coin04_1.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/coin05.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/coin06.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/coin07.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/coin08.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/coin09.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/coin10.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/coin11.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/coin111.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/coin11_1.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/coin12.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/coin12_1.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/coin13.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/coin13_1.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/coin14.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/coin14_1.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/coin15.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/coin15_1.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/coin16.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/coin16_1.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/coin17.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/coin18.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/coin19.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/coin20.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/coin21.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/coin222.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/coinL1.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/coinL2.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/con01.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/delete.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/full.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/hide.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/logBanner.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/logLOGO.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/logName.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/logPwd.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/logYZM.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/no.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/ok.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/shanchu.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/show.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/topic.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/update.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/userPICS.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/bootstrap/bootstrap.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/bootstrap/bootstrap.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/bootstrap/bootstrapValidator.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/bootstrap/jquery.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/bootstrap/jquery.pagination.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/bootstrap/pagination.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/cbwjs/bootstrap.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/cbwjs/bootstrap.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/cbwjs/bootstrapValidator.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/cbwjs/jquery-2.1.1.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/cbwjs/jquery.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/cbwjs/jquery.pagination.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/cbwjs/pagination.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/cbwjs/vector.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/cyjs/demo.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/cyjs/jquery.particleground.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/cyjs/jquery.particleground.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/cyjs/png.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/echarts.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/jquery-1.12.4.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/jquery.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/page.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/public.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/three.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/404.jsp" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/course/course_add.jsp" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/course/course_list.jsp" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/include/bootstrap.jsp" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/include/cbw.jsp" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/include/cy.jsp" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/include/easyui.jsp" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/include/foot.jsp" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/include/head.jsp" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/include/left.jsp" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/include/link.jsp" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/include/linking.jsp" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/index.jsp" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/login.jsp" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/main.jsp" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/student/course_list.jsp" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/student/student_add.jsp" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/student/student_course.jsp" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/student/student_info.jsp" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/student/student_list.jsp" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/teacher/course_list.jsp" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/teacher/teacher_add.jsp" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/teacher/teacher_list.jsp" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/upload/adl.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/upload/cbw.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/upload/cgx.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/upload/cy.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/upload/pyy.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/upload/wxw.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/upload/xr.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/upload/xx.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/upload/yml.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/user/user_modi_pwd.jsp" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/conf/log4j.properties" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/conf/mysql.properties" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/conf/redis.properties" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mappers/AdminMapper.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mappers/CourseMapper.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mappers/StudentMapper.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mappers/TeacherMapper.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mybatis-config.xml" afterPath="$PROJECT_DIR$/target/classes/mybatis-config.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -92,12 +278,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="application.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="182" column="17" lean-forward="false" selection-start-line="182" selection-start-column="17" selection-end-line="182" selection-end-column="17" />
+            <state relative-caret-position="496">
+              <caret line="31" column="37" lean-forward="false" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -222,7 +408,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -241,13 +428,19 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="hs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hs" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="AndroidView" />
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -325,6 +518,12 @@
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
     </configuration>
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.hs.Application" />
+      <module name="hs" />
+      <envs />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -352,81 +551,6 @@
       <properties />
       <listeners />
     </configuration>
-    <configuration name="hs" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.0.48" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/" />
-      <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
-      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
-      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
-      <deployment>
-        <artifact name="hs:war exploded">
-          <settings>
-            <option name="CONTEXT_PATH" value="/" />
-          </settings>
-        </artifact>
-      </deployment>
-      <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="Unnamed_hs_2" />
-      </server-settings>
-      <predefined_log_file id="Tomcat" enabled="true" />
-      <predefined_log_file id="Tomcat Catalina" enabled="true" />
-      <predefined_log_file id="Tomcat Manager" enabled="false" />
-      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
-      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="42661" />
-      </RunnerSettings>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <method>
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="hs:war exploded" />
-        </option>
-      </method>
-    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -452,6 +576,7 @@
       <workItem from="1517465540882" duration="606000" />
       <workItem from="1517467038153" duration="21000" />
       <workItem from="1517741483056" duration="2357000" />
+      <workItem from="1524141147403" duration="49000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1517190370888</created>
@@ -478,10 +603,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5243000" />
+    <option name="totallyTimeSpent" value="5292000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="-11" width="1602" height="861" extended-state="6" />
+    <frame x="0" y="-6" width="1440" height="855" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32734805" sideWeight="0.510296" order="7" side_tool="true" content_ui="tabs" />
@@ -495,16 +621,16 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39917126" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3383978" sideWeight="0.4948652" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872927" sideWeight="0.49765572" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32734805" sideWeight="0.48970398" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27091378" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27474892" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -512,6 +638,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3383978" sideWeight="0.4948652" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -557,6 +684,14 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hs/controller/TeacherController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
@@ -573,48 +708,17 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/doc/vlink-data系统前后端分离接口文档.md" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/doc/vlink-data系统前后端分离RESTFUL接口文档1.0.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-16505">
-            <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/doc/vlink-data系统前后端分离RESTFUL接口文档1.0.md" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hs/controller/TeacherController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
           <caret line="11" column="28" lean-forward="false" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/conf/mysql.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-396">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/aopalliance-1.0.jar!/META-INF/MANIFEST.MF">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/conf/mysql.properties" />
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" />
+    <entry file="jar://$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/aopalliance-1.0.jar!/META-INF/MANIFEST.MF" />
     <entry file="uml://MAVEN/com.hs:hs:1.0-SNAPSHOT">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -844,9 +948,10 @@
               <point x="0.0" y="15.5" />
             </edge>
           </edges>
-          <settings layout="Hierarchic Group" zoom="0.19802610633556192" x="1191.9614147909967" y="-262.2347266881029" />
+          <settings layout="Hierarchic Group" zoom="0.19802610633556192" x="1192.0" y="-262.0" />
           <SelectedNodes />
           <Categories />
+          <SCOPE>All</SCOPE>
           <VISIBILITY>All</VISIBILITY>
         </state>
       </provider>
@@ -855,7 +960,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -863,7 +967,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="98" column="56" lean-forward="false" selection-start-line="98" selection-start-column="56" selection-end-line="98" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -875,18 +978,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/course/course_list.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/course/course_list.jsp" />
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="103" column="60" lean-forward="true" selection-start-line="103" selection-start-column="60" selection-end-line="103" selection-end-column="60" />
+        <state relative-caret-position="528">
+          <caret line="117" column="10" lean-forward="false" selection-start-line="117" selection-start-column="10" selection-end-line="117" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="182" column="17" lean-forward="false" selection-start-line="182" selection-start-column="17" selection-end-line="182" selection-end-column="17" />
+        <state relative-caret-position="496">
+          <caret line="31" column="37" lean-forward="false" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="37" />
           <folding />
         </state>
       </provider>

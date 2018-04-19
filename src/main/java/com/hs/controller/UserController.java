@@ -1,4 +1,5 @@
 package com.hs.controller;
+
 import com.hs.entity.Admin;
 import com.hs.entity.Student;
 import com.hs.entity.Teacher;
@@ -10,6 +11,7 @@ import com.hs.utils.SecurityCodeUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
 import javax.annotation.Resource;
 import javax.imageio.ImageIO;
 import javax.servlet.ServletOutputStream;

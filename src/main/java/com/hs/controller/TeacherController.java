@@ -5,17 +5,13 @@ import com.github.pagehelper.PageInfo;
 import com.hs.entity.Teacher;
 import com.hs.entity.common.ResponseData;
 import com.hs.service.TeacherService;
-import com.sun.org.apache.regexp.internal.RE;
-import org.apache.ibatis.jdbc.Null;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -28,7 +24,7 @@ public class TeacherController {
 
     @RequestMapping(value = "/getAllTeacher")
     @ResponseBody
-    public String getAllTeacher(@RequestParam String pageNum,@RequestParam String pageSize, @RequestParam String tName, HttpServletRequest request) {
+    public String getAllTeacher(@RequestParam String pageNum, @RequestParam String pageSize, @RequestParam String tName, HttpServletRequest request) {
         if("".equals(pageNum)||pageNum== null){
             pageNum="1";
         }
