@@ -52,13 +52,13 @@ public final class StringUtil extends StringUtils{
             result[i++] = tokens.nextToken();
         return result;
     }
-    public static void main(String[] argv){
+    /*public static void main(String[] argv){
         String [] list = StringUtil.split(";" ,"a;b;c;;e;", false);
         System.out.println(list.length);
         for(String s:list){                                         
             System.out.println(s);
         }
-    }
+    }*/
 
     /**
      * 将字符串转成boolean类型。

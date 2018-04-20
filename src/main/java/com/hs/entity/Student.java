@@ -9,17 +9,18 @@ import java.util.List;
 /**
  * Created by zj on 2018年1年6日.
  */
-public class Student implements Serializable {
-    private int stuId;
+public class Student extends BaseEntity {
+    private Integer stuId;
     private String stuName;
     private String stuPassword;
     private String stuAddress;
     private String stuEmail;
-    private int stuSex;
+    private Integer stuSex;
     private String stuNo;
     private String stuTel;
     private String stuDepart;
     private String stuIdcard;
+    private Integer userType;
     private Date creatTime;
     private List<Course> lc = new ArrayList<Course>();
 
@@ -31,7 +32,7 @@ public class Student implements Serializable {
         this.stuPassword = stuPassword;
     }
 
-    public Student(int stuId, String stuName, String stuPassword, String stuAddress, String stuEmail, int stuSex, String stuNo, String stuTel, String stuDepart, String stuIdcard) {
+    public Student(Integer stuId, String stuName, String stuPassword, String stuAddress, String stuEmail, Integer stuSex, String stuNo, String stuTel, String stuDepart, String stuIdcard) {
         this.stuId = stuId;
         this.stuName = stuName;
         this.stuPassword = stuPassword;
@@ -44,11 +45,11 @@ public class Student implements Serializable {
         this.stuIdcard = stuIdcard;
     }
 
-    public int getStuId() {
+    public Integer getStuId() {
         return stuId;
     }
 
-    public void setStuId(int stuId) {
+    public void setStuId(Integer stuId) {
         this.stuId = stuId;
     }
 
@@ -84,11 +85,11 @@ public class Student implements Serializable {
         this.stuEmail = stuEmail;
     }
 
-    public int getStuSex() {
+    public Integer getStuSex() {
         return stuSex;
     }
 
-    public void setStuSex(int stuSex) {
+    public void setStuSex(Integer stuSex) {
         this.stuSex = stuSex;
     }
 
@@ -143,5 +144,13 @@ public class Student implements Serializable {
 
     public void setLc(List<Course> lc) {
         this.lc = lc;
+    }
+
+    public Integer getUserType() {
+        return userType;
+    }
+
+    public void setUserType(Integer userType) {
+        this.userType = userType;
     }
 }

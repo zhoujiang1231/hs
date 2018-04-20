@@ -15,7 +15,7 @@ import redis.clients.jedis.JedisPoolConfig;
 /**
  * Redis连接池及RedisTemplate配置
  * 
- * @author Jiangsl
+ * @author zj
  * @date 2018/01/18
  *
  */

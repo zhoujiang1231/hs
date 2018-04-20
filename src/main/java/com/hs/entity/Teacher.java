@@ -1,6 +1,5 @@
 package com.hs.entity;
 
-import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -9,17 +8,18 @@ import java.util.List;
 /**
  * Created by zj on 2018年1年10日.
  */
-public class Teacher implements Serializable{
-    private int tId;
-    private  String	tName;
+public class Teacher extends BaseEntity{
+    private Integer tId;
+    private String	tName;
     private String	tPassword;
     private Date creatTime;
+    private Integer userType;
     private List<Course> lc = new ArrayList<Course>();
 
     public Teacher() {
     }
 
-    public Teacher(int tId) {
+    public Teacher(Integer tId) {
         this.tId = tId;
     }
 
@@ -28,11 +28,11 @@ public class Teacher implements Serializable{
         this.tPassword = tPassword;
     }
 
-    public int gettId() {
+    public Integer gettId() {
         return tId;
     }
 
-    public void settId(int tId) {
+    public void settId(Integer tId) {
         this.tId = tId;
     }
 
@@ -71,5 +71,13 @@ public class Teacher implements Serializable{
 
     public void setLc(List<Course> lc) {
         this.lc = lc;
+    }
+
+    public Integer getUserType() {
+        return userType;
+    }
+
+    public void setUserType(Integer userType) {
+        this.userType = userType;
     }
 }

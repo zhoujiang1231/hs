@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -19,13 +20,12 @@ import java.util.Map;
 /**
  * Created by zj on 2018年1年6日.
  */
-@Controller
+@RestController
 @RequestMapping(value = "/course",produces = "text/html;charset=UTF-8")
 public class CourseController {
     @Resource private CourseService courseService;
 
     @RequestMapping(value = "/getAllCourse")
-    @ResponseBody
     public String getAllCourse(@RequestParam String pageNum, String cName, String cType, HttpServletRequest request) {
         if("".equals(pageNum)||pageNum== null){
             pageNum="1";
@@ -46,7 +46,6 @@ public class CourseController {
     }
 
     @RequestMapping(value = "/choseCourse")
-    @ResponseBody
     public String choseCourse(String cId,HttpServletRequest request){
        int stuId = (Integer) request.getSession().getAttribute("stuId");
        Map map = new HashMap();
@@ -65,7 +64,6 @@ public class CourseController {
     }
 
     @RequestMapping(value = "/unchoeseCourse")
-    @ResponseBody
     public String unchoeseCourse(String cId,HttpServletRequest request){
         int stuId = (Integer) request.getSession().getAttribute("stuId");
         Map map = new HashMap();
@@ -84,7 +82,6 @@ public class CourseController {
     }
 
     @RequestMapping(value = "/addCourse")
-    @ResponseBody
     public String addCourse(Course course,HttpServletRequest request){
         if(course.getcName()==null || course.getcName()==""){
             return ResponseData.error("课程名为空");
@@ -121,7 +118,6 @@ public class CourseController {
     }
 
     @RequestMapping(value = "/deleteCourse")
-    @ResponseBody
     public String deleteCourse(int cId){
         boolean b = courseService.deleteCourse(cId);
         if(b){
@@ -133,7 +129,6 @@ public class CourseController {
     }
 
     @RequestMapping(value = "/deleteCourseBatch")
-    @ResponseBody
     public String deleteCourseBatch(String[] cId){
         int[] cid = new int[cId.length];
         for (int i = 0; i < cId.length; i++) {
@@ -157,7 +152,6 @@ public class CourseController {
      * @return
      */
     @RequestMapping(value = "/getAllTeacherCourse")
-    @ResponseBody
     public String getAllTeacherCourse(@RequestParam String pageNum, String cName, String cType, HttpServletRequest request) {
         if("".equals(pageNum)||pageNum== null){
             pageNum="1";
@@ -185,7 +179,6 @@ public class CourseController {
      * @return
      */
     @RequestMapping(value = "/getAllStudentCourse")
-    @ResponseBody
     public String getAllStudentCourse(@RequestParam String pageNum, HttpServletRequest request) {
         if("".equals(pageNum)||pageNum== null){
             pageNum="1";

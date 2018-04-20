@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -17,13 +18,12 @@ import java.util.List;
 /**
  * Created by zj on 2018年1年10日.
  */
-@Controller
+@RestController
 @RequestMapping(value = "/teacher",produces = "text/html;charset=UTF-8")
 public class TeacherController {
     @Resource private TeacherService teacherService;
 
     @RequestMapping(value = "/getAllTeacher")
-    @ResponseBody
     public String getAllTeacher(@RequestParam String pageNum, @RequestParam String pageSize, @RequestParam String tName, HttpServletRequest request) {
         if("".equals(pageNum)||pageNum== null){
             pageNum="1";
@@ -49,7 +49,6 @@ public class TeacherController {
         }
     }
     @RequestMapping(value = "/deleteTeacher")
-    @ResponseBody
     public String deleteTeacher(int tId) {
         if(teacherService.deleteTeacher(new Teacher(tId))){
             return ResponseData.success("删除成功");
@@ -59,7 +58,6 @@ public class TeacherController {
 
 
     @RequestMapping(value = "/addTeacher")
-    @ResponseBody
     public String addTeacher(Teacher teacher) {
         if(teacher.gettName()==""){
             return ResponseData.error("姓名为空");
@@ -74,7 +72,6 @@ public class TeacherController {
     }
 
     @RequestMapping(value = "/updateTeacherPswAll")
-    @ResponseBody
     public String updateUserPsw(String[] tId) {
         if(teacherService.updateTeacherPswAll(tId)){
             return ResponseData.success("密码重置成功");

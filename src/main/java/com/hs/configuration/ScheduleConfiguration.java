@@ -16,7 +16,7 @@ import redis.clients.jedis.JedisPool;
 /**
  * 定时任务调度器配置
  * 
- * @author Jiangsl
+ * @author zj
  * @date 2018/01/18
  *
  */

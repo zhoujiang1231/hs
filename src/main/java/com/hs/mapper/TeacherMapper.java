@@ -1,13 +1,14 @@
 package com.hs.mapper;
 
 import com.hs.entity.Teacher;
+import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
 /**
  * Created by zj on 2018年1年6日.
  */
-
+@Mapper
 public interface TeacherMapper {
     /**
      * 获取登录老师信息

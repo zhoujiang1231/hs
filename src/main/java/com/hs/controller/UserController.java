@@ -11,6 +11,7 @@ import com.hs.utils.SecurityCodeUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import javax.imageio.ImageIO;
@@ -24,7 +25,7 @@ import java.io.IOException;
 /**
  * Created by zj on 2018年1年10日.
  */
-@Controller
+@RestController
 @RequestMapping(value = "/user",produces = "text/html;charset=UTF-8")
 public class UserController {
     @Resource private AdminService adminService;
@@ -32,7 +33,6 @@ public class UserController {
     @Resource private StudentService studentService;
 
     @RequestMapping(value = "/login")
-    @ResponseBody
         public String login(String user_type, String user_name, String user_password, String code, HttpServletRequest request){
         HttpSession session = request.getSession();
         if(!session.getAttribute("SECURITY_CODE").equals(code)) {
@@ -93,13 +93,11 @@ public class UserController {
         }
     }
     @RequestMapping(value = "/logout")
-    @ResponseBody
     public String logout(HttpServletRequest httpServletRequest){
         httpServletRequest.getSession().invalidate();
         return ResponseData.success();
     }
     @RequestMapping(value = "/addUser")
-    @ResponseBody
     public String addUser(String userName,String userPassword,String user_type){
         if(!"0".equals(user_type)&&!"1".equals(user_type)){
             return ResponseData.error("类型错误");
@@ -136,7 +134,6 @@ public class UserController {
     }
 
     @RequestMapping(value = "/updateUserPsw")
-    @ResponseBody
     public String updateUserPsw(int userId,String oldpsw,String newpsw1,HttpServletRequest request){
         HttpSession session = request.getSession();
         String user_type= (String) session.getAttribute("user_type");

@@ -3,6 +3,8 @@ package com.hs.entity;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import java.io.Serializable;
+
 /**
  * 基础实体类
  * 
@@ -10,7 +12,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  * @date 2018/03/13
  *
  */
-public abstract class BaseEntity {
+public abstract class BaseEntity implements Serializable {
 	protected static ObjectMapper mapper = new ObjectMapper();
 
 	@Override

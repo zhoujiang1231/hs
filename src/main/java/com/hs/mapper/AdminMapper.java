@@ -1,13 +1,14 @@
 package com.hs.mapper;
 
 import com.hs.entity.Admin;
+import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
 /**
  * Created by zj on 2018年1年6日.
  */
-
+@Mapper
 public interface AdminMapper {
     /**
      * 获取登录管理员信息

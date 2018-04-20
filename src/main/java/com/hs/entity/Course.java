@@ -5,15 +5,16 @@ import java.io.Serializable;
 /**
  * Created by zj on 2018年1年9日.
  */
-public class Course implements Serializable {
-    private int cId;
+public class Course extends BaseEntity{
+    private Integer cId;
     private String cName;
-    private  String cTeacher;
-    private  int cType;
-    private  int cHour;
-    private  float cMark;
-    private int cTotal;
-    private int cChosed;
+    private String cTeacher;
+    private Integer cType;
+    private Integer cHour;
+    private float cMark;
+    private Integer cTotal;
+    private Integer cChosed;
+    private Integer userType;
 
     public Course() {
     }
@@ -27,11 +28,12 @@ public class Course implements Serializable {
         this.cMark = cMark;
     }
 
-    public int getcId() {
+
+    public Integer getcId() {
         return cId;
     }
 
-    public void setcId(int cId) {
+    public void setcId(Integer cId) {
         this.cId = cId;
     }
 
@@ -51,19 +53,19 @@ public class Course implements Serializable {
         this.cTeacher = cTeacher;
     }
 
-    public int getcType() {
+    public Integer getcType() {
         return cType;
     }
 
-    public void setcType(int cType) {
+    public void setcType(Integer cType) {
         this.cType = cType;
     }
 
-    public int getcHour() {
+    public Integer getcHour() {
         return cHour;
     }
 
-    public void setcHour(int cHour) {
+    public void setcHour(Integer cHour) {
         this.cHour = cHour;
     }
 
@@ -75,19 +77,27 @@ public class Course implements Serializable {
         this.cMark = cMark;
     }
 
-    public int getcTotal() {
+    public Integer getcTotal() {
         return cTotal;
     }
 
-    public void setcTotal(int cTotal) {
+    public void setcTotal(Integer cTotal) {
         this.cTotal = cTotal;
     }
 
-    public int getcChosed() {
+    public Integer getcChosed() {
         return cChosed;
     }
 
-    public void setcChosed(int cChosed) {
+    public void setcChosed(Integer cChosed) {
         this.cChosed = cChosed;
+    }
+
+    public Integer getUserType() {
+        return userType;
+    }
+
+    public void setUserType(Integer userType) {
+        this.userType = userType;
     }
 }

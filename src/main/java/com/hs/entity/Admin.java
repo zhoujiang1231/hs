@@ -1,14 +1,14 @@
 package com.hs.entity;
 
-import java.io.Serializable;
 
 /**
  * Created by zj on 2018年1年10日.
  */
-public class Admin implements Serializable {
-    int	adminId;
-    String	adminName;
-    String	adminPassword;
+public class Admin extends BaseEntity {
+    private Integer	adminId;
+    private String	adminName;
+    private String	adminPassword;
+    private Integer userType;
 
     public Admin() {
     }
@@ -18,17 +18,17 @@ public class Admin implements Serializable {
         this.adminPassword = adminPassword;
     }
 
-    public Admin(int adminId, String adminName, String adminPassword) {
+    public Admin(Integer adminId, String adminName, String adminPassword) {
         this.adminId = adminId;
         this.adminName = adminName;
         this.adminPassword = adminPassword;
     }
 
-    public int getAdminId() {
+    public Integer getAdminId() {
         return adminId;
     }
 
-    public void setAdminId(int adminId) {
+    public void setAdminId(Integer adminId) {
         this.adminId = adminId;
     }
 
@@ -46,5 +46,13 @@ public class Admin implements Serializable {
 
     public void setAdminPassword(String adminPassword) {
         this.adminPassword = adminPassword;
+    }
+
+    public Integer getUserType() {
+        return userType;
+    }
+
+    public void setUserType(Integer userType) {
+        this.userType = userType;
     }
 }
