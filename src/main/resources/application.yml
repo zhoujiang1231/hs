@@ -15,15 +15,15 @@ spring:
     initial-size: 1
     max-active: 10
     min-idle: 1
-#  redis:
-#    host: 172.16.203.105
-#    port: 6379
-#    password:
-#    database: 0
-#    timeout: 3000
-#    pool:
-#      max-idle: 20
-#      min-idle: 5
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+    database: 0
+    timeout: 3000
+    pool:
+      max-idle: 20
+      min-idle: 5
 
 #MyBatis
 mybatis:

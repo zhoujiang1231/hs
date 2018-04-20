@@ -22,7 +22,7 @@ import redis.clients.jedis.JedisPoolConfig;
 @Configuration
 public class RedisConfiguration {
 
-	/*@Value("${spring.redis.host}")
+	@Value("${spring.redis.host}")
 	private String host;
 
 	@Value("${spring.redis.password}")
@@ -52,17 +52,17 @@ public class RedisConfiguration {
 		return poolConfig;
 	}
 
-	@Bean
+	/*@Bean
 	public JedisPool jedisPool() {
 		JedisPool jedisPool = new JedisPool(jedisPoolConfig(), host, port, timeout, password, database);
 		return jedisPool;
-	}
+	}*/
 
 	@Bean
 	public RedisConnectionFactory redisConnectionFactory() {
 		JedisConnectionFactory connectionFactory = new JedisConnectionFactory();
 		connectionFactory.setHostName(host);
-		connectionFactory.setPassword(password);
+		//connectionFactory.setPassword(password);
 		connectionFactory.setDatabase(database);
 		connectionFactory.setPort(port);
 		connectionFactory.setTimeout(timeout);
@@ -86,6 +86,6 @@ public class RedisConfiguration {
 		redisTemplate.setHashValueSerializer(jsonRedisSerializer);
 
 		return redisTemplate;
-	}*/
+	}
 
 }

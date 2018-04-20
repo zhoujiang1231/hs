@@ -8,6 +8,7 @@ import com.hs.service.AdminService;
 import com.hs.service.StudentService;
 import com.hs.service.TeacherService;
 import com.hs.utils.SecurityCodeUtil;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -31,59 +32,47 @@ public class UserController {
     @Resource private AdminService adminService;
     @Resource private TeacherService teacherService;
     @Resource private StudentService studentService;
+    @Resource private RedisTemplate redisTemplate;
 
     @RequestMapping(value = "/login")
-        public String login(String user_type, String user_name, String user_password, String code, HttpServletRequest request){
+        public String login(String userType, String userName, String authCode, String securityCode, HttpServletRequest request){
         HttpSession session = request.getSession();
-        if(!session.getAttribute("SECURITY_CODE").equals(code)) {
+        if(!redisTemplate.opsForValue().get(session.getId()+"SECURITY_CODE").equals(securityCode)) {
             return ResponseData.error("验证码错误！");
         }
         else{
             //管理员登录
-            if ("0".equals(user_type)) {
-                Admin admin1 = adminService.getLoginAdmin(new Admin(user_name, user_password));
+            if ("0".equals(userType)) {
+                Admin admin1 = adminService.getLoginAdmin(new Admin(userName, authCode));
                 if (admin1 != null && admin1.getAdminId() != -1) {
-                    session.setAttribute("adminId", admin1.getAdminId());
-                    session.setAttribute("adminName", admin1.getAdminName());
-                    session.setAttribute("adminPassword", admin1.getAdminPassword());
-                    session.setAttribute("user_type", "0");
+                    redisTemplate.opsForValue().set(session.getId()+"account",admin1);
+                    redisTemplate.opsForValue().set(session.getId()+"user_type",admin1.getUserType());
+                    redisTemplate.opsForValue().set(session.getId()+"accountPsw",admin1.getAdminPassword());
                     return ResponseData.buildData(admin1);
                 } else {
                     return ResponseData.error("用户名或密码错误");
                 }
             }
             //老师登录
-            if ("1".equals(user_type)) {
-                Teacher teacher = teacherService.getLoginTeacher(new Teacher(user_name,user_password));
+            if ("1".equals(userType)) {
+                Teacher teacher = teacherService.getLoginTeacher(new Teacher(userName,authCode));
                 if(teacher!=null&&teacher.gettId()!=-1){
-                    session.setAttribute("tId", teacher.gettId());
-                    session.setAttribute("tName", teacher.gettName());
-                    session.setAttribute("tPassword", teacher.gettPassword());
-                    session.setAttribute("user_type", "1");
-                    session.setAttribute("creatTime", teacher.getCreatTime());
-                    session.setAttribute("teacher_course_list",teacher.getLc());
+                    redisTemplate.opsForValue().set(session.getId()+"account",teacher);
+                    redisTemplate.opsForValue().set(session.getId()+"user_type",teacher.getUserType());
+                    redisTemplate.opsForValue().set(session.getId()+"accountPsw",teacher.gettPassword());
+
                     return ResponseData.buildData(teacher);
                 } else {
                     return ResponseData.error("用户名或密码错误");
                 }
             }
             //学生登录
-            if ("2".equals(user_type)) {
-                Student student = studentService.getLoginStudent(new Student(user_name,user_password));
+            if ("2".equals(userType)) {
+                Student student = studentService.getLoginStudent(new Student(userName,authCode));
                 if(student!=null&&student.getStuId()!=-1){
-                    session.setAttribute("stuId", student.getStuId());
-                    session.setAttribute("stuName", student.getStuName());
-                    session.setAttribute("stuPassword", student.getStuPassword());
-                    session.setAttribute("stuAddress", student.getStuAddress());
-                    session.setAttribute("stuDepart", student.getStuDepart());
-                    session.setAttribute("stuEmail", student.getStuEmail());
-                    session.setAttribute("stuNo", student.getStuNo());
-                    session.setAttribute("stuIdcard", student.getStuIdcard());
-                    session.setAttribute("stuTel", student.getStuTel());
-                    session.setAttribute("stuSex", student.getStuSex());
-                    session.setAttribute("user_type", "2");
-                    session.setAttribute("creatTime", student.getCreatTime());
-                    session.setAttribute("student_course_list",student.getLc());
+                    redisTemplate.opsForValue().set(session.getId()+"account",student);
+                    redisTemplate.opsForValue().set(session.getId()+"user_type",student.getUserType());
+                    redisTemplate.opsForValue().set(session.getId()+"accountPsw",student.getStuPassword());
                     return ResponseData.buildData(student);
                 } else {
                     return ResponseData.error("用户名或密码错误");
@@ -94,7 +83,9 @@ public class UserController {
     }
     @RequestMapping(value = "/logout")
     public String logout(HttpServletRequest httpServletRequest){
-        httpServletRequest.getSession().invalidate();
+        HttpSession session = httpServletRequest.getSession();
+        redisTemplate.delete(session.getId()+"*");
+        session.invalidate();
         return ResponseData.success();
     }
     @RequestMapping(value = "/addUser")
@@ -136,9 +127,10 @@ public class UserController {
     @RequestMapping(value = "/updateUserPsw")
     public String updateUserPsw(int userId,String oldpsw,String newpsw1,HttpServletRequest request){
         HttpSession session = request.getSession();
-        String user_type= (String) session.getAttribute("user_type");
+        String user_type= (String) redisTemplate.opsForValue().get(session.getId()+"user_type");
+        String accountPsw = (String) redisTemplate.opsForValue().get(session.getId()+"accountPsw");
         if("0".equals(user_type)){
-            if(!oldpsw.equals(session.getAttribute("adminPassword"))){
+            if(!oldpsw.equals(accountPsw)){
                 return ResponseData.error("旧密码输入错误");
             }
             Admin admin = new Admin();
@@ -150,7 +142,7 @@ public class UserController {
             return ResponseData.error("修改失败");
         }
         if("1".equals(user_type)){
-            if(!oldpsw.equals(session.getAttribute("tPassword"))){
+            if(!oldpsw.equals(accountPsw)){
                 return ResponseData.error("旧密码输入错误");
             }
             Teacher teacher = new Teacher();
@@ -162,7 +154,7 @@ public class UserController {
             return ResponseData.error("修改失败");
         }
         if("2".equals(user_type)){
-            if(!oldpsw.equals(session.getAttribute("stuPassword"))){
+            if(!oldpsw.equals(accountPsw)){
                 return ResponseData.error("旧密码输入错误");
             }
             Student student = new Student();
@@ -178,13 +170,13 @@ public class UserController {
         }
     }
 
-    @RequestMapping(value = "/vcode_img")
+    @RequestMapping(value = "/loginsecurityCode")
     public String securityCodeImage(HttpServletRequest request, HttpServletResponse response) {
         BufferedImage imgBuf = SecurityCodeUtil.initImage();
         String scode = SecurityCodeUtil.generateSecurityCode(imgBuf);
         // 将生成的验证码写入session
         HttpSession session = request.getSession();
-        session.setAttribute(SecurityCodeUtil.SECURITY_CODE, scode);
+        redisTemplate.opsForValue().set(session.getId()+SecurityCodeUtil.SECURITY_CODE,scode);
         // 禁止图像缓存。
         response.setHeader("Pragma", "no-cache");
         response.setHeader("Cache-Control", "no-cache");
