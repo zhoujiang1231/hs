@@ -170,7 +170,7 @@ public class UserController {
         }
     }
 
-    @RequestMapping(value = "/loginsecurityCode")
+    @RequestMapping(value = "/loginSecurityCodeImage")
     public String securityCodeImage(HttpServletRequest request, HttpServletResponse response) {
         BufferedImage imgBuf = SecurityCodeUtil.initImage();
         String scode = SecurityCodeUtil.generateSecurityCode(imgBuf);
