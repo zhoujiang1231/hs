@@ -25,14 +25,14 @@
 	</appender>
 	
 	<!-- 输出到Logstash -->
-	<appender name="LOGSTASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+	<!--<appender name="LOGSTASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
 		<encoder class="net.logstash.logback.encoder.LogstashEncoder">
 			<customFields>{"app":"${app}"}</customFields>
 		</encoder>
 		<destination>127.0.0.1:4560</destination>
 		<writeBufferSize>1024</writeBufferSize>
 		<ringBufferSize>1024</ringBufferSize>
-	</appender>
+	</appender>-->
 	
 	<appender name="ASYNC" class="ch.qos.logback.classic.AsyncAppender">
 		<discardingThreshold>0</discardingThreshold>

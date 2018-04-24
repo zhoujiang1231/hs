@@ -16,7 +16,7 @@ spring:
     max-active: 10
     min-idle: 1
   redis:
-    host: 127.0.0.1
+    host: azhou.top
     port: 6379
     password:
     database: 0

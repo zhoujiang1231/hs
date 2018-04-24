@@ -8,8 +8,10 @@ import com.hs.service.AdminService;
 import com.hs.service.StudentService;
 import com.hs.service.TeacherService;
 import com.hs.utils.SecurityCodeUtil;
+import com.hs.utils.StringUtil;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,6 +24,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.Map;
 
 /**
  * Created by zj on 2018年1年10日.
@@ -35,8 +38,15 @@ public class UserController {
     @Resource private RedisTemplate redisTemplate;
 
     @RequestMapping(value = "/login")
-        public String login(String userType, String userName, String authCode, String securityCode, HttpServletRequest request){
+        public String login(@RequestBody Map map, HttpServletRequest request){
+        String userType = (String) map.get("userType");
+        String securityCode = (String) map.get("securityCode");
+        String userName = (String) map.get("userName");
+        String authCode = (String) map.get("authCode");
         HttpSession session = request.getSession();
+        if(StringUtil.isEmpty(userType)){
+            return ResponseData.error("请选择用户类型!");
+        }
         if(!redisTemplate.opsForValue().get(session.getId()+"SECURITY_CODE").equals(securityCode)) {
             return ResponseData.error("验证码错误！");
         }
