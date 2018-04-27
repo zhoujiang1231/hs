@@ -3,8 +3,10 @@ package com.hs;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.core.annotation.Order;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -31,8 +33,8 @@ public class Application extends WebMvcConfigurerAdapter {
 	}
 
 	@Override
+	@Order(FilterRegistrationBean.HIGHEST_PRECEDENCE)
 	public void addCorsMappings(CorsRegistry registry) {
-
 		registry.addMapping("/**")
 				.allowCredentials(true)
 				.allowedHeaders("*")

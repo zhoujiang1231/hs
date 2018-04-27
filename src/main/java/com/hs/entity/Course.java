@@ -1,6 +1,6 @@
 package com.hs.entity;
 
-import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Created by zj on 2018年1年9日.
@@ -8,6 +8,7 @@ import java.io.Serializable;
 public class Course extends BaseEntity{
     private Integer cId;
     private String cName;
+    private Integer tId;
     private String cTeacher;
     private Integer cType;
     private Integer cHour;
@@ -15,6 +16,7 @@ public class Course extends BaseEntity{
     private Integer cTotal;
     private Integer cChosed;
     private Integer userType;
+    private Date createTime;
 
     public Course() {
     }
@@ -99,5 +101,21 @@ public class Course extends BaseEntity{
 
     public void setUserType(Integer userType) {
         this.userType = userType;
+    }
+
+    public Integer gettId() {
+        return tId;
+    }
+
+    public void settId(Integer tId) {
+        this.tId = tId;
+    }
+
+    public Date getCreateTime() {
+        return this.createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 }

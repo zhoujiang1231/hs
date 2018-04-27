@@ -2,14 +2,13 @@ package com.hs.controller;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.hs.constant.Const;
 import com.hs.entity.Teacher;
 import com.hs.entity.common.ResponseData;
 import com.hs.service.TeacherService;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -19,51 +18,51 @@ import java.util.List;
  * Created by zj on 2018年1年10日.
  */
 @RestController
-@RequestMapping(value = "/teacher",produces = "text/html;charset=UTF-8")
+@RequestMapping(value = "/teacher",produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class TeacherController {
     @Resource private TeacherService teacherService;
 
-    @RequestMapping(value = "/getAllTeacher")
-    public String getAllTeacher(@RequestParam String pageNum, @RequestParam String pageSize, @RequestParam String tName, HttpServletRequest request) {
-        if("".equals(pageNum)||pageNum== null){
-            pageNum="1";
+    @GetMapping(value = "/getAllTeacher")
+    public String getAllTeacher(@RequestParam Integer start, @RequestParam Integer limit,Teacher teacher, HttpServletRequest request) {
+        if(start== null){
+            start= Const.PAGE_START;
         }
-        if("".equals(pageSize)||pageSize== null){
-            pageSize="10";
+        if(limit== null){
+            limit=Const.PAGE_LIMIT;
         }
-        if(!"-1".equals(pageSize)) {
-            PageHelper.startPage(Integer.parseInt(pageNum), Integer.parseInt(pageSize), true);
-            List<Teacher> lt = teacherService.getAllTeacher(tName);
-            PageInfo<Teacher> pt = new PageInfo<Teacher>(lt);
-            if (pt.getTotal() != 0) {
-                return ResponseData.buildList(lt,pt);
-            }
-            return ResponseData.error("没有教师");
+        PageHelper.startPage(start, limit,true);
+        List<Teacher> lt = teacherService.getAllTeacher(teacher.gettName());
+        PageInfo<Teacher> pt = new PageInfo<Teacher>(lt);
+        if (pt.getTotal() != 0) {
+            return ResponseData.buildList(lt,pt);
         }
-        else{
-            List<Teacher> lt = teacherService.getAllTeacher("");
-            if (lt!=null&&lt.size()>0&&lt.get(0).gettId()!=-1) {
-                return ResponseData.buildList(lt);
-            }
-            return ResponseData.error("没有教师");
-        }
+        return ResponseData.error("没有教师");
     }
-    @RequestMapping(value = "/deleteTeacher")
-    public String deleteTeacher(int tId) {
-        if(teacherService.deleteTeacher(new Teacher(tId))){
+
+    @GetMapping(value = "/getAllTeacherIdAndName")
+    public String getAllTeacherIdAndName(HttpServletRequest request) {
+        List<Teacher> lt = teacherService.getAllTeacher("");
+        return ResponseData.buildList(lt);
+    }
+
+
+    @DeleteMapping(value = "/deleteTeacher/{tId}")
+    public String deleteTeacher(@PathVariable Integer tId) {
+        Teacher teacher = new Teacher(tId);
+        if(teacherService.deleteTeacher(teacher)){
             return ResponseData.success("删除成功");
         }
         return ResponseData.error("删除失败");
     }
 
 
-    @RequestMapping(value = "/addTeacher")
-    public String addTeacher(Teacher teacher) {
-        if(teacher.gettName()==""){
+    @PostMapping(value = "/addTeacher")
+    public String addTeacher(@RequestBody Teacher teacher) {
+        if(teacher.gettName()==""||teacher.gettName()==null){
             return ResponseData.error("姓名为空");
         }
-        if(teacher.gettPassword()==""){
-            return ResponseData.error("密码为空");
+        if(teacher.gettPassword()==""||teacher.gettPassword()==null){
+            teacher.settPassword("888888");
         }
         if(teacherService.addTeacher(teacher)){
             return ResponseData.success("添加成功");

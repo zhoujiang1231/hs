@@ -27,7 +27,7 @@
     </update>
 
     <insert id="addStudent" parameterType="Student" useGeneratedKeys="true">
-        INSERT INTO student  (stuName,stuNo,stuSex,creatTime
+        INSERT INTO student  (stuName,stuSex,creatTime
         <if test='stuDepart!=null and stuDepart!=""'>
             ,stuDepart
         </if>
@@ -44,7 +44,7 @@
             ,stuIdcard
         </if>
         )
-        VALUES (#{stuName},#{stuNo},#{stuSex},now()
+        VALUES (#{stuName},#{stuSex},now()
         <if test='stuDepart!=null and stuDepart!=""'>
             ,#{stuDepart}
         </if>

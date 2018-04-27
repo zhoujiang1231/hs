@@ -9,7 +9,7 @@ spring:
   application.name: "@project.artifactId@"
   profiles.active: dev
   datasource:
-    url: jdbc:mysql://azhou.top:3306/hs?userUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://azhou.top:3306/hs?userUnicode:true&characterEncoding:UTF-8
     username: root
     password: 1231
     initial-size: 1
@@ -30,4 +30,11 @@ mybatis:
   mapper-locations: classpath:mapper/*.xml
   config-locations: classpath:mybatis-config.xml
   type-aliases-package: com.hs.entity
+
+
+pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql
 

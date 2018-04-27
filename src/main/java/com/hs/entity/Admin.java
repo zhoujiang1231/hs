@@ -8,7 +8,7 @@ public class Admin extends BaseEntity {
     private Integer	adminId;
     private String	adminName;
     private String	adminPassword;
-    private Integer userType;
+    private Integer userType = 0;
 
     public Admin() {
     }

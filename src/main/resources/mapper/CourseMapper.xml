@@ -54,12 +54,12 @@
 
     <!--老师操作部分-->
     <insert id="addCourse" parameterType="Course" useGeneratedKeys="true" keyProperty="cId">
-        INSERT INTO course (cName,cMark,cHour,cTeacher,cType,cTotal,cChosed)
-        VALUES (#{cName},#{cMark},#{cHour},#{cTeacher},#{cType},#{cTotal},0)
+        INSERT INTO course (cName,cMark,cHour,tId,cTeacher,cType,cTotal,cChosed,createTime)
+        VALUES (#{cName},#{cMark},#{cHour},#{tId},#{cTeacher},#{cType},#{cTotal},0,now())
     </insert>
 
     <insert id="addCourseTeacher" parameterType="map" >
-        INSERT INTO course_teacher (tName,cId) VALUES (#{tName},#{cId})
+        INSERT INTO course_teacher (tName,tId,cId) VALUES (#{tName},#{tId},#{cId})
     </insert>
 
     <delete id="deleteCourse" parameterType="java.lang.Integer">

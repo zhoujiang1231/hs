@@ -1,6 +1,5 @@
 package com.hs.entity;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -13,7 +12,7 @@ public class Teacher extends BaseEntity{
     private String	tName;
     private String	tPassword;
     private Date creatTime;
-    private Integer userType;
+    private Integer userType =1;
     private List<Course> lc = new ArrayList<Course>();
 
     public Teacher() {
@@ -52,13 +51,8 @@ public class Teacher extends BaseEntity{
         this.tPassword = tPassword;
     }
 
-    public String getCreatTime() {
-        if(this.creatTime!=null) {
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            String s = simpleDateFormat.format(this.creatTime);
-            return s;
-        }
-        return "";
+    public Date getCreatTime() {
+        return this.creatTime;
     }
 
     public void setCreatTime(Date creatTime) {

@@ -41,10 +41,10 @@
 	
 	<!-- 全局日志 -->
 	<root level="INFO">
-		<springProfile name="production">
+		<!--<springProfile name="production">
 			<appender-ref ref="LOGSTASH" />
 			<appender-ref ref="ASYNC" />
-		</springProfile>
+		</springProfile>-->
 		<springProfile name="!production">
 			<appender-ref ref="CONSOLE" />
 		</springProfile>
@@ -54,7 +54,7 @@
 	</root>
 	
 	<!-- 应用程序日志 -->
-	<logger name="com.hs" level="DEBUG">
+	<logger name="com.hs" level="ERROR">
   	</logger>
   	
 </configuration>

@@ -2,42 +2,45 @@ package com.hs.controller;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.hs.constant.Const;
 import com.hs.entity.Student;
 import com.hs.entity.common.ResponseData;
 import com.hs.service.StudentService;
-import org.springframework.stereotype.Controller;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
  * Created by zj on 2018年1年6日.
  */
 @RestController
-@RequestMapping(value = "/student",produces = "text/html;charset=UTF-8")
+@RequestMapping(value = "/student",produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class StudentController {
     @Resource private StudentService studentService;
+    @Resource private RedisTemplate redisTemplate;
     
-    @RequestMapping(value = "/deleteStudent")
-    public String deleteStudent(Student student){
+    @DeleteMapping(value = "/deleteStudent/{stuId}")
+    public String deleteStudent(@PathVariable Integer stuId){
+        Student student = new Student();
+        student.setStuId(stuId);
         if(studentService.deleteStudent(student))
             return ResponseData.success("删除成功");
         else
             return ResponseData.error("删除失败");
     }
-    @RequestMapping(value = "/addStudent")
-    public String addStudent(Student student){
+    @PostMapping(value = "/addStudent")
+    public String addStudent(@RequestBody Student student){
         if("".equals(student.getStuName())){
             return ResponseData.error("姓名为空");
         }
         if("".equals(student.getStuNo())){
             return ResponseData.error("学号为空");
         }
-        /*if("".equals(student.getStuIdcard())){
-            return ResponseData.error("身份证为空");
-        }*/
         else {
             if (studentService.addStudent(student)) {
                 return ResponseData.success("添加成功");
@@ -47,57 +50,43 @@ public class StudentController {
         }
     }
 
-    @RequestMapping(value = "/getAllStudent")
-    public String getAllStudent(@RequestParam String pageNum, String stuName, String stuDepart, String stuSex, HttpServletRequest request) {
-        if("".equals(pageNum)||pageNum== null){
-            pageNum="1";
+    @GetMapping(value = "/getAllStudent")
+    public String getAllStudent(@RequestParam Integer start,Integer limit, Student student, HttpServletRequest request) {
+        if(start== null){
+            start= Const.PAGE_START;
         }
-        if("".equals(stuSex)||stuSex==null){
-            stuSex="10";
+        if(limit== null){
+            limit=Const.PAGE_LIMIT;
         }
-        Student student = new Student();
-        student.setStuName(stuName);
-        student.setStuDepart(stuDepart);
-        student.setStuSex(Integer.parseInt(stuSex));
-        PageHelper.startPage(Integer.parseInt(pageNum), 10,true);
+        if(student.getStuSex()==null){
+            student.setStuSex(10);
+        }
+        PageHelper.startPage(start, limit,true);
         List<Student> ls = studentService.getAllStudent(student);
-        PageInfo<Student> ps = new PageInfo<Student>(ls);
+        PageInfo ps = new PageInfo(ls);
         if(ps.getTotal()!=0){
             return ResponseData.buildList(ls,ps);
         }
         return ResponseData.error("没有学生");
     }
 
-    @RequestMapping(value = "/getUserByCondition")
+    @GetMapping(value = "/getUserByCondition")
     public String getAllStudent(Student student){
         List<Student> lu = studentService.getStudentByCondition(student);
         return ResponseData.buildList(lu);
     }
-    @RequestMapping(value = "/updateStudentPsw",method = RequestMethod.POST)
-    public  String updateStudentPsw(Student student, @RequestParam String oldpsw, HttpServletRequest httpServletRequest){
-        if(oldpsw.equals(httpServletRequest.getSession().getAttribute("student_password"))){
-            return  ResponseData.error("旧密码输入错误");
-        }
-        if(studentService.updateStudentPsw(student)) {
-            return ResponseData.success("修改成功");
-        }
-        else
-            return ResponseData.error("系统异常");
-    }
-    @RequestMapping(value = "/updateStudent",method = RequestMethod.POST)
-    public String updateStudent(Student student, HttpServletRequest request){
+
+    @PostMapping(value = "/updateStudent")
+    public String updateStudent(@RequestBody Student student, HttpServletRequest request){
         if (studentService.updateStudent(student)){
-            request.getSession().setAttribute("stuSex", student.getStuSex());
-            request.getSession().setAttribute("stuAddress", student.getStuAddress());
-            request.getSession().setAttribute("stuTel", student.getStuTel());
-            request.getSession().setAttribute("stuEmail", student.getStuEmail());
+            HttpSession session = request.getSession();
             return ResponseData.success("修改成功");
         }
         return ResponseData.error("修改失败");
 
     }
 
-    @RequestMapping(value = "/updateStudentPswAll")
+    @GetMapping(value = "/updateStudentPswAll")
     public String updateStudentPswAll(String[] stuId) {
         if(studentService.updateStudentPswAll(stuId)){
             return ResponseData.success("密码重置成功");

@@ -1,7 +1,5 @@
 package com.hs.entity;
 
-import java.io.Serializable;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -20,7 +18,7 @@ public class Student extends BaseEntity {
     private String stuTel;
     private String stuDepart;
     private String stuIdcard;
-    private Integer userType;
+    private Integer userType = 2;
     private Date creatTime;
     private List<Course> lc = new ArrayList<Course>();
 
@@ -125,13 +123,8 @@ public class Student extends BaseEntity {
         this.stuIdcard = stuIdcard;
     }
 
-    public String getCreatTime() {
-        if(this.creatTime!=null) {
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            String s = simpleDateFormat.format(this.creatTime);
-            return s;
-        }
-        return "";
+    public Date getCreatTime() {
+        return this.creatTime;
     }
 
     public void setCreatTime(Date creatTime) {

@@ -2,14 +2,13 @@ package com.hs.controller;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.hs.constant.Const;
 import com.hs.entity.Course;
 import com.hs.entity.common.ResponseData;
 import com.hs.service.CourseService;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -21,22 +20,22 @@ import java.util.Map;
  * Created by zj on 2018年1年6日.
  */
 @RestController
-@RequestMapping(value = "/course",produces = "text/html;charset=UTF-8")
+@RequestMapping(value = "/course",produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class CourseController {
     @Resource private CourseService courseService;
 
-    @RequestMapping(value = "/getAllCourse")
-    public String getAllCourse(@RequestParam String pageNum, String cName, String cType, HttpServletRequest request) {
-        if("".equals(pageNum)||pageNum== null){
-            pageNum="1";
+    @GetMapping(value = "/getAllCourse")
+    public String getAllCourse(Integer start,Integer limit, Course course, HttpServletRequest request) {
+        if(start== null){
+            start= Const.PAGE_START;
         }
-        if("".equals(cType)||cType==null){
-            cType="10";
+        if(limit== null){
+            limit=Const.PAGE_LIMIT;
         }
-        PageHelper.startPage(Integer.parseInt(pageNum), 10,true);
-        Course course  = new Course();
-        course.setcName(cName);
-        course.setcType(Integer.parseInt(cType));
+        if(course.getcType()==null){
+            course.setcType(10);
+        }
+        PageHelper.startPage(start, limit,true);
         List<Course> lc = courseService.getAllCourse(course);
         PageInfo<Course> ps = new PageInfo<Course>(lc);
         if(ps.getTotal()!=0){
@@ -81,8 +80,8 @@ public class CourseController {
         return ResponseData.error("系统异常");
     }
 
-    @RequestMapping(value = "/addCourse")
-    public String addCourse(Course course,HttpServletRequest request){
+    @PostMapping(value = "/addCourse")
+    public String addCourse(@RequestBody Course course,HttpServletRequest request){
         if(course.getcName()==null || course.getcName()==""){
             return ResponseData.error("课程名为空");
         }
@@ -117,8 +116,8 @@ public class CourseController {
         }
     }
 
-    @RequestMapping(value = "/deleteCourse")
-    public String deleteCourse(int cId){
+    @RequestMapping(value = "/deleteCourse/{cId}")
+    public String deleteCourse(@PathVariable  int cId){
         boolean b = courseService.deleteCourse(cId);
         if(b){
             return ResponseData.success("删除成功");
