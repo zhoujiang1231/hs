@@ -16,7 +16,6 @@ import java.io.IOException;
  * @Date: 2018年4年26日
  **/
 @WebFilter(urlPatterns = "*",filterName = "sessionCheck")
-//@Order(FilterRegistrationBean.LOWEST_PRECEDENCE)
 public class SessionCheckFilter implements Filter {
 
     @Resource

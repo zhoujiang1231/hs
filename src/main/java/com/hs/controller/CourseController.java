@@ -4,10 +4,11 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.hs.constant.Const;
 import com.hs.entity.Course;
+import com.hs.entity.Student;
 import com.hs.entity.common.ResponseData;
 import com.hs.service.CourseService;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.MediaType;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -23,6 +24,7 @@ import java.util.Map;
 @RequestMapping(value = "/course",produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class CourseController {
     @Resource private CourseService courseService;
+    @Resource private RedisTemplate redisTemplate;
 
     @GetMapping(value = "/getAllCourse")
     public String getAllCourse(Integer start,Integer limit, Course course, HttpServletRequest request) {
@@ -44,17 +46,17 @@ public class CourseController {
         return ResponseData.error("没有课程");
     }
 
-    @RequestMapping(value = "/choseCourse")
-    public String choseCourse(String cId,HttpServletRequest request){
-       int stuId = (Integer) request.getSession().getAttribute("stuId");
-       Map map = new HashMap();
-       map.put("stuId",stuId);
-       map.put("cId",cId);
+    @PostMapping(value = "/choseCourse")
+    public String choseCourse(@RequestBody Map map,HttpServletRequest request){
+        Integer cId = (Integer) map.get("cId");
+        Integer stuId = (Integer) redisTemplate.opsForValue().get(request.getRequestedSessionId()+"stuId");
+        map.put("stuId",stuId);
        try {
            if (courseService.choeseCourse(map)) {
                List<Course> lc= courseService.getAllStudentCourse(stuId);
-               request.getSession().setAttribute("student_course_list",lc);
-               return ResponseData.success();
+               Student student = (Student) redisTemplate.opsForValue().get(request.getRequestedSessionId()+"account");
+               student.setLc(lc);
+               return ResponseData.buildData(student);
            }
        }catch (Exception e){
            return ResponseData.error("由于系统原因选课失败");
@@ -62,17 +64,17 @@ public class CourseController {
        return ResponseData.error("系统异常");
     }
 
-    @RequestMapping(value = "/unchoeseCourse")
-    public String unchoeseCourse(String cId,HttpServletRequest request){
-        int stuId = (Integer) request.getSession().getAttribute("stuId");
-        Map map = new HashMap();
+    @PostMapping(value = "/unchoseCourse")
+    public String unchoseCourse(@RequestBody Map map,HttpServletRequest request){
+        Integer cId = (Integer) map.get("cId");
+        Integer stuId = (Integer) redisTemplate.opsForValue().get(request.getRequestedSessionId()+"stuId");
         map.put("stuId",stuId);
-        map.put("cId",cId);
         try {
             if (courseService.unchoeseCourse(map)) {
                 List<Course> lc= courseService.getAllStudentCourse(stuId);
-                request.getSession().setAttribute("student_course_list",lc);
-                return ResponseData.success();
+                Student student = (Student) redisTemplate.opsForValue().get(request.getRequestedSessionId()+"account");
+                student.setLc(lc);
+                return ResponseData.buildData(student);
             }
         }catch (Exception e){
             return ResponseData.error("由于系统原因取消课程失败");
@@ -178,12 +180,19 @@ public class CourseController {
      * @return
      */
     @RequestMapping(value = "/getAllStudentCourse")
-    public String getAllStudentCourse(@RequestParam String pageNum, HttpServletRequest request) {
-        if("".equals(pageNum)||pageNum== null){
-            pageNum="1";
+    public String getAllStudentCourse(Integer start, Integer limit, HttpServletRequest request) {
+        if(start== null){
+            start= Const.PAGE_START;
         }
-        Integer stuId = (Integer) request.getSession().getAttribute("stuId");
-        PageHelper.startPage(Integer.parseInt(pageNum), 10,true);
+        if(limit== null){
+            limit=Const.PAGE_LIMIT;
+        }
+        PageHelper.startPage(start, limit,true);
+        Integer stuId = (Integer) redisTemplate.opsForValue().get(request.getRequestedSessionId()+"stuId");
+        if(stuId == null){
+            return ResponseData.error("没有课程");
+        }
+        PageHelper.startPage(start, limit,true);
         List<Course> lc = courseService.getAllStudentCourse(stuId);
         PageInfo<Course> ps = new PageInfo<Course>(lc);
         if(ps.getTotal()!=0){

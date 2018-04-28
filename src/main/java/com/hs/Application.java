@@ -3,13 +3,9 @@ package com.hs;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.core.annotation.Order;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 /**
  * 这里是程序的起点。。。
@@ -23,7 +19,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @ComponentScan("com.hs")
 @MapperScan("com.hs")
 @ServletComponentScan
-public class Application extends WebMvcConfigurerAdapter {
+public class Application /*extends WebMvcConfigurerAdapter*/ {
 	public static void main(String[] args) throws Exception {
 
 		// 设置JVM的DNS缓存时间，详见：http://docs.amazonaws.cn/AWSSdkDocsJava/latest/DeveloperGuide/java-dg-jvm-ttl.html
@@ -32,13 +28,14 @@ public class Application extends WebMvcConfigurerAdapter {
 		SpringApplication.run(Application.class, args);
 	}
 
-	@Override
+	/*@Override
 	@Order(FilterRegistrationBean.HIGHEST_PRECEDENCE)
 	public void addCorsMappings(CorsRegistry registry) {
+		System.out.println("跨域成功");
 		registry.addMapping("/**")
 				.allowCredentials(true)
 				.allowedHeaders("*")
 				.allowedOrigins("*")
 				.allowedMethods("*");
-	}
+	}*/
 }

@@ -81,6 +81,7 @@ public class UserController {
                 Student student = studentService.getLoginStudent(new Student(userName,authCode));
                 if(student!=null&&student.getStuId()!=-1){
                     redisTemplate.opsForValue().set(session.getId()+"account",student,1L,TimeUnit.HOURS);
+                    redisTemplate.opsForValue().set(session.getId()+"stuId",student.getStuId(),1L,TimeUnit.HOURS);
                     redisTemplate.opsForValue().set(session.getId()+"user_type",student.getUserType(),1L,TimeUnit.HOURS);
                     redisTemplate.opsForValue().set(session.getId()+"accountPsw",student.getStuPassword(),1L,TimeUnit.HOURS);
                     return ResponseData.buildData(student);
