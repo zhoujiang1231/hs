@@ -67,6 +67,7 @@ public class UserController {
                 Teacher teacher = teacherService.getLoginTeacher(new Teacher(userName,authCode));
                 if(teacher!=null&&teacher.gettId()!=-1){
                     redisTemplate.opsForValue().set(session.getId()+"account",teacher,1L,TimeUnit.HOURS);
+                    redisTemplate.opsForValue().set(session.getId()+"tId",teacher.gettId(),1L,TimeUnit.HOURS);
                     redisTemplate.opsForValue().set(session.getId()+"user_type",teacher.getUserType(),1L,TimeUnit.HOURS);
                     redisTemplate.opsForValue().set(session.getId()+"accountPsw",teacher.gettPassword(),1L,TimeUnit.HOURS);
                     redisTemplate.opsForValue().set(session.getId()+"teacher",teacher.gettName(),1L,TimeUnit.HOURS);

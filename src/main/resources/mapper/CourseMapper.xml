@@ -19,7 +19,7 @@
         <if test='cName!="" and cName!=null '>
             and   c.cName like '%${cName}%'
         </if>
-        <if test="cType!=10 and cType!=-1">
+        <if test='cType!="" and cType!=null '>
             and   c.cType = #{cType}
         </if>
         ORDER BY cId

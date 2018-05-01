@@ -153,18 +153,19 @@ public class CourseController {
      * @return
      */
     @RequestMapping(value = "/getAllTeacherCourse")
-    public String getAllTeacherCourse(@RequestParam String pageNum, String cName, String cType, HttpServletRequest request) {
-        if("".equals(pageNum)||pageNum== null){
-            pageNum="1";
+    public String getAllTeacherCourse(@RequestParam Integer start, Integer limit, String cName, String cType, HttpServletRequest request) {
+        if(start== null){
+            start= Const.PAGE_START;
         }
-        if("".equals(cType)||cType==null){
-            cType="10";
+        if(limit== null){
+            limit=Const.PAGE_LIMIT;
         }
+        PageHelper.startPage(start, limit,true);
         Map map = new HashMap();
-        map.put("tId",request.getSession().getAttribute("tId"));
+        map.put("tId",redisTemplate.opsForValue().get(request.getRequestedSessionId()+"tId"));
         map.put("cName",cName);
         map.put("cType",cType);
-        PageHelper.startPage(Integer.parseInt(pageNum), 10,true);
+        PageHelper.startPage(start, limit,true);
         List<Course> lc = courseService.getAllTeacherCourse(map);
         PageInfo<Course> ps = new PageInfo<Course>(lc);
         if(ps.getTotal()!=0){
