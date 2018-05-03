@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hs.mapper.GradeMapper">
+    <resultMap id="GradeList" type="Grade">
+    </resultMap>
+    <select id="getStudentGrade" resultType="Grade" parameterType="Grade">
+        SELECT * FROM grade WHERE stuId = #{stuId}
+    </select>
+
+    <!--根据课程查询所有成绩-->
+    <select id="getAllGradeByCourse" resultType="Grade" parameterType="Integer">
+        SELECT * FROM grade WHERE cId = #{cId}
+    </select>
+
+    <!--查询所有成绩-->
+    <select id="getAllGrade" resultType="Grade">
+        SELECT * FROM grade group by cId
+    </select>
+
+    <!--根据条件查询所有成绩-->
+    <select id="getAllGradeByCon" resultType="Grade" parameterType="HashMap">
+        SELECT * FROM grade WHERE 1=1
+        <if test='cId!=null '>
+            and  cId = #{cId}
+        </if>
+        <if test='stuId!=null '>
+            and  stuId = #{stuId}
+        </if>
+        <if test='cType!=null '>
+            and  stuId IN SELECT cId from course where cType = #{cType}
+        </if>
+    </select>
+
+    <update id="updateGrade" parameterType="Grade">
+        UPDATE grade SET grade=#{grade} WHERE gId = #{gId}
+    </update>
+    <insert id="addStudentGrade" parameterType="Grade" useGeneratedKeys="true">
+        INSERT INTO grade  (cId,stuId,grade)
+        VALUES (#{cId},#{stuId},#{grade})
+    </insert>
+    <delete id="deleteStudentGrade" parameterType="Grade">
+        DELETE from grade where gId = #{gId}
+    </delete>
+</mapper>
