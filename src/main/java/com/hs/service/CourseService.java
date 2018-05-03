@@ -68,7 +68,8 @@ public class CourseService {
         return false;
     }
 
-    public List<Course> getAllStudentCourse(int stuId) {
-        return courseMapper.getAllStudentCourse(stuId);
+    public List<Course> getAllStudentCourseNoStatus() {
+        return courseMapper.getAllStudentCourseNoStatus();
     }
+
 }

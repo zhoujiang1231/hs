@@ -1,5 +1,7 @@
 package com.hs.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -7,6 +9,7 @@ import java.util.List;
 /**
  * Created by zj on 2018年1年10日.
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Teacher extends BaseEntity{
     private Integer tId;
     private String	tName;

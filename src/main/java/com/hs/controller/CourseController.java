@@ -5,8 +5,10 @@ import com.github.pagehelper.PageInfo;
 import com.hs.constant.Const;
 import com.hs.entity.Course;
 import com.hs.entity.Student;
+import com.hs.entity.Teacher;
 import com.hs.entity.common.ResponseData;
 import com.hs.service.CourseService;
+import com.hs.utils.StringUtil;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -54,6 +56,9 @@ public class CourseController {
        try {
            if (courseService.choeseCourse(map)) {
                List<Course> lc= courseService.getAllStudentCourse(stuId);
+               if(lc!=null&&lc.size()>20){
+                   return ResponseData.error("你已经选择了20门课程!");
+               }
                Student student = (Student) redisTemplate.opsForValue().get(request.getRequestedSessionId()+"account");
                student.setLc(lc);
                return ResponseData.buildData(student);
@@ -90,22 +95,31 @@ public class CourseController {
         if(course.getcMark()<=0){
             return ResponseData.error("请填写正确的学分");
         }
-        if(course.getcHour()<=0){
+        if(course.getcHour()<=0 || course.getcHour() == null){
             return ResponseData.error("请填写正确的学时");
         }
-        if(course.getcTeacher()==null || "".equals(course.getcTeacher())){
-            String tName = (String) request.getSession().getAttribute("tName");
-            if(tName==null||"".equals(tName)){
+        if(StringUtil.isEmpty(course.getcTime())){
+            return ResponseData.error("请选择上课时间");
+        }
+        if(course.gettId() == null){
+            Teacher teacher = (Teacher) redisTemplate.opsForValue().get(request.getRequestedSessionId()+"account");
+            String tName = teacher.gettName();
+            Integer tId = teacher.gettId();
+            if(StringUtil.isEmpty(tName)||tId == null){
                 return ResponseData.error("请选择任课教师");
             }
             else {
                 course.setcTeacher(tName);
+                course.settId(tId);
             }
         }
-        if(course.getcType()==-1){
+        if(course.getcType()== null){
             return ResponseData.error("请选择类型");
         }
-        if(course.getcTotal()<=0){
+        if(StringUtil.isEmpty(course.getcTime())){
+            return ResponseData.error("请选择类型");
+        }
+        if(course.getcTotal()<=0||course.getcTotal() == null){
             return ResponseData.error("请填写课程总人数");
         }
         boolean b = courseService.addCourse(course);
@@ -146,7 +160,6 @@ public class CourseController {
 
     /**
      * 获取老师所要教学的课程
-     * @param pageNum
      * @param cName
      * @param cType
      * @param request
@@ -176,7 +189,6 @@ public class CourseController {
 
     /**
      * 获取学生选择的课程
-     * @param pageNum
      * @param request
      * @return
      */
@@ -202,4 +214,15 @@ public class CourseController {
         return ResponseData.error("没有课程");
     }
 
+
+    /**
+     * 获取所有课程包含已经删除的
+     * @param request
+     * @return
+     */
+    @RequestMapping(value = "/allCourseNoStatus")
+    public String getAllStudentCourse(HttpServletRequest request) {
+        List<Course> lc = courseService.getAllStudentCourseNoStatus();
+        return ResponseData.buildList(lc);
+    }
 }

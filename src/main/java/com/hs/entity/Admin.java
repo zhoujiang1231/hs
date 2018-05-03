@@ -1,9 +1,12 @@
 package com.hs.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 /**
  * Created by zj on 2018年1年10日.
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Admin extends BaseEntity {
     private Integer	adminId;
     private String	adminName;

@@ -4,7 +4,7 @@
 <mapper namespace="com.hs.mapper.CourseMapper">
 
     <select id="getAllCourse" resultType="Course" parameterType="Course">
-        SELECT * FROM course WHERE 1=1
+        SELECT * FROM course WHERE status = 0
         <if test='cName!="" and cName!=null '>
           and   cName like '%${cName}%'
         </if>
@@ -15,7 +15,7 @@
     </select>
 
     <select id="getAllTeacherCourse" resultType="Course" parameterType="map">
-        SELECT * FROM course c WHERE cId in(SELECT cId FROM course_teacher WHERE tName = (SELECT tName FROM teacher WHERE tId=#{tId}))
+        SELECT * FROM course c WHERE status = 0 and cId in(SELECT cId FROM course_teacher WHERE tName = (SELECT tName FROM teacher WHERE tId=#{tId}))
         <if test='cName!="" and cName!=null '>
             and   c.cName like '%${cName}%'
         </if>
@@ -48,25 +48,25 @@
     </delete>
 
     <!--直接删除课程时删除该课程的选课记录-->
-    <delete id="deleteCourseForStudent" parameterType="java.lang.Integer">
+    <delete id="deleteCourseForStudent" parameterType="Integer">
         DELETE FROM course_student WHERE cId=#{cId}
     </delete>
 
     <!--老师操作部分-->
     <insert id="addCourse" parameterType="Course" useGeneratedKeys="true" keyProperty="cId">
-        INSERT INTO course (cName,cMark,cHour,tId,cTeacher,cType,cTotal,cChosed,createTime)
-        VALUES (#{cName},#{cMark},#{cHour},#{tId},#{cTeacher},#{cType},#{cTotal},0,now())
+        INSERT INTO course (cName,cMark,cHour,cTime,tId,cTeacher,cType,cTotal,cChosed)
+        VALUES (#{cName},#{cMark},#{cHour},#{cTime},#{tId},#{cTeacher},#{cType},#{cTotal},0)
     </insert>
 
     <insert id="addCourseTeacher" parameterType="map" >
         INSERT INTO course_teacher (tName,tId,cId) VALUES (#{tName},#{tId},#{cId})
     </insert>
 
-    <delete id="deleteCourse" parameterType="java.lang.Integer">
-        DELETE FROM course WHERE cId = #{cId}
-    </delete>
+    <update id="deleteCourse" parameterType="Integer">
+        update course set status = 1 WHERE cId = #{cId}
+    </update>
 
-    <delete id="deleteCourse_student" parameterType="java.lang.Integer">
+    <delete id="deleteCourse_student" parameterType="Integer">
         DELETE FROM course_student WHERE cId=#{cId} and stuId = #{stuId}
     </delete>
 
@@ -87,8 +87,13 @@
         </foreach>
     </delete>
 
-    <select id="getAllStudentCourse" parameterType="java.lang.Integer" resultType="Course">
+    <select id="getAllStudentCourse" parameterType="Integer" resultType="Course">
         select * from course where cId in(SELECT  cId FROM course_student WHERE stuId = #{stuId})
         ORDER BY cId
     </select>
+
+    <select id="getAllStudentCourseNoStatus" resultType="Course">
+        select * from course where cId ORDER BY cId
+    </select>
+
 </mapper>

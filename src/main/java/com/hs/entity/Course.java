@@ -1,10 +1,13 @@
 package com.hs.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.Date;
 
 /**
  * Created by zj on 2018年1年9日.
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Course extends BaseEntity{
     private Integer cId;
     private String cName;
@@ -12,6 +15,7 @@ public class Course extends BaseEntity{
     private String cTeacher;
     private Integer cType;
     private Integer cHour;
+    private String cTime;
     private float cMark;
     private Integer cTotal;
     private Integer cChosed;
@@ -117,5 +121,13 @@ public class Course extends BaseEntity{
 
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
+    }
+
+    public String getcTime() {
+        return cTime;
+    }
+
+    public void setcTime(String cTime) {
+        this.cTime = cTime;
     }
 }

@@ -36,4 +36,6 @@ public interface CourseMapper {
     public int addCourseTeacher(Map map);
 
     public List<Course> getAllStudentCourse(int stuId);
+
+    public List<Course> getAllStudentCourseNoStatus();
 }
