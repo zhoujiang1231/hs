@@ -2,42 +2,73 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hs.mapper.TeacherMapper">
-    <select id="getLoginTeacher" resultType="Teacher" parameterType="Teacher">
-        SELECT * FROM teacher WHERE tName=#{tName} and tPassword = #{tPassword}
+
+    <resultMap id="TeacherEntity" type="Teacher">
+        <id property="tId" column="t_id" ></id>
+        <result property="tName" column="t_name"></result>
+        <result property="tPassword" column="t_password"></result>
+        <result property="userName" column="user_name"></result>
+        <result property="createTime" column="create_time"></result>
+        <collection property="lc" select="getTeacherCourse" column="t_id">
+        </collection>
+    </resultMap>
+
+    <resultMap id="CourseEntity" type="Course">
+        <id property="cId" column="c_id" ></id>
+        <result property="cName" column="c_name"></result>
+        <result property="tId" column="t_id"></result>
+        <result property="cTeacher" column="c_teacher"></result>
+        <result property="cType" column="c_type"></result>
+        <result property="cHour" column="c_hour"></result>
+        <result property="cTime" column="c_time"></result>
+        <result property="cMark" column="c_mark"></result>
+        <result property="cTotal" column="c_total"></result>
+        <result property="cChosed" column="c_chosed"></result>
+        <result property="userType" column="user_type"></result>
+        <result property="createTime" column="create_time"></result>
+    </resultMap>
+
+    <select id="getTeacherCourse" resultMap="CourseEntity" parameterType="java.lang.Integer">
+        SELECT c.* FROM course c LEFT JOIN course_teacher ct ON c.c_id = ct.c_id LEFT JOIN teacher t on ct.t_id = t.t_id WHERE t.t_id = #{tId}
     </select>
 
-    <select id="getAllTeacher" resultType="Teacher" parameterType="java.lang.String">
+    <select id="getLoginTeacher" resultMap="TeacherEntity" parameterType="Teacher">
+        SELECT * FROM teacher WHERE user_name=#{userName} and t_password = #{tPassword}
+    </select>
+
+    <select id="getAllTeacher" resultMap="TeacherEntity" parameterType="java.lang.String">
         SELECT * FROM teacher WHERE 1=1
         <if test='_parameter!=null and _parameter!=""'>
-           and tName like '%${_parameter}%'
+           and t_name like '%${_parameter}%'
         </if>
+        order by t_id
     </select>
 
     <update id="updateTeacherPsw" parameterType="Teacher">
-        UPDATE teacher SET tPassword=#{tPassword} WHERE tId = #{tId}
+        UPDATE teacher SET t_password=#{tPassword} WHERE t_id = #{tId}
     </update>
 
     <insert id="addTeacher" parameterType="Teacher" useGeneratedKeys="true">
-        INSERT INTO teacher (tName,tPassword,creatTime)
-        VALUES (#{tName},#{tPassword},now())
+        INSERT INTO teacher (user_name,t_name,t_password,create_time)
+        VALUES (#{userName},#{tName},#{tPassword},now())
     </insert>
 
     <delete id="deleteTeacher" parameterType="Teacher">
-        DELETE FROM teacher where tId=#{tId}
+        DELETE FROM teacher where t_id=#{tId}
     </delete>
     <!--删除教师帐号之后必须做的动作
         1删除该课程的选课记录
         2删除教师的课程-->
     <!--1删除该课程的选课记录-->
     <delete id="deleteCourseStudent" parameterType="Teacher">
-        DELETE FROM course_student WHERE cId IN (SELECT cId FROM course_teacher WHERE tId=#{tId})
+        DELETE FROM course_student WHERE c_id IN (SELECT course_teacher.c_id FROM course_teacher WHERE t_id=#{tId})
     </delete>
     <!--2删除教师的课程-->
     <delete id="deleteCourseTeacher" parameterType="java.lang.Integer">
-        DELETE FROM course_teacher WHERE tId = #{tId}
+        DELETE FROM course_teacher WHERE t_id = #{tId}
     </delete>
     <update id="updateTeacherPswAll" >
-        UPDATE teacher SET tPassword=888888 WHERE tId IN
+        UPDATE teacher SET t_password=888888 WHERE t_id IN
         <foreach collection="array" item="tId" index="index"
                  open="(" close=")" separator=",">
             #{tId}

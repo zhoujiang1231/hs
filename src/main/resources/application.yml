@@ -9,8 +9,8 @@ spring:
   application.name: "@project.artifactId@"
   profiles.active: dev
   datasource:
-    url: jdbc:mysql://azhou.top:3306/hs?userUnicode:true&characterEncoding:UTF-8
-    username: root
+    url: jdbc:postgresql://localhost:5432/HS
+    username: postgres
     password: 1231
     initial-size: 1
     max-active: 10

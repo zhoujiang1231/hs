@@ -47,4 +47,8 @@ public class GradeService {
     public List<Grade> getAllGradeByCon(HashMap map){
         return gradeMapper.getAllGradeByCon(map);
     }
+
+    public Grade getGradeByCourseAndStu(Grade grade){
+        return gradeMapper.getGradeByCourseAndStu(grade);
+    }
 }

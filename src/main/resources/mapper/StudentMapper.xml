@@ -3,48 +3,86 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hs.mapper.StudentMapper">
 
-    <resultMap id="studentList" type="Student">
-        <id property="stuId" column="stuId"></id>
-        <collection property="lc" select="getStudentCourse" column="stuId">
-            <id column="cId" property="cId"></id>
+    <resultMap id="StudentEntity" type="Student">
+        <id property="stuId" column="stu_id" ></id>
+        <result property="stuName" column="stu_name"></result>
+        <result property="stuPassword" column="stu_password"></result>
+        <result property="stuAddress" column="stu_address"></result>
+        <result property="stuEmail" column="stu_email"></result>
+        <result property="stuSex" column="stu_sex"></result>
+        <result property="stuNo" column="stu_no"></result>
+        <result property="stuTel" column="stu_tel"></result>
+        <result property="stuDepart" column="stu_depart"></result>
+        <result property="stuIdcard" column="stu_idcard"></result>
+        <result property="createTime" column="create_time"></result>
+        <collection property="lc" select="getStudentCourse" column="stu_id">
         </collection>
     </resultMap>
 
-    <select id="getLoginStudent" resultMap="studentList" parameterType="Student">
-        SELECT * FROM student WHERE stuNo=#{stuNo} and stuPassword = #{stuPassword}
+    <resultMap id="CourseEntity" type="Course">
+        <id property="cId" column="c_id" ></id>
+        <result property="cName" column="c_name"></result>
+        <result property="tId" column="t_id"></result>
+        <result property="cTeacher" column="c_teacher"></result>
+        <result property="cType" column="c_type"></result>
+        <result property="cHour" column="c_hour"></result>
+        <result property="cTime" column="c_time"></result>
+        <result property="cMark" column="c_mark"></result>
+        <result property="cTotal" column="c_total"></result>
+        <result property="cChosed" column="c_chosed"></result>
+        <result property="userType" column="user_type"></result>
+        <result property="createTime" column="create_time"></result>
+    </resultMap>
+
+    <select id="getLoginStudent" resultMap="StudentEntity" parameterType="Student">
+        SELECT * FROM student WHERE stu_no=#{stuNo} and stu_password = #{stuPassword}
     </select>
 
-    <select id="getStudentCourse" resultType="Course" parameterType="java.lang.Integer">
-        SELECT c.* FROM course c LEFT JOIN course_student cs ON c.cId = cs.cId LEFT JOIN student s on cs.stuId = s.stuId WHERE s.stuId = #{stuId}
+    <select id="getStudentCourse" resultMap="CourseEntity" parameterType="java.lang.Integer">
+        SELECT c.* FROM course c LEFT JOIN course_student cs ON c.c_id = cs.c_id LEFT JOIN student s on cs.stu_id = s.stu_id WHERE s.stu_id = #{stuId}
+    </select>
+
+    <select id="getStudentByCourse" resultMap="StudentEntity" parameterType="java.lang.Integer">
+        SELECT s.stu_id,s.stu_name FROM student s where stu_id in (select course_student.stu_id from course_student where c_id = #{cId})
+    </select>
+
+    <!--检查学号是否唯一-->
+    <select id="checkUniqueStuNo" resultMap="StudentEntity" parameterType="String">
+        SELECT * FROM student WHERE stu_no = #{stuNo}
+    </select>
+
+    <!--检查身份证是否唯一-->
+    <select id="checkUniqueIdCard" resultMap="StudentEntity" parameterType="String">
+        SELECT * FROM student WHERE stu_idcard = #{stuIdcard}
     </select>
 
     <update id="updateStudentPsw" parameterType="Student">
-        UPDATE student SET stuPassword=#{stuPassword} WHERE stuId = #{stuId}
+        UPDATE student SET stu_password=#{stuPassword} WHERE stu_id = #{stuId}
     </update>
 
     <update id="updateStudent" parameterType="Student">
-        UPDATE student SET stuEmail = #{stuEmail},stuTel=#{stuTel},stuAddress=#{stuAddress},stuSex=#{stuSex} WHERE stuId = #{stuId}
+        UPDATE student SET stu_email = #{stuEmail},stu_tel=#{stuTel},stu_address=#{stuAddress},stu_sex=#{stuSex} WHERE stu_id = #{stuId}
     </update>
 
     <insert id="addStudent" parameterType="Student" useGeneratedKeys="true">
-        INSERT INTO student  (stuName,stuSex
+        INSERT INTO student  (stu_name,stu_sex,stu_no
         <if test='stuDepart!=null and stuDepart!=""'>
-            ,stuDepart
+            ,stu_depart
         </if>
         <if test='stuAddress!=null and stuAddress!=""'>
-            ,stuAddress
+            ,stu_address
         </if>
         <if test='stuTel!=null and stuTel!=""'>
-            ,stuTel
+            ,stu_tel
         </if>
         <if test='stuEmail!=null and stuEmail!=""'>
-            ,stuEmail
+            ,stu_email
         </if>
         <if test='stuIdcard!=null and stuIdcard!=""'>
-            ,stuIdcard
+            ,stu_idcard
         </if>
         )
-        VALUES (#{stuName},#{stuSex}
+        VALUES (#{stuName},#{stuSex},#{stuNo}
         <if test='stuDepart!=null and stuDepart!=""'>
             ,#{stuDepart}
         </if>
@@ -65,36 +103,36 @@
 
     <!--删除学生帐号时同时删除选课记录-->
     <delete id="deleteStudent" parameterType="Student">
-        DELETE FROM student where stuId=#{stuId}
+        DELETE FROM student where stu_id=#{stuId}
     </delete>
 
     <delete id="deleteStudentCourse" parameterType="Student">
-        DELETE FROM course_student where stuId=#{stuId}
+        DELETE FROM course_student where stu_id=#{stuId}
     </delete>
 
     <select id="checkStudentNameUnique" parameterType="java.lang.String" resultType="Student">
-        SELECT * FROM student WHERE stuName=#{stuName}
+        SELECT * FROM student WHERE stu_name=#{stuName}
     </select>
 
-    <select id="getAllStudent" parameterType="Student" resultType="Student">
+    <select id="getAllStudent" parameterType="Student" resultMap="StudentEntity">
         SELECT * FROM student WHERE 1=1
         <if test='stuDepart!="" and stuDepart!=null'>
-             and stuDepart =#{stuDepart}
+             and stu_depart =#{stuDepart}
         </if>
         <if test='stuName!="" and stuName!=null'>
-            and stuName =#{stuName}
+            and stu_name =#{stuName}
         </if>
         <if test='stuSex!=10'>
-            and stuSex=#{stuSex}
+            and stu_sex=#{stuSex}
         </if>
     </select>
 
-    <select id="checkSno" parameterType="java.lang.String" resultType="Student">
-        SELECT * FROM student WHERE stuNo=#{stuNo}
+    <select id="checkSno" parameterType="java.lang.String" resultMap="StudentEntity">
+        SELECT * FROM student WHERE stu_no=#{stuNo}
     </select>
 
     <update id="updateStudentPswAll" >
-        UPDATE student SET stuPassword=888888 WHERE stuId IN
+        UPDATE student SET stu_password=888888 WHERE stuId IN
         <foreach collection="array" item="stuId" index="index"
                  open="(" close=")" separator=",">
             #{stuId}

@@ -71,4 +71,24 @@ public interface StudentMapper {
      */
     public int deleteStudentCourse(Student student);
 
+    /**
+     * 检查学号是否唯一
+     * @param stuNo
+     * @return
+     */
+    public Student checkUniqueStuNo(String stuNo);
+
+    /**
+     * 检查身份证是否唯一
+     * @param stuIdcard
+     * @return
+     */
+    public Student checkUniqueIdCard(String stuIdcard);
+
+    /**
+     * 查询选择了某门课的所有学生
+     * @param cId
+     * @return
+     */
+    public List<Student> getStudentByCourse(Integer cId);
 }

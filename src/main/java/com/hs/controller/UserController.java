@@ -8,6 +8,7 @@ import com.hs.entity.common.ResponseData;
 import com.hs.service.AdminService;
 import com.hs.service.StudentService;
 import com.hs.service.TeacherService;
+import com.hs.utils.MD5Encoder;
 import com.hs.utils.SecurityCodeUtil;
 import com.hs.utils.StringUtil;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -46,10 +47,17 @@ public class UserController {
         if(StringUtil.isEmpty(userType)){
             return ResponseData.error("请选择用户类型!");
         }
+        if(StringUtil.isEmpty(userName)){
+            return ResponseData.error("请输入登录名!");
+        }
+        if(StringUtil.isEmpty(authCode)){
+            return ResponseData.error("请输入登录密码!");
+        }
         if(!redisTemplate.opsForValue().get(session.getId()+"SECURITY_CODE").equals(securityCode)) {
             return ResponseData.error("验证码错误！");
         }
         else{
+            authCode = MD5Encoder.encode(authCode);
             //管理员登录
             if ("0".equals(userType)) {
                 Admin admin1 = adminService.getLoginAdmin(new Admin(userName, authCode));
@@ -64,7 +72,10 @@ public class UserController {
             }
             //老师登录
             if ("1".equals(userType)) {
-                Teacher teacher = teacherService.getLoginTeacher(new Teacher(userName,authCode));
+                Teacher teacher1 = new Teacher();
+                teacher1.settPassword(authCode);
+                teacher1.setUserName(userName);
+                Teacher teacher = teacherService.getLoginTeacher(teacher1);
                 if(teacher!=null&&teacher.gettId()!=-1){
                     redisTemplate.opsForValue().set(session.getId()+"account",teacher,1L,TimeUnit.HOURS);
                     redisTemplate.opsForValue().set(session.getId()+"tId",teacher.gettId(),1L,TimeUnit.HOURS);
@@ -87,7 +98,7 @@ public class UserController {
                     redisTemplate.opsForValue().set(session.getId()+"accountPsw",student.getStuPassword(),1L,TimeUnit.HOURS);
                     return ResponseData.buildData(student);
                 } else {
-                    return ResponseData.error("用户名或密码错误");
+                    return ResponseData.error("学号或密码错误");
                 }
             }
             return ResponseData.error("系统异常");
@@ -96,7 +107,11 @@ public class UserController {
     @GetMapping(value = "/logout")
     public String logout(HttpServletRequest httpServletRequest){
         HttpSession session = httpServletRequest.getSession();
-        redisTemplate.delete(session.getId()+"*");
+        redisTemplate.delete(session.getId()+"account");
+        redisTemplate.delete(session.getId()+"user_type");
+        redisTemplate.delete(session.getId()+"accountPsw");
+        redisTemplate.delete(session.getId()+"tId");
+        redisTemplate.delete(session.getId()+"stuId");
         session.invalidate();
         return ResponseData.success();
     }
@@ -127,7 +142,14 @@ public class UserController {
     public String updateUserPsw(@RequestBody Map map ,HttpServletRequest request){
         Integer userId = (Integer) map.get("userId");
         String authCode = (String) map.get("authCode");
-            HttpSession session = request.getSession();
+        if(userId == null){
+            return ResponseData.error("系统异常!");
+        }
+        if(StringUtil.isEmpty(authCode)){
+            return ResponseData.error("请输入密码!");
+        }
+        authCode = MD5Encoder.encode(authCode);
+        HttpSession session = request.getSession();
         int user_type= (Integer) redisTemplate.opsForValue().get(session.getId()+"user_type");
         boolean flag = false;
         switch (user_type){

@@ -159,6 +159,43 @@ public class CourseController {
     }
 
     /**
+     * 修改课程信息
+     * @param course
+     * @return
+     */
+    @PutMapping(value = "/updateCourse")
+    public String updateCourse(@RequestBody Course course){
+        if(course.getcName()==null || course.getcName()==""){
+            return ResponseData.error("课程名为空");
+        }
+        if(course.getcMark()<=0){
+            return ResponseData.error("请填写正确的学分");
+        }
+        if(course.getcHour()<=0 || course.getcHour() == null){
+            return ResponseData.error("请填写正确的学时");
+        }
+        if(StringUtil.isEmpty(course.getcTime())){
+            return ResponseData.error("请选择上课时间");
+        }
+        if(course.getcType()== null){
+            return ResponseData.error("请选择类型");
+        }
+        if(StringUtil.isEmpty(course.getcTime())){
+            return ResponseData.error("请选择类型");
+        }
+        if(course.getcTotal()<=0||course.getcTotal() == null){
+            return ResponseData.error("请填写课程总人数");
+        }
+        boolean b = courseService.updateCourse(course);
+        if(b){
+            return ResponseData.success("修改成功");
+        }
+        else {
+            return ResponseData.error("修改失败");
+        }
+    }
+
+    /**
      * 获取老师所要教学的课程
      * @param cName
      * @param cType
@@ -183,6 +220,22 @@ public class CourseController {
         PageInfo<Course> ps = new PageInfo<Course>(lc);
         if(ps.getTotal()!=0){
             return ResponseData.buildList(lc,ps);
+        }
+        return ResponseData.error("没有课程");
+    }
+
+    /**
+     * 获取老师所要教学的课程不分页
+     * @param request
+     * @return
+     */
+    @RequestMapping(value = "/getAllTeacherCourseNoPage")
+    public String getAllTeacherCourseNoPage(HttpServletRequest request) {
+        Map map = new HashMap();
+        map.put("tId",redisTemplate.opsForValue().get(request.getRequestedSessionId()+"tId"));
+        List<Course> lc = courseService.getAllTeacherCourse(map);
+        if(lc!=null && lc.size()!= 0 ){
+            return ResponseData.buildList(lc);
         }
         return ResponseData.error("没有课程");
     }

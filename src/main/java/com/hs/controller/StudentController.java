@@ -6,6 +6,7 @@ import com.hs.constant.Const;
 import com.hs.entity.Student;
 import com.hs.entity.common.ResponseData;
 import com.hs.service.StudentService;
+import com.hs.utils.StringUtil;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -41,12 +42,21 @@ public class StudentController {
         if("".equals(student.getStuNo())){
             return ResponseData.error("学号为空");
         }
-        else {
-            if (studentService.addStudent(student)) {
-                return ResponseData.success("添加成功");
-            } else {
-                return ResponseData.error("添加失败");
+        Student student1 = studentService.checkUniqueStuNo(student.getStuNo());
+        if(student1!=null){
+            return ResponseData.error("学号重复");
+        }
+
+        if(StringUtil.isNotEmpty(student.getStuIdcard())) {
+            Student student2 = studentService.checkUniqueIdCard(student.getStuIdcard());
+            if (student2 != null) {
+                return ResponseData.error("身份证重复");
             }
+        }
+        if (studentService.addStudent(student)) {
+            return ResponseData.success("添加成功");
+        } else {
+            return ResponseData.error("添加失败");
         }
     }
 
@@ -68,6 +78,18 @@ public class StudentController {
             return ResponseData.buildList(ls,ps);
         }
         return ResponseData.error("没有学生");
+    }
+
+    @GetMapping(value = "/getStudentByCourse")
+    public String getStudentByCourse(@RequestParam Integer cId, HttpServletRequest request) {
+        if(cId == null){
+            return ResponseData.error("请选择课程号");
+        }
+        List<Student> ls = studentService.getStudentByCourse(cId);
+        if(ls!=null && ls.size()!=0){
+            return ResponseData.buildList(ls);
+        }
+        return ResponseData.error("没有学生选择该门课");
     }
 
     @GetMapping(value = "/getUserByCondition")

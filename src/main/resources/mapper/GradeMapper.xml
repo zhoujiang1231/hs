@@ -2,44 +2,57 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hs.mapper.GradeMapper">
-    <resultMap id="GradeList" type="Grade">
+    <resultMap id="GradeEntity" type="Grade">
+        <id property="gId" column="g_id" ></id>
+        <result property="cId" column="c_id"></result>
+        <result property="cName" column="c_name"></result>
+        <result property="stuId" column="stu_id"></result>
+        <result property="stuNo" column="stu_no"></result>
+        <result property="stuName" column="stu_name"></result>
+        <result property="grade" column="grade"></result>
+        <result property="createTime" column="create_time"></result>
     </resultMap>
-    <select id="getStudentGrade" resultType="Grade" parameterType="Grade">
-        SELECT * FROM grade WHERE stuId = #{stuId}
+    <select id="getStudentGrade" resultMap="GradeEntity" parameterType="Grade">
+        SELECT g.* ,s.stu_name,s.stu_no FROM grade g left join student s on g.stu_id = s.stu_id WHERE g.stu_id = #{stuId}
     </select>
 
     <!--根据课程查询所有成绩-->
-    <select id="getAllGradeByCourse" resultType="Grade" parameterType="Integer">
-        SELECT * FROM grade WHERE cId = #{cId}
+    <select id="getAllGradeByCourse" resultMap="GradeEntity" parameterType="Integer">
+        SELECT g.* ,s.stu_name,s.stu_no FROM grade g left join student s on g.stu_id = s.stu_id WHERE g.c_id = #{cId}
     </select>
 
     <!--查询所有成绩-->
-    <select id="getAllGrade" resultType="Grade">
-        SELECT * FROM grade group by cId
+    <select id="getAllGrade" resultMap="GradeEntity">
+        SELECT g.* ,s.stu_name,s.stu_no FROM grade g left join student s on g.stu_id = s.stu_id
+    </select>
+
+    <!--根据课程和学生查询成绩-->
+    <select id="getGradeByCourseAndStu" resultMap="GradeEntity">
+        SELECT * FROM grade where stu_id = #{stuId} and c_id = #{cId}
     </select>
 
     <!--根据条件查询所有成绩-->
-    <select id="getAllGradeByCon" resultType="Grade" parameterType="HashMap">
-        SELECT * FROM grade WHERE 1=1
+    <select id="getAllGradeByCon" resultMap="GradeEntity" parameterType="HashMap">
+        SELECT g.* ,s.stu_name,s.stu_no FROM grade g left join student s on g.stu_id = s.stu_id WHERE 1=1
         <if test='cId!=null '>
-            and  cId = #{cId}
+            and  c_id = #{cId}
         </if>
         <if test='stuId!=null '>
-            and  stuId = #{stuId}
+            and  g.stu_id = #{stuId}
         </if>
         <if test='cType!=null '>
-            and  stuId IN SELECT cId from course where cType = #{cType}
+            and  g.stu_id IN (SELECT course.c_id from course where c_type = #{cType})
         </if>
     </select>
 
     <update id="updateGrade" parameterType="Grade">
-        UPDATE grade SET grade=#{grade} WHERE gId = #{gId}
+        UPDATE grade SET grade=#{grade} WHERE g_id = #{gId}
     </update>
     <insert id="addStudentGrade" parameterType="Grade" useGeneratedKeys="true">
-        INSERT INTO grade  (cId,stuId,grade)
-        VALUES (#{cId},#{stuId},#{grade})
+        INSERT INTO grade  (c_id,c_name,stu_id,grade)
+        VALUES (#{cId},#{cName},#{stuId},#{grade})
     </insert>
     <delete id="deleteStudentGrade" parameterType="Grade">
-        DELETE from grade where gId = #{gId}
+        DELETE from grade where g_id = #{gId}
     </delete>
 </mapper>

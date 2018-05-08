@@ -60,4 +60,16 @@ public class StudentService {
         }
         return false;
     }
+
+    public Student checkUniqueStuNo(String stuNo){
+        return studentMapper.checkUniqueStuNo(stuNo);
+    }
+
+    public Student checkUniqueIdCard(String stuIdCard){
+        return studentMapper.checkUniqueIdCard(stuIdCard);
+    }
+
+    public List<Student> getStudentByCourse(Integer cId){
+        return studentMapper.getStudentByCourse(cId);
+    }
 }

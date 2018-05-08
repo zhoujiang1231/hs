@@ -3,97 +3,117 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hs.mapper.CourseMapper">
 
-    <select id="getAllCourse" resultType="Course" parameterType="Course">
+    <resultMap id="CourseEntity" type="Course">
+        <id property="cId" column="c_id" ></id>
+        <result property="cName" column="c_name"></result>
+        <result property="tId" column="t_id"></result>
+        <result property="cTeacher" column="c_teacher"></result>
+        <result property="cType" column="c_type"></result>
+        <result property="cHour" column="c_hour"></result>
+        <result property="cTime" column="c_time"></result>
+        <result property="cMark" column="c_mark"></result>
+        <result property="cTotal" column="c_total"></result>
+        <result property="cChosed" column="c_chosed"></result>
+        <result property="userType" column="user_type"></result>
+        <result property="createTime" column="create_time"></result>
+    </resultMap>
+
+    <select id="getAllCourse" resultMap="CourseEntity" parameterType="Course">
         SELECT * FROM course WHERE status = 0
         <if test='cName!="" and cName!=null '>
-          and   cName like '%${cName}%'
+          and   c_name like '%${cName}%'
         </if>
         <if test="cType!=10 and cType!=-1">
-          and   cType = #{cType}
+          and   c_type = #{cType}
         </if>
-        ORDER BY cId
+        ORDER BY c_id
     </select>
 
-    <select id="getAllTeacherCourse" resultType="Course" parameterType="map">
-        SELECT * FROM course c WHERE status = 0 and cId in(SELECT cId FROM course_teacher WHERE tName = (SELECT tName FROM teacher WHERE tId=#{tId}))
+    <select id="getAllTeacherCourse" resultMap="CourseEntity" parameterType="map">
+        SELECT * FROM course c WHERE status = 0 and c_id in(SELECT course_teacher.c_id FROM course_teacher WHERE course_teacher.t_id=#{tId})
         <if test='cName!="" and cName!=null '>
-            and   c.cName like '%${cName}%'
+            and   c.c_name like '%${cName}%'
         </if>
         <if test='cType!="" and cType!=null '>
-            and   c.cType = #{cType}
+            and   c.c_type = #{cType}
         </if>
-        ORDER BY cId
+        ORDER BY c_id
     </select>
 
     <!--学生操作部分-->
     <!--修改课程已选人数+1-->
     <update id="choseCourse"  parameterType="map">
-        UPDATE course set cChosed = cChosed+1 where cId=#{cId}
+        UPDATE course set c_chosed = c_chosed+1 where c_id=#{cId}
     </update>
 
     <!--向学生课程关联表中插入选课数据-->
     <insert id="addCourseStudent" parameterType="map">
-        INSERT INTO course_student (stuId,cId)
+        INSERT INTO course_student (stu_id,c_id)
         VALUES (#{stuId},#{cId})
     </insert>
 
     <!--修改课程已选人数-1-->
     <update id="unchoseCourse"  parameterType="map">
-        UPDATE course set cChosed = cChosed-1 where cId=#{cId}
+        UPDATE course set c_chosed = c_chosed-1 where c_id=#{cId}
     </update>
 
     <!--向学生课程关联表中删除选课数据-->
     <delete id="deleteCourseStudent" parameterType="map">
-        DELETE FROM course_student WHERE stuId=#{stuId} and cId=#{cId}
+        DELETE FROM course_student WHERE stu_id=#{stuId} and c_id=#{cId}
     </delete>
 
     <!--直接删除课程时删除该课程的选课记录-->
     <delete id="deleteCourseForStudent" parameterType="Integer">
-        DELETE FROM course_student WHERE cId=#{cId}
+        DELETE FROM course_student WHERE c_id=#{cId}
     </delete>
 
     <!--老师操作部分-->
     <insert id="addCourse" parameterType="Course" useGeneratedKeys="true" keyProperty="cId">
-        INSERT INTO course (cName,cMark,cHour,cTime,tId,cTeacher,cType,cTotal,cChosed)
+        INSERT INTO course (c_name,c_mark,c_hour,c_time,t_id,c_teacher,c_type,c_total,c_chosed)
         VALUES (#{cName},#{cMark},#{cHour},#{cTime},#{tId},#{cTeacher},#{cType},#{cTotal},0)
     </insert>
 
     <insert id="addCourseTeacher" parameterType="map" >
-        INSERT INTO course_teacher (tName,tId,cId) VALUES (#{tName},#{tId},#{cId})
+        INSERT INTO course_teacher (t_name,t_id,c_id) VALUES (#{tName},#{tId},#{cId})
     </insert>
 
     <update id="deleteCourse" parameterType="Integer">
-        update course set status = 1 WHERE cId = #{cId}
+        update course set status = 1 WHERE c_id = #{cId}
     </update>
 
     <delete id="deleteCourse_student" parameterType="Integer">
-        DELETE FROM course_student WHERE cId=#{cId} and stuId = #{stuId}
+        DELETE FROM course_student WHERE c_id=#{cId} and stu_id = #{stuId}
     </delete>
 
 
     <!--批量删除操作-->
     <delete id="deleteCourseBatch">
-        DELETE FROM course WHERE cId IN
+        DELETE FROM course WHERE c_id IN
         <foreach collection="array" item="cId" index="index"
                  open="(" close=")" separator=",">
             #{cId}
         </foreach>
     </delete>
     <delete id="deleteCourseForStudentBatch">
-        DELETE FROM course_student WHERE cId IN
+        DELETE FROM course_student WHERE c_id IN
         <foreach collection="array" item="cId" index="index"
                  open="(" close=")" separator=",">
             #{cId}
         </foreach>
     </delete>
 
-    <select id="getAllStudentCourse" parameterType="Integer" resultType="Course">
-        select * from course where cId in(SELECT  cId FROM course_student WHERE stuId = #{stuId})
-        ORDER BY cId
+    <select id="getAllStudentCourse" parameterType="Integer" resultMap="CourseEntity">
+        select * from course where c_id in(SELECT  course_student.c_id FROM course_student WHERE stu_id = #{stuId})
+        ORDER BY c_id
     </select>
 
-    <select id="getAllStudentCourseNoStatus" resultType="Course">
-        select * from course where cId ORDER BY cId
+    <select id="getAllStudentCourseNoStatus" resultMap="CourseEntity">
+        select * from course ORDER BY c_id
     </select>
+
+    <update id="updateCourse" parameterType="Course">
+        update course set c_name = #{cName},c_type = #{cType},
+        c_time = #{cTime},c_mark = #{cMark},c_hour = #{cHour},c_total = #{cTotal} where c_id = #{cId}
+    </update>
 
 </mapper>

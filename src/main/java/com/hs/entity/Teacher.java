@@ -14,7 +14,8 @@ public class Teacher extends BaseEntity{
     private Integer tId;
     private String	tName;
     private String	tPassword;
-    private Date creatTime;
+    private String	userName;
+    private Date createTime;
     private Integer userType =1;
     private List<Course> lc = new ArrayList<Course>();
 
@@ -54,12 +55,12 @@ public class Teacher extends BaseEntity{
         this.tPassword = tPassword;
     }
 
-    public Date getCreatTime() {
-        return this.creatTime;
+    public Date getCreateTime() {
+        return this.createTime;
     }
 
-    public void setCreatTime(Date creatTime) {
-        this.creatTime = creatTime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
     public List<Course> getLc() {
@@ -76,5 +77,13 @@ public class Teacher extends BaseEntity{
 
     public void setUserType(Integer userType) {
         this.userType = userType;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 }

@@ -22,7 +22,7 @@ public class Student extends BaseEntity {
     private String stuDepart;
     private String stuIdcard;
     private Integer userType = 2;
-    private Date creatTime;
+    private Date createTime;
     private List<Course> lc = new ArrayList<Course>();
 
     public Student() {
@@ -126,12 +126,12 @@ public class Student extends BaseEntity {
         this.stuIdcard = stuIdcard;
     }
 
-    public Date getCreatTime() {
-        return this.creatTime;
+    public Date getCreateTime() {
+        return this.createTime;
     }
 
-    public void setCreatTime(Date creatTime) {
-        this.creatTime = creatTime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
     public List<Course> getLc() {

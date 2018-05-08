@@ -27,6 +27,8 @@ public interface CourseMapper {
 
     public int deleteCourse(int cId);
 
+    public int updateCourse(Course course);
+
     public int deleteCourseForStudent(int cId);
 
     public int deleteCourseBatch(int[] cId);

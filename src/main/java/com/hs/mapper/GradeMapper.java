@@ -25,4 +25,6 @@ public interface GradeMapper {
     public List<Grade> getAllGrade();
 
     public List<Grade> getAllGradeByCon(HashMap map);
+
+    public Grade getGradeByCourseAndStu(Grade grade);
 }

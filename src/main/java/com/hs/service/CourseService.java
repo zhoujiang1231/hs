@@ -45,6 +45,7 @@ public class CourseService {
         if(courseMapper.addCourse(course)>0) {
             Map map = new HashMap();
             map.put("tName",course.getcTeacher());
+            map.put("tId",course.gettId());
             map.put("cId",course.getcId());
             courseMapper.addCourseTeacher(map);
             return true;
@@ -63,6 +64,13 @@ public class CourseService {
     public boolean deleteCourseBatch(int[] cId) {
         if(courseMapper.deleteCourseBatch(cId)>0){
             courseMapper.deleteCourseForStudentBatch(cId);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean updateCourse(Course course) {
+        if(courseMapper.updateCourse(course)>0){
             return true;
         }
         return false;

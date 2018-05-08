@@ -2,19 +2,22 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hs.mapper.AdminMapper">
-    <resultMap id="AdminList" type="Admin">
+    <resultMap id="AdminEntity" type="Admin">
+        <id property="adminId" column="admin_id" ></id>
+        <result property="adminName" column="admin_name"></result>
+        <result property="adminPassword" column="admin_password"></result>
     </resultMap>
-    <select id="getLoginAdmin" resultType="Admin" parameterType="Admin">
-        SELECT * FROM admin WHERE adminName=#{adminName} and adminPassword = #{adminPassword}
+    <select id="getLoginAdmin" resultMap="AdminEntity" parameterType="Admin">
+        SELECT * FROM admin WHERE admin_name=#{adminName} and admin_password = #{adminPassword}
     </select>
     <update id="updateAdminPsw" parameterType="Admin">
-        UPDATE admin SET adminPassword=#{adminPassword} WHERE adminId = #{adminId}
+        UPDATE admin SET admin_password=#{adminPassword} WHERE admin_id = #{adminId}
     </update>
     <insert id="addAdmin" parameterType="Admin" useGeneratedKeys="true">
-        INSERT INTO admin  (adminName,adminPassword)
+        INSERT INTO admin  (admin_name,admin_password)
         VALUES (#{adminName},#{adminPassword})
     </insert>
     <delete id="deleteAdmin" parameterType="Admin">
-        DELETE admin where adminId=#{adminId}
+        DELETE from admin where admin_id=#{adminId}
     </delete>
 </mapper>

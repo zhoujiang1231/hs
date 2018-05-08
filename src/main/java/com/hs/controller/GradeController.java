@@ -18,7 +18,9 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Author: zj
@@ -69,9 +71,12 @@ public class GradeController {
     }
 
     @PutMapping("/studentGrade")
-    public String updateGrade(Grade grade){
+    public String updateGrade(@RequestBody Grade grade){
         if(grade.getgId() == null ){
             return ResponseData.error("请选择一门成绩!");
+        }
+        if(grade.getGrade()<=0){
+            return ResponseData.error("请填写正确的分数!");
         }
         if(gradeService.updateGrade(grade)) {
             return ResponseData.success("修改成功!");
@@ -80,7 +85,7 @@ public class GradeController {
     }
 
     @PostMapping("/studentGrade")
-    public String addStudentGrade(Grade grade){
+    public String addStudentGrade(@RequestBody Grade grade){
         if(grade.getcId() == null){
             return ResponseData.error("请选择课程!");
         }
@@ -90,17 +95,23 @@ public class GradeController {
         if(grade.getGrade() <0){
             return ResponseData.error("请填写正确的分数!");
         }
+        Grade grade1 = gradeService.getGradeByCourseAndStu(grade);
+        if(grade1 != null){
+            return ResponseData.error("该门课程的学生已有成绩!");
+        }
         if(gradeService.addStudentGrade(grade)){
             return ResponseData.success();
         }
         return ResponseData.error("添加失败");
     }
 
-    @DeleteMapping("/studentGrade")
-    public String deleteStudentGrade(Grade grade){
-        if(grade.getgId() == null){
+    @DeleteMapping("/courseGrade/{gId}")
+    public String deleteStudentGrade(@PathVariable Integer gId){
+        if(gId == null){
             return ResponseData.error("请选择一门成绩!");
         }
+        Grade grade = new Grade();
+        grade.setgId(gId);
         if(gradeService.deleteStudentGrade(grade)){
             return ResponseData.success();
         }
@@ -108,7 +119,23 @@ public class GradeController {
     }
 
     @GetMapping("/courseGrade")
-    public String getAllGradeByCourse(Integer start,Integer limit,Integer cId){
+    public String getAllGradeByCourse(Integer start,Integer limit,Integer cId,HttpServletRequest request){
+        Map map = new HashMap();
+        map.put("tId",redisTemplate.opsForValue().get(request.getRequestedSessionId()+"tId"));
+        List<Course> lc = courseService.getAllTeacherCourse(map);
+        if(lc == null){
+            return ResponseData.error("你没有开课!");
+        }
+        boolean flag = false;
+        /*lc.forEach(o ->{
+            if(o.getcId() == cId) flag = true;
+        });*/
+        for (Course course : lc) {
+            if(course.getcId() == cId) flag = true;
+        }
+        if(flag == false){
+            return ResponseData.error("不是你的课程!");
+        }
         if(start== null){
             start= Const.PAGE_START;
         }

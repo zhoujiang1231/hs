@@ -12,12 +12,15 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Grade extends BaseEntity{
 
-    Integer	gId;    //
-    Integer	cId;    //
-    Integer	stuId;  //
-    float	grade;  //
-    List<Course> lc ;
-    Date createTime;//
+    private Integer	gId;    //
+    private Integer	cId;    //
+    private String	cName;    //
+    private Integer	stuId;  //
+    private String stuNo;//
+    private String stuName;//
+    private float	grade;  //
+    private List<Course> lc ;
+    private Date createTime;//
 
     public Grade() {
     }
@@ -26,6 +29,15 @@ public class Grade extends BaseEntity{
         this.cId = cId;
         this.stuId = stuId;
         this.grade = grade;
+    }
+
+    public Grade(Integer cId, String cName, Integer stuId, String stuNo, String stuName, float grade) {
+        this.cId = cId;
+        this.stuId = stuId;
+        this.stuNo = stuNo;
+        this.stuName = stuName;
+        this.grade = grade;
+        this.cName = cName;
     }
 
     public Integer getgId() {
@@ -74,5 +86,29 @@ public class Grade extends BaseEntity{
 
     public void setLc(List<Course> lc) {
         this.lc = lc;
+    }
+
+    public String getStuNo() {
+        return stuNo;
+    }
+
+    public void setStuNo(String stuNo) {
+        this.stuNo = stuNo;
+    }
+
+    public String getStuName() {
+        return stuName;
+    }
+
+    public void setStuName(String stuName) {
+        this.stuName = stuName;
+    }
+
+    public String getcName() {
+        return cName;
+    }
+
+    public void setcName(String cName) {
+        this.cName = cName;
     }
 }
