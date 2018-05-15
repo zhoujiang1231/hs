@@ -26,6 +26,9 @@
         <if test="cType!=10 and cType!=-1">
           and   c_type = #{cType}
         </if>
+        <if test='tId!=null and tId!=-1'>
+            and  t_id = #{tId}
+        </if>
         ORDER BY c_id
     </select>
 

@@ -97,7 +97,7 @@ public class MD5Encoder {
 	     }  
 	     return result;  
 	}
-	
+	/*
 	public static void main(String[] args) throws UnsupportedEncodingException {
 		String json="[{\"city_name\":\"北京\",\"province_name\":\"北京\",\"category_name\":\"北京测试\",\"source_id\":\"3010091b9d44bbf-bfaa-431c-a306-3d2e6d9f8e7b\",\"name\":\"天润融通演示\",\"telephone\":\"80672598\"}]";
 		byte b[]=json.getBytes();//823da1912f9a4c1a19526c7a2ca7d084  电话帮:08f720005839a656e856ef0f2d95d0dd
@@ -105,6 +105,6 @@ public class MD5Encoder {
 		System.out.println(encode(json1));
 		
 		
-	}
+	}*/
  
 }

@@ -91,4 +91,10 @@ public interface StudentMapper {
      * @return
      */
     public List<Student> getStudentByCourse(Integer cId);
+
+    /**
+     * 查询所有的部门
+     * @return
+     */
+    public List<String> getAllDepart();
 }

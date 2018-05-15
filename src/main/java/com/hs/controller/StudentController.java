@@ -116,4 +116,13 @@ public class StudentController {
         return ResponseData.error("重置密码失败");
     }
 
+    @GetMapping(value = "/allDepart")
+    public String getAllDepart(){
+        List<String> ls = studentService.getAllDepart();
+        if(ls != null){
+            return ResponseData.buildList(ls);
+        }
+        return ResponseData.error("没有数据");
+    }
+
 }

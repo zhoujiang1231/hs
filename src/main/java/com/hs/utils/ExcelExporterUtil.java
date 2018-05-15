@@ -198,7 +198,7 @@ public class ExcelExporterUtil {
         }
     }
     
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         ExcelExporterUtil.setCellType(Cell.CELL_TYPE_STRING);//不管excel里的列是什么变量类型的，都当成字符串直接读出来,如果设置为null，则按照excel里该列原本的类型读取
         Object[][] excel = ExcelExporterUtil.read(new File("C:\\Users\\txy\\Documents\\Tencent Files\\2389679202\\FileRecv\\5000269呼入低消.xls"), 0);
         for(int i =0;i<excel.length;i++) {
@@ -207,5 +207,5 @@ public class ExcelExporterUtil {
             }
             System.out.println();
         }
-    }
+    }*/
 }

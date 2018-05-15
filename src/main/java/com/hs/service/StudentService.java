@@ -72,4 +72,8 @@ public class StudentService {
     public List<Student> getStudentByCourse(Integer cId){
         return studentMapper.getStudentByCourse(cId);
     }
+
+    public List<String> getAllDepart(){
+        return studentMapper.getAllDepart();
+    }
 }
